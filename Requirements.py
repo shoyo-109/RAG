@@ -1,0 +1,13 @@
+langchain
+langchain-core
+langgraph
+langchain-openai
+python-dotenv
+langchain-google-genai
+langchain-community
+chromadb
+sentence-transformers
+langchain-chroma
+fastapi
+uvicorn
+python-multipart
