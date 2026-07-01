@@ -5,11 +5,14 @@ An enterprise-ready, production-grade Retrieval-Augmented Generation (RAG) platf
 ---
 
 ## 📸 Platform Screenshots
-*Add your UI and Visualizer screenshots in this section:*
+<img width="1913" height="1078" alt="image" src="https://github.com/user-attachments/assets/03bdec73-3d61-4a2b-a5e7-22ac740771a8" />
+
 
 | Conversation Dashboard | 3D Embedding Space Projection |
 | :---: | :---: |
-| *[Add Conversation Screenshot Here]* | *[Add 3D Space Screenshot Here]* |
+| <img width="1373" height="652" alt="image" src="https://github.com/user-attachments/assets/df90ca50-8efe-44d6-87b7-239a08ea4fa4" />
+ | <img width="1793" height="906" alt="image" src="https://github.com/user-attachments/assets/85a53c80-8a0e-47e8-9f53-c204f6b8bbb0" />
+ |
 
 ---
 
