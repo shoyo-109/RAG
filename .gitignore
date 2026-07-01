@@ -1,0 +1,21 @@
+.env
+Documents
+/.embedding_cache
+.chroma_db
+venv
+__pycache__
+
+frontend/.next
+frontend/node_modules
+.python-version
+chatgpt_key.py
+.embeddings_cache/advance_rag7166d1be-f8b4-533e-b623-dd54eaf0c85c
+/.embeddings_cache
+frontend/next-env.d.ts
+/frontend/Referance Photos
+frontend/eslint.config.mjs
+frontend/next.config.ts
+frontend/package-lock.json
+frontend/tsconfig.json
+frontend/package.json
+nvdia_model_cnfg.py
