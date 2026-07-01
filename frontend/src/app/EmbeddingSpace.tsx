@@ -15,6 +15,24 @@ interface EmbeddingSpaceProps {
   retrievedChunks: string[];
 }
 
+interface Star {
+  x: number;
+  y: number;
+  size: number;
+  brightness: number;
+  speed: number;
+}
+
+interface Meteor {
+  x: number;
+  y: number;
+  speedX: number;
+  speedY: number;
+  length: number;
+  size: number;
+  opacity: number;
+}
+
 export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpaceProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -25,9 +43,44 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
   const angleXRef = useRef<number>(0.3);
   const angleYRef = useRef<number>(0.5);
   const hoverNodeRef = useRef<ChunkNode | null>(null);
+  const isHoveredRef = useRef<boolean>(false);
+
+  // Space assets refs
+  const starsRef = useRef<Star[]>([]);
+  const meteorsRef = useRef<Meteor[]>([]);
 
   // Track cursor position for canvas hover detection
   const mousePosRef = useRef<{ x: number; y: number }>({ x: -1000, y: -1000 });
+
+  useEffect(() => {
+    // Generate stars
+    const stars: Star[] = [];
+    for (let i = 0; i < 60; i++) {
+      stars.push({
+        x: Math.random() * 1920,
+        y: Math.random() * 1080,
+        size: Math.random() * 1.5 + 0.5,
+        brightness: Math.random(),
+        speed: Math.random() * 0.1 + 0.05,
+      });
+    }
+    starsRef.current = stars;
+
+    // Generate active meteors
+    const meteors: Meteor[] = [];
+    for (let i = 0; i < 3; i++) {
+      meteors.push({
+        x: Math.random() * 1920,
+        y: Math.random() * 500,
+        speedX: -(Math.random() * 1.2 + 0.8),
+        speedY: Math.random() * 0.8 + 0.4,
+        length: Math.random() * 40 + 30,
+        size: Math.random() * 1.5 + 1.0,
+        opacity: Math.random(),
+      });
+    }
+    meteorsRef.current = meteors;
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -42,7 +95,7 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
     const resizeCanvas = () => {
       if (containerRef.current) {
         canvas.width = containerRef.current.clientWidth;
-        canvas.height = containerRef.current.clientHeight || 450;
+        canvas.height = containerRef.current.clientHeight || 550;
       }
     };
     resizeCanvas();
@@ -57,33 +110,84 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
       const centerY = height / 2;
       const scaleFactor = Math.min(width, height) * 0.4;
 
-      // Slow idle rotation in 3D space
-      angleYRef.current += 0.003;
-      angleXRef.current = 0.2 + Math.sin(Date.now() * 0.0005) * 0.1; // gentle bobbing
+      // Draw real space background (pitch black with deep purple glow)
+      ctx.fillStyle = "#000000";
+      ctx.fillRect(0, 0, width, height);
+
+      // Draw subtle space nebula glow
+      const radialGlow = ctx.createRadialGradient(centerX, centerY, 50, centerX, centerY, Math.max(width, height) * 0.8);
+      radialGlow.addColorStop(0, "rgba(24, 18, 54, 0.25)");
+      radialGlow.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = radialGlow;
+      ctx.fillRect(0, 0, width, height);
+
+      // Update and Draw Stars
+      starsRef.current.forEach((star) => {
+        // Move star slowly to left to simulate cosmic motion
+        star.x -= star.speed;
+        if (star.x < 0) {
+          star.x = width;
+          star.y = Math.random() * height;
+        }
+
+        // Star twinkle
+        star.brightness += (Math.random() - 0.5) * 0.05;
+        star.brightness = Math.max(0.2, Math.min(1.0, star.brightness));
+
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.brightness})`;
+        ctx.beginPath();
+        ctx.arc(star.x % width, star.y % height, star.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Update and Draw Meteors (slow speed)
+      meteorsRef.current.forEach((meteor) => {
+        meteor.x += meteor.speedX;
+        if (meteor.x < -100) {
+          meteor.x = width + 100;
+          meteor.y = Math.random() * (height * 0.6);
+        }
+        meteor.y += meteor.speedY;
+        if (meteor.y > height + 100) {
+          meteor.y = -50;
+          meteor.x = Math.random() * width + 200;
+        }
+
+        // Draw meteor trail
+        const grad = ctx.createLinearGradient(meteor.x, meteor.y, meteor.x - meteor.speedX * meteor.length * 0.3, meteor.y - meteor.speedY * meteor.length * 0.3);
+        grad.addColorStop(0, "rgba(255, 255, 255, 0.8)");
+        grad.addColorStop(0.2, "rgba(139, 92, 246, 0.4)");
+        grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+
+        ctx.strokeStyle = grad;
+        ctx.lineWidth = meteor.size;
+        ctx.beginPath();
+        ctx.moveTo(meteor.x, meteor.y);
+        ctx.lineTo(meteor.x + meteor.speedX * meteor.length * 0.5, meteor.y + meteor.speedY * meteor.length * 0.5);
+        ctx.stroke();
+      });
+
+      // Pause rotation on hover
+      if (!isHoveredRef.current) {
+        angleYRef.current += 0.0025;
+        angleXRef.current = 0.25 + Math.sin(Date.now() * 0.0004) * 0.08;
+      }
 
       const cosX = Math.cos(angleXRef.current);
       const sinX = Math.sin(angleXRef.current);
       const cosY = Math.cos(angleYRef.current);
       const sinY = Math.sin(angleYRef.current);
 
-      // Clear with dark tech space theme gradient
-      const bgGrad = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, Math.max(width, height));
-      bgGrad.addColorStop(0, "#111827");
-      bgGrad.addColorStop(1, "#030712");
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, width, height);
-
-      // Draw Grid/Space Structure lines to make it look premium and technical
-      ctx.strokeStyle = "rgba(59, 130, 246, 0.05)";
+      // Technical reference grid rings
+      ctx.strokeStyle = "rgba(139, 92, 246, 0.04)";
       ctx.lineWidth = 1;
-      // Drawing longitudinal rings or bounding lines
       for (let r = 1; r <= 3; r++) {
         ctx.beginPath();
         ctx.arc(centerX, centerY, (scaleFactor / 3) * r, 0, Math.PI * 2);
         ctx.stroke();
       }
 
-      // Project 3D nodes to 2D screen coordinates
+      // Project 3D nodes
       interface ProjectedNode {
         node: ChunkNode;
         projX: number;
@@ -94,23 +198,16 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
       }
 
       const projected: ProjectedNode[] = nodes.map((node) => {
-        // Translate coordinates to center and apply 3D rotation
-        // Y-axis rotation
         let x1 = node.x * cosY - node.z * sinY;
         let z1 = node.z * cosY + node.x * sinY;
-
-        // X-axis rotation
         let y2 = node.y * cosX - z1 * sinX;
         let z2 = z1 * cosX + node.y * sinX;
 
-        // Camera perspective model
         const cameraDistance = 15;
         const perspective = cameraDistance / (cameraDistance + z2);
-
         const projX = centerX + x1 * scaleFactor * 0.7 * perspective;
         const projY = centerY + y2 * scaleFactor * 0.7 * perspective;
 
-        // Check if this chunk is one of the retrieved ones
         const isRetrieved = retrievedChunks.some((rc) => 
           rc.toLowerCase().includes(node.text.toLowerCase()) || 
           node.text.toLowerCase().includes(rc.toLowerCase())
@@ -126,23 +223,20 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
         };
       });
 
-      // Sort by depth (Z desc) so closer elements render on top
       projected.sort((a, b) => b.projZ - a.projZ);
 
-      // Draw connections between sequential chunks to show document flow
-      ctx.lineWidth = 1.5;
+      // Draw connection lines
+      ctx.lineWidth = 1.2;
       for (let i = 0; i < projected.length - 1; i++) {
         const from = projected[i];
         const to = projected[i + 1];
-        
-        // Calculate average scale for opacity
         const avgScale = (from.scale + to.scale) / 2;
-        const baseOpacity = from.isRetrieved && to.isRetrieved ? 0.4 : 0.08;
-        
+        const baseOpacity = from.isRetrieved && to.isRetrieved ? 0.45 : 0.08;
+
         const grad = ctx.createLinearGradient(from.projX, from.projY, to.projX, to.projY);
-        grad.addColorStop(0, from.isRetrieved ? `rgba(16, 185, 129, ${0.8 * avgScale})` : `rgba(59, 130, 246, ${baseOpacity * avgScale})`);
-        grad.addColorStop(1, to.isRetrieved ? `rgba(16, 185, 129, ${0.8 * avgScale})` : `rgba(59, 130, 246, ${baseOpacity * avgScale})`);
-        
+        grad.addColorStop(0, from.isRetrieved ? `rgba(16, 185, 129, ${0.8 * avgScale})` : `rgba(139, 92, 246, ${baseOpacity * avgScale})`);
+        grad.addColorStop(1, to.isRetrieved ? `rgba(16, 185, 129, ${0.8 * avgScale})` : `rgba(139, 92, 246, ${baseOpacity * avgScale})`);
+
         ctx.strokeStyle = grad;
         ctx.beginPath();
         ctx.moveTo(from.projX, from.projY);
@@ -150,57 +244,50 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
         ctx.stroke();
       }
 
-      // Check mouse collision with nodes for tooltip interaction
+      // Check mouse hover
       let foundHover: ChunkNode | null = null;
       const mouseX = mousePosRef.current.x;
       const mouseY = mousePosRef.current.y;
 
       projected.forEach((p) => {
-        const nodeSize = p.isRetrieved ? 12 * p.scale : 6 * p.scale;
+        const nodeSize = p.isRetrieved ? 13 * p.scale : 6.5 * p.scale;
         const dx = mouseX - p.projX;
         const dy = mouseY - p.projY;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        // Hover detection within 15px radius
-        if (dist < Math.max(nodeSize + 6, 12)) {
+        if (dist < Math.max(nodeSize + 8, 14)) {
           foundHover = p.node;
         }
 
-        // --- Draw Node ---
+        // Draw Nodes
         ctx.beginPath();
         ctx.arc(p.projX, p.projY, nodeSize, 0, Math.PI * 2);
 
         if (p.isRetrieved) {
-          // Glow effect for retrieved nodes
-          ctx.shadowBlur = 15;
+          ctx.shadowBlur = 18;
           ctx.shadowColor = "#10b981";
           ctx.fillStyle = "#10b981";
         } else {
           ctx.shadowBlur = 0;
-          ctx.fillStyle = `rgba(59, 130, 246, ${0.4 + p.scale * 0.6})`;
+          ctx.fillStyle = `rgba(139, 92, 246, ${0.45 + p.scale * 0.55})`;
         }
         ctx.fill();
 
-        // Draw outer ring
         ctx.shadowBlur = 0;
-        ctx.strokeStyle = p.isRetrieved 
-          ? `rgba(255, 255, 255, ${0.8 * p.scale})` 
-          : `rgba(99, 102, 241, ${0.3 * p.scale})`;
-        ctx.lineWidth = p.isRetrieved ? 2 : 1;
+        ctx.strokeStyle = p.isRetrieved ? "rgba(255, 255, 255, 0.95)" : `rgba(139, 92, 246, ${0.3 * p.scale})`;
+        ctx.lineWidth = p.isRetrieved ? 2.5 : 1;
         ctx.beginPath();
         ctx.arc(p.projX, p.projY, nodeSize + (p.isRetrieved ? 4 : 2), 0, Math.PI * 2);
         ctx.stroke();
 
-        // Draw labels for retrieved nodes
         if (p.isRetrieved) {
-          ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
-          ctx.font = "bold 9px monospace";
+          ctx.fillStyle = "#ffffff";
+          ctx.font = "bold 9.5px var(--font-sans)";
           ctx.textAlign = "center";
           ctx.fillText(`Chunk ${p.node.id}`, p.projX, p.projY - nodeSize - 8);
         }
       });
 
-      // Update hovered state
       if (foundHover !== hoverNodeRef.current) {
         hoverNodeRef.current = foundHover;
         setHoveredNode(foundHover);
@@ -224,11 +311,13 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     mousePosRef.current = { x, y };
-    setTooltipPos({ x: e.clientX - rect.left + 15, y: e.clientY - rect.top + 15 });
+    isHoveredRef.current = true;
+    setTooltipPos({ x: e.clientX - rect.left + 20, y: e.clientY - rect.top + 10 });
   };
 
   const handleMouseLeave = () => {
     mousePosRef.current = { x: -1000, y: -1000 };
+    isHoveredRef.current = false;
     setHoveredNode(null);
     hoverNodeRef.current = null;
   };
@@ -239,7 +328,7 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
         ref={canvasRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        style={{ display: "block", borderRadius: "8px", cursor: hoveredNode ? "pointer" : "default" }}
+        style={{ display: "block", borderRadius: "14px", cursor: hoveredNode ? "pointer" : "default" }}
       />
       
       {hoveredNode && (
@@ -248,25 +337,34 @@ export default function EmbeddingSpace({ nodes, retrievedChunks }: EmbeddingSpac
             position: "absolute",
             left: `${tooltipPos.x}px`,
             top: `${tooltipPos.y}px`,
-            backgroundColor: "rgba(17, 24, 39, 0.95)",
-            color: "#e5e7eb",
-            padding: "10px 14px",
-            borderRadius: "6px",
-            fontSize: "12px",
-            lineHeight: "1.4",
-            maxWidth: "280px",
+            background: "rgba(18, 14, 32, 0.75)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            color: "#f3f4f6",
+            padding: "16px",
+            borderRadius: "14px",
+            fontSize: "12.5px",
+            lineHeight: "1.5",
+            maxWidth: "340px",
             zIndex: 100,
-            border: "1px solid rgba(59, 130, 246, 0.3)",
-            boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.5)",
+            border: "1px solid rgba(255, 255, 255, 0.08)",
+            boxShadow: "0 12px 40px 0 rgba(0, 0, 0, 0.55), inset 0 0 15px rgba(255, 255, 255, 0.05)",
             pointerEvents: "none",
+            fontFamily: "var(--font-sans)",
+            transition: "all 0.15s ease-out",
           }}
         >
-          <strong style={{ color: "#60a5fa", display: "block", marginBottom: "4px" }}>
-            Chunk {hoveredNode.id}
-          </strong>
-          <span style={{ fontSize: "11px", display: "block", fontStyle: "italic" }}>
-            {hoveredNode.text.slice(0, 160)}
-            {hoveredNode.text.length > 160 ? "..." : ""}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+            <strong style={{ color: "#a78bfa", fontFamily: "var(--font-title)", fontSize: "14px", fontWeight: "700" }}>
+              Semantic Chunk {hoveredNode.id}
+            </strong>
+            <span style={{ fontSize: "10px", color: "var(--accent-secondary)", background: "rgba(236, 72, 153, 0.15)", padding: "2px 6px", borderRadius: "4px", fontWeight: "600" }}>
+              x: {hoveredNode.x.toFixed(2)} y: {hoveredNode.y.toFixed(2)}
+            </span>
+          </div>
+          <span style={{ color: "#d1d5db", display: "block", fontStyle: "normal", fontSize: "12px", maxHeight: "150px", overflowY: "hidden" }}>
+            "{hoveredNode.text.slice(0, 200)}
+            {hoveredNode.text.length > 200 ? "..." : ""}"
           </span>
         </div>
       )}

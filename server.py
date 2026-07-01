@@ -52,7 +52,8 @@ async def upload_file(file: UploadFile = File(...)):
     try:
         # Route loaders based on file extension
         if ext == ".pdf":
-            loader = PyPDFLoader(temp_file_path)
+            from langchain_community.document_loaders import PyMuPDFLoader
+            loader = PyMuPDFLoader(temp_file_path)
         elif ext == ".txt":
             loader = TextLoader(temp_file_path, encoding="utf-8")
         else:
@@ -82,11 +83,16 @@ async def upload_file(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail=f"Failed to index document: {str(e)}")
 
 @app.post("/chat")
-async def chat_session(session_id: str = Form(...), question: str = Form(...)):
+async def chat_session(
+    session_id: str = Form(...), 
+    question: str = Form(...),
+    top_k: int = Form(10)
+):
     if session_id not in sessions_db:
         raise HTTPException(status_code=404, detail="Session expired or not found. Please upload document again.")
 
     pipeline = sessions_db[session_id]
+    pipeline.top_k = top_k
 
     async def event_generator():
         try:
@@ -110,3 +116,13 @@ def shutdown_event():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
+
+
+
+
+'''
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "timestamp": time.time()}
+
+'''

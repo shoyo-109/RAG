@@ -17,11 +17,13 @@ export default function Home() {
   const [isUploading, setIsUploading] = useState<boolean>(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
-  
+
   // 3D Visualizer States
   const [nodes, setNodes] = useState<ChunkNode[]>([]);
   const [retrievedChunks, setRetrievedChunks] = useState<string[]>([]);
-  
+  const [activeTab, setActiveTab] = useState<"chat" | "space">("chat");
+  const [topK, setTopK] = useState<number>(10);
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "initial",
@@ -32,7 +34,7 @@ export default function Home() {
   const [input, setInput] = useState<string>("");
   const [isChatting, setIsChatting] = useState<boolean>(false);
   const [dragActive, setDragActive] = useState<boolean>(false);
-  
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -57,7 +59,7 @@ export default function Home() {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const droppedFile = e.dataTransfer.files[0];
       await processAndUploadFile(droppedFile);
@@ -106,12 +108,12 @@ export default function Home() {
 
       const data = await response.json();
       setSessionId(data.session_id);
-      
+
       // Load 3D coordinates for chunking visualisation
       if (data.projections) {
         setNodes(data.projections);
       }
-      
+
       // Update chat message indicating success
       setMessages((prev) => [
         ...prev,
@@ -140,12 +142,12 @@ export default function Home() {
 
     const messageId = `msg-${Date.now()}`;
     const userMsg: Message = { id: `user-${Date.now()}`, sender: "user", text: userQuery };
-    const aiMsg: Message = { 
-      id: messageId, 
-      sender: "ai", 
-      text: "", 
-      thinkingStages: [], 
-      isThinking: true 
+    const aiMsg: Message = {
+      id: messageId,
+      sender: "ai",
+      text: "",
+      thinkingStages: [],
+      isThinking: true
     };
 
     setMessages((prev) => [...prev, userMsg, aiMsg]);
@@ -153,6 +155,7 @@ export default function Home() {
     const formData = new FormData();
     formData.append("session_id", sessionId);
     formData.append("question", userQuery);
+    formData.append("top_k", topK.toString());
 
     try {
       const response = await fetch("http://127.0.0.1:8000/chat", {
@@ -169,7 +172,7 @@ export default function Home() {
       if (!reader) return;
 
       let partialLine = "";
-      
+
       while (true) {
         const { value, done } = await reader.read();
         if (done) break;
@@ -180,42 +183,43 @@ export default function Home() {
 
         for (const line of lines) {
           if (line.startsWith("data: ")) {
-            const dataContent = line.slice(6).trim();
-            if (!dataContent) continue;
+            const rawContent = line.slice(6);
+            const trimmedContent = rawContent.trim();
+            if (!rawContent) continue;
 
             // Check if the data specifies a thinking stage log
-            if (dataContent.startsWith("stage:")) {
-              const stageMsg = dataContent.slice(6);
+            if (trimmedContent.startsWith("stage:")) {
+              const stageMsg = trimmedContent.slice(6);
               setMessages((prev) =>
                 prev.map((msg) =>
                   msg.id === messageId
                     ? {
-                        ...msg,
-                        thinkingStages: [...(msg.thinkingStages || []), stageMsg],
-                      }
+                      ...msg,
+                      thinkingStages: [...(msg.thinkingStages || []), stageMsg],
+                    }
                     : msg
                 )
               );
-            } 
+            }
             // Check if the data contains retrieved chunks for visual highlight
-            else if (dataContent.startsWith("retrieved_chunks:")) {
+            else if (trimmedContent.startsWith("retrieved_chunks:")) {
               try {
-                const chunksList = JSON.parse(dataContent.slice(17));
+                const chunksList = JSON.parse(trimmedContent.slice(17));
                 setRetrievedChunks(chunksList);
               } catch (e) {
                 console.error("Failed to parse retrieved chunks list", e);
               }
-            } 
-            // Normal token content
+            }
+            // Normal token content (preserve space)
             else {
               setMessages((prev) =>
                 prev.map((msg) =>
                   msg.id === messageId
                     ? {
-                        ...msg,
-                        isThinking: false,
-                        text: msg.text + dataContent,
-                      }
+                      ...msg,
+                      isThinking: false,
+                      text: msg.text + rawContent,
+                    }
                     : msg
                 )
               );
@@ -240,169 +244,242 @@ export default function Home() {
     <main className={styles.mainContainer}>
       <header className={styles.topHeader}>
         <div className={styles.headerTitle}>
-          <span className={styles.logoBadge}>ADVANCED</span>
+          {/* <span className={styles.logoBadge}>ADVANCED</span> */}
           <h1>Cognitive RAG Hub</h1>
         </div>
-        <p className={styles.headerSubtitle}>Hybrid Search, Semantic Cache, Hallucination Verification & Embedding Spaces</p>
+        {/* <p className={styles.headerSubtitle}>Hybrid Search, Semantic Cache, Hallucination Verification & Embedding Spaces</p> */}
       </header>
 
-      <section className={styles.workspace}>
-        {/* Panel 1: Upload Injector */}
-        <div className={styles.leftPanel}>
-          <div className={styles.cardHeader}>
-            <h3>Knowledge Injector</h3>
-            <p>Load PDF or TXT to build semantic vectors</p>
-          </div>
+      {/* Tab Selector */}
+      <div className={styles.tabContainer}>
+        <button
+          onClick={() => setActiveTab("chat")}
+          className={`${styles.tabButton} ${activeTab === "chat" ? styles.activeTab : ""}`}
+        >
+          💬 Conversation Dashboard
+        </button>
+        <button
+          onClick={() => setActiveTab("space")}
+          className={`${styles.tabButton} ${activeTab === "space" ? styles.activeTab : ""}`}
+        >
+          🌐 3D Embedding Space
+        </button>
+      </div>
 
-          <div
-            className={`${styles.dragArea} ${dragActive ? styles.dragActive : ""} ${file ? styles.fileLoaded : ""}`}
-            onDragEnter={handleDrag}
-            onDragLeave={handleDrag}
-            onDragOver={handleDrag}
-            onDrop={handleDrop}
-          >
-            <input
-              type="file"
-              ref={fileInputRef}
-              className={styles.hiddenInput}
-              onChange={handleFileChange}
-              accept=".pdf,.txt"
-            />
-
-            {!file ? (
-              <div className={styles.uploadPrompt}>
-                <div className={styles.pulseIcon}>📥</div>
-                <p className={styles.primaryText}>Drag & drop document</p>
-                <p className={styles.secondaryText}>PDF or TXT up to 10MB</p>
-                <button type="button" className={styles.browseButton} onClick={triggerBrowse}>
-                  Browse
-                </button>
+      <section className={`${styles.workspace} ${activeTab === "chat" ? styles.workspaceChat : styles.workspaceSpace}`}>
+        {activeTab === "chat" && (
+          <>
+            {/* Panel 1: Upload Injector Dashboard */}
+            <div className={styles.leftPanel}>
+              <div className={styles.cardHeader}>
+                <h3>Cognitive Ingestion</h3>
+                <p>Deploy documents to semantic vector space</p>
               </div>
-            ) : (
-              <div className={styles.fileDetails}>
-                <div className={styles.fileIcon}>📄</div>
-                <p className={styles.fileName}>{file.name}</p>
-                <p className={styles.fileSize}>{(file.size / 1024).toFixed(1)} KB</p>
-                {isUploading ? (
-                  <div className={styles.processingIndicator}>
-                    <div className={styles.spinner}></div>
-                    <span>Parsing, chunking, and caching...</span>
+
+              {!file ? (
+                <div
+                  className={`${styles.dragArea} ${dragActive ? styles.dragActive : ""}`}
+                  onDragEnter={handleDrag}
+                  onDragLeave={handleDrag}
+                  onDragOver={handleDrag}
+                  onDrop={handleDrop}
+                  onClick={triggerBrowse}
+                >
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    className={styles.hiddenInput}
+                    onChange={handleFileChange}
+                    accept=".pdf,.txt"
+                  />
+                  <div className={styles.uploadPrompt}>
+                    <div className={styles.pulseIcon}>📥</div>
+                    <p className={styles.primaryText}>Drag & drop document</p>
+                    <p className={styles.secondaryText}>PDF or TXT up to 10MB</p>
+                    <button type="button" className={styles.browseButton}>
+                      Browse Files
+                    </button>
                   </div>
-                ) : (
-                  <div className={styles.statusSuccess}>
-                    <span className={styles.successCheck}>✓</span> Indexed and Ready
+                </div>
+              ) : (
+                <div className={styles.fileLoadedContainer} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                  {/* File Metadata Details */}
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", background: "rgba(255,255,255,0.02)", padding: "10px 14px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
+                    <div style={{ fontSize: "2rem" }}>📄</div>
+                    <div style={{ minWidth: 0, flex: 1 }}>
+                      <p className={styles.fileName} style={{ margin: 0 }}>{file.name}</p>
+                      <p className={styles.fileSize} style={{ margin: "2px 0 0 0" }}>{(file.size / 1024).toFixed(1)} KB</p>
+                    </div>
                   </div>
-                )}
-              </div>
-            )}
-          </div>
 
-          {uploadError && <div className={styles.errorBox}>{uploadError}</div>}
-          
-          <div className={styles.tipsBox}>
-            <h4>💡 Production Parameters</h4>
-            <ul>
-              <li><strong>Semantic chunking</strong> threshold = 90</li>
-              <li><strong>HNSW Configuration</strong>: M=20, ef=100</li>
-              <li><strong>Hybrid Retrieval</strong>: BM25 + Vector (50/50 RRF)</li>
-              <li><strong>Semantic cache</strong> hit matches similarity &ge; 0.95</li>
-            </ul>
-          </div>
-        </div>
+                  {/* Dynamic Pipeline Progress Stepper */}
+                  <div className={styles.stepperContainer}>
+                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
+                      <span className={styles.stepIcon}>{isUploading ? "⚡" : "✓"}</span>
+                      <span>1. Extracting Document Text</span>
+                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                    </div>
+                    
+                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
+                      <span className={styles.stepIcon}>{isUploading ? "⚙️" : "✓"}</span>
+                      <span>2. Semantic Percentile Chunking</span>
+                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                    </div>
 
-        {/* Panel 2: Interactive 3D Embedding Space */}
-        <div className={styles.visualizerPanel}>
-          <div className={styles.cardHeader}>
-            <h3>3D Embedding Space</h3>
-            <p>Dimensional view of document semantic chunks. Nodes glow when retrieved.</p>
-          </div>
-          <div className={styles.canvasContainer}>
-            {nodes.length > 0 ? (
-              <EmbeddingSpace nodes={nodes} retrievedChunks={retrievedChunks} />
-            ) : (
-              <div className={styles.emptyVisualizer}>
-                <div className={styles.visualizerPlaceholderIcon}>🌐</div>
-                <p className={styles.visualizerPlaceholderText}>Upload a document to project chunks in 3D space</p>
-              </div>
-            )}
-          </div>
-        </div>
+                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
+                      <span className={styles.stepIcon}>{isUploading ? "🕸️" : "✓"}</span>
+                      <span>3. Building Chroma HNSW Graph</span>
+                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                    </div>
 
-        {/* Panel 3: Chat Container */}
-        <div className={styles.chatPanel}>
-          <div className={styles.chatHistory}>
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`${styles.messageWrapper} ${msg.sender === "user" ? styles.userWrapper : styles.aiWrapper}`}
-              >
-                {msg.sender === "ai" && (
-                  <div className={styles.avatar}>🤖</div>
-                )}
-                
-                <div className={styles.messageContent}>
-                  {/* Multi-stage Thinking Logs */}
-                  {msg.thinkingStages && msg.thinkingStages.length > 0 && (
-                    <div className={styles.thinkingAccordion}>
-                      <div className={styles.thinkingHeader}>
-                        <div className={styles.miniSpinner}></div>
-                        <span>Nemotron Reasoning Stage</span>
+                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
+                      <span className={styles.stepIcon}>{isUploading ? "🗂️" : "✓"}</span>
+                      <span>4. Rebuilding BM25 Lexical Index</span>
+                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                    </div>
+                  </div>
+
+                  {/* Document Space Statistics */}
+                  {!isUploading && nodes.length > 0 && (
+                    <div className={styles.statGrid}>
+                      <div className={styles.statCard}>
+                        <div className={styles.statValue}>{nodes.length}</div>
+                        <div className={styles.statLabel}>Total Chunks</div>
                       </div>
-                      <div className={styles.thinkingStagesList}>
-                        {msg.thinkingStages.map((stage, idx) => (
-                          <div key={idx} className={styles.stageItem}>
-                            {stage}
-                          </div>
-                        ))}
+                      <div className={styles.statCard}>
+                        <div className={styles.statValue}>HNSW</div>
+                        <div className={styles.statLabel}>Graph Mode</div>
                       </div>
                     </div>
                   )}
 
-                  {msg.isThinking && !msg.text && (
-                    <div className={styles.thinkingSkeleton}>
-                      <div className="shimmer" style={{ width: "80%", height: "14px", borderRadius: "4px", marginBottom: "8px" }}></div>
-                      <div className="shimmer" style={{ width: "60%", height: "14px", borderRadius: "4px" }}></div>
-                    </div>
-                  )}
+                  {/* Interactive RAG Parameter Sliders */}
+                  {!isUploading && sessionId && (
+                    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "1.25rem" }}>
+                      <div className={styles.parameterSlider}>
+                        <div className={styles.sliderLabel}>
+                          <span>Context Chunks (K)</span>
+                          <span style={{ color: "var(--accent-primary)", fontWeight: "800" }}>{topK}</span>
+                        </div>
+                        <input
+                          type="range"
+                          min="3"
+                          max="15"
+                          value={topK}
+                          onChange={(e) => setTopK(parseInt(e.target.value))}
+                          className={styles.sliderInput}
+                        />
+                      </div>
 
-                  {msg.text && (
-                    <div className={styles.bubbleText}>
-                      {msg.text.includes("[WARNING: Response failed hallucination filter]") || msg.text.includes("⚠️ [WARNING:") ? (
-                        <span style={{ color: "#f87171" }}>{msg.text}</span>
-                      ) : (
-                        msg.text
-                      )}
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(255,255,255,0.01)", border: "1px solid rgba(255,255,255,0.04)", padding: "10px 14px", borderRadius: "12px" }}>
+                        <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>Hallucination Filter</span>
+                        <span style={{ fontSize: "0.75rem", background: "rgba(16, 185, 129, 0.15)", color: "#10b981", padding: "2px 8px", borderRadius: "4px", fontWeight: "700" }}>ENABLED</span>
+                      </div>
                     </div>
                   )}
                 </div>
+              )}
 
-                {msg.sender === "user" && (
-                  <div className={styles.avatarUser}>👤</div>
-                )}
+              {uploadError && <div className={styles.errorBox}>{uploadError}</div>}
+            </div>
+
+            {/* Panel 3: Chat Container */}
+            <div className={styles.chatPanel}>
+              <div className={styles.chatHistory}>
+                {messages.map((msg) => (
+                  <div
+                    key={msg.id}
+                    className={`${styles.messageWrapper} ${msg.sender === "user" ? styles.userWrapper : styles.aiWrapper}`}
+                  >
+                    {msg.sender === "ai" && (
+                      <div className={styles.avatar}>🤖</div>
+                    )}
+
+                    <div className={styles.messageContent}>
+                      {/* Multi-stage Thinking Logs */}
+                      {msg.thinkingStages && msg.thinkingStages.length > 0 && (
+                        <div className={styles.thinkingAccordion}>
+                          <div className={styles.thinkingHeader}>
+                            <div className={styles.miniSpinner}></div>
+                            <span>Nemotron Reasoning Stage</span>
+                          </div>
+                          <div className={styles.thinkingStagesList}>
+                            {msg.thinkingStages.map((stage, idx) => (
+                              <div key={idx} className={styles.stageItem}>
+                                {stage}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {msg.isThinking && !msg.text && (
+                        <div className={styles.thinkingSkeleton}>
+                          <div className="shimmer" style={{ width: "80%", height: "14px", borderRadius: "4px", marginBottom: "8px" }}></div>
+                          <div className="shimmer" style={{ width: "60%", height: "14px", borderRadius: "4px" }}></div>
+                        </div>
+                      )}
+
+                      {msg.text && (
+                        <div className={styles.bubbleText}>
+                          {msg.text.includes("[WARNING: Response failed hallucination filter]") || msg.text.includes("⚠️ [WARNING:") ? (
+                            <span style={{ color: "#f87171" }}>{msg.text}</span>
+                          ) : (
+                            msg.text
+                          )}
+                        </div>
+                      )}
+                    </div>
+
+                    {msg.sender === "user" && (
+                      <div className={styles.avatarUser}>👤</div>
+                    )}
+                  </div>
+                ))}
+                <div ref={messagesEndRef} />
               </div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
 
-          {/* Form input */}
-          <form className={styles.inputArea} onSubmit={sendMessage}>
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder={sessionId ? "Ask anything about the document..." : "Upload document to unlock chat..."}
-              disabled={!sessionId || isChatting}
-              className={styles.chatInput}
-            />
-            <button
-              type="submit"
-              disabled={!sessionId || !input.trim() || isChatting}
-              className={styles.sendButton}
-            >
-              Send
-            </button>
-          </form>
-        </div>
+              {/* Form input */}
+              <form className={styles.inputArea} onSubmit={sendMessage}>
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder={sessionId ? "Ask anything about the document..." : "Upload document to unlock chat..."}
+                  disabled={!sessionId || isChatting}
+                  className={styles.chatInput}
+                />
+                <button
+                  type="submit"
+                  disabled={!sessionId || !input.trim() || isChatting}
+                  className={styles.sendButton}
+                >
+                  Send
+                </button>
+              </form>
+            </div>
+          </>
+        )}
+
+        {activeTab === "space" && (
+          /* Panel 2: Interactive 3D Embedding Space */
+          <div className={styles.visualizerPanel} style={{ height: "100%" }}>
+            <div className={styles.cardHeader}>
+              <h3>3D Embedding Space Projection</h3>
+              <p>Dimensional view of document semantic chunks. Hover nodes to pause rotation and inspect values.</p>
+            </div>
+            <div className={styles.canvasContainer}>
+              {nodes.length > 0 ? (
+                <EmbeddingSpace nodes={nodes} retrievedChunks={retrievedChunks} />
+              ) : (
+                <div className={styles.emptyVisualizer}>
+                  <div className={styles.visualizerPlaceholderIcon}>🌐</div>
+                  <p className={styles.visualizerPlaceholderText}>Upload a document in the Conversation tab to project chunks in 3D space</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </section>
     </main>
   );
