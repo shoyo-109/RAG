@@ -34,12 +34,21 @@ sessions_db: Dict[str, AdvancedRAGPipeline] = {}
 # Keep track of active temp files to clean up later
 sessions_temp_files: Dict[str, str] = {}
 
+import importlib
+doc_loader_module = importlib.import_module("Doc-Loader.pipeline")
+IngestionPipeline = doc_loader_module.IngestionPipeline
+
+SUPPORTED_EXTENSIONS = [
+    ".pdf", ".txt", ".docx", ".doc", ".pptx", ".ppt", ".xlsx", ".xls",
+    ".png", ".jpg", ".jpeg", ".bmp", ".tiff", ".html", ".md", ".csv", ".json"
+]
+
 @app.post("/upload")
 async def upload_file(file: UploadFile = File(...)):
     filename = file.filename
     ext = os.path.splitext(filename)[-1].lower()
-    if ext not in [".pdf", ".txt"]:
-        raise HTTPException(status_code=400, detail="Only PDF and TXT files are supported.")
+    if ext not in SUPPORTED_EXTENSIONS:
+        raise HTTPException(status_code=400, detail=f"Unsupported file format '{ext}'. Supported formats: {', '.join(SUPPORTED_EXTENSIONS)}")
 
     # Create session id
     session_id = str(uuid.uuid4())
@@ -50,16 +59,8 @@ async def upload_file(file: UploadFile = File(...)):
         temp_file_path = temp_file.name
 
     try:
-        # Route loaders based on file extension
-        if ext == ".pdf":
-            from langchain_community.document_loaders import PyMuPDFLoader
-            loader = PyMuPDFLoader(temp_file_path)
-        elif ext == ".txt":
-            loader = TextLoader(temp_file_path, encoding="utf-8")
-        else:
-            raise ValueError(f"Unsupported file type: {ext}")
-            
-        docs = loader.load()
+        # Load document using production-grade IngestionPipeline with 3-Level Fallbacks
+        docs = IngestionPipeline.load_document(temp_file_path, tenant_id=session_id)
 
         # Build Advanced RAG pipeline for this session
         pipeline = AdvancedRAGPipeline()
