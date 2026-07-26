@@ -38,6 +38,10 @@ except (ImportError, ValueError):
 
 logger = logging.getLogger("AdvancedRAG")
 
+class LowContextError(Exception):
+    """Raised when retrieved documents have low similarity/relevance to the query."""
+    pass
+
 class AdvancedRAGPipeline:
     def __init__(self, cache_threshold: float = 0.95):
         # 1. Initialize SentenceTransformers Embeddings with Cache-Backed Storage
@@ -104,8 +108,6 @@ class AdvancedRAGPipeline:
             
             Question:
             {question}
-            
-            If you don't have enough context, respond with "I don't have enough context"
             """
         )
 
@@ -194,18 +196,21 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         doc = Document(page_content=text, metadata=metadata or {})
         self.add_documents([doc])
 
-    def custom_hybrid_search(self, query: str, query_embedding: np.ndarray, top_k: int = 10, rrf_k: int = 60) -> List[Document]:
+    def custom_hybrid_search(self, query: str, query_embedding: np.ndarray, top_k: int = 10, rrf_k: int = 60) -> Tuple[List[Document], float, float]:
         """
         Custom hybrid search ensembler combining Chroma Vector Search and BM25 search
         using Reciprocal Rank Fusion (RRF) with equal (50-50) weights.
         
         Optimization: uses precomputed query embedding to avoid double embedding calculations.
+        Returns: (List[Document], max_rrf_score, min_vector_distance)
         """
         if not self.all_chunks:
-            return []
+            return [], 0.0, float('inf')
 
         # 1. Fetch candidates from Vector search by precomputed embedding (saves 50-150ms)
-        vector_docs = self.vector_store.similarity_search_by_vector(query_embedding.tolist(), k=top_k)
+        vector_results = self.vector_store.similarity_search_with_score_by_vector(query_embedding.tolist(), k=top_k)
+        vector_docs = [doc for doc, _ in vector_results]
+        min_vector_distance = vector_results[0][1] if vector_results else float('inf')
 
         # 2. Fetch candidates from BM25 search
         bm25_docs = []
@@ -231,27 +236,31 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
 
         # Sort documents based on combined RRF scores
         sorted_docs = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]]
+        max_score = sorted_docs[0][1] if sorted_docs else 0.0
+        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]], max_score, min_vector_distance
 
-    async def custom_hybrid_search_async(self, query: str, query_embedding: np.ndarray, top_k: int = 10, rrf_k: int = 60) -> List[Document]:
+    async def custom_hybrid_search_async(self, query: str, query_embedding: np.ndarray, top_k: int = 10, rrf_k: int = 60) -> Tuple[List[Document], float, float]:
         """
         Asynchronous custom hybrid search. Runs Vector and BM25 searches in parallel threads.
         
         Optimization: concurrent retrieval + precomputed query embedding.
+        Returns: (List[Document], max_rrf_score, min_vector_distance)
         """
         if not self.all_chunks:
-            return []
+            return [], 0.0, float('inf')
 
         # Run vector search and BM25 search concurrently in threadpool to prevent blocking the event loop
         tasks = [
-            asyncio.to_thread(self.vector_store.similarity_search_by_vector, query_embedding.tolist(), k=top_k)
+            asyncio.to_thread(self.vector_store.similarity_search_with_score_by_vector, query_embedding.tolist(), k=top_k)
         ]
         if self.bm25_retriever:
             tasks.append(asyncio.to_thread(self.bm25_retriever.invoke, query))
         else:
             tasks.append(asyncio.to_thread(lambda: []))
             
-        vector_docs, bm25_docs = await asyncio.gather(*tasks)
+        vector_results, bm25_docs = await asyncio.gather(*tasks)
+        vector_docs = [doc for doc, _ in vector_results]
+        min_vector_distance = vector_results[0][1] if vector_results else float('inf')
 
         # RRF scoring dict
         rrf_scores = {}
@@ -271,13 +280,30 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
 
         # Sort documents based on combined RRF scores
         sorted_docs = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
-        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]]
+        max_score = sorted_docs[0][1] if sorted_docs else 0.0
+        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]], max_score, min_vector_distance
+
+    def rewrite_query(self, question: str) -> str:
+        """Self-healing: Rewrites a poor query to improve retrieval scores."""
+        try:
+            rewrite_prompt = ChatPromptTemplate.from_template(
+                "You are an AI assistant tasked with reformulating user queries for better information retrieval. "
+                "Rewrite the following query to be more descriptive and search-engine friendly. "
+                "Do not answer the query, just output the rewritten query.\n\nQuery: {question}"
+            )
+            chain = rewrite_prompt | self.fallback_llm | StrOutputParser()
+            rewritten = chain.invoke({"question": question}).strip()
+            logger.info(f"Rewrote query from '{question}' to '{rewritten}'")
+            return rewritten
+        except Exception as e:
+            logger.error(f"Error rewriting query: {e}")
+            return question
 
     def hallucination_filter(self, context: str, answer: str) -> bool:
         """
         Evaluates whether the generated response is grounded in the retrieved context.
         """
-        if "I don't have enough context" in answer or "[CONTENT BLOCKED]" in answer:
+        if "[CONTENT BLOCKED]" in answer:
             return True
 
         # Fallback evaluation on Hallucination Filter as well
@@ -331,8 +357,24 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                 )
                 return cached_res
 
-            # 3. Hybrid search (using precomputed embedding to avoid redundant calls)
-            relevant_docs = self.custom_hybrid_search(sanitized_question, query_emb, top_k=self.top_k)
+            # 3. Hybrid search and Self-Healing Thresholding
+            relevant_docs, max_score, min_distance = self.custom_hybrid_search(sanitized_question, query_emb, top_k=self.top_k)
+            
+            # Threshold Check: either distance is too high (L2 > 1.2 implies low similarity) or RRF is too low
+            # Assuming Chroma L2 default: higher distance = lower similarity. 
+            MAX_DISTANCE_THRESHOLD = 1.2
+            MIN_SCORE_THRESHOLD = 0.015
+            
+            if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+                logger.warning(f"Low retrieval score (dist={min_distance}, rrf={max_score}), attempting query rewrite.")
+                sanitized_question = self.rewrite_query(sanitized_question)
+                query_emb = np.array(self.embeddings.embed_query(sanitized_question))
+                relevant_docs, max_score, min_distance = self.custom_hybrid_search(sanitized_question, query_emb, top_k=self.top_k)
+                
+                if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+                    logger.warning(f"Score still too low after rewrite (dist={min_distance}, rrf={max_score}). Short-circuiting.")
+                    raise LowContextError("Insufficient context found in the knowledge base.")
+
             context_str = "\n\n".join([doc.page_content for doc in relevant_docs])
 
             # 4. Generate response with Fallback LLM Chain
@@ -366,6 +408,24 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
             logger.info("RAG query complete", extra={"extra_data": {"model_used": model_used, "cache_hit": False}})
             return final_response
 
+        except LowContextError as lce:
+            self.metrics.record_request(
+                latency_ms=(time.time() - start_time) * 1000,
+                input_tokens=input_tokens,
+                output_tokens=0,
+                error=True,
+                cache_hit=False
+            )
+            fallback_response = {
+                "error": "LowContextError",
+                "message": "I don't have enough context to answer accurately.",
+                "actions": [
+                    {"label": "Search the web instead?", "action": "web_search"},
+                    {"label": "Escalate to human support?", "action": "escalate"},
+                    {"label": "Did you mean to ask a different question?", "action": "suggest"}
+                ]
+            }
+            return json.dumps(fallback_response)
         except Exception as e:
             logger.error(f"Error handling query: {e}")
             self.metrics.record_request(
@@ -410,7 +470,29 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         await asyncio.sleep(0.2)
         
         # Retrieve context (parallel optimized)
-        relevant_docs = await self.custom_hybrid_search_async(sanitized_question, query_emb, top_k=self.top_k)
+        relevant_docs, max_score, min_distance = await self.custom_hybrid_search_async(sanitized_question, query_emb, top_k=self.top_k)
+        
+        MAX_DISTANCE_THRESHOLD = 1.2
+        MIN_SCORE_THRESHOLD = 0.015
+        if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+            yield "data: stage:⚠️ Low confidence retrieval, attempting to rewrite query...\n\n"
+            sanitized_question = self.rewrite_query(sanitized_question)
+            query_emb = np.array(self.embeddings.embed_query(sanitized_question))
+            relevant_docs, max_score, min_distance = await self.custom_hybrid_search_async(sanitized_question, query_emb, top_k=self.top_k)
+            
+            if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+                fallback_response = {
+                    "error": "LowContextError",
+                    "message": "I don't have enough context to answer accurately.",
+                    "actions": [
+                        {"label": "Search the web instead?", "action": "web_search"},
+                        {"label": "Escalate to human support?", "action": "escalate"},
+                        {"label": "Did you mean to ask a different question?", "action": "suggest"}
+                    ]
+                }
+                yield f"data: {json.dumps(fallback_response)}\n\n"
+                return
+
         context_str = "\n\n".join([doc.page_content for doc in relevant_docs])
         
         retrieved_texts = [doc.page_content for doc in relevant_docs]
