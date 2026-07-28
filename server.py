@@ -72,16 +72,32 @@ def load_document(file_path: str):
     ext = os.path.splitext(file_path)[-1].lower()
     if ext == ".pdf":
         try:
-            from langchain_community.document_loaders import PyMuPDFLoader
-            loader = PyMuPDFLoader(file_path)
-            return loader.load()
-        except Exception:
             from langchain_community.document_loaders import PyPDFLoader
             loader = PyPDFLoader(file_path)
             return loader.load()
+        except Exception as e:
+            try:
+                from langchain_community.document_loaders import PyMuPDFLoader
+                loader = PyMuPDFLoader(file_path)
+                return loader.load()
+            except Exception:
+                try:
+                    from pypdf import PdfReader
+                    from langchain_core.documents import Document
+                    reader = PdfReader(file_path)
+                    text = "\n".join([page.extract_text() or "" for page in reader.pages])
+                    return [Document(page_content=text, metadata={"source": file_path})]
+                except Exception:
+                    # Raw binary fallback
+                    from langchain_core.documents import Document
+                    with open(file_path, "rb") as f:
+                        content_bytes = f.read()
+                    text = content_bytes.decode("utf-8", errors="ignore")
+                    return [Document(page_content=text, metadata={"source": file_path})]
     else:
         loader = TextLoader(file_path, encoding="utf-8")
         return loader.load()
+
 
 
 

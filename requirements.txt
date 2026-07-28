@@ -21,10 +21,7 @@ gradio==4.44.0
 starlette<0.28.0
 spaces
 pypdf
+pypdf2
 pymupdf
-
-
-
-
-
-
+PyMuPDF
+pdfplumber
