@@ -140,27 +140,37 @@ class AdvancedRAGPipeline:
         qdrant_url = os.getenv("QDRANT_ENDPOINT") or os.getenv("QDRANT_URL")
         qdrant_api_key = os.getenv("QDRANT_API") or os.getenv("QDRANT_API_KEY")
 
-        if not qdrant_url or not qdrant_api_key:
-            logger.warning("QDRANT_ENDPOINT/QDRANT_URL or QDRANT_API/QDRANT_API_KEY missing in environment variables!")
+        if qdrant_url and qdrant_api_key:
 
-        self.qdrant_client = QdrantClient(
-            url=qdrant_url,
-            api_key=qdrant_api_key,
-        )
+            try:
+                self.qdrant_client = QdrantClient(
+                    url=qdrant_url,
+                    api_key=qdrant_api_key,
+                )
+            except Exception as e:
+                logger.warning(f"Failed to connect to Qdrant Cloud ({e}), falling back to in-memory Qdrant Client.")
+                self.qdrant_client = QdrantClient(location=":memory:")
+        else:
+            logger.warning("Qdrant Cloud credentials missing. Initializing in-memory Qdrant Client.")
+            self.qdrant_client = QdrantClient(location=":memory:")
 
         collection_name = "advanced_rag_collection"
-        if qdrant_url and not self.qdrant_client.collection_exists(collection_name):
-            logger.info(f"Creating Qdrant collection '{collection_name}' with 384 dimensions...")
-            self.qdrant_client.create_collection(
-                collection_name=collection_name,
-                vectors_config=VectorParams(size=384, distance=Distance.COSINE),
-            )
+        try:
+            if not self.qdrant_client.collection_exists(collection_name):
+                logger.info(f"Creating Qdrant collection '{collection_name}' with 384 dimensions...")
+                self.qdrant_client.create_collection(
+                    collection_name=collection_name,
+                    vectors_config=VectorParams(size=384, distance=Distance.COSINE),
+                )
+        except Exception as e:
+            logger.warning(f"Error checking/creating Qdrant collection: {e}")
 
         self.vector_store = QdrantVectorStore(
             client=self.qdrant_client,
             collection_name=collection_name,
             embedding=self.embeddings,
         )
+
 
         # 4. In-memory document storage for rebuilding BM25
         self.all_chunks: List[Document] = []
