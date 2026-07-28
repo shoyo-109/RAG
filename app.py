@@ -1,7 +1,6 @@
 import os
-import uvicorn
 import gradio as gr
-from server import app
+from server import app as fastapi_app
 
 # Create a clean Gradio landing page for Hugging Face Space UI
 demo = gr.Blocks(title="Advanced Cognitive RAG Hub API")
@@ -21,10 +20,12 @@ with demo:
         """
     )
 
-# Mount FastAPI app so Gradio SDK monitors and serves both
-app_mounted = gr.mount_gradio_app(app, demo, path="/ui")
+# Expose `app` at module level so Hugging Face Space automatically serves FastAPI & Gradio
+app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
 
 if __name__ == "__main__":
+    import uvicorn
     port = int(os.getenv("PORT", 7860))
-    uvicorn.run(app_mounted, host="0.0.0.0", port=port)
+    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)
+
 
