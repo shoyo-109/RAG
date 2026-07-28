@@ -89,24 +89,29 @@ async def startup_event():
     asyncio.create_task(asyncio.to_thread(AdvancedRAGPipeline))
 
 @app.get("/")
+@app.get("/api")
 async def root():
     return {
         "status": "online",
         "service": "Advanced Cognitive RAG Hub API",
         "version": "1.0.0",
-        "endpoints": ["/upload", "/chat", "/warmup", "/health"]
+        "endpoints": ["/api/upload", "/api/chat", "/api/warmup", "/api/health"]
     }
 
 @app.get("/health")
+@app.get("/api/health")
 async def health_check():
     return {"status": "healthy"}
 
 @app.get("/warmup")
+@app.get("/api/warmup")
 async def warmup_pipeline():
     # Trigger model load in background if not already loaded
     asyncio.create_task(asyncio.to_thread(AdvancedRAGPipeline))
     return {"status": "warming_up"}
 
+@app.post("/api/upload")
+@app.post("/upload_doc")
 @app.post("/upload")
 async def upload_file(
     request: Request,
@@ -185,8 +190,10 @@ async def upload_file(
             os.remove(temp_file_path)
         raise HTTPException(status_code=500, detail=f"Failed to index document: {str(e)}")
 
+@app.post("/api/chat")
 @app.post("/chat")
 async def chat_session(
+
     session_id: str = Form(...), 
     question: str = Form(...),
     top_k: int = Form(10)
