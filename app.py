@@ -37,6 +37,12 @@ with demo:
 # Mount Gradio UI under /ui so FastAPI handles /upload and /chat directly at root
 app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
 
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 7860))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
+
 
 
 
