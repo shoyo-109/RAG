@@ -1,3 +1,13 @@
+---
+title: Cogni RAG
+emoji: 🧠
+colorFrom: blue
+colorTo: indigo
+sdk: gradio
+app_file: app.py
+pinned: false
+---
+
 # Advanced Cognitive RAG Hub
 
 An enterprise-ready, production-grade Retrieval-Augmented Generation (RAG) platform. Features semantic percentile chunking, Chroma HNSW vector database,Reciprocal Rank Fusion (RRF) hybrid search (lexical + vector), dynamic semantic cache, Nvidia Nemotron primary LLM reasoning + GPT-4o-Mini fallback controls, and a fully interactive 3D embedding space visualizer.
