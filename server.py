@@ -71,10 +71,18 @@ import re
 def load_document(file_path: str):
     ext = os.path.splitext(file_path)[-1].lower()
     if ext == ".pdf":
-        loader = PyPDFLoader(file_path)
+        try:
+            from langchain_community.document_loaders import PyMuPDFLoader
+            loader = PyMuPDFLoader(file_path)
+            return loader.load()
+        except Exception:
+            from langchain_community.document_loaders import PyPDFLoader
+            loader = PyPDFLoader(file_path)
+            return loader.load()
     else:
         loader = TextLoader(file_path, encoding="utf-8")
-    return loader.load()
+        return loader.load()
+
 
 
 SUPPORTED_EXTENSIONS = [
