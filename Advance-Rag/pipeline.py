@@ -18,8 +18,17 @@ from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams
 from langchain_community.retrievers import BM25Retriever
 from langchain_experimental.text_splitter import SemanticChunker
-from langchain_classic.embeddings.cache import CacheBackedEmbeddings
-from langchain_classic.storage import LocalFileStore
+try:
+    from langchain.embeddings import CacheBackedEmbeddings
+    from langchain.storage import LocalFileStore
+except ImportError:
+    try:
+        from langchain.embeddings.cache import CacheBackedEmbeddings
+        from langchain.storage.file_system import LocalFileStore
+    except ImportError:
+        from langchain_community.embeddings import CacheBackedEmbeddings
+        from langchain_community.storage import LocalFileStore
+
 
 # Local imports
 try:
