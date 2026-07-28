@@ -13,6 +13,8 @@ interface Message {
   isThinking?: boolean;
 }
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+
 export default function Home() {
   const [uploadedFiles, setUploadedFiles] = useState<{ name: string; size: number }[]>([]);
   const [isUploading, setIsUploading] = useState<boolean>(false);
@@ -39,7 +41,7 @@ export default function Home() {
 
   // Trigger warmup request when page loads
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/warmup").catch((err) => {
+    fetch(`${API_BASE_URL}/warmup`).catch((err) => {
       console.warn("Backend warmup trigger failed:", err);
     });
   }, []);
@@ -143,7 +145,7 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/upload", {
+      const response = await fetch(`${API_BASE_URL}/upload`, {
         method: "POST",
         body: formData,
       });
@@ -213,7 +215,7 @@ export default function Home() {
     formData.append("top_k", topK.toString());
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/chat", {
+      const response = await fetch(`${API_BASE_URL}/chat`, {
         method: "POST",
         body: formData,
       });

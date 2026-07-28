@@ -30,6 +30,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Security Middleware for OWASP HTTP Headers
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    response.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+    return response
+
 # Store advanced RAG pipelines in-memory keyed by session id
 sessions_db: Dict[str, AdvancedRAGPipeline] = {}
 
@@ -56,12 +67,17 @@ def record_upload(client_ip: str):
     upload_records[client_ip].append(datetime.now())
 
 import importlib
+import re
 doc_loader_module = importlib.import_module("Doc-Loader.pipeline")
 IngestionPipeline = doc_loader_module.IngestionPipeline
 
 SUPPORTED_EXTENSIONS = [
     ".pdf", ".txt", ".docx", ".doc", ".pptx", ".ppt", ".xlsx", ".xls",
     ".png", ".jpg", ".jpeg", ".bmp", ".tiff", ".html", ".md", ".csv", ".json"
+]
+
+DANGEROUS_EXTENSIONS = [
+    ".exe", ".py", ".sh", ".php", ".js", ".bat", ".vbs", ".dll", ".cmd", ".ps1", ".jar"
 ]
 
 @app.on_event("startup")
@@ -110,10 +126,22 @@ async def upload_file(
     if size > 50 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="File size exceeds the maximum limit of 50MB.")
 
-    filename = file.filename
+    # 1. Path Traversal Defense: Sanitize filename
+    raw_filename = os.path.basename(file.filename or "uploaded_document")
+    filename = re.sub(r"[^\w\s.-]", "_", raw_filename).strip()
     ext = os.path.splitext(filename)[-1].lower()
-    if ext not in SUPPORTED_EXTENSIONS:
-        raise HTTPException(status_code=400, detail=f"Unsupported file format '{ext}'. Supported formats: {', '.join(SUPPORTED_EXTENSIONS)}")
+
+    if not ext or ext in DANGEROUS_EXTENSIONS or ext not in SUPPORTED_EXTENSIONS:
+        raise HTTPException(status_code=400, detail=f"Security Error: Prohibited or unsupported file format '{ext}'.")
+
+    # 2. Magic Bytes Inspection (MIME Spoofing Defense)
+    header_bytes = await file.read(512)
+    await file.seek(0)
+
+    if ext == ".pdf" and not header_bytes.startswith(b"%PDF-"):
+        raise HTTPException(status_code=400, detail="Security Error: File header does not match valid PDF magic bytes.")
+    if ext in [".docx", ".xlsx", ".pptx"] and not header_bytes.startswith(b"PK\x03\x04"):
+        raise HTTPException(status_code=400, detail=f"Security Error: File content does not match binary format for '{ext}'.")
 
     # Check if appending to an existing session
     is_append = False
