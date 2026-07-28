@@ -37,6 +37,10 @@ with demo:
 # Mount Gradio UI under /ui so FastAPI handles /upload and /chat directly at root
 app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
 
+# Launch Gradio at module level to keep process active on Hugging Face Spaces
+demo.launch(server_name="0.0.0.0", server_port=7860, prevent_thread_lock=False)
+
+
 
 
 
