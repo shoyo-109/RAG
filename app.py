@@ -34,11 +34,9 @@ with demo:
         """
     )
 
-# Expose `app` at module level for Hugging Face Space runner
-app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
+# Mount Gradio UI at root path / so Gradio JS fetches API config cleanly
+app = gr.mount_gradio_app(fastapi_app, demo, path="/")
 
-if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860)
 
 
 
