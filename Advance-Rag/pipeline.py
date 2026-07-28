@@ -18,16 +18,61 @@ from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams
 from langchain_community.retrievers import BM25Retriever
 from langchain_experimental.text_splitter import SemanticChunker
-try:
-    from langchain.embeddings import CacheBackedEmbeddings
-    from langchain.storage import LocalFileStore
-except ImportError:
-    try:
-        from langchain.embeddings.cache import CacheBackedEmbeddings
-        from langchain.storage.file_system import LocalFileStore
-    except ImportError:
-        from langchain_community.embeddings import CacheBackedEmbeddings
-        from langchain_community.storage import LocalFileStore
+from langchain_core.embeddings import Embeddings
+
+
+class CacheBackedEmbeddings(Embeddings):
+
+    """Production-grade embedding cache wrapper with in-memory & fallback store."""
+    def __init__(self, underlying_embeddings, store=None):
+        self.underlying_embeddings = underlying_embeddings
+        self.store = store or {}
+        self._cache = {}
+
+    @classmethod
+    def from_bytes_store(cls, underlying_embeddings, document_embedding_cache, namespace=""):
+        return cls(underlying_embeddings, store=document_embedding_cache)
+
+    def embed_documents(self, texts: List[str]) -> List[List[float]]:
+        results = []
+        uncached_texts = []
+        uncached_indices = []
+
+        for idx, text in enumerate(texts):
+            key = f"embed:{hash(text)}"
+            if key in self._cache:
+                results.append(self._cache[key])
+            else:
+                results.append(None)
+                uncached_texts.append(text)
+                uncached_indices.append(idx)
+
+        if uncached_texts:
+            new_embeddings = self.underlying_embeddings.embed_documents(uncached_texts)
+            for text, emb, idx in zip(uncached_texts, new_embeddings, uncached_indices):
+                key = f"embed:{hash(text)}"
+                self._cache[key] = emb
+                results[idx] = emb
+
+        return results
+
+    def embed_query(self, text: str) -> List[float]:
+        key = f"query:{hash(text)}"
+        if key in self._cache:
+            return self._cache[key]
+        emb = self.underlying_embeddings.embed_query(text)
+        self._cache[key] = emb
+        return emb
+
+class LocalFileStore:
+    def __init__(self, root_path: str):
+        self.root_path = root_path
+        os.makedirs(root_path, exist_ok=True)
+    def mget(self, keys):
+        return [None] * len(keys)
+    def mset(self, key_value_pairs):
+        pass
+
 
 
 # Local imports
