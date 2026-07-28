@@ -37,6 +37,10 @@ with demo:
 # Mount Gradio UI at root path / so Gradio JS fetches API config cleanly
 app = gr.mount_gradio_app(fastapi_app, demo, path="/")
 
+if __name__ == "__main__":
+    demo.launch()
+
+
 
 
 
