@@ -2,6 +2,17 @@ import os
 import gradio as gr
 from server import app as fastapi_app
 
+# ZeroGPU decorator hook for Hugging Face Spaces
+try:
+    import spaces
+    @spaces.GPU
+    def zero_gpu_pipeline_hook():
+        """Hook to register ZeroGPU hardware allocation on startup."""
+        return True
+except (ImportError, Exception):
+    def zero_gpu_pipeline_hook():
+        return True
+
 # Create a clean Gradio landing page for Hugging Face Space UI
 demo = gr.Blocks(title="Advanced Cognitive RAG Hub API")
 with demo:
