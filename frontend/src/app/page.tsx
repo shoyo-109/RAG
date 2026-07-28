@@ -191,7 +191,20 @@ export default function Home() {
   // Send Chat message and handle SSE response stream
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || !sessionId || isChatting) return;
+    if (!input.trim() || isChatting || isUploading) return;
+
+    if (!sessionId) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `msg-${Date.now()}`,
+          sender: "ai",
+          text: "⚠️ Please upload a PDF or TXT document first on the left panel before asking questions!",
+        },
+      ]);
+      return;
+    }
+
 
     const userQuery = input;
     setInput("");
@@ -581,12 +594,12 @@ export default function Home() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder={sessionId ? "Ask anything about the document..." : "Upload a document to enable answering..."}
-                  disabled={isChatting}
+                  disabled={isChatting || isUploading}
                   className={styles.chatInput}
                 />
                 <button
                   type="submit"
-                  disabled={!sessionId || !input.trim() || isChatting || isUploading}
+                  disabled={!input.trim() || isChatting || isUploading}
                   className={styles.sendButton}
                 >
                   Send
