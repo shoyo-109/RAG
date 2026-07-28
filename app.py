@@ -34,11 +34,9 @@ with demo:
         """
     )
 
-# Mount Gradio UI at root path / so Gradio JS fetches API config cleanly
-app = gr.mount_gradio_app(fastapi_app, demo, path="/")
+# Mount Gradio UI under /ui so FastAPI handles /upload and /chat directly at root
+app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
 
-if __name__ == "__main__":
-    demo.launch()
 
 
 
