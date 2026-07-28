@@ -66,10 +66,16 @@ def check_upload_limit(client_ip: str) -> Tuple[bool, str]:
 def record_upload(client_ip: str):
     upload_records[client_ip].append(datetime.now())
 
-import importlib
 import re
-doc_loader_module = importlib.import_module("Doc-Loader.pipeline")
-IngestionPipeline = doc_loader_module.IngestionPipeline
+
+def load_document(file_path: str):
+    ext = os.path.splitext(file_path)[-1].lower()
+    if ext == ".pdf":
+        loader = PyPDFLoader(file_path)
+    else:
+        loader = TextLoader(file_path, encoding="utf-8")
+    return loader.load()
+
 
 SUPPORTED_EXTENSIONS = [
     ".pdf", ".txt", ".docx", ".doc", ".pptx", ".ppt", ".xlsx", ".xls",
@@ -162,8 +168,9 @@ async def upload_file(
 
 
     try:
-        # Load document using production-grade IngestionPipeline with 3-Level Fallbacks
-        docs = IngestionPipeline.load_document(temp_file_path, tenant_id=session_id)
+        # Load document using production-grade PyPDFLoader / TextLoader
+        docs = load_document(temp_file_path)
+
 
         # Build or add to Advanced RAG pipeline for this session
         pipeline.add_documents(docs)
