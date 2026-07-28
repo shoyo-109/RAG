@@ -5,8 +5,8 @@ Features:
 1. Semantic Chunking (Hugging Face embeddings "all-MiniLM-L6-v2", 90 percentile threshold)
 2. Embeddings (sentence-transformers/all-MiniLM-L6-v2) with local caching
 3. LLM (Nvidia Nemotron reasoning model primary, GPT-4o-Mini fallback, exponential backoff & circuit breaker)
-4. Hybrid Search (Chroma Vector retriever + BM25, customized ensembler with 50-50 weights)
-5. HNSW index configuration in Chroma (M=20, ef=100)
+4. Hybrid Search (Qdrant Cloud Vector retriever + BM25, customized ensembler with 50-50 weights)
+5. Managed vector index & Cosine similarity configuration in Qdrant Cloud
 6. Dynamic BM25 rebuilding when new documents are added
 7. Hallucination filter in the RAG pipeline using LLM reflection
 8. Batch query support

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import styles from "./page.module.css";
 import EmbeddingSpace, { ChunkNode } from "./EmbeddingSpace";
 
@@ -13,8 +14,9 @@ interface Message {
 }
 
 export default function Home() {
-  const [file, setFile] = useState<File | null>(null);
+  const [uploadedFiles, setUploadedFiles] = useState<{ name: string; size: number }[]>([]);
   const [isUploading, setIsUploading] = useState<boolean>(false);
+  const [uploadStep, setUploadStep] = useState<number>(1);
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
 
@@ -34,6 +36,13 @@ export default function Home() {
   const [input, setInput] = useState<string>("");
   const [isChatting, setIsChatting] = useState<boolean>(false);
   const [dragActive, setDragActive] = useState<boolean>(false);
+
+  // Trigger warmup request when page loads
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/warmup").catch((err) => {
+      console.warn("Backend warmup trigger failed:", err);
+    });
+  }, []);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -78,8 +87,31 @@ export default function Home() {
     fileInputRef.current?.click();
   };
 
+  // Reset active session
+  const resetSession = () => {
+    setUploadedFiles([]);
+    setSessionId(null);
+    setNodes([]);
+    setRetrievedChunks([]);
+    setUploadError(null);
+    setInput("");
+    setMessages([
+      {
+        id: "initial",
+        sender: "ai",
+        text: "👋 Welcome! Start by dropping a PDF or TXT file on the panel to the left. Once indexed, we can start discussing it.",
+      },
+    ]);
+  };
+
   // Upload and Index Document via FastAPI
   const processAndUploadFile = async (selectedFile: File) => {
+    // 50MB file size limit check in frontend
+    if (selectedFile.size > 50 * 1024 * 1024) {
+      setUploadError("File size exceeds the maximum limit of 50MB.");
+      return;
+    }
+
     const ext = selectedFile.name.split(".").pop()?.toLowerCase();
     if (ext !== "pdf" && ext !== "txt") {
       setUploadError("Only PDF and TXT documents are supported.");
@@ -87,13 +119,28 @@ export default function Home() {
     }
 
     setUploadError(null);
-    setFile(selectedFile);
     setIsUploading(true);
-    setNodes([]);
-    setRetrievedChunks([]);
+    setUploadStep(1);
+
+    // Simulated progress stepper updates
+    const stepInterval = setInterval(() => {
+      setUploadStep((prev) => (prev < 4 ? prev + 1 : prev));
+    }, 1500);
+
+    const isAppend = sessionId !== null;
+    if (!isAppend) {
+      setNodes([]);
+      setRetrievedChunks([]);
+      setUploadedFiles([{ name: selectedFile.name, size: selectedFile.size }]);
+    } else {
+      setUploadedFiles((prev) => [...prev, { name: selectedFile.name, size: selectedFile.size }]);
+    }
 
     const formData = new FormData();
     formData.append("file", selectedFile);
+    if (isAppend && sessionId) {
+      formData.append("session_id", sessionId);
+    }
 
     try {
       const response = await fetch("http://127.0.0.1:8000/upload", {
@@ -120,13 +167,21 @@ export default function Home() {
         {
           id: `upload-${Date.now()}`,
           sender: "ai",
-          text: `📄 **${selectedFile.name}** was successfully indexed into advanced knowledge base! Custom HNSW index ready. Try asking questions.`,
+          text: isAppend
+            ? `➕ Added **${selectedFile.name}** to the active knowledge base. Custom HNSW and BM25 indices updated! Try asking questions.`
+            : `📄 **${selectedFile.name}** was successfully indexed into advanced knowledge base! Custom HNSW index ready. Try asking questions.`,
         },
       ]);
     } catch (err: any) {
       setUploadError(err.message || "An error occurred during file upload.");
-      setFile(null);
+      if (isAppend) {
+        setUploadedFiles((prev) => prev.slice(0, -1));
+      } else {
+        setUploadedFiles([]);
+      }
     } finally {
+      clearInterval(stepInterval);
+      setUploadStep(4);
       setIsUploading(false);
     }
   };
@@ -210,6 +265,26 @@ export default function Home() {
                 console.error("Failed to parse retrieved chunks list", e);
               }
             }
+            // Check if final presentation-transformed markdown output is received
+            else if (trimmedContent.startsWith("final_transformed:")) {
+              try {
+                const transformedText = JSON.parse(trimmedContent.slice(18));
+                setMessages((prev) =>
+                  prev.map((msg) =>
+                    msg.id === messageId
+                      ? {
+                        ...msg,
+                        isThinking: false,
+                        text: transformedText,
+                      }
+                      : msg
+                  )
+                );
+              } catch (e) {
+                console.error("Failed to parse final_transformed payload", e);
+              }
+            }
+
             // Normal token content (preserve space)
             else {
               setMessages((prev) =>
@@ -224,6 +299,7 @@ export default function Home() {
                 )
               );
             }
+
           }
         }
       }
@@ -276,7 +352,7 @@ export default function Home() {
                 <p>Deploy documents to semantic vector space</p>
               </div>
 
-              {!file ? (
+              {uploadedFiles.length === 0 ? (
                 <div
                   className={`${styles.dragArea} ${dragActive ? styles.dragActive : ""}`}
                   onDragEnter={handleDrag}
@@ -295,47 +371,102 @@ export default function Home() {
                   <div className={styles.uploadPrompt}>
                     <div className={styles.pulseIcon}>📥</div>
                     <p className={styles.primaryText}>Drag & drop document</p>
-                    <p className={styles.secondaryText}>PDF or TXT up to 10MB</p>
+                    <p className={styles.secondaryText}>PDF or TXT up to 50MB</p>
                     <button type="button" className={styles.browseButton}>
                       Browse Files
                     </button>
                   </div>
                 </div>
               ) : (
-                <div className={styles.fileLoadedContainer} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                <div className={styles.fileLoadedContainer}>
                   {/* File Metadata Details */}
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", background: "rgba(255,255,255,0.02)", padding: "10px 14px", borderRadius: "12px", border: "1px solid rgba(255,255,255,0.05)" }}>
-                    <div style={{ fontSize: "2rem" }}>📄</div>
-                    <div style={{ minWidth: 0, flex: 1 }}>
-                      <p className={styles.fileName} style={{ margin: 0 }}>{file.name}</p>
-                      <p className={styles.fileSize} style={{ margin: "2px 0 0 0" }}>{(file.size / 1024).toFixed(1)} KB</p>
-                    </div>
+                  <div className={styles.fileListContainer}>
+                    {uploadedFiles.map((f, idx) => (
+                      <div key={idx} className={styles.fileListItem}>
+                        <div className={styles.fileItemIcon}>📄</div>
+                        <div className={styles.fileItemInfo}>
+                          <p className={styles.fileName}>{f.name}</p>
+                          <p className={styles.fileSize}>{(f.size / 1024).toFixed(1)} KB</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Actions for active session */}
+                  <div className={styles.fileActions}>
+                    <button
+                      type="button"
+                      onClick={triggerBrowse}
+                      className={styles.appendButton}
+                      disabled={isUploading}
+                    >
+                      {isUploading ? "Uploading..." : "➕ Add Doc"}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={resetSession}
+                      className={styles.resetButton}
+                      disabled={isUploading}
+                    >
+                      Reset Session
+                    </button>
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      className={styles.hiddenInput}
+                      onChange={handleFileChange}
+                      accept=".pdf,.txt"
+                    />
                   </div>
 
                   {/* Dynamic Pipeline Progress Stepper */}
                   <div className={styles.stepperContainer}>
-                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
-                      <span className={styles.stepIcon}>{isUploading ? "⚡" : "✓"}</span>
+                    <div className={`${styles.stepItem} ${!isUploading ? styles.stepDone : uploadStep === 1 ? styles.stepActive : uploadStep > 1 ? styles.stepDone : styles.stepPending}`}>
+                      <span className={styles.stepIcon}>
+                        {uploadStep === 1 && isUploading ? (
+                          <div className={`${styles.miniSpinner} ${styles.stepSpinner}`}></div>
+                        ) : (!isUploading || uploadStep > 1) ? "✓" : "⚡"}
+                      </span>
                       <span>1. Extracting Document Text</span>
-                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                      <span className={styles.stepBadge}>
+                        {!isUploading || uploadStep > 1 ? "Done" : uploadStep === 1 ? "Active" : "Pending"}
+                      </span>
                     </div>
                     
-                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
-                      <span className={styles.stepIcon}>{isUploading ? "⚙️" : "✓"}</span>
+                    <div className={`${styles.stepItem} ${!isUploading ? styles.stepDone : uploadStep === 2 ? styles.stepActive : uploadStep > 2 ? styles.stepDone : styles.stepPending}`}>
+                      <span className={styles.stepIcon}>
+                        {uploadStep === 2 && isUploading ? (
+                          <div className={`${styles.miniSpinner} ${styles.stepSpinner}`}></div>
+                        ) : (!isUploading || uploadStep > 2) ? "✓" : "⚙️"}
+                      </span>
                       <span>2. Semantic Percentile Chunking</span>
-                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                      <span className={styles.stepBadge}>
+                        {!isUploading || uploadStep > 2 ? "Done" : uploadStep === 2 ? "Active" : "Pending"}
+                      </span>
                     </div>
 
-                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
-                      <span className={styles.stepIcon}>{isUploading ? "🕸️" : "✓"}</span>
-                      <span>3. Building Chroma HNSW Graph</span>
-                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                    <div className={`${styles.stepItem} ${!isUploading ? styles.stepDone : uploadStep === 3 ? styles.stepActive : uploadStep > 3 ? styles.stepDone : styles.stepPending}`}>
+                      <span className={styles.stepIcon}>
+                        {uploadStep === 3 && isUploading ? (
+                          <div className={`${styles.miniSpinner} ${styles.stepSpinner}`}></div>
+                        ) : (!isUploading || uploadStep > 3) ? "✓" : "🕸️"}
+                      </span>
+                      <span>3. Indexing into Qdrant Cloud</span>
+                      <span className={styles.stepBadge}>
+                        {!isUploading || uploadStep > 3 ? "Done" : uploadStep === 3 ? "Active" : "Pending"}
+                      </span>
                     </div>
 
-                    <div className={`${styles.stepItem} ${isUploading ? styles.stepActive : styles.stepDone}`}>
-                      <span className={styles.stepIcon}>{isUploading ? "🗂️" : "✓"}</span>
+                    <div className={`${styles.stepItem} ${!isUploading ? styles.stepDone : uploadStep === 4 ? styles.stepActive : styles.stepPending}`}>
+                      <span className={styles.stepIcon}>
+                        {uploadStep === 4 && isUploading ? (
+                          <div className={`${styles.miniSpinner} ${styles.stepSpinner}`}></div>
+                        ) : !isUploading ? "✓" : "🗂️"}
+                      </span>
                       <span>4. Rebuilding BM25 Lexical Index</span>
-                      <span className={styles.stepBadge}>{isUploading ? "Active" : "Done"}</span>
+                      <span className={styles.stepBadge}>
+                        {!isUploading ? "Done" : uploadStep === 4 ? "Active" : "Pending"}
+                      </span>
                     </div>
                   </div>
 
@@ -347,19 +478,19 @@ export default function Home() {
                         <div className={styles.statLabel}>Total Chunks</div>
                       </div>
                       <div className={styles.statCard}>
-                        <div className={styles.statValue}>HNSW</div>
-                        <div className={styles.statLabel}>Graph Mode</div>
+                        <div className={styles.statValue}>Qdrant</div>
+                        <div className={styles.statLabel}>Cloud Store</div>
                       </div>
                     </div>
                   )}
 
                   {/* Interactive RAG Parameter Sliders */}
                   {!isUploading && sessionId && (
-                    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", borderTop: "1px solid rgba(255,255,255,0.05)", paddingTop: "1.25rem" }}>
+                    <div className={styles.parameterControls}>
                       <div className={styles.parameterSlider}>
                         <div className={styles.sliderLabel}>
                           <span>Context Chunks (K)</span>
-                          <span style={{ color: "var(--accent-primary)", fontWeight: "800" }}>{topK}</span>
+                          <span className={styles.sliderValue}>{topK}</span>
                         </div>
                         <input
                           type="range"
@@ -371,9 +502,9 @@ export default function Home() {
                         />
                       </div>
 
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "rgba(255,255,255,0.01)", border: "1px solid rgba(255,255,255,0.04)", padding: "10px 14px", borderRadius: "12px" }}>
-                        <span style={{ fontSize: "0.8rem", fontWeight: "700" }}>Hallucination Filter</span>
-                        <span style={{ fontSize: "0.75rem", background: "rgba(16, 185, 129, 0.15)", color: "#10b981", padding: "2px 8px", borderRadius: "4px", fontWeight: "700" }}>ENABLED</span>
+                      <div className={styles.hallucinationFilterBadge}>
+                        <span className={styles.filterTitle}>Hallucination Filter</span>
+                        <span className={styles.filterStatus}>ENABLED</span>
                       </div>
                     </div>
                   )}
@@ -415,17 +546,19 @@ export default function Home() {
 
                       {msg.isThinking && !msg.text && (
                         <div className={styles.thinkingSkeleton}>
-                          <div className="shimmer" style={{ width: "80%", height: "14px", borderRadius: "4px", marginBottom: "8px" }}></div>
-                          <div className="shimmer" style={{ width: "60%", height: "14px", borderRadius: "4px" }}></div>
+                          <div className={`shimmer ${styles.skeletonLineLong}`}></div>
+                          <div className={`shimmer ${styles.skeletonLineShort}`}></div>
                         </div>
                       )}
 
                       {msg.text && (
                         <div className={styles.bubbleText}>
                           {msg.text.includes("[WARNING: Response failed hallucination filter]") || msg.text.includes("⚠️ [WARNING:") ? (
-                            <span style={{ color: "#f87171" }}>{msg.text}</span>
+                            <span className={styles.warningText}>
+                              <ReactMarkdown>{msg.text}</ReactMarkdown>
+                            </span>
                           ) : (
-                            msg.text
+                            <ReactMarkdown>{msg.text}</ReactMarkdown>
                           )}
                         </div>
                       )}
@@ -445,13 +578,13 @@ export default function Home() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder={sessionId ? "Ask anything about the document..." : "Upload document to unlock chat..."}
-                  disabled={!sessionId || isChatting}
+                  placeholder={sessionId ? "Ask anything about the document..." : "Upload a document to enable answering..."}
+                  disabled={isChatting}
                   className={styles.chatInput}
                 />
                 <button
                   type="submit"
-                  disabled={!sessionId || !input.trim() || isChatting}
+                  disabled={!sessionId || !input.trim() || isChatting || isUploading}
                   className={styles.sendButton}
                 >
                   Send
@@ -463,7 +596,7 @@ export default function Home() {
 
         {activeTab === "space" && (
           /* Panel 2: Interactive 3D Embedding Space */
-          <div className={styles.visualizerPanel} style={{ height: "100%" }}>
+          <div className={`${styles.visualizerPanel} ${styles.visualizerPanelFullHeight}`}>
             <div className={styles.cardHeader}>
               <h3>3D Embedding Space Projection</h3>
               <p>Dimensional view of document semantic chunks. Hover nodes to pause rotation and inspect values.</p>

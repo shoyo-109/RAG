@@ -1,6 +1,7 @@
 import os
 import time
 import logging
+import json
 from typing import List, Optional, Dict, Any
 from langchain_core.documents import Document
 
@@ -59,7 +60,40 @@ class IngestionPipeline:
             parse_result.elements, context
         )
 
-        # 5. Convert to LangChain Document format
+        # 5. Convert to LangChain Document format with Hierarchical Parent-Child Metadata
+        element_to_parent_text = {}
+        element_to_breadcrumb = {}
+
+        active_breadcrumb = "General Document Content"
+        section_elements = []
+
+        def flush_section():
+            if not section_elements:
+                return
+            section_full_text = "\n".join([e.text for e in section_elements if e.text])
+            for e in section_elements:
+                element_to_parent_text[e.element_id] = section_full_text
+                element_to_breadcrumb[e.element_id] = active_breadcrumb
+
+        for el in sanitized_elements:
+            el_type_val = getattr(el.element_type, "value", str(el.element_type)).lower() if hasattr(el, "element_type") else ""
+            is_heading = (
+                el_type_val in ["heading", "title", "header"]
+            ) or (el.text and (
+                el.text.strip().startswith("#") or 
+                el.text.strip().isupper() or 
+                (len(el.text.split()) <= 5 and any(kw in el.text.lower() for kw in ["experience", "education", "projects", "skills", "summary", "activities"]))
+            ))
+
+            if is_heading:
+                flush_section()
+                active_breadcrumb = el.text.strip("# ").strip()
+                section_elements = [el]
+            else:
+                section_elements.append(el)
+
+        flush_section()
+
         langchain_docs: List[Document] = []
 
         for el in sanitized_elements:
@@ -67,12 +101,14 @@ class IngestionPipeline:
             doc_metadata: Dict[str, Any] = {
                 "source": filename,
                 "element_id": el.element_id,
-                "element_type": el.element_type.value,
+                "element_type": getattr(el.element_type, "value", str(el.element_type)) if hasattr(el, "element_type") else "text",
                 "tenant_id": tenant_id,
                 "parser_used": context.selected_parser or parse_result.parser_name,
                 "confidence": el.confidence,
-                "parent_id": el.parent_id,
-                "child_ids": el.child_ids,
+                "parent_id": el.parent_id or "",
+                "child_ids": json.dumps(el.child_ids),
+                "parent_text": element_to_parent_text.get(el.element_id, el.text),
+                "breadcrumb_path": element_to_breadcrumb.get(el.element_id, "General Context")
             }
 
             if el.provenance:

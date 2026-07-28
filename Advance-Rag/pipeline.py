@@ -3,6 +3,8 @@ import time
 import logging
 import asyncio
 import json
+import threading
+import re
 import numpy as np
 from typing import List, Dict, Tuple, Optional, Any
 
@@ -11,7 +13,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_chroma import Chroma
+from langchain_qdrant import QdrantVectorStore
+from qdrant_client import QdrantClient
+from qdrant_client.http.models import Distance, VectorParams
 from langchain_community.retrievers import BM25Retriever
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_classic.embeddings.cache import CacheBackedEmbeddings
@@ -26,6 +30,9 @@ try:
     from .pii_detector import PIIDetector
     from .output_validator import OutputValidator
     from .cache import RAGCache
+    from .response_tuner import get_tuned_prompt, post_process_response
+    from .memory import MultiLayerMemoryManager
+    from .presentation import PresentationBuilder, PresentationTuner
 except (ImportError, ValueError):
     from metrics import MetricsCollector
     from retry import with_retry
@@ -34,9 +41,15 @@ except (ImportError, ValueError):
     from pii_detector import PIIDetector
     from output_validator import OutputValidator
     from cache import RAGCache
+    from response_tuner import get_tuned_prompt, post_process_response
+    from memory import MultiLayerMemoryManager
+    from presentation import PresentationBuilder, PresentationTuner
 
 
 logger = logging.getLogger("AdvancedRAG")
+
+_shared_embeddings = None
+_embeddings_lock = threading.Lock()
 
 class LowContextError(Exception):
     """Raised when retrieved documents have low similarity/relevance to the query."""
@@ -45,7 +58,12 @@ class LowContextError(Exception):
 class AdvancedRAGPipeline:
     def __init__(self, cache_threshold: float = 0.95):
         # 1. Initialize SentenceTransformers Embeddings with Cache-Backed Storage
-        self.underlying_embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+        global _shared_embeddings
+        with _embeddings_lock:
+            if _shared_embeddings is None:
+                logger.info("Initializing shared HuggingFaceEmbeddings model...")
+                _shared_embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+        self.underlying_embeddings = _shared_embeddings
         
         # Ensure embedding cache directory exists
         os.makedirs("./.embeddings_cache", exist_ok=True)
@@ -64,52 +82,63 @@ class AdvancedRAGPipeline:
             breakpoint_threshold_amount=90
         )
 
-        # 3. Vector Database (Chroma) initialized with HNSW parameters (m=20, ef=100)
-        self.vector_store = Chroma(
-            collection_name="advanced_rag_collection",
-            embedding_function=self.embeddings,
-            collection_metadata={
-                "hnsw:M": 20,
-                "hnsw:construction_ef": 100,
-                "hnsw:search_ef": 100
-            }
+        # 3. Vector Database (Qdrant Cloud) initialized with Cosine distance metric
+        qdrant_url = os.getenv("QDRANT_ENDPOINT") or os.getenv("QDRANT_URL")
+        qdrant_api_key = os.getenv("QDRANT_API") or os.getenv("QDRANT_API_KEY")
+
+        if not qdrant_url or not qdrant_api_key:
+            logger.warning("QDRANT_ENDPOINT/QDRANT_URL or QDRANT_API/QDRANT_API_KEY missing in environment variables!")
+
+        self.qdrant_client = QdrantClient(
+            url=qdrant_url,
+            api_key=qdrant_api_key,
+        )
+
+        collection_name = "advanced_rag_collection"
+        if qdrant_url and not self.qdrant_client.collection_exists(collection_name):
+            logger.info(f"Creating Qdrant collection '{collection_name}' with 384 dimensions...")
+            self.qdrant_client.create_collection(
+                collection_name=collection_name,
+                vectors_config=VectorParams(size=384, distance=Distance.COSINE),
+            )
+
+        self.vector_store = QdrantVectorStore(
+            client=self.qdrant_client,
+            collection_name=collection_name,
+            embedding=self.embeddings,
         )
 
         # 4. In-memory document storage for rebuilding BM25
         self.all_chunks: List[Document] = []
         self.bm25_retriever: Optional[BM25Retriever] = None
 
-        # 5. Initialize Primary Nvidia LLM
+        # 5. Initialize Primary Nvidia Instruct LLM (Sub-1.5s Fast Latency)
         self.primary_llm = ChatOpenAI(
-            model_name="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+            model_name="meta/llama-3.1-70b-instruct",
             base_url="https://integrate.api.nvidia.com/v1",
             api_key=os.getenv("NVIDIA_API_KEY"),
-            temperature=0.5,
-            extra_body={
-                "chat_template_kwargs": {"enable_thinking": True},
-                "reasoning_budget": 16384
-            }
-        )
-
-        # 6. Initialize Fallback LLM (GPT-4o-Mini)
-        self.fallback_llm = ChatOpenAI(
-            model_name="gpt-4o-mini",
-            api_key=os.getenv("OPENAI_API_KEY"),
-            temperature=0.5,
+            temperature=0.3,
             timeout=15.0
         )
 
-        # Prompts for RAG and Hallucination Filter
-        self.rag_prompt = ChatPromptTemplate.from_template(
-            """Answer the question based on the context provided:
-            
-            Context:
-            {context}
-            
-            Question:
-            {question}
-            """
+        # 6. Initialize Cognitive Nvidia Nemotron Reasoning LLM (Complex Cognitive Reasoning)
+        self.cognitive_llm = ChatOpenAI(
+            model_name="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+            base_url="https://integrate.api.nvidia.com/v1",
+            api_key=os.getenv("NVIDIA_API_KEY"),
+            temperature=0.3,
+            extra_body={
+                "chat_template_kwargs": {"enable_thinking": True},
+                "reasoning_budget": 2048
+            }
         )
+
+
+        # Fallback LLM uses primary Nvidia model (completely removing OpenAI dependency)
+        self.fallback_llm = self.primary_llm
+
+        # Prompts for RAG and Hallucination Filter
+        self.rag_prompt = get_tuned_prompt()
 
         self.hallucination_prompt = ChatPromptTemplate.from_template(
             """You are a hallucination filter. Analyze the context and the answer.
@@ -138,6 +167,10 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         
         # In-memory cache for PCA 3D projections (Optimization: 0ms projection calculations)
         self._cached_projections: Optional[List[Dict]] = None
+
+        # 9. Multi-Layer Memory Engine & Presentation Engine
+        self.memory_manager = MultiLayerMemoryManager(capacity=5, max_context_tokens=16000, vector_store=self.vector_store)
+
 
     # Invoke LLM chain with Fallback & Circuit Breaker & Retry
     @with_retry(max_retries=3, base_delay=1.0, exceptions=(Exception,))
@@ -180,7 +213,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         chunks = self.chunker.split_documents(raw_documents)
         logger.info(f"Semantically chunked {len(raw_documents)} documents into {len(chunks)} chunks.")
 
-        # Index in Chroma vector store
+        # Index in Qdrant vector store
         self.vector_store.add_documents(chunks)
         
         # Append to our document pool and rebuild BM25 retriever
@@ -198,19 +231,19 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
 
     def custom_hybrid_search(self, query: str, query_embedding: np.ndarray, top_k: int = 10, rrf_k: int = 60) -> Tuple[List[Document], float, float]:
         """
-        Custom hybrid search ensembler combining Chroma Vector Search and BM25 search
+        Custom hybrid search ensembler combining Qdrant Vector Search and BM25 search
         using Reciprocal Rank Fusion (RRF) with equal (50-50) weights.
         
         Optimization: uses precomputed query embedding to avoid double embedding calculations.
-        Returns: (List[Document], max_rrf_score, min_vector_distance)
+        Returns: (List[Document], max_rrf_score, top_vector_score)
         """
         if not self.all_chunks:
-            return [], 0.0, float('inf')
+            return [], 0.0, 0.0
 
         # 1. Fetch candidates from Vector search by precomputed embedding (saves 50-150ms)
         vector_results = self.vector_store.similarity_search_with_score_by_vector(query_embedding.tolist(), k=top_k)
         vector_docs = [doc for doc, _ in vector_results]
-        min_vector_distance = vector_results[0][1] if vector_results else float('inf')
+        top_vector_score = vector_results[0][1] if vector_results else 0.0
 
         # 2. Fetch candidates from BM25 search
         bm25_docs = []
@@ -237,17 +270,17 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         # Sort documents based on combined RRF scores
         sorted_docs = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
         max_score = sorted_docs[0][1] if sorted_docs else 0.0
-        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]], max_score, min_vector_distance
+        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]], max_score, top_vector_score
 
     async def custom_hybrid_search_async(self, query: str, query_embedding: np.ndarray, top_k: int = 10, rrf_k: int = 60) -> Tuple[List[Document], float, float]:
         """
         Asynchronous custom hybrid search. Runs Vector and BM25 searches in parallel threads.
         
         Optimization: concurrent retrieval + precomputed query embedding.
-        Returns: (List[Document], max_rrf_score, min_vector_distance)
+        Returns: (List[Document], max_rrf_score, top_vector_score)
         """
         if not self.all_chunks:
-            return [], 0.0, float('inf')
+            return [], 0.0, 0.0
 
         # Run vector search and BM25 search concurrently in threadpool to prevent blocking the event loop
         tasks = [
@@ -260,7 +293,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
             
         vector_results, bm25_docs = await asyncio.gather(*tasks)
         vector_docs = [doc for doc, _ in vector_results]
-        min_vector_distance = vector_results[0][1] if vector_results else float('inf')
+        top_vector_score = vector_results[0][1] if vector_results else 0.0
 
         # RRF scoring dict
         rrf_scores = {}
@@ -281,7 +314,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         # Sort documents based on combined RRF scores
         sorted_docs = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
         max_score = sorted_docs[0][1] if sorted_docs else 0.0
-        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]], max_score, min_vector_distance
+        return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]], max_score, top_vector_score
 
     def rewrite_query(self, question: str) -> str:
         """Self-healing: Rewrites a poor query to improve retrieval scores."""
@@ -315,6 +348,50 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         except Exception as e:
             logger.error(f"Error executing hallucination check: {e}")
             return True
+
+    def _route_query(self, question: str) -> Tuple[ChatOpenAI, str]:
+        """
+        Regex Intent Classifier to route between fast instruct model (sub-2s latency)
+        and cognitive reasoning model (Nemotron).
+        """
+        cognitive_patterns = [
+            r'\bcompare\b', r'\bcontrast\b', r'\brelationship\b', r'\bsynthesize\b',
+            r'\banalyze\b', r'\bexplain why\b', r'\bhow does .* relate\b',
+            r'\bsummarize all\b', r'\bconnect\b', r'\bevaluate\b'
+        ]
+        
+        q_lower = question.lower()
+        for pattern in cognitive_patterns:
+            if re.search(pattern, q_lower):
+                logger.info(f"Intent Classifier: Routing to Cognitive Reasoning Model (Nemotron) based on pattern '{pattern}'")
+                return self.cognitive_llm, "cognitive_nemotron"
+                
+        logger.info("Intent Classifier: Routing to Fast Primary Model (Llama-3.1-70b)")
+        return self.primary_llm, "primary_llama70b"
+
+    def _build_hierarchical_context(self, docs: List[Document]) -> str:
+        """
+        Extracts parent_text and breadcrumb_path metadata from retrieved child documents,
+        deduplicates section blocks, and constructs rich hierarchical context for the LLM.
+        """
+        seen_parents = set()
+        formatted_blocks = []
+
+        for doc in docs:
+            parent_text = doc.metadata.get("parent_text", doc.page_content) if hasattr(doc, "metadata") and isinstance(doc.metadata, dict) else doc.page_content
+            breadcrumb = doc.metadata.get("breadcrumb_path", "") if hasattr(doc, "metadata") and isinstance(doc.metadata, dict) else ""
+
+            if parent_text in seen_parents:
+                continue
+            seen_parents.add(parent_text)
+
+            if breadcrumb:
+                block = f"[Category: {breadcrumb}]\n{parent_text}"
+            else:
+                block = parent_text
+            formatted_blocks.append(block)
+
+        return "\n\n---\n\n".join(formatted_blocks)
 
     def query(self, question: str) -> str:
         """
@@ -358,41 +435,79 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                 return cached_res
 
             # 3. Hybrid search and Self-Healing Thresholding
-            relevant_docs, max_score, min_distance = self.custom_hybrid_search(sanitized_question, query_emb, top_k=self.top_k)
+            relevant_docs, max_score, top_vector_score = self.custom_hybrid_search(sanitized_question, query_emb, top_k=self.top_k)
             
-            # Threshold Check: either distance is too high (L2 > 1.2 implies low similarity) or RRF is too low
-            # Assuming Chroma L2 default: higher distance = lower similarity. 
-            MAX_DISTANCE_THRESHOLD = 1.2
-            MIN_SCORE_THRESHOLD = 0.015
+            # Threshold Check: either vector similarity is too low or RRF score is too low
+            MIN_SIMILARITY_THRESHOLD = 0.25
+            MIN_SCORE_THRESHOLD = 0.008
             
-            if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
-                logger.warning(f"Low retrieval score (dist={min_distance}, rrf={max_score}), attempting query rewrite.")
+            if top_vector_score < MIN_SIMILARITY_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+                logger.warning(f"Low retrieval score (sim={top_vector_score:.4f}, rrf={max_score:.4f}), attempting query rewrite.")
                 sanitized_question = self.rewrite_query(sanitized_question)
                 query_emb = np.array(self.embeddings.embed_query(sanitized_question))
-                relevant_docs, max_score, min_distance = self.custom_hybrid_search(sanitized_question, query_emb, top_k=self.top_k)
+                relevant_docs, max_score, top_vector_score = self.custom_hybrid_search(sanitized_question, query_emb, top_k=self.top_k)
                 
-                if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
-                    logger.warning(f"Score still too low after rewrite (dist={min_distance}, rrf={max_score}). Short-circuiting.")
+                if top_vector_score < MIN_SIMILARITY_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+                    logger.warning(f"Score still too low after rewrite (sim={top_vector_score:.4f}, rrf={max_score:.4f}). Short-circuiting.")
                     raise LowContextError("Insufficient context found in the knowledge base.")
 
-            context_str = "\n\n".join([doc.page_content for doc in relevant_docs])
+            rag_context_str = self._build_hierarchical_context(relevant_docs)
+            allocated_context = self.memory_manager.prepare_allocated_context(rag_context_str, sanitized_question)
+            
+            context_with_memory = allocated_context["rag_context"]
+            if allocated_context["memory_context"]:
+                context_with_memory = f"Memory History:\n{allocated_context['memory_context']}\n\nDocument Context:\n{allocated_context['rag_context']}"
 
-            # 4. Generate response with Fallback LLM Chain
-            response, model_used = self.run_llm_chain({"context": context_str, "question": sanitized_question})
+            # 4. Generate response with routed model
+            selected_llm, model_used = self._route_query(sanitized_question)
+            chain = self.rag_prompt | selected_llm | StrOutputParser()
+            response = chain.invoke({"context": context_with_memory, "question": sanitized_question})
             output_tokens = len(response.split()) * 4 // 3
 
-            # 5. Hallucination filter
-            is_grounded = self.hallucination_filter(context_str, response)
+            # 5. Active Self-Healing Hallucination Filter
+            is_grounded = self.hallucination_filter(allocated_context["rag_context"], response)
             if not is_grounded:
-                logger.warning("Hallucination detected in generated response!")
-                final_response = f"[WARNING: Response failed hallucination filter] {response}"
+                logger.warning("Hallucination detected! Executing Self-Healing strict grounding correction...")
+                try:
+                    correction_prompt = ChatPromptTemplate.from_template(
+                        "You are an active self-healing grounding verifier. Your task is to rewrite the draft response so it is 100% strictly grounded in the provided context.\n\n"
+                        "UNIVERSAL GROUNDING RULES:\n"
+                        "1. Strictly limit facts, metrics, entities, and details to the exact subject or condition requested in the user's question.\n"
+                        "2. Remove any claim, entity, or detail that is not explicitly present in the retrieved context.\n"
+                        "3. Do NOT extrapolate or infer facts outside the context.\n\n"
+                        "Retrieved Context:\n{context}\n\n"
+                        "User Question:\n{question}\n\n"
+                        "Draft Response to Cleanse:\n{response}\n\n"
+                        "Strictly Grounded Corrected Answer:"
+                    )
+
+                    correction_chain = correction_prompt | self.fallback_llm | StrOutputParser()
+                    final_response = correction_chain.invoke({
+                        "context": allocated_context["rag_context"],
+                        "question": sanitized_question,
+                        "response": response
+                    })
+                except Exception as ce:
+                    logger.error(f"Failed to execute self-correction: {ce}")
+                    final_response = response
             else:
                 final_response = response
+
 
             # 6. Output Validation
             is_valid, final_response, val_reason = self.output_validator.validate(final_response)
             if not is_valid:
                 logger.warning(f"Output altered by validator: {val_reason}")
+
+            # Apply Presentation Engine transformation (Rule 1-9 CPU Native < 0.5ms)
+            final_response = PresentationBuilder.transform_to_presentation(
+                final_response,
+                active_topic=allocated_context["active_topic"],
+                should_render_header=allocated_context["should_render_top_header"]
+            )
+
+            # Record completed turn in Memory Manager
+            self.memory_manager.record_completed_turn(sanitized_question, final_response)
 
             # 7. Populate cache (saving query embedding for reuse)
             self.cache.set(sanitized_question, final_response, query_emb=query_emb)
@@ -470,17 +585,17 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         await asyncio.sleep(0.2)
         
         # Retrieve context (parallel optimized)
-        relevant_docs, max_score, min_distance = await self.custom_hybrid_search_async(sanitized_question, query_emb, top_k=self.top_k)
+        relevant_docs, max_score, top_vector_score = await self.custom_hybrid_search_async(sanitized_question, query_emb, top_k=self.top_k)
         
-        MAX_DISTANCE_THRESHOLD = 1.2
-        MIN_SCORE_THRESHOLD = 0.015
-        if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+        MIN_SIMILARITY_THRESHOLD = 0.25
+        MIN_SCORE_THRESHOLD = 0.008
+        if top_vector_score < MIN_SIMILARITY_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
             yield "data: stage:⚠️ Low confidence retrieval, attempting to rewrite query...\n\n"
             sanitized_question = self.rewrite_query(sanitized_question)
             query_emb = np.array(self.embeddings.embed_query(sanitized_question))
-            relevant_docs, max_score, min_distance = await self.custom_hybrid_search_async(sanitized_question, query_emb, top_k=self.top_k)
+            relevant_docs, max_score, top_vector_score = await self.custom_hybrid_search_async(sanitized_question, query_emb, top_k=self.top_k)
             
-            if min_distance > MAX_DISTANCE_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
+            if top_vector_score < MIN_SIMILARITY_THRESHOLD or max_score < MIN_SCORE_THRESHOLD:
                 fallback_response = {
                     "error": "LowContextError",
                     "message": "I don't have enough context to answer accurately.",
@@ -493,40 +608,45 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                 yield f"data: {json.dumps(fallback_response)}\n\n"
                 return
 
-        context_str = "\n\n".join([doc.page_content for doc in relevant_docs])
+        context_str = self._build_hierarchical_context(relevant_docs)
+        allocated_context = self.memory_manager.prepare_allocated_context(context_str, sanitized_question)
         
+        context_with_memory = allocated_context["rag_context"]
+        if allocated_context["memory_context"]:
+            context_with_memory = f"Memory History:\n{allocated_context['memory_context']}\n\nDocument Context:\n{allocated_context['rag_context']}"
+
         retrieved_texts = [doc.page_content for doc in relevant_docs]
         yield f"data: retrieved_chunks:{json.dumps(retrieved_texts)}\n\n"
 
         yield "data: stage:🧠 Blending vector and BM25 search indices...\n\n"
         await asyncio.sleep(0.2)
 
-        yield "data: stage:📝 Formulating response...\n\n"
+        selected_llm, model_tag = self._route_query(sanitized_question)
+
+        if model_tag == "cognitive_nemotron":
+            yield "data: stage:🤔 Nemotron Cognitive Reasoning Stage...\n\n"
+        else:
+            yield "data: stage:📝 Formulating response...\n\n"
         
-        # Execute streaming with fallback
+        # Execute streaming with routed model via LCEL chain
         stream_successful = False
         try:
             self.circuit_breaker.check_call_allowed()
-            # Stream from primary Nvidia Nemotron
-            async for chunk in self.primary_llm.astream(
-                self.rag_prompt.format(context=context_str, question=sanitized_question)
-            ):
-                token_text = chunk.content
+            chain = self.rag_prompt | selected_llm | StrOutputParser()
+            async for token_text in chain.astream({"context": context_with_memory, "question": sanitized_question}):
                 full_response += token_text
                 yield f"data: {token_text}\n\n"
             self.circuit_breaker.record_success()
             stream_successful = True
         except Exception as e:
             self.circuit_breaker.record_failure()
-            logger.error(f"Primary streaming failed: {e}. Falling back to GPT-4o-Mini...")
+            logger.error(f"Routed streaming ({model_tag}) failed: {e}. Falling back to primary LLM...")
             
         if not stream_successful:
             try:
                 # Stream from fallback
-                async for chunk in self.fallback_llm.astream(
-                    self.rag_prompt.format(context=context_str, question=sanitized_question)
-                ):
-                    token_text = chunk.content
+                fallback_chain = self.rag_prompt | self.fallback_llm | StrOutputParser()
+                async for token_text in fallback_chain.astream({"context": context_with_memory, "question": sanitized_question}):
                     full_response += token_text
                     yield f"data: {token_text}\n\n"
             except Exception as fe:
@@ -534,12 +654,34 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                 yield "data: Error: An internal error occurred while generating response.\n\n"
                 return
 
-        # Stage 4: Run Hallucination Filter
-        is_grounded = self.hallucination_filter(context_str, full_response)
+
+
+        # Stage 4: Active Self-Healing Hallucination Filter
+        is_grounded = self.hallucination_filter(allocated_context["rag_context"], full_response)
         if not is_grounded:
-            logger.warning("Hallucination detected in generated response!")
-            yield "data: \n\n⚠️ [WARNING: Response failed hallucination filter check]\n\n"
-            full_response += "\n\n⚠️ [WARNING: Response failed hallucination filter check]"
+            logger.warning("Hallucination detected! Executing Self-Healing strict grounding correction...")
+            try:
+                correction_prompt = ChatPromptTemplate.from_template(
+                    "You are an active self-healing grounding verifier. Your task is to rewrite the draft response so it is 100% strictly grounded in the provided context.\n\n"
+                    "UNIVERSAL GROUNDING RULES:\n"
+                    "1. Strictly limit facts, metrics, entities, and details to the exact subject or condition requested in the user's question.\n"
+                    "2. Remove any claim, entity, or detail that is not explicitly present in the retrieved context.\n"
+                    "3. Do NOT extrapolate or infer facts outside the context.\n\n"
+                    "Retrieved Context:\n{context}\n\n"
+                    "User Question:\n{question}\n\n"
+                    "Draft Response to Cleanse:\n{response}\n\n"
+                    "Strictly Grounded Corrected Answer:"
+                )
+
+                correction_chain = correction_prompt | self.fallback_llm | StrOutputParser()
+                full_response = correction_chain.invoke({
+                    "context": allocated_context["rag_context"],
+                    "question": sanitized_question,
+                    "response": full_response
+                })
+            except Exception as ce:
+                logger.error(f"Failed to execute hallucination self-correction: {ce}")
+
 
         # Validate final output
         is_valid, clean_response, val_reason = self.output_validator.validate(full_response)
@@ -547,8 +689,23 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
             yield f"data: \n\n[Security modification: {val_reason}]\n\n"
             full_response = clean_response
 
+        # Transform response via Presentation Engine (CPU Native < 0.5ms)
+        clean_response_tuned = PresentationBuilder.transform_to_presentation(
+            full_response,
+            active_topic=allocated_context["active_topic"],
+            should_render_header=allocated_context["should_render_top_header"]
+        )
+
+        # Yield presentation-transformed response safely JSON-encoded for SSE stream
+        yield f"data: final_transformed:{json.dumps(clean_response_tuned)}\n\n"
+
+
+        # Record completed turn in memory
+        self.memory_manager.record_completed_turn(sanitized_question, clean_response_tuned)
+
+
         # Store in cache
-        self.cache.set(sanitized_question, full_response, query_emb=query_emb)
+        self.cache.set(sanitized_question, clean_response_tuned, query_emb=query_emb)
         
         self.metrics.record_request(
             latency_ms=(time.time() - start_time) * 1000,

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-y: auto;
   padding: 1.5rem 2rem;
   max-width: 1600px;
   margin: 0 auto;
@@ -30,7 +31,7 @@
   border-radius: 8px;
   font-size: 0.75rem;
   letter-spacing: 1.5px;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
   text-transform: uppercase;
 }
 
@@ -38,7 +39,7 @@
   font-family: var(--font-title);
   font-size: 1.85rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #ffffff 30%, #d8b4fe 100%);
+  background: linear-gradient(135deg, #ffffff 30%, #ffedd5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -0.5px;
@@ -73,7 +74,7 @@
 }
 
 .leftPanel:hover {
-  border-color: rgba(139, 92, 246, 0.2);
+  border-color: rgba(249, 115, 22, 0.2);
 }
 
 .cardHeader {
@@ -96,12 +97,12 @@
 }
 
 .dragArea {
-  border: 2px dashed rgba(139, 92, 246, 0.25);
+  border: 2px dashed rgba(249, 115, 22, 0.25);
   border-radius: 14px;
   padding: 2rem 1.25rem;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(18, 14, 32, 0.4);
+  background: rgba(28, 25, 23, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,21 +115,21 @@
 
 .dragArea:hover {
   border-color: var(--accent-primary);
-  background: rgba(139, 92, 246, 0.05);
+  background: rgba(249, 115, 22, 0.05);
 }
 
 .dragActive {
   border-color: var(--accent-secondary);
-  background: rgba(236, 72, 153, 0.08);
+  background: rgba(245, 158, 11, 0.08);
   transform: scale(1.01);
-  box-shadow: 0 0 25px rgba(236, 72, 153, 0.15);
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.15);
 }
 
 .fileLoaded {
   border-style: solid;
   border-color: var(--accent-primary);
-  background: rgba(139, 92, 246, 0.03);
-  box-shadow: inset 0 0 15px rgba(139, 92, 246, 0.05);
+  background: rgba(249, 115, 22, 0.03);
+  box-shadow: inset 0 0 15px rgba(249, 115, 22, 0.05);
 }
 
 .hiddenInput {
@@ -202,7 +203,7 @@
 
 .fileIcon {
   font-size: 2.8rem;
-  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+  filter: drop-shadow(0 0 10px rgba(249, 115, 22, 0.3));
 }
 
 .fileName {
@@ -231,7 +232,7 @@
 .spinner {
   width: 28px;
   height: 28px;
-  border: 3px solid rgba(139, 92, 246, 0.15);
+  border: 3px solid rgba(249, 115, 22, 0.15);
   border-top-color: var(--accent-primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -334,7 +335,7 @@
   margin-bottom: 1.25rem;
   opacity: 0.35;
   animation: float 5s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.2));
+  filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.2));
 }
 
 .visualizerPlaceholderText {
@@ -367,7 +368,7 @@
 }
 
 .chatPanel:hover {
-  border-color: rgba(236, 72, 153, 0.2);
+  border-color: rgba(245, 158, 11, 0.2);
 }
 
 .chatHistory {
@@ -396,8 +397,8 @@
 }
 
 .avatar {
-  background: rgba(139, 92, 246, 0.15);
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.3);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -405,13 +406,13 @@
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.2);
   flex-shrink: 0;
 }
 
 .avatarUser {
-  background: rgba(236, 72, 153, 0.15);
-  border: 1px solid rgba(236, 72, 153, 0.3);
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -419,7 +420,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  box-shadow: 0 0 10px rgba(236, 72, 153, 0.2);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
   flex-shrink: 0;
 }
 
@@ -435,13 +436,38 @@
   border-radius: 16px;
   font-size: 0.9rem;
   line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.bubbleText p {
+  margin: 0 0 0.5rem 0;
+}
+
+.bubbleText p:last-child {
+  margin-bottom: 0;
+}
+
+.bubbleText ul, .bubbleText ol {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.bubbleText li {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.bubbleText strong {
+  color: var(--accent-secondary);
+  font-weight: 700;
 }
 
 .userWrapper .bubbleText {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, rgba(139, 92, 246, 0.65) 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, rgba(249, 115, 22, 0.65) 100%);
   color: #fff;
   border-bottom-right-radius: 4px;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.2);
 }
 
 .aiWrapper .bubbleText {
@@ -453,8 +479,8 @@
 
 /* Thinking accordion and stages */
 .thinkingAccordion {
-  background: rgba(139, 92, 246, 0.07);
-  border: 1px solid rgba(139, 92, 246, 0.18);
+  background: rgba(249, 115, 22, 0.07);
+  border: 1px solid rgba(249, 115, 22, 0.18);
   border-radius: 10px;
   padding: 0.6rem 0.85rem;
   display: flex;
@@ -470,13 +496,13 @@
   gap: 0.5rem;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #c084fc;
+  color: #fcd34d;
 }
 
 .miniSpinner {
   width: 13px;
   height: 13px;
-  border: 1.5px solid rgba(139, 92, 246, 0.2);
+  border: 1.5px solid rgba(249, 115, 22, 0.2);
   border-top-color: var(--accent-primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -529,8 +555,8 @@
 
 .chatInput:focus {
   border-color: var(--accent-primary);
-  background: rgba(139, 92, 246, 0.02);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+  background: rgba(249, 115, 22, 0.02);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.2);
 }
 
 .chatInput:disabled {
@@ -548,14 +574,14 @@
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .sendButton:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(236, 72, 153, 0.45);
+  box-shadow: 0 5px 20px rgba(245, 158, 11, 0.45);
 }
 
 .sendButton:disabled {
@@ -603,9 +629,9 @@
 
 .activeTab {
   color: #fff;
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  box-shadow: 0 0 15px rgba(139, 92, 246, 0.08);
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  box-shadow: 0 0 15px rgba(249, 115, 22, 0.08);
 }
 
 /* Mobile Responsive styles */
@@ -702,8 +728,8 @@
 }
 
 .stepActive {
-  background: rgba(139, 92, 246, 0.05);
-  border-color: rgba(139, 92, 246, 0.25);
+  background: rgba(249, 115, 22, 0.05);
+  border-color: rgba(249, 115, 22, 0.25);
   color: #fff;
 }
 
@@ -711,6 +737,69 @@
   background: rgba(16, 185, 129, 0.04);
   border-color: rgba(16, 185, 129, 0.2);
   color: #10b981;
+}
+
+.stepPending {
+  background: rgba(255, 255, 255, 0.01);
+  border-color: rgba(255, 255, 255, 0.02);
+  color: var(--text-muted);
+  opacity: 0.55;
+}
+
+.fileListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.fileListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.8rem;
+}
+
+.appendButton {
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px dashed rgba(249, 115, 22, 0.3);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  text-align: center;
+}
+
+.appendButton:hover {
+  background: rgba(249, 115, 22, 0.18);
+  border-color: var(--accent-primary);
+}
+
+.resetButton {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  text-align: center;
+}
+
+.resetButton:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #ef4444;
 }
 
 .stepIcon {
@@ -804,6 +893,91 @@
   cursor: pointer;
   box-shadow: 0 0 8px var(--accent-primary);
 }
+
+.fileLoadedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.fileItemIcon {
+  font-size: 1.2rem;
+}
+
+.fileItemInfo {
+  min-width: 0;
+  flex: 1;
+}
+
+.fileActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stepSpinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+.parameterControls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1.25rem;
+}
+
+.sliderValue {
+  color: var(--accent-primary);
+  font-weight: 800;
+}
+
+.hallucinationFilterBadge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.filterTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.filterStatus {
+  font-size: 0.75rem;
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.skeletonLineLong {
+  width: 80%;
+  height: 14px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeletonLineShort {
+  width: 60%;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.warningText {
+  color: #f87171;
+}
+
+.visualizerPanelFullHeight {
+  height: 100%;
+}
+
 
 
 

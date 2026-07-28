@@ -5,9 +5,9 @@ langchain-openai
 python-dotenv
 langchain-google-genai
 langchain-community
-chromadb
+qdrant-client
 sentence-transformers
-langchain-chroma
+langchain-qdrant
 fastapi
 uvicorn
 python-multipart
