@@ -38,10 +38,7 @@ with demo:
 app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
 
 if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 7860))
-    # Run single-process uvicorn event loop to keep server alive
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    demo.launch(server_name="0.0.0.0", server_port=7860)
 
 
 
