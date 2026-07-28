@@ -111,8 +111,6 @@ async def warmup_pipeline():
     return {"status": "warming_up"}
 
 @app.post("/api/upload")
-@app.post("/upload_doc")
-@app.post("/upload")
 async def upload_file(
     request: Request,
     file: UploadFile = File(...),
@@ -124,10 +122,11 @@ async def upload_file(
     if not is_allowed:
         raise HTTPException(status_code=429, detail=limit_msg)
 
+    # Read uploaded bytes directly
+    content = await file.read()
+    size = len(content)
+
     # Enforce file size limit (50MB)
-    file.file.seek(0, os.SEEK_END)
-    size = file.file.tell()
-    file.file.seek(0)
     if size > 50 * 1024 * 1024:
         raise HTTPException(status_code=400, detail="File size exceeds the maximum limit of 50MB.")
 
@@ -140,8 +139,7 @@ async def upload_file(
         raise HTTPException(status_code=400, detail=f"Security Error: Prohibited or unsupported file format '{ext}'.")
 
     # 2. Magic Bytes Inspection (MIME Spoofing Defense)
-    header_bytes = await file.read(512)
-    await file.seek(0)
+    header_bytes = content[:512]
 
     if ext == ".pdf" and not header_bytes.startswith(b"%PDF-"):
         raise HTTPException(status_code=400, detail="Security Error: File header does not match valid PDF magic bytes.")
@@ -159,8 +157,9 @@ async def upload_file(
 
     # Write upload to temporary file
     with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as temp_file:
-        shutil.copyfileobj(file.file, temp_file)
+        temp_file.write(content)
         temp_file_path = temp_file.name
+
 
     try:
         # Load document using production-grade IngestionPipeline with 3-Level Fallbacks
@@ -191,8 +190,8 @@ async def upload_file(
         raise HTTPException(status_code=500, detail=f"Failed to index document: {str(e)}")
 
 @app.post("/api/chat")
-@app.post("/chat")
 async def chat_session(
+
 
     session_id: str = Form(...), 
     question: str = Form(...),
