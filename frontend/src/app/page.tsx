@@ -41,7 +41,7 @@ export default function Home() {
 
   // Trigger warmup request when page loads
   useEffect(() => {
-    fetch(`${API_BASE_URL}/warmup`).catch((err) => {
+    fetch(`${API_BASE_URL}/api/warmup`).catch((err) => {
       console.warn("Backend warmup trigger failed:", err);
     });
   }, []);
@@ -145,7 +145,7 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/upload`, {
+      const response = await fetch(`${API_BASE_URL}/api/upload`, {
         method: "POST",
         body: formData,
       });
@@ -228,7 +228,7 @@ export default function Home() {
     formData.append("top_k", topK.toString());
 
     try {
-      const response = await fetch(`${API_BASE_URL}/chat`, {
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
         method: "POST",
         body: formData,
       });
