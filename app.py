@@ -9,6 +9,9 @@ try:
     def zero_gpu_pipeline_hook():
         """Hook to register ZeroGPU hardware allocation on startup."""
         return True
+    
+    # Execute immediately on import to register with ZeroGPU supervisor
+    zero_gpu_pipeline_hook()
 except (ImportError, Exception):
     def zero_gpu_pipeline_hook():
         return True
@@ -31,12 +34,8 @@ with demo:
         """
     )
 
-# Expose `app` at module level so Hugging Face Space automatically serves FastAPI & Gradio
+# Expose `app` at module level for Hugging Face Space runner
 app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
 
-if __name__ == "__main__":
-    import uvicorn
-    port = int(os.getenv("PORT", 7860))
-    uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)
 
 
