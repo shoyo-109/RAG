@@ -16,7 +16,8 @@ langchain-huggingface
 rank_bm25
 langsmith
 redis
-gradio
+gradio==4.44.0
 spaces
+
 
 
