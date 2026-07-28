@@ -86,7 +86,7 @@ try:
     from .cache import RAGCache
     from .response_tuner import get_tuned_prompt, post_process_response
     from .memory import MultiLayerMemoryManager
-    from .presentation import PresentationBuilder, PresentationTuner
+    from .presentation import PresentationBuilder, PresentationTuner, IncrementalBlockStreamer
 except (ImportError, ValueError):
     from metrics import MetricsCollector
     from retry import with_retry
@@ -97,7 +97,8 @@ except (ImportError, ValueError):
     from cache import RAGCache
     from response_tuner import get_tuned_prompt, post_process_response
     from memory import MultiLayerMemoryManager
-    from presentation import PresentationBuilder, PresentationTuner
+    from presentation import PresentationBuilder, PresentationTuner, IncrementalBlockStreamer
+
 
 
 logger = logging.getLogger("AdvancedRAG")
@@ -693,13 +694,25 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
             yield "data: stage:📝 Formulating response...\n\n"
         
         # Execute streaming with routed model via LCEL chain
+        block_streamer = IncrementalBlockStreamer(
+            active_topic=allocated_context["active_topic"],
+            should_render_header=allocated_context["should_render_top_header"]
+        )
         stream_successful = False
         try:
             self.circuit_breaker.check_call_allowed()
             chain = self.rag_prompt | selected_llm | StrOutputParser()
             async for token_text in chain.astream({"context": context_with_memory, "question": sanitized_question}):
                 full_response += token_text
+                events = block_streamer.feed_token(token_text)
+                for ev in events:
+                    if ev["type"] == "block_commit":
+                        yield f"data: block_commit:{json.dumps(ev)}\n\n"
                 yield f"data: {token_text}\n\n"
+
+            for ev in block_streamer.flush():
+                yield f"data: block_commit:{json.dumps(ev)}\n\n"
+
             self.circuit_breaker.record_success()
             stream_successful = True
         except Exception as e:
@@ -712,11 +725,20 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                 fallback_chain = self.rag_prompt | self.fallback_llm | StrOutputParser()
                 async for token_text in fallback_chain.astream({"context": context_with_memory, "question": sanitized_question}):
                     full_response += token_text
+                    events = block_streamer.feed_token(token_text)
+                    for ev in events:
+                        if ev["type"] == "block_commit":
+                            yield f"data: block_commit:{json.dumps(ev)}\n\n"
                     yield f"data: {token_text}\n\n"
+
+                for ev in block_streamer.flush():
+                    yield f"data: block_commit:{json.dumps(ev)}\n\n"
+
             except Exception as fe:
                 logger.critical(f"Fallback streaming failed: {fe}")
                 yield "data: Error: An internal error occurred while generating response.\n\n"
                 return
+
 
 
 

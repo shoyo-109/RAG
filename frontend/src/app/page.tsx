@@ -11,7 +11,10 @@ interface Message {
   text: string;
   thinkingStages?: string[];
   isThinking?: boolean;
+  committedBlocks?: string[];
+  rawTail?: string;
 }
+
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
@@ -280,6 +283,30 @@ export default function Home() {
                 console.error("Failed to parse retrieved chunks list", e);
               }
             }
+            // Check if incremental tuned block commit event is received
+            else if (trimmedContent.startsWith("block_commit:")) {
+              try {
+                const commitPayload = JSON.parse(trimmedContent.slice(13));
+                setMessages((prev) =>
+                  prev.map((msg) => {
+                    if (msg.id !== messageId) return msg;
+                    const updatedCommitted = [...(msg.committedBlocks || [])];
+                    const blockIdx = (commitPayload.id || 1) - 1;
+                    updatedCommitted[blockIdx] = commitPayload.content;
+
+                    return {
+                      ...msg,
+                      isThinking: false,
+                      committedBlocks: updatedCommitted,
+                      rawTail: "",
+                      text: updatedCommitted.join("\n\n"),
+                    };
+                  })
+                );
+              } catch (e) {
+                console.error("Failed to parse block_commit event", e);
+              }
+            }
             // Check if final presentation-transformed markdown output is received
             else if (trimmedContent.startsWith("final_transformed:")) {
               try {
@@ -300,20 +327,25 @@ export default function Home() {
               }
             }
 
-            // Normal token content (preserve space)
+            // Normal active token content delta
             else {
               setMessages((prev) =>
-                prev.map((msg) =>
-                  msg.id === messageId
-                    ? {
-                      ...msg,
-                      isThinking: false,
-                      text: msg.text + rawContent,
-                    }
-                    : msg
-                )
+                prev.map((msg) => {
+                  if (msg.id !== messageId) return msg;
+                  const currentTail = msg.rawTail || "";
+                  const newTail = currentTail + rawContent;
+                  const committedText = (msg.committedBlocks || []).join("\n\n");
+                  const fullText = committedText ? `${committedText}\n\n${newTail}` : newTail;
+                  return {
+                    ...msg,
+                    isThinking: false,
+                    rawTail: newTail,
+                    text: fullText,
+                  };
+                })
               );
             }
+
 
           }
         }
