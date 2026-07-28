@@ -16,8 +16,10 @@ langchain-huggingface
 rank_bm25
 langsmith
 redis
+huggingface-hub<0.25.0
 gradio==4.44.0
 spaces
+
 
 
 
