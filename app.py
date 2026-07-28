@@ -37,5 +37,12 @@ with demo:
 # Expose `app` at module level for Hugging Face Space runner
 app = gr.mount_gradio_app(fastapi_app, demo, path="/ui")
 
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 7860))
+    # Run single-process uvicorn event loop to keep server alive
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
+
 
 
