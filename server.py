@@ -72,6 +72,19 @@ async def startup_event():
     # Pre-warm AdvancedRAGPipeline (triggering HuggingFaceEmbeddings model load)
     asyncio.create_task(asyncio.to_thread(AdvancedRAGPipeline))
 
+@app.get("/")
+async def root():
+    return {
+        "status": "online",
+        "service": "Advanced Cognitive RAG Hub API",
+        "version": "1.0.0",
+        "endpoints": ["/upload", "/chat", "/warmup", "/health"]
+    }
+
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
 @app.get("/warmup")
 async def warmup_pipeline():
     # Trigger model load in background if not already loaded

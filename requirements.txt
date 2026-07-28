@@ -16,3 +16,5 @@ langchain-huggingface
 rank_bm25
 langsmith
 redis
+gradio
+
