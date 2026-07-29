@@ -183,7 +183,7 @@ async def upload_file(
         is_append = True
     else:
         session_id = str(uuid.uuid4())
-        pipeline = AdvancedRAGPipeline()
+        pipeline = AdvancedRAGPipeline(session_id=session_id)
 
     # Write upload to temporary file
     with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as temp_file:
@@ -219,6 +219,24 @@ async def upload_file(
         if os.path.exists(temp_file_path):
             os.remove(temp_file_path)
         raise HTTPException(status_code=500, detail=f"Failed to index document: {str(e)}")
+
+@app.post("/api/reset_session")
+async def reset_session(session_id: str = Form(...)):
+    if session_id in sessions_db:
+        pipeline = sessions_db[session_id]
+        pipeline.cache.clear_session(session_id)
+        del sessions_db[session_id]
+
+    if session_id in sessions_temp_files:
+        temp_path = sessions_temp_files[session_id]
+        if os.path.exists(temp_path):
+            try:
+                os.remove(temp_path)
+            except Exception:
+                pass
+        del sessions_temp_files[session_id]
+
+    return {"status": "reset", "session_id": session_id}
 
 @app.post("/api/chat")
 async def chat_session(

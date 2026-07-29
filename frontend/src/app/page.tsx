@@ -93,7 +93,19 @@ export default function Home() {
   };
 
   // Reset active session
-  const resetSession = () => {
+  const resetSession = async () => {
+    if (sessionId) {
+      try {
+        const formData = new FormData();
+        formData.append("session_id", sessionId);
+        await fetch(`${API_BASE_URL}/api/reset_session`, {
+          method: "POST",
+          body: formData,
+        });
+      } catch (e) {
+        console.warn("Backend session reset request failed:", e);
+      }
+    }
     setUploadedFiles([]);
     setSessionId(null);
     setNodes([]);
@@ -108,6 +120,7 @@ export default function Home() {
       },
     ]);
   };
+
 
   // Upload and Index Document via FastAPI
   const processAndUploadFile = async (selectedFile: File) => {

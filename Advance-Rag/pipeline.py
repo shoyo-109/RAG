@@ -15,7 +15,7 @@ from langchain_openai import ChatOpenAI
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_qdrant import QdrantVectorStore
 from qdrant_client import QdrantClient
-from qdrant_client.http.models import Distance, VectorParams
+from qdrant_client.http.models import Distance, VectorParams, Filter, FieldCondition, MatchValue
 from langchain_community.retrievers import BM25Retriever
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.embeddings import Embeddings
@@ -111,7 +111,8 @@ class LowContextError(Exception):
     pass
 
 class AdvancedRAGPipeline:
-    def __init__(self, cache_threshold: float = 0.95):
+    def __init__(self, cache_threshold: float = 0.95, session_id: Optional[str] = None):
+        self.session_id = session_id or "global"
         # 1. Initialize SentenceTransformers Embeddings with Cache-Backed Storage
         global _shared_embeddings
         with _embeddings_lock:
@@ -219,8 +220,8 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
 """
         )
 
-        # 7. Dynamic Cache system
-        self.cache = RAGCache(embeddings=self.embeddings, similarity_threshold=cache_threshold)
+        # 7. Dynamic Cache system (scoped by session_id)
+        self.cache = RAGCache(embeddings=self.embeddings, similarity_threshold=cache_threshold, session_id=self.session_id)
 
         # 8. Operational Reliability & Security Layers
         self.input_sanitizer = InputSanitizer()
@@ -269,26 +270,33 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
     def add_documents(self, raw_documents: List[Document]):
         """
         Adds documents to the pipeline by performing semantic chunking, 
-        indexing into Chroma, and rebuilding/updating the BM25 index.
+        indexing into Qdrant Cloud with session_id metadata tag, and rebuilding BM25 index.
         """
         if not raw_documents:
             return
 
         # Perform semantic chunking
         chunks = self.chunker.split_documents(raw_documents)
-        logger.info(f"Semantically chunked {len(raw_documents)} documents into {len(chunks)} chunks.")
+        logger.info(f"Semantically chunked {len(raw_documents)} documents into {len(chunks)} chunks for session '{self.session_id}'.")
+
+        # Tag every chunk with session_id to guarantee multi-tenant session isolation
+        for chunk in chunks:
+            if not isinstance(chunk.metadata, dict):
+                chunk.metadata = {}
+            chunk.metadata["session_id"] = self.session_id
 
         # Index in Qdrant vector store
         self.vector_store.add_documents(chunks)
         
-        # Append to our document pool and rebuild BM25 retriever
+        # Append to document pool and rebuild BM25 retriever
         self.all_chunks.extend(chunks)
         self.bm25_retriever = BM25Retriever.from_documents(self.all_chunks, k=5)
         
         # Invalidate PCA projections cache (Optimization)
         self._cached_projections = None
         
-        logger.info("BM25 index successfully rebuilt with updated knowledge base.")
+        logger.info(f"BM25 index successfully rebuilt for session '{self.session_id}'.")
+
 
     def add_text_document(self, text: str, metadata: Optional[dict] = None):
         doc = Document(page_content=text, metadata=metadata or {})
@@ -298,22 +306,34 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         """
         Custom hybrid search ensembler combining Qdrant Vector Search and BM25 search
         using Reciprocal Rank Fusion (RRF) with equal (50-50) weights.
+        Enforces strict multi-tenant session isolation using Qdrant payload filters.
         
         Optimization: uses precomputed query embedding to avoid double embedding calculations.
         Returns: (List[Document], max_rrf_score, top_vector_score)
         """
-        if not self.all_chunks:
+        session_chunks = [doc for doc in self.all_chunks if doc.metadata.get("session_id") == self.session_id]
+        if not session_chunks:
             return [], 0.0, 0.0
 
-        # 1. Fetch candidates from Vector search by precomputed embedding (saves 50-150ms)
-        vector_results = self.vector_store.similarity_search_with_score_by_vector(query_embedding.tolist(), k=top_k)
-        vector_docs = [doc for doc, _ in vector_results]
+        # 1. Fetch candidates from Vector search with session_id payload filter
+        search_filter = Filter(must=[FieldCondition(key="metadata.session_id", match=MatchValue(value=self.session_id))])
+        try:
+            vector_results = self.vector_store.similarity_search_with_score_by_vector(
+                query_embedding.tolist(), k=top_k, filter=search_filter
+            )
+        except Exception:
+            # Fallback if filter keyword varies in store wrapper
+            vector_results = self.vector_store.similarity_search_with_score_by_vector(query_embedding.tolist(), k=top_k)
+            vector_results = [(doc, score) for doc, score in vector_results if doc.metadata.get("session_id") == self.session_id]
+
+        vector_docs = [doc for doc, _ in vector_results if doc.metadata.get("session_id") == self.session_id]
         top_vector_score = vector_results[0][1] if vector_results else 0.0
 
-        # 2. Fetch candidates from BM25 search
+        # 2. Fetch candidates from BM25 search and filter by session_id
         bm25_docs = []
         if self.bm25_retriever:
-            bm25_docs = self.bm25_retriever.invoke(query)
+            raw_bm25 = self.bm25_retriever.invoke(query)
+            bm25_docs = [doc for doc in raw_bm25 if doc.metadata.get("session_id") == self.session_id]
 
         # RRF scoring dict
         rrf_scores = {}
@@ -340,24 +360,39 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
     async def custom_hybrid_search_async(self, query: str, query_embedding: np.ndarray, top_k: int = 10, rrf_k: int = 60) -> Tuple[List[Document], float, float]:
         """
         Asynchronous custom hybrid search. Runs Vector and BM25 searches in parallel threads.
+        Enforces strict multi-tenant session isolation using Qdrant payload filters.
         
         Optimization: concurrent retrieval + precomputed query embedding.
         Returns: (List[Document], max_rrf_score, top_vector_score)
         """
-        if not self.all_chunks:
+        session_chunks = [doc for doc in self.all_chunks if doc.metadata.get("session_id") == self.session_id]
+        if not session_chunks:
             return [], 0.0, 0.0
 
+        search_filter = Filter(must=[FieldCondition(key="metadata.session_id", match=MatchValue(value=self.session_id))])
+
+        def _run_vector_search():
+            try:
+                return self.vector_store.similarity_search_with_score_by_vector(
+                    query_embedding.tolist(), k=top_k, filter=search_filter
+                )
+            except Exception:
+                res = self.vector_store.similarity_search_with_score_by_vector(query_embedding.tolist(), k=top_k)
+                return [(doc, score) for doc, score in res if doc.metadata.get("session_id") == self.session_id]
+
+        def _run_bm25_search():
+            if self.bm25_retriever:
+                raw_bm25 = self.bm25_retriever.invoke(query)
+                return [doc for doc in raw_bm25 if doc.metadata.get("session_id") == self.session_id]
+            return []
+
         # Run vector search and BM25 search concurrently in threadpool to prevent blocking the event loop
-        tasks = [
-            asyncio.to_thread(self.vector_store.similarity_search_with_score_by_vector, query_embedding.tolist(), k=top_k)
-        ]
-        if self.bm25_retriever:
-            tasks.append(asyncio.to_thread(self.bm25_retriever.invoke, query))
-        else:
-            tasks.append(asyncio.to_thread(lambda: []))
-            
-        vector_results, bm25_docs = await asyncio.gather(*tasks)
-        vector_docs = [doc for doc, _ in vector_results]
+        vector_results, bm25_docs = await asyncio.gather(
+            asyncio.to_thread(_run_vector_search),
+            asyncio.to_thread(_run_bm25_search)
+        )
+        
+        vector_docs = [doc for doc, _ in vector_results if doc.metadata.get("session_id") == self.session_id]
         top_vector_score = vector_results[0][1] if vector_results else 0.0
 
         # RRF scoring dict
@@ -380,6 +415,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         sorted_docs = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
         max_score = sorted_docs[0][1] if sorted_docs else 0.0
         return [doc_map[doc_key] for doc_key, _ in sorted_docs[:top_k]], max_score, top_vector_score
+
 
     def rewrite_query(self, question: str) -> str:
         """Self-healing: Rewrites a poor query to improve retrieval scores."""
