@@ -5,6 +5,17 @@ import ReactMarkdown from "react-markdown";
 import styles from "./page.module.css";
 import EmbeddingSpace, { ChunkNode } from "./EmbeddingSpace";
 
+interface MessageAction {
+  label: string;
+  action: string;
+}
+
+interface MessageError {
+  error: string;
+  message: string;
+  actions?: MessageAction[];
+}
+
 interface Message {
   id: string;
   sender: "user" | "ai";
@@ -13,8 +24,27 @@ interface Message {
   isThinking?: boolean;
   committedBlocks?: string[];
   rawTail?: string;
+  errorObj?: MessageError;
 }
 
+const parseErrorJson = (text: string, existingError?: MessageError): MessageError | null => {
+  if (existingError) return existingError;
+  if (!text) return null;
+  const trimmed = text.trim();
+  if (trimmed.startsWith("{") && trimmed.includes('"error"')) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (parsed && (parsed.error || parsed.message)) {
+        return {
+          error: parsed.error || "Engine Warning",
+          message: parsed.message || "An issue occurred in the cognitive pipeline.",
+          actions: parsed.actions || [],
+        };
+      }
+    } catch (e) {}
+  }
+  return null;
+};
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 
@@ -41,6 +71,28 @@ export default function Home() {
   const [input, setInput] = useState<string>("");
   const [isChatting, setIsChatting] = useState<boolean>(false);
   const [dragActive, setDragActive] = useState<boolean>(false);
+
+  const handleActionClick = (action: string, label: string) => {
+    if (action === "web_search") {
+      setInput("Search web for more details on this subject...");
+    } else if (action === "suggest") {
+      setInput("Could you explain this topic in more detail?");
+    } else if (action === "escalate") {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `system-${Date.now()}`,
+          sender: "ai",
+          text: "ℹ️ Escalation requested: Our support team has been notified. You can also rephrase your question or upload additional documents.",
+        },
+      ]);
+    } else if (action === "retry") {
+      const lastUserMsg = [...messages].reverse().find((m) => m.sender === "user");
+      if (lastUserMsg) {
+        setInput(lastUserMsg.text);
+      }
+    }
+  };
 
   // Trigger warmup request when page loads
   useEffect(() => {
@@ -87,7 +139,7 @@ export default function Home() {
     }
   };
 
-  // Trigger File Browse Dialog
+  // Trigger Browse Dialog
   const triggerBrowse = () => {
     fileInputRef.current?.click();
   };
@@ -296,6 +348,49 @@ export default function Home() {
                 console.error("Failed to parse retrieved chunks list", e);
               }
             }
+            // Check if error payload is received with error: prefix
+            else if (trimmedContent.startsWith("error:")) {
+              const errPayload = trimmedContent.slice(6);
+              let parsedErr: MessageError;
+              try {
+                parsedErr = JSON.parse(errPayload);
+              } catch (e) {
+                parsedErr = { error: "Engine Error", message: errPayload };
+              }
+              setMessages((prev) =>
+                prev.map((msg) =>
+                  msg.id === messageId
+                    ? {
+                        ...msg,
+                        isThinking: false,
+                        errorObj: parsedErr,
+                        text: parsedErr.message || "An error occurred.",
+                      }
+                    : msg
+                )
+              );
+            }
+            // Check if raw JSON error payload was received directly
+            else if (trimmedContent.startsWith('{"error"')) {
+              try {
+                const parsedErr = JSON.parse(trimmedContent);
+                if (parsedErr && parsedErr.error) {
+                  setMessages((prev) =>
+                    prev.map((msg) =>
+                      msg.id === messageId
+                        ? {
+                            ...msg,
+                            isThinking: false,
+                            errorObj: parsedErr,
+                            text: parsedErr.message || "An error occurred.",
+                          }
+                        : msg
+                    )
+                  );
+                  continue;
+                }
+              } catch (e) {}
+            }
             // Check if incremental tuned block commit event is received
             else if (trimmedContent.startsWith("block_commit:")) {
               try {
@@ -364,10 +459,15 @@ export default function Home() {
         }
       }
     } catch (err: any) {
+      const errObj: MessageError = {
+        error: "Connection Error",
+        message: err.message || "Failed to communicate with chat engine.",
+        actions: [{ label: "Retry Question", action: "retry" }]
+      };
       setMessages((prev) =>
         prev.map((msg) =>
           msg.id === messageId
-            ? { ...msg, isThinking: false, text: `⚠️ Error: ${err.message}` }
+            ? { ...msg, isThinking: false, errorObj: errObj, text: err.message || "An error occurred." }
             : msg
         )
       );
@@ -380,10 +480,8 @@ export default function Home() {
     <main className={styles.mainContainer}>
       <header className={styles.topHeader}>
         <div className={styles.headerTitle}>
-          {/* <span className={styles.logoBadge}>ADVANCED</span> */}
           <h1>Cognitive RAG Hub</h1>
         </div>
-        {/* <p className={styles.headerSubtitle}>Hybrid Search, Semantic Cache, Hallucination Verification & Embedding Spaces</p> */}
       </header>
 
       {/* Tab Selector */}
@@ -604,24 +702,66 @@ export default function Home() {
                         </div>
                       )}
 
-                      {msg.isThinking && !msg.text && (
+                      {msg.isThinking && !msg.text && !msg.errorObj && (
                         <div className={styles.thinkingSkeleton}>
                           <div className={`shimmer ${styles.skeletonLineLong}`}></div>
                           <div className={`shimmer ${styles.skeletonLineShort}`}></div>
                         </div>
                       )}
 
-                      {msg.text && (
-                        <div className={styles.bubbleText}>
-                          {msg.text.includes("[WARNING: Response failed hallucination filter]") || msg.text.includes("⚠️ [WARNING:") ? (
-                            <span className={styles.warningText}>
-                              <ReactMarkdown>{msg.text}</ReactMarkdown>
-                            </span>
-                          ) : (
-                            <ReactMarkdown>{msg.text}</ReactMarkdown>
-                          )}
-                        </div>
-                      )}
+                      {(() => {
+                        const err = parseErrorJson(msg.text, msg.errorObj);
+                        if (err) {
+                          return (
+                            <div className={styles.errorCardContainer}>
+                              <div className={styles.errorCardHeader}>
+                                <span className={styles.errorCardIcon}>⚠️</span>
+                                <span className={styles.errorCardTitle}>
+                                  {err.error === "LowContextError"
+                                    ? "Low Context Warning"
+                                    : err.error || "Engine Notice"}
+                                </span>
+                              </div>
+                              <div className={styles.errorCardMessage}>
+                                {err.message}
+                              </div>
+                              {err.actions && err.actions.length > 0 && (
+                                <div className={styles.errorCardActions}>
+                                  <p className={styles.actionsPrompt}>Suggested Actions:</p>
+                                  <div className={styles.actionButtonsRow}>
+                                    {err.actions.map((act, idx) => (
+                                      <button
+                                        key={idx}
+                                        type="button"
+                                        className={styles.actionBtn}
+                                        onClick={() => handleActionClick(act.action, act.label)}
+                                      >
+                                        {act.label}
+                                      </button>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        }
+
+                        if (msg.text) {
+                          return (
+                            <div className={styles.bubbleText}>
+                              {msg.text.includes("[WARNING: Response failed hallucination filter]") || msg.text.includes("⚠️ [WARNING:") ? (
+                                <span className={styles.warningText}>
+                                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+                                </span>
+                              ) : (
+                                <ReactMarkdown>{msg.text}</ReactMarkdown>
+                              )}
+                            </div>
+                          );
+                        }
+
+                        return null;
+                      })()}
                     </div>
 
                     {msg.sender === "user" && (
@@ -667,7 +807,6 @@ export default function Home() {
               ) : (
                 <div className={styles.emptyVisualizer}>
                   <div className={styles.visualizerPlaceholderIcon}>🌐</div>
-                  <p className={styles.visualizerPlaceholderText}>Upload a document in the Conversation tab to project chunks in 3D space</p>
                 </div>
               )}
             </div>

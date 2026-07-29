@@ -706,7 +706,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                         {"label": "Did you mean to ask a different question?", "action": "suggest"}
                     ]
                 }
-                yield f"data: {json.dumps(fallback_response)}\n\n"
+                yield f"data: error:{json.dumps(fallback_response)}\n\n"
                 return
 
         context_str = self._build_hierarchical_context(relevant_docs)
