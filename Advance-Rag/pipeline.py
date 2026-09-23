@@ -188,29 +188,23 @@ class AdvancedRAGPipeline:
 
         # 5. Initialize Primary Nvidia Instruct LLM (Fast Latency RAG Model)
         self.primary_llm = ChatOpenAI(
-            model_name="meta/llama-3.3-70b-instruct",
+            model_name="nvidia/nemotron-3-ultra-550b-a55b",
             base_url="https://integrate.api.nvidia.com/v1",
-            api_key=os.getenv("NVIDIA_API_KEY"),
+            api_key=os.getenv("NVIDIA_API_KEY") or os.getenv("NEMOTRON_API_KEY"),
             temperature=0.3,
             timeout=180.0
         )
 
-        # 6. Initialize Cognitive Nvidia Nemotron 550B Reasoning LLM (Complex Cognitive Reasoning)
+        # 6. Initialize Cognitive Nvidia LLM (Complex Cognitive Reasoning)
         self.cognitive_llm = ChatOpenAI(
             model_name="nvidia/nemotron-3-ultra-550b-a55b",
             base_url="https://integrate.api.nvidia.com/v1",
-            api_key=os.getenv("NVIDIA_API_KEY"),
-            temperature=0.7,
-            top_p=0.95,
-            max_tokens=16384,
-            extra_body={
-                "chat_template_kwargs": {"enable_thinking": True},
-                "reasoning_budget": 2048
-            }
+            api_key=os.getenv("NVIDIA_API_KEY") or os.getenv("NEMOTRON_API_KEY"),
+            temperature=0.5,
+            timeout=180.0
         )
 
-
-        # Fallback LLM uses primary Nvidia model (completely removing OpenAI dependency)
+        # Fallback LLM uses primary Nvidia model
         self.fallback_llm = self.primary_llm
 
         # Prompts for RAG and Hallucination Filter
@@ -477,8 +471,8 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                 logger.info(f"Intent Classifier: Routing to Cognitive Reasoning Model (Nemotron) based on pattern '{pattern}'")
                 return self.cognitive_llm, "cognitive_nemotron"
                 
-        logger.info("Intent Classifier: Routing to Fast Primary Model (Llama-3.3-70b)")
-        return self.primary_llm, "primary_llama70b"
+        logger.info("Intent Classifier: Routing to Fast Primary Model (Nemotron-3-Ultra-550B)")
+        return self.primary_llm, "primary_nemotron"
 
     def _build_hierarchical_context(self, docs: List[Document]) -> str:
         """

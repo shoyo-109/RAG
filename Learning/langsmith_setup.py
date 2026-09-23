@@ -20,7 +20,7 @@ os.environ["LANGSMITH_TRACING"] = "true"
 def demo_basic():
     # Langsmith tracing handsOn
     llm = ChatOpenAI(
-        model_name="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        model_name="nvidia/nemotron-3-ultra-550b-a55b",
         base_url="https://integrate.api.nvidia.com/v1",
         api_key=os.getenv("NVIDIA_API_KEY"),
         temperature=0.6,
@@ -46,7 +46,7 @@ def demo_basic():
 def demo_trace_with_metadata(user_id: str, request_type: str):
 
     llm = ChatOpenAI(
-        model_name="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+        model_name="nvidia/nemotron-3-ultra-550b-a55b",
         base_url="https://integrate.api.nvidia.com/v1",
         api_key=os.getenv("NVIDIA_API_KEY"),
         temperature=0.6,

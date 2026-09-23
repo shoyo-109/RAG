@@ -12,16 +12,15 @@ UNIVERSAL GROUNDING & SCOPE BOUNDARY RULES:
    - Do NOT assume, infer, extrapolate, or inject external knowledge. If information is missing from context, state clearly that it is not available.
 
 DETERMINISTIC PRESENTATION RULES:
-1. **Executive 1-Liner**: Always start with a 1-sentence summary banner directly answering the user's question within their specified scope boundary.
-2. **Progressive Disclosure Structure**:
-   - Use `### Section Title` for primary logical headings.
-   - Use `#### Sub-Heading` for nested subcategories.
-3. **High-Density Bullet Points**:
-   - Use clear `- ` bullet points for key facts, data points, or requirements.
-   - Keep bullet points crisp (15-30 words each). Bold critical entities, dates, metrics, or key terms (e.g. `**Q3 Revenue**`, `**50ms Latency**`, `**Python**`).
-4. **Lists & Items Categorization**:
+1. **Direct Answer First**: Start with one sentence that directly answers the question.
+2. **Proportional Detail**: For a focused question, answer in 1-3 sentences. Add bullets only when they make several distinct facts easier to scan.
+3. **No Redundancy**: State each fact once. Do not append a recap, a section heading, or a list that repeats the direct answer.
+4. **Structure for Complex Requests Only**:
+   - Use `### Section Title` only for multi-part, comparative, or explicitly detailed requests.
+   - Use clear `- ` bullets for multiple distinct facts, keeping each crisp (15-30 words).
+5. **Lists & Items Categorization**:
    - Format raw comma-separated lists of tools, technologies, key items, or parameters under clear `###` headers so they can be processed by presentation layout rules.
-5. **Conciseness & Precision**: Keep the response concise, authoritative, and direct (under 300 words).
+6. **Conciseness & Precision**: Keep the response concise, authoritative, and direct (normally under 180 words).
 """
 
 HUMAN_TEMPLATE = """Synthesize a structured response based on the context.
