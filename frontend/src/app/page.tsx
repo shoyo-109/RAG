@@ -219,8 +219,15 @@ export default function Home() {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.detail || "Upload failed");
+        let errorMsg = "Upload failed";
+        try {
+          const errorData = await response.json();
+          errorMsg = errorData.detail || errorData.message || errorMsg;
+        } catch {
+          const rawText = await response.text().catch(() => "");
+          errorMsg = rawText || `Server error (${response.status})`;
+        }
+        throw new Error(errorMsg);
       }
 
       const data = await response.json();

@@ -142,57 +142,67 @@ class AdvancedRAGPipeline:
         qdrant_url = os.getenv("QDRANT_ENDPOINT") or os.getenv("QDRANT_URL")
         qdrant_api_key = os.getenv("QDRANT_API") or os.getenv("QDRANT_API_KEY")
 
-        if qdrant_url and qdrant_api_key:
+        qdrant_success = False
+        collection_name = "advanced_rag_collection"
 
+        if qdrant_url and qdrant_api_key:
             try:
                 self.qdrant_client = QdrantClient(
                     url=qdrant_url,
                     api_key=qdrant_api_key,
                 )
+                if not self.qdrant_client.collection_exists(collection_name):
+                    logger.info(f"Creating Qdrant collection '{collection_name}' with 384 dimensions...")
+                    self.qdrant_client.create_collection(
+                        collection_name=collection_name,
+                        vectors_config=VectorParams(size=384, distance=Distance.COSINE),
+                    )
+                self.vector_store = QdrantVectorStore(
+                    client=self.qdrant_client,
+                    collection_name=collection_name,
+                    embedding=self.embeddings,
+                )
+                qdrant_success = True
             except Exception as e:
-                logger.warning(f"Failed to connect to Qdrant Cloud ({e}), falling back to in-memory Qdrant Client.")
-                self.qdrant_client = QdrantClient(location=":memory:")
-        else:
-            logger.warning("Qdrant Cloud credentials missing. Initializing in-memory Qdrant Client.")
-            self.qdrant_client = QdrantClient(location=":memory:")
+                logger.warning(f"Failed to connect to Qdrant Cloud or initialize vector store ({e}), falling back to in-memory Qdrant Client.")
+                qdrant_success = False
 
-        collection_name = "advanced_rag_collection"
-        try:
+        if not qdrant_success:
+            logger.warning("Initializing in-memory Qdrant Client fallback.")
+            self.qdrant_client = QdrantClient(location=":memory:")
             if not self.qdrant_client.collection_exists(collection_name):
-                logger.info(f"Creating Qdrant collection '{collection_name}' with 384 dimensions...")
                 self.qdrant_client.create_collection(
                     collection_name=collection_name,
                     vectors_config=VectorParams(size=384, distance=Distance.COSINE),
                 )
-        except Exception as e:
-            logger.warning(f"Error checking/creating Qdrant collection: {e}")
-
-        self.vector_store = QdrantVectorStore(
-            client=self.qdrant_client,
-            collection_name=collection_name,
-            embedding=self.embeddings,
-        )
+            self.vector_store = QdrantVectorStore(
+                client=self.qdrant_client,
+                collection_name=collection_name,
+                embedding=self.embeddings,
+            )
 
 
         # 4. In-memory document storage for rebuilding BM25
         self.all_chunks: List[Document] = []
         self.bm25_retriever: Optional[BM25Retriever] = None
 
-        # 5. Initialize Primary Nvidia Instruct LLM (Sub-1.5s Fast Latency)
+        # 5. Initialize Primary Nvidia Instruct LLM (Fast Latency RAG Model)
         self.primary_llm = ChatOpenAI(
-            model_name="meta/llama-3.1-70b-instruct",
+            model_name="meta/llama-3.3-70b-instruct",
             base_url="https://integrate.api.nvidia.com/v1",
             api_key=os.getenv("NVIDIA_API_KEY"),
             temperature=0.3,
-            timeout=15.0
+            timeout=180.0
         )
 
-        # 6. Initialize Cognitive Nvidia Nemotron Reasoning LLM (Complex Cognitive Reasoning)
+        # 6. Initialize Cognitive Nvidia Nemotron 550B Reasoning LLM (Complex Cognitive Reasoning)
         self.cognitive_llm = ChatOpenAI(
-            model_name="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+            model_name="nvidia/nemotron-3-ultra-550b-a55b",
             base_url="https://integrate.api.nvidia.com/v1",
             api_key=os.getenv("NVIDIA_API_KEY"),
-            temperature=0.3,
+            temperature=0.7,
+            top_p=0.95,
+            max_tokens=16384,
             extra_body={
                 "chat_template_kwargs": {"enable_thinking": True},
                 "reasoning_budget": 2048
@@ -346,7 +356,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         for r_idx, docs in enumerate(retrievers_results):
             w = weight[r_idx]
             for rank_idx, doc in enumerate(docs):
-                doc_key = doc.page_content
+                doc_key = doc.metadata.get("element_id") if (hasattr(doc, "metadata") and isinstance(doc.metadata, dict) and doc.metadata.get("element_id")) else (doc.metadata.get("id") if (hasattr(doc, "metadata") and isinstance(doc.metadata, dict) and doc.metadata.get("id")) else f"{hash(doc.page_content)}_{id(doc)}")
                 doc_map[doc_key] = doc
                 # RRF Score formula: weight * (1.0 / (rrf_k + rank))
                 score = w * (1.0 / (rrf_k + (rank_idx + 1)))
@@ -406,7 +416,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
         for r_idx, docs in enumerate(retrievers_results):
             w = weight[r_idx]
             for rank_idx, doc in enumerate(docs):
-                doc_key = doc.page_content
+                doc_key = doc.metadata.get("element_id") if (hasattr(doc, "metadata") and isinstance(doc.metadata, dict) and doc.metadata.get("element_id")) else (doc.metadata.get("id") if (hasattr(doc, "metadata") and isinstance(doc.metadata, dict) and doc.metadata.get("id")) else f"{hash(doc.page_content)}_{id(doc)}")
                 doc_map[doc_key] = doc
                 score = w * (1.0 / (rrf_k + (rank_idx + 1)))
                 rrf_scores[doc_key] = rrf_scores.get(doc_key, 0.0) + score
@@ -467,7 +477,7 @@ Respond ONLY with "YES" if the answer is fully supported by the context, or "NO"
                 logger.info(f"Intent Classifier: Routing to Cognitive Reasoning Model (Nemotron) based on pattern '{pattern}'")
                 return self.cognitive_llm, "cognitive_nemotron"
                 
-        logger.info("Intent Classifier: Routing to Fast Primary Model (Llama-3.1-70b)")
+        logger.info("Intent Classifier: Routing to Fast Primary Model (Llama-3.3-70b)")
         return self.primary_llm, "primary_llama70b"
 
     def _build_hierarchical_context(self, docs: List[Document]) -> str:

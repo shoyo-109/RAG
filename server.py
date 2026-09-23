@@ -176,25 +176,24 @@ async def upload_file(
     if ext in [".docx", ".xlsx", ".pptx"] and not header_bytes.startswith(b"PK\x03\x04"):
         raise HTTPException(status_code=400, detail=f"Security Error: File content does not match binary format for '{ext}'.")
 
-    # Check if appending to an existing session
-    is_append = False
-    if session_id and session_id in sessions_db:
-        pipeline = sessions_db[session_id]
-        is_append = True
-    else:
-        session_id = str(uuid.uuid4())
-        pipeline = AdvancedRAGPipeline(session_id=session_id)
-
-    # Write upload to temporary file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as temp_file:
-        temp_file.write(content)
-        temp_file_path = temp_file.name
-
-
+    temp_file_path = None
     try:
+        # Check if appending to an existing session
+        is_append = False
+        if session_id and session_id in sessions_db:
+            pipeline = sessions_db[session_id]
+            is_append = True
+        else:
+            session_id = str(uuid.uuid4())
+            pipeline = AdvancedRAGPipeline(session_id=session_id)
+
+        # Write upload to temporary file
+        with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as temp_file:
+            temp_file.write(content)
+            temp_file_path = temp_file.name
+
         # Load document using production-grade PyPDFLoader / TextLoader
         docs = load_document(temp_file_path)
-
 
         # Build or add to Advanced RAG pipeline for this session
         pipeline.add_documents(docs)
@@ -216,7 +215,7 @@ async def upload_file(
             "is_append": is_append
         }
     except Exception as e:
-        if os.path.exists(temp_file_path):
+        if temp_file_path and os.path.exists(temp_file_path):
             os.remove(temp_file_path)
         raise HTTPException(status_code=500, detail=f"Failed to index document: {str(e)}")
 

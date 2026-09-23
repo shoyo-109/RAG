@@ -13,3 +13,13 @@ chatgpt_key.py
 /.embeddings_cache
 /frontend/Referance Photos
 
+architecture.md
+evaluation/results/run_2026-08-13_00-42-37.json
+flow.md
+test_rag.py
+
+# Test files and directories
+test_*.py
+*_test.py
+tests/
+test/
