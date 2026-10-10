@@ -1,0 +1,505 @@
+{
+  "metadata": {
+    "phase": "PhaseA",
+    "title": "Phase A \u2014 Evidence-Aware Retrieval: Information Requirement Decomposition & Semantic Neighborhood Accessibility",
+    "corpus": "The Comedy of Errors (203 chunks: C0\u2013C202)",
+    "timestamp": "2026-10-06T19:05:33.624619",
+    "control_gate": "PASSED",
+    "neighborhood_sizes_tested": [
+      3,
+      5,
+      10
+    ]
+  },
+  "retrieval_budget_accounting": {
+    "A0_baseline": {
+      "queries_per_question": 4,
+      "total_queries_suite": 24,
+      "mean_candidate_pool_size": 55.166666666666664
+    },
+    "A1_evidence_decomposition": {
+      "queries_per_question": "4 to 6 (2-3 ERs x 2)",
+      "total_queries_suite": 28,
+      "mean_candidate_pool_size": 55.5
+    }
+  },
+  "a0_baseline_control": {
+    "candidate_recall": 0.85,
+    "final_recall_15": 0.7,
+    "ndcg_10": 0.4849962170994588,
+    "mrr": 0.3685185185185185,
+    "mean_pool_size": 55.166666666666664
+  },
+  "a1_evidence_decomposition": {
+    "candidate_recall": 0.75,
+    "primary_evidence_recall": 0.7777777777777778,
+    "supporting_evidence_recall": 0.7272727272727273,
+    "mean_pool_size": 55.5,
+    "total_retrieval_calls": 28
+  },
+  "a2_semantic_neighborhood_expansion": {
+    "3": {
+      "total": 0.8,
+      "primary": 0.7777777777777778,
+      "supporting": 0.8181818181818182,
+      "new_recovered": 1,
+      "mean_nb_size": 22.333333333333332
+    },
+    "5": {
+      "total": 0.8,
+      "primary": 0.7777777777777778,
+      "supporting": 0.8181818181818182,
+      "new_recovered": 1,
+      "mean_nb_size": 29.5
+    },
+    "10": {
+      "total": 0.85,
+      "primary": 0.7777777777777778,
+      "supporting": 0.9090909090909091,
+      "new_recovered": 2,
+      "mean_nb_size": 50.5
+    }
+  },
+  "a3_filtered_final_results": {
+    "final_recall_15": 0.6805555555555557,
+    "ndcg_10": 0.4853783560035074,
+    "mean_ce_pool_size": 65.5,
+    "mean_ce_latency_ms": 2717.0516649881997
+  },
+  "er_derivation_provenance": {
+    "Q01": [
+      {
+        "er_id": "Q01_ER1",
+        "type": "IDENTITY_ORIGIN",
+        "derived_from_question": "Derived from 'Who is Aegeon and what is his origin?' -> identity/origin component",
+        "intent": "Aegeon origin Syracusan merchant identity profession travel history"
+      },
+      {
+        "er_id": "Q01_ER2",
+        "type": "FAMILY_BACKGROUND",
+        "derived_from_question": "Derived from 'Who is Aegeon and what is his origin?' -> family background component",
+        "intent": "Aegeon marriage wife Emilia birth of twin sons Syracusan family"
+      }
+    ],
+    "Q02": [
+      {
+        "er_id": "Q02_ER1",
+        "type": "STATUTE_DECREE",
+        "derived_from_question": "Derived from 'Why was Aegeon sentenced to death in Ephesus?' -> legal decree component",
+        "intent": "Ephesus law Syracusan merchants death penalty fine thousand marks ransom"
+      },
+      {
+        "er_id": "Q02_ER2",
+        "type": "SENTENCING_FINANCIAL",
+        "derived_from_question": "Derived from 'Why was Aegeon sentenced to death in Ephesus?' -> financial ransom/sentencing component",
+        "intent": "Aegeon inability to pay ransom hundred marks estate Duke Solinus death sentence execution"
+      }
+    ],
+    "Q03": [
+      {
+        "er_id": "Q03_ER1",
+        "type": "VISITOR_STATE",
+        "derived_from_question": "Derived from 'Why does Antipholus of Syracuse fail to recognize Adriana...' -> visitor stranger state component",
+        "intent": "Antipholus of Syracuse stranger visitor in Ephesus unaware of twin brother, bewildered lost in city"
+      },
+      {
+        "er_id": "Q03_ER2",
+        "type": "MARRIAGE_RELATIONSHIP",
+        "derived_from_question": "Derived from '...when she addresses him as her husband?' -> Adriana husband relationship component",
+        "intent": "Adriana wife married to Antipholus of Ephesus, domestic dispute dinner dinner invitation"
+      },
+      {
+        "er_id": "Q03_ER3",
+        "type": "MISTAKEN_ENCOUNTER",
+        "derived_from_question": "Derived from '...fail to recognize Adriana when she addresses him...' -> mistaken identity encounter component",
+        "intent": "Adriana addressing visiting Syracuse twin as husband, emotional monologue confusion soliloquy"
+      }
+    ],
+    "Q04": [
+      {
+        "er_id": "Q04_ER1",
+        "type": "TWIN_SONS_BIRTH",
+        "derived_from_question": "Derived from 'How did Aegeon come to have two pairs of identical twin sons...' -> twin sons birth component",
+        "intent": "Epidamnum birth of identical twin sons to Aegeon and Emilia at same hour"
+      },
+      {
+        "er_id": "Q04_ER2",
+        "type": "TWIN_SERVANTS_BUY",
+        "derived_from_question": "Derived from '...and twin servants?' -> twin servants acquisition component",
+        "intent": "Purchase of poor woman's identical twin boys as bond-servants to attend twin sons"
+      },
+      {
+        "er_id": "Q04_ER3",
+        "type": "SHIPWRECK_SEPARATION",
+        "derived_from_question": "Derived from 'How did Aegeon come to have...' -> family separation/shipwreck component",
+        "intent": "Tempest sea storm shipwreck bound to mast floating separation of parents and children"
+      }
+    ],
+    "Q05": [
+      {
+        "er_id": "Q05_ER1",
+        "type": "SYRACUSE_TWIN_DYNAMIC",
+        "derived_from_question": "Derived from 'How do Antipholus of Syracuse... differ in initial interactions with Dromio of Syracuse?' -> Syracuse master dynamic",
+        "intent": "Antipholus of Syracuse entrusts gold money to Dromio of Syracuse, gentle master servant banter sconce jesting"
+      },
+      {
+        "er_id": "Q05_ER2",
+        "type": "EPHESUS_TWIN_DYNAMIC",
+        "derived_from_question": "Derived from '...and Antipholus of Ephesus differ in initial interactions with Dromio of Syracuse?' -> Ephesus master dynamic",
+        "intent": "Antipholus of Ephesus encounters Dromio of Syracuse expecting money, locked out of house beating violence"
+      }
+    ],
+    "Q06": [
+      {
+        "er_id": "Q06_ER1",
+        "type": "GOLDSMITH_CHAIN_DELIVERY",
+        "derived_from_question": "Derived from '...what role does Angelo the goldsmith play in the debt dispute?' -> goldsmith chain delivery component",
+        "intent": "Angelo goldsmith delivers gold chain to Antipholus of Syracuse by mistake demanding payment"
+      },
+      {
+        "er_id": "Q06_ER2",
+        "type": "DEBT_DISPUTE_ARREST",
+        "derived_from_question": "Derived from 'Why is Antipholus of Ephesus arrested... in debt dispute?' -> arrest for debt component",
+        "intent": "Angelo demands 200 ducats from Antipholus of Ephesus who denies receiving chain, officer arrest for debt"
+      }
+    ]
+  },
+  "per_question_summary": [
+    {
+      "question_id": "Q01",
+      "initial_required_evidence": 2,
+      "a0_initial_recall_15": 1.0,
+      "a1_er_cand_recall": 1.0,
+      "neighborhood_recall": 1.0,
+      "filtered_pool_recall": 1.0,
+      "final_recall_15": 1.0,
+      "evidence_precision_15": 0.13333333333333333,
+      "mrr": 0.1111111111111111,
+      "ndcg_10": 0.4977677578363716,
+      "ndcg_15": 0.4977677578363716,
+      "ce_pool_size": 58,
+      "ce_latency_ms": 2490.2331829071045
+    },
+    {
+      "question_id": "Q02",
+      "initial_required_evidence": 4,
+      "a0_initial_recall_15": 0.75,
+      "a1_er_cand_recall": 0.75,
+      "neighborhood_recall": 1.0,
+      "filtered_pool_recall": 1.0,
+      "final_recall_15": 0.75,
+      "evidence_precision_15": 0.2,
+      "mrr": 1.0,
+      "ndcg_10": 0.7006757752708271,
+      "ndcg_15": 0.7006757752708271,
+      "ce_pool_size": 53,
+      "ce_latency_ms": 2392.08722114563
+    },
+    {
+      "question_id": "Q03",
+      "initial_required_evidence": 4,
+      "a0_initial_recall_15": 0.5,
+      "a1_er_cand_recall": 0.25,
+      "neighborhood_recall": 0.25,
+      "filtered_pool_recall": 0.25,
+      "final_recall_15": 0.25,
+      "evidence_precision_15": 0.06666666666666667,
+      "mrr": 0.2,
+      "ndcg_10": 0.34056279551822277,
+      "ndcg_15": 0.34056279551822277,
+      "ce_pool_size": 79,
+      "ce_latency_ms": 2913.005590438843
+    },
+    {
+      "question_id": "Q04",
+      "initial_required_evidence": 3,
+      "a0_initial_recall_15": 1.0,
+      "a1_er_cand_recall": 1.0,
+      "neighborhood_recall": 1.0,
+      "filtered_pool_recall": 1.0,
+      "final_recall_15": 1.0,
+      "evidence_precision_15": 0.2,
+      "mrr": 0.5,
+      "ndcg_10": 0.5684253783110057,
+      "ndcg_15": 0.6405907981213604,
+      "ce_pool_size": 86,
+      "ce_latency_ms": 3197.8797912597656
+    },
+    {
+      "question_id": "Q05",
+      "initial_required_evidence": 3,
+      "a0_initial_recall_15": 0.3333333333333333,
+      "a1_er_cand_recall": 0.6666666666666666,
+      "neighborhood_recall": 0.6666666666666666,
+      "filtered_pool_recall": 0.6666666666666666,
+      "final_recall_15": 0.3333333333333333,
+      "evidence_precision_15": 0.06666666666666667,
+      "mrr": 0.1111111111111111,
+      "ndcg_10": 0.2648449933190547,
+      "ndcg_15": 0.2648449933190547,
+      "ce_pool_size": 60,
+      "ce_latency_ms": 2712.2879028320312
+    },
+    {
+      "question_id": "Q06",
+      "initial_required_evidence": 4,
+      "a0_initial_recall_15": 0.75,
+      "a1_er_cand_recall": 1.0,
+      "neighborhood_recall": 1.0,
+      "filtered_pool_recall": 1.0,
+      "final_recall_15": 0.75,
+      "evidence_precision_15": 0.2,
+      "mrr": 0.3333333333333333,
+      "ndcg_10": 0.5399934357655625,
+      "ndcg_15": 0.5596255011228877,
+      "ce_pool_size": 57,
+      "ce_latency_ms": 2596.816301345825
+    }
+  ],
+  "evidence_stage_classifications": [
+    {
+      "question_id": "Q01",
+      "gold_chunk_id": "C4",
+      "role": "PRIMARY",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q01",
+      "gold_chunk_id": "C2",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q02",
+      "gold_chunk_id": "C2",
+      "role": "PRIMARY",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q02",
+      "gold_chunk_id": "C4",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q02",
+      "gold_chunk_id": "C10",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q02",
+      "gold_chunk_id": "C12",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": false,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": false,
+      "stage_classification": "STAGE_2_RERANKING_FAILURE"
+    },
+    {
+      "question_id": "Q03",
+      "gold_chunk_id": "C15",
+      "role": "PRIMARY",
+      "in_A0": false,
+      "in_A1": false,
+      "in_neighborhood": false,
+      "in_filtered": false,
+      "in_final": false,
+      "stage_classification": "STAGE_MISSING_ACCESSIBILITY_FAILURE"
+    },
+    {
+      "question_id": "Q03",
+      "gold_chunk_id": "C24",
+      "role": "PRIMARY",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q03",
+      "gold_chunk_id": "C29",
+      "role": "SUPPORTING",
+      "in_A0": false,
+      "in_A1": false,
+      "in_neighborhood": false,
+      "in_filtered": false,
+      "in_final": false,
+      "stage_classification": "STAGE_MISSING_ACCESSIBILITY_FAILURE"
+    },
+    {
+      "question_id": "Q03",
+      "gold_chunk_id": "C61",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": false,
+      "in_neighborhood": false,
+      "in_filtered": false,
+      "in_final": false,
+      "stage_classification": "STAGE_0_INITIAL_RETRIEVAL_FAILURE"
+    },
+    {
+      "question_id": "Q04",
+      "gold_chunk_id": "C4",
+      "role": "PRIMARY",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q04",
+      "gold_chunk_id": "C6",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": false,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q04",
+      "gold_chunk_id": "C8",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q05",
+      "gold_chunk_id": "C42",
+      "role": "PRIMARY",
+      "in_A0": false,
+      "in_A1": false,
+      "in_neighborhood": false,
+      "in_filtered": false,
+      "in_final": false,
+      "stage_classification": "STAGE_MISSING_ACCESSIBILITY_FAILURE"
+    },
+    {
+      "question_id": "Q05",
+      "gold_chunk_id": "C65",
+      "role": "PRIMARY",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": false,
+      "stage_classification": "STAGE_2_RERANKING_FAILURE"
+    },
+    {
+      "question_id": "Q05",
+      "gold_chunk_id": "C12",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q06",
+      "gold_chunk_id": "C105",
+      "role": "PRIMARY",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": true,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q06",
+      "gold_chunk_id": "C107",
+      "role": "PRIMARY",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": false,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q06",
+      "gold_chunk_id": "C147",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": false,
+      "in_filtered": true,
+      "in_final": true,
+      "stage_classification": "STAGE_3_FINAL_RECOVERY"
+    },
+    {
+      "question_id": "Q06",
+      "gold_chunk_id": "C155",
+      "role": "SUPPORTING",
+      "in_A0": true,
+      "in_A1": true,
+      "in_neighborhood": false,
+      "in_filtered": true,
+      "in_final": false,
+      "stage_classification": "STAGE_2_RERANKING_FAILURE"
+    }
+  ],
+  "target_autopsies": {
+    "C15": {
+      "question_id": "Q03",
+      "gold_chunk_id": "C15",
+      "role": "PRIMARY",
+      "in_A0": false,
+      "in_A1": false,
+      "in_neighborhood": false,
+      "in_filtered": false,
+      "in_final": false,
+      "stage_classification": "STAGE_MISSING_ACCESSIBILITY_FAILURE"
+    },
+    "C42": {
+      "question_id": "Q05",
+      "gold_chunk_id": "C42",
+      "role": "PRIMARY",
+      "in_A0": false,
+      "in_A1": false,
+      "in_neighborhood": false,
+      "in_filtered": false,
+      "in_final": false,
+      "stage_classification": "STAGE_MISSING_ACCESSIBILITY_FAILURE"
+    }
+  }
+}

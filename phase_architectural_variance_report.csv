@@ -1,0 +1,6 @@
+configuration,metric,mean,ci_lower,ci_upper,std_error
+Canonical_D0,Final_Recall_15,0.7222,0.5417,0.9167,0.0955
+Listwise_LLM_Ordering_A,Final_Recall_15,0.6667,0.4444,0.8889,0.1145
+Listwise_LLM_Ordering_A,nDCG_10,0.6985,0.489,0.9118,0.1112
+Listwise_LLM_Ordering_A,MRR,0.8542,0.5625,1.0,0.1289
+Delta_Listwise_vs_D0,Delta_Final_Recall,-0.0556,-0.1948,0.0833,0.0741

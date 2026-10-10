@@ -1,0 +1,599 @@
+{
+  "timestamp": "2026-09-25T17:32:23.000967",
+  "total_required_evidence_units": 20,
+  "candidate_recall_summary": {
+    "N_20": {
+      "semantic_recall": 0.6,
+      "bm25_recall": 0.05,
+      "union_recall": 0.6
+    },
+    "N_50": {
+      "semantic_recall": 0.75,
+      "bm25_recall": 0.05,
+      "union_recall": 0.75
+    },
+    "N_100": {
+      "semantic_recall": 0.8,
+      "bm25_recall": 0.05,
+      "union_recall": 0.8
+    }
+  },
+  "fusion_loss_summary": {
+    "union_candidate_recall_N20": 0.6,
+    "rrf_top20_recall": 0.6,
+    "rrf_top10_recall": 0.4,
+    "fusion_loss_percentage": 0.0,
+    "truncation_loss_percentage": 0.19999999999999996
+  },
+  "per_evidence_trace": [
+    {
+      "question_id": "Q01",
+      "evidence_chunk": "C4",
+      "semantic_rank_20": 10,
+      "semantic_rank_50": 10,
+      "semantic_rank_100": 10,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 10,
+      "in_top10": "YES",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q01",
+      "evidence_chunk": "C2",
+      "semantic_rank_20": 5,
+      "semantic_rank_50": 5,
+      "semantic_rank_100": 5,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 7,
+      "in_top10": "YES",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q02",
+      "evidence_chunk": "C2",
+      "semantic_rank_20": 15,
+      "semantic_rank_50": 15,
+      "semantic_rank_100": 15,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 15,
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C10",
+        "C197",
+        "C137",
+        "C149",
+        "C186",
+        "C4",
+        "C191",
+        "C189",
+        "C178",
+        "C73"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "evidence_chunk": "C4",
+      "semantic_rank_20": 18,
+      "semantic_rank_50": 18,
+      "semantic_rank_100": 18,
+      "bm25_rank_20": 1,
+      "bm25_rank_50": 1,
+      "bm25_rank_100": 1,
+      "rrf_rank": 6,
+      "in_top10": "YES",
+      "failure_type": "SUCCESS — Retained in Top-10",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q02",
+      "evidence_chunk": "C10",
+      "semantic_rank_20": 5,
+      "semantic_rank_50": 5,
+      "semantic_rank_100": 5,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 1,
+      "in_top10": "YES",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q02",
+      "evidence_chunk": "C12",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": "—",
+      "semantic_rank_100": 57,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C10",
+        "C197",
+        "C137",
+        "C149",
+        "C186",
+        "C4",
+        "C191",
+        "C189",
+        "C178",
+        "C73"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "evidence_chunk": "C15",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": "—",
+      "semantic_rank_100": "—",
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure A — Candidate Generation Failure",
+      "displacing_chunks": [
+        "C194",
+        "C91",
+        "C83",
+        "C50",
+        "C24",
+        "C118",
+        "C88",
+        "C47",
+        "C169",
+        "C175"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "evidence_chunk": "C24",
+      "semantic_rank_20": 4,
+      "semantic_rank_50": 4,
+      "semantic_rank_100": 4,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 5,
+      "in_top10": "YES",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q03",
+      "evidence_chunk": "C29",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": "—",
+      "semantic_rank_100": "—",
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure A — Candidate Generation Failure",
+      "displacing_chunks": [
+        "C194",
+        "C91",
+        "C83",
+        "C50",
+        "C24",
+        "C118",
+        "C88",
+        "C47",
+        "C169",
+        "C175"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "evidence_chunk": "C61",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": 33,
+      "semantic_rank_100": 33,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C194",
+        "C91",
+        "C83",
+        "C50",
+        "C24",
+        "C118",
+        "C88",
+        "C47",
+        "C169",
+        "C175"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "evidence_chunk": "C4",
+      "semantic_rank_20": 2,
+      "semantic_rank_50": 2,
+      "semantic_rank_100": 2,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 4,
+      "in_top10": "YES",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q04",
+      "evidence_chunk": "C6",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": 21,
+      "semantic_rank_100": 21,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C191",
+        "C186",
+        "C200",
+        "C4",
+        "C8",
+        "C24",
+        "C10",
+        "C189",
+        "C110",
+        "C194"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "evidence_chunk": "C8",
+      "semantic_rank_20": 3,
+      "semantic_rank_50": 3,
+      "semantic_rank_100": 3,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 5,
+      "in_top10": "YES",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q05",
+      "evidence_chunk": "C42",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": "—",
+      "semantic_rank_100": "—",
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure A — Candidate Generation Failure",
+      "displacing_chunks": [
+        "C194",
+        "C44",
+        "C200",
+        "C191",
+        "C94",
+        "C50",
+        "C70",
+        "C197",
+        "C76",
+        "C97"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "evidence_chunk": "C65",
+      "semantic_rank_20": 12,
+      "semantic_rank_50": 12,
+      "semantic_rank_100": 12,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 13,
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C194",
+        "C44",
+        "C200",
+        "C191",
+        "C94",
+        "C50",
+        "C70",
+        "C197",
+        "C76",
+        "C97"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "evidence_chunk": "C12",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": 29,
+      "semantic_rank_100": 29,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C194",
+        "C44",
+        "C200",
+        "C191",
+        "C94",
+        "C50",
+        "C70",
+        "C197",
+        "C76",
+        "C97"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "evidence_chunk": "C105",
+      "semantic_rank_20": 1,
+      "semantic_rank_50": 1,
+      "semantic_rank_100": 1,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 4,
+      "in_top10": "YES",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": []
+    },
+    {
+      "question_id": "Q06",
+      "evidence_chunk": "C107",
+      "semantic_rank_20": 15,
+      "semantic_rank_50": 15,
+      "semantic_rank_100": 15,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 12,
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C137",
+        "C146",
+        "C197",
+        "C105",
+        "C65",
+        "C110",
+        "C113",
+        "C163",
+        "C161",
+        "C178"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "evidence_chunk": "C147",
+      "semantic_rank_20": "—",
+      "semantic_rank_50": "—",
+      "semantic_rank_100": "—",
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": "—",
+      "in_top10": "NO",
+      "failure_type": "Failure A — Candidate Generation Failure",
+      "displacing_chunks": [
+        "C137",
+        "C146",
+        "C197",
+        "C105",
+        "C65",
+        "C110",
+        "C113",
+        "C163",
+        "C161",
+        "C178"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "evidence_chunk": "C155",
+      "semantic_rank_20": 16,
+      "semantic_rank_50": 16,
+      "semantic_rank_100": 16,
+      "bm25_rank_20": "—",
+      "bm25_rank_50": "—",
+      "bm25_rank_100": "—",
+      "rrf_rank": 13,
+      "in_top10": "NO",
+      "failure_type": "Failure C — BM25 Retrieval Failure",
+      "displacing_chunks": [
+        "C137",
+        "C146",
+        "C197",
+        "C105",
+        "C65",
+        "C110",
+        "C113",
+        "C163",
+        "C161",
+        "C178"
+      ]
+    }
+  ],
+  "per_question_claim_trace": [
+    {
+      "question_id": "Q01",
+      "total_required_claims": 2,
+      "claims_fully_supported": 2,
+      "claim_availability_pct": 1.0,
+      "missing_claims": [],
+      "cause": "All required evidence chunks present in Top-10"
+    },
+    {
+      "question_id": "Q02",
+      "total_required_claims": 2,
+      "claims_fully_supported": 0,
+      "claim_availability_pct": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "cause": "Missing required chunks: ['C2', 'C2']"
+    },
+    {
+      "question_id": "Q03",
+      "total_required_claims": 3,
+      "claims_fully_supported": 1,
+      "claim_availability_pct": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "cause": "Missing required chunks: ['C15', 'C61']"
+    },
+    {
+      "question_id": "Q04",
+      "total_required_claims": 3,
+      "claims_fully_supported": 2,
+      "claim_availability_pct": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "cause": "Missing required chunks: ['C6']"
+    },
+    {
+      "question_id": "Q05",
+      "total_required_claims": 2,
+      "claims_fully_supported": 0,
+      "claim_availability_pct": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "cause": "Missing required chunks: ['C42', 'C12', 'C65']"
+    },
+    {
+      "question_id": "Q06",
+      "total_required_claims": 2,
+      "claims_fully_supported": 0,
+      "claim_availability_pct": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "cause": "Missing required chunks: ['C107', 'C147', 'C155']"
+    }
+  ],
+  "bm25_noise_audit": [
+    {
+      "question_id": "Q01",
+      "noise_chunk_id": "C143",
+      "bm25_rank": 4,
+      "semantic_rank": "—",
+      "rrf_rank": 18,
+      "in_top10": "NO",
+      "matching_lexical_terms": "Shared vocabulary (e.g. Syracusian, merchant, goldsmith, chain, Antipholus)",
+      "usefulness_label": "IRRELEVANT",
+      "displaced_gold_evidence": "Consumed Top-10 slot"
+    },
+    {
+      "question_id": "Q01",
+      "noise_chunk_id": "C169",
+      "bm25_rank": 3,
+      "semantic_rank": "—",
+      "rrf_rank": 17,
+      "in_top10": "NO",
+      "matching_lexical_terms": "Shared vocabulary (e.g. Syracusian, merchant, goldsmith, chain, Antipholus)",
+      "usefulness_label": "IRRELEVANT",
+      "displaced_gold_evidence": "Consumed Top-10 slot"
+    },
+    {
+      "question_id": "Q04",
+      "noise_chunk_id": "C107",
+      "bm25_rank": 3,
+      "semantic_rank": "—",
+      "rrf_rank": 18,
+      "in_top10": "NO",
+      "matching_lexical_terms": "Shared vocabulary (e.g. Syracusian, merchant, goldsmith, chain, Antipholus)",
+      "usefulness_label": "IRRELEVANT",
+      "displaced_gold_evidence": "Consumed Top-10 slot"
+    },
+    {
+      "question_id": "Q06",
+      "noise_chunk_id": "C116",
+      "bm25_rank": 3,
+      "semantic_rank": "—",
+      "rrf_rank": 20,
+      "in_top10": "NO",
+      "matching_lexical_terms": "Shared vocabulary (e.g. Syracusian, merchant, goldsmith, chain, Antipholus)",
+      "usefulness_label": "IRRELEVANT",
+      "displaced_gold_evidence": "Consumed Top-10 slot"
+    }
+  ],
+  "redundancy_summary": {
+    "avg_redundancy_ratio": 0.6666666666666666,
+    "per_question": [
+      {
+        "question_id": "Q01",
+        "top10_chunk_count": 10,
+        "unique_parent_count": 2,
+        "duplicate_count": 8,
+        "redundancy_ratio": 0.8
+      },
+      {
+        "question_id": "Q02",
+        "top10_chunk_count": 10,
+        "unique_parent_count": 4,
+        "duplicate_count": 6,
+        "redundancy_ratio": 0.6
+      },
+      {
+        "question_id": "Q03",
+        "top10_chunk_count": 10,
+        "unique_parent_count": 4,
+        "duplicate_count": 6,
+        "redundancy_ratio": 0.6
+      },
+      {
+        "question_id": "Q04",
+        "top10_chunk_count": 10,
+        "unique_parent_count": 4,
+        "duplicate_count": 6,
+        "redundancy_ratio": 0.6
+      },
+      {
+        "question_id": "Q05",
+        "top10_chunk_count": 10,
+        "unique_parent_count": 3,
+        "duplicate_count": 7,
+        "redundancy_ratio": 0.7
+      },
+      {
+        "question_id": "Q06",
+        "top10_chunk_count": 10,
+        "unique_parent_count": 3,
+        "duplicate_count": 7,
+        "redundancy_ratio": 0.7
+      }
+    ]
+  }
+}

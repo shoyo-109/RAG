@@ -1,0 +1,6 @@
+route,budget,all_evidence_exposure_count,all_evidence_exposure_rate,inaccessible_candidate_recovery_count,inaccessible_candidate_recovery_rate
+Route_A_Lexical,K=10 (BM25 top-5 distinctive anchor terms),3,0.15,0,0.0
+Route_B_Entity,fixed top-K diagnostic output budget (K=10),8,0.4,0,0.0
+Route_C_Structural,K=6 (Window k=3 around anchor candidate),1,0.05,0,0.0
+Route_D_Semantic,K=5 (Top-5 cosine vector neighbors),6,0.3,0,0.0
+Any_Combined_Route,Union of Routes A-D,9,0.45,0,0.0

@@ -1,0 +1,372 @@
+{
+  "C15": {
+    "chunk_id": "C15",
+    "element_id": "pdf_el_e503ecf3",
+    "character_count": 987,
+    "token_count": 264,
+    "word_count": 183,
+    "raw_text": "First Merchant; Sir, I commend you to your own content. Exit \nANTIPHOLUS OF SYRACUSE; He that commends me to mine own content \nCommends me to the thing I cannot get. I to the world am like a drop of water \nThat in the ocean seeks another drop, \nWho, falling there to find his fellow forth, \nUnseen, inquisitive, confounds himself: \nSo I, to find a mother and a brother, \nIn quest of them, unhappy, lose myself. Enter DROMIO of Ephesus \nHere comes the almanac of my true date. What now? how chance thou art return'd so soon? DROMIO OF EPHESUS; Return'd so soon! rather approach'd too late: \nThe capon burns, the pig falls from the spit, \nThe clock hath strucken twelve upon the bell; \nMy mistress made it one upon my cheek: \nShe is so hot because the meat is cold; \nThe meat is cold because you come not home; \nYou come not home because you have no stomach; \nYou have no stomach having broke your fast; \nBut we that know what 'tis to fast and pray \nAre penitent for your default to-day. 8",
+    "local_context": {
+      "previous_chunk": {
+        "chunk_id": "C14",
+        "text": "I crave your pardon. Soon at five o'clock, \nPlease you, I'll meet with you upon the mart \nAnd afterward consort you till bed-time: \nMy present business calls me from you now. ANTIPHOLUS OF SYRACUSE; Farewell till then: I will go lose myself \nAnd wander up and down to view the city."
+      },
+      "target_chunk": {
+        "chunk_id": "C15",
+        "text": "First Merchant; Sir, I commend you to your own content. Exit \nANTIPHOLUS OF SYRACUSE; He that commends me to mine own content \nCommends me to the thing I cannot get. I to the world am like a drop of water \nThat in the ocean seeks another drop, \nWho, falling there to find his fellow forth, \nUnseen, inquisitive, confounds himself: \nSo I, to find a mother and a brother, \nIn quest of them, unhappy, lose myself. Enter DROMIO of Ephesus \nHere comes the almanac of my true date. What now? how chance thou art return'd so soon? DROMIO OF EPHESUS; Return'd so soon! rather approach'd too late: \nThe capon burns, the pig falls from the spit, \nThe clock hath strucken twelve upon the bell; \nMy mistress made it one upon my cheek: \nShe is so hot because the meat is cold; \nThe meat is cold because you come not home; \nYou come not home because you have no stomach; \nYou have no stomach having broke your fast; \nBut we that know what 'tis to fast and pray \nAre penitent for your default to-day. 8"
+      },
+      "next_chunk": {
+        "chunk_id": "C16",
+        "text": "ANTIPHOLUS OF SYRACUSE; Stop in your wind, sir: tell me this, I pray: \nWhere have you left the money that I gave you? DROMIO OF EPHESUS; O,--sixpence, that I had o' Wednesday last \nTo pay the saddler for my mistress' crupper? The saddler had it, sir; I kept it not. ANTIPHOLUS OF SYRACUSE; I am not in a sportive humour now: \nTell me, and dally not, where is the money?"
+      }
+    },
+    "structural_info": {
+      "page": 10,
+      "breadcrumb_path": "ACT 1 \n1",
+      "parent_id": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEO",
+      "parent_text_snippet": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers, and other Attendant"
+    },
+    "gold_relationship": {
+      "question_id": "Q03",
+      "question_text": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "gold_role": "PRIMARY"
+    },
+    "retrieval_trace": {
+      "q0_dense_rank_all203": 142,
+      "subquery_dense_ranks": {
+        "subquery_1": {
+          "query": "Antipholus of Syracuse visitor stranger in Ephesus",
+          "rank": 104,
+          "cosine_sim": 0.3465
+        },
+        "subquery_2": {
+          "query": "Adriana marriage to Antipholus of Ephesus twin brother",
+          "rank": 97,
+          "cosine_sim": 0.2882
+        },
+        "subquery_3": {
+          "query": "Mistaken identity Antipholus of Syracuse addressed by Adriana",
+          "rank": 137,
+          "cosine_sim": 0.2269
+        }
+      },
+      "bm25_rank_all203": "N/A (> len)",
+      "depth_analysis": {
+        "N_20": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 47,
+          "ce_rank": "N/A",
+          "ce_score": "-4.9510 (Direct - Not in Pool)"
+        },
+        "N_50": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 68,
+          "ce_rank": "N/A",
+          "ce_score": "-4.9510 (Direct - Not in Pool)"
+        },
+        "N_100": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 82,
+          "ce_rank": "N/A",
+          "ce_score": "-4.9510 (Direct - Not in Pool)"
+        }
+      }
+    }
+  },
+  "C29": {
+    "chunk_id": "C29",
+    "element_id": "pdf_el_a620ec48",
+    "character_count": 449,
+    "token_count": 140,
+    "word_count": 82,
+    "raw_text": "Here comes your man; now is your husband nigh. Enter DROMIO of Ephesus \nADRIANA; Say, is your tardy master now at hand? DROMIO OF EPHESUS; Nay, he's at two hands with me, and that my two \nears \ncan witness. ADRIANA; Say, didst thou speak with him? know'st thou his mind? DROMIO OF EPHESUS; Ay, ay, he told his mind upon mine ear: \nBeshrew his hand, I scarce could understand it. LUCIANA; Spake he so doubtfully, thou couldst not feel his meaning? 14",
+    "local_context": {
+      "previous_chunk": {
+        "chunk_id": "C28",
+        "text": "no marvel though she pause; \nThey can be meek that have no other cause. A wretched soul, bruised with adversity, \nWe bid be quiet when we hear it cry; \nBut were we burdened with like weight of pain, \nAs much or more would we ourselves complain: \nSo thou, that hast no unkind mate to grieve thee, \nWith urging helpless patience wouldst relieve me, \nBut, if thou live to see like right bereft, \nThis fool-begg'd patience in thee will be left. LUCIANA; Well, I will marry one day, but to try."
+      },
+      "target_chunk": {
+        "chunk_id": "C29",
+        "text": "Here comes your man; now is your husband nigh. Enter DROMIO of Ephesus \nADRIANA; Say, is your tardy master now at hand? DROMIO OF EPHESUS; Nay, he's at two hands with me, and that my two \nears \ncan witness. ADRIANA; Say, didst thou speak with him? know'st thou his mind? DROMIO OF EPHESUS; Ay, ay, he told his mind upon mine ear: \nBeshrew his hand, I scarce could understand it. LUCIANA; Spake he so doubtfully, thou couldst not feel his meaning? 14"
+      },
+      "next_chunk": {
+        "chunk_id": "C30",
+        "text": "DROMIO OF EPHESUS; Nay, he struck so plainly, I could too well feel his \nblows; and withal so doubtfully that I could scarce \nunderstand them. ADRIANA; But say, I prithee, is he coming home? It seems he \nhath great care to please his wife. DROMIO OF EPHESUS; Why, mistress, sure my master is horn-mad. ADRIANA; Horn-mad, thou villain! DROMIO OF EPHESUS; I mean not cuckold-mad; \nBut, sure, he is stark mad. When I desired him to come home to dinner, \nHe ask'd me for a thousand marks in gold: \n''Tis dinner-time,' quoth I; 'My gold!' quoth he; \n'Your meat doth burn,' quoth I; 'My gold!' quoth he: \n'Will you come home?' quoth I; 'My gold!' quoth he."
+      }
+    },
+    "structural_info": {
+      "page": 16,
+      "breadcrumb_path": "ACT 2 \n12",
+      "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+      "parent_text_snippet": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neither my husband nor th"
+    },
+    "gold_relationship": {
+      "question_id": "Q03",
+      "question_text": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "gold_role": "SUPPORTING"
+    },
+    "retrieval_trace": {
+      "q0_dense_rank_all203": 60,
+      "subquery_dense_ranks": {
+        "subquery_1": {
+          "query": "Antipholus of Syracuse visitor stranger in Ephesus",
+          "rank": 90,
+          "cosine_sim": 0.3879
+        },
+        "subquery_2": {
+          "query": "Adriana marriage to Antipholus of Ephesus twin brother",
+          "rank": 21,
+          "cosine_sim": 0.4686
+        },
+        "subquery_3": {
+          "query": "Mistaken identity Antipholus of Syracuse addressed by Adriana",
+          "rank": 109,
+          "cosine_sim": 0.2992
+        }
+      },
+      "bm25_rank_all203": "N/A (> len)",
+      "depth_analysis": {
+        "N_20": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 47,
+          "ce_rank": "N/A",
+          "ce_score": "-4.2752 (Direct - Not in Pool)"
+        },
+        "N_50": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 68,
+          "ce_rank": "N/A",
+          "ce_score": "-4.2752 (Direct - Not in Pool)"
+        },
+        "N_100": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 82,
+          "ce_rank": "N/A",
+          "ce_score": "-4.2752 (Direct - Not in Pool)"
+        }
+      }
+    }
+  },
+  "C42": {
+    "chunk_id": "C42",
+    "element_id": "pdf_el_1ee87952",
+    "character_count": 561,
+    "token_count": 151,
+    "word_count": 105,
+    "raw_text": "Hold, take thou that, and that. Beating him \nDROMIO OF SYRACUSE; Hold, sir, for God's sake! now your jest is earnest: \nUpon what bargain do you give it me? ANTIPHOLUS OF SYRACUSE; Because that I familiarly sometimes \nDo use you for my fool and chat with you, \nYour sauciness will jest upon my love \nAnd make a common of my serious hours. When the sun shines let foolish gnats make sport, \nBut creep in crannies when he hides his beams. If you will jest with me, know my aspect, \nAnd fashion your demeanor to my looks, \nOr I will beat this method in your sconce.",
+    "local_context": {
+      "previous_chunk": {
+        "chunk_id": "C41",
+        "text": "ANTIPHOLUS OF SYRACUSE; Yea, dost thou jeer and flout me in the teeth? Think'st thou I jest?"
+      },
+      "target_chunk": {
+        "chunk_id": "C42",
+        "text": "Hold, take thou that, and that. Beating him \nDROMIO OF SYRACUSE; Hold, sir, for God's sake! now your jest is earnest: \nUpon what bargain do you give it me? ANTIPHOLUS OF SYRACUSE; Because that I familiarly sometimes \nDo use you for my fool and chat with you, \nYour sauciness will jest upon my love \nAnd make a common of my serious hours. When the sun shines let foolish gnats make sport, \nBut creep in crannies when he hides his beams. If you will jest with me, know my aspect, \nAnd fashion your demeanor to my looks, \nOr I will beat this method in your sconce."
+      },
+      "next_chunk": {
+        "chunk_id": "C43",
+        "text": "DROMIO OF SYRACUSE; Sconce call you it? so you would leave battering, I \nhad rather have it a head: an you use these blows \nlong, I must get a sconce for my head and ensconce \nit too; or else I shall seek my wit in my shoulders. But, I pray, sir why am I beaten? ANTIPHOLUS OF SYRACUSE; Dost thou not know? DROMIO OF SYRACUSE; Nothing, sir, but that I am beaten. ANTIPHOLUS OF SYRACUSE; Shall I tell you why? DROMIO OF SYRACUSE; Ay, sir, and wherefore; for they say every why hath \na wherefore. ANTIPHOLUS OF SYRACUSE; Why, first,--for flouting me; and then, \nwherefore--For urging it the second time to me. 19"
+      }
+    },
+    "structural_info": {
+      "page": 21,
+      "breadcrumb_path": "ACT 2 \n12",
+      "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+      "parent_text_snippet": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neither my husband nor th"
+    },
+    "gold_relationship": {
+      "question_id": "Q05",
+      "question_text": "How do Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse?",
+      "gold_role": "PRIMARY"
+    },
+    "retrieval_trace": {
+      "q0_dense_rank_all203": 99,
+      "subquery_dense_ranks": {
+        "subquery_1": {
+          "query": "Antipholus of Syracuse character background and his relationship to Dromio of Syracuse",
+          "rank": 71,
+          "cosine_sim": 0.4278
+        },
+        "subquery_2": {
+          "query": "Antipholus of Ephesus relationship to Dromio of Syracuse and the master-servant dynamic in Ephesus",
+          "rank": 119,
+          "cosine_sim": 0.3227
+        },
+        "subquery_3": {
+          "query": "Initial encounter scenes between Antipholus of Syracuse and Dromio of Syracuse versus Antipholus of Ephesus and Dromio of Syracuse",
+          "rank": 87,
+          "cosine_sim": 0.3696
+        }
+      },
+      "bm25_rank_all203": "N/A (> len)",
+      "depth_analysis": {
+        "N_20": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 43,
+          "ce_rank": "N/A",
+          "ce_score": "0.5802 (Direct - Not in Pool)"
+        },
+        "N_50": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 68,
+          "ce_rank": "N/A",
+          "ce_score": "0.5802 (Direct - Not in Pool)"
+        },
+        "N_100": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 82,
+          "ce_rank": "N/A",
+          "ce_score": "0.5802 (Direct - Not in Pool)"
+        }
+      }
+    }
+  },
+  "C61": {
+    "chunk_id": "C61",
+    "element_id": "pdf_el_414fb4ad",
+    "character_count": 580,
+    "token_count": 175,
+    "word_count": 116,
+    "raw_text": "LUCIANA; If thou art changed to aught, 'tis to an ass. DROMIO OF SYRACUSE; 'Tis true; she rides me and I long for grass. 'Tis so, I am an ass; else it could never be \nBut I should know her as well as she knows me. ADRIANA; Come, come, no longer will I be a fool, \nTo put the finger in the eye and weep, \nWhilst man and master laugh my woes to scorn. Come, sir, to dinner. Dromio, keep the gate. Husband, I'll dine above with you to-day \nAnd shrive you of a thousand idle pranks. Sirrah, if any ask you for your master, \nSay he dines forth, and let no creature enter. Come, sister.",
+    "local_context": {
+      "previous_chunk": {
+        "chunk_id": "C60",
+        "text": "Until I know this sure uncertainty, \nI'll entertain the offer'd fallacy. LUCIANA; Dromio, go bid the servants spread for dinner. DROMIO OF SYRACUSE; O, for my beads! I cross me for a sinner. This is the fairy land: O spite of spites! We talk with goblins, owls and sprites: \nIf we obey them not, this will ensue, \nThey'll suck our breath, or pinch us black and blue. LUCIANA; Why pratest thou to thyself and answer'st not? Dromio, thou drone, thou snail, thou slug, thou sot! DROMIO OF SYRACUSE; I am transformed, master, am I not? ANTIPHOLUS OF SYRACUSE; I think thou art in mind, and so am I. DROMIO OF SYRACUSE; Nay, master, both in mind and in my shape. ANTIPHOLUS OF SYRACUSE; Thou hast thine own form. DROMIO OF SYRACUSE; No, I am an ape. 25"
+      },
+      "target_chunk": {
+        "chunk_id": "C61",
+        "text": "LUCIANA; If thou art changed to aught, 'tis to an ass. DROMIO OF SYRACUSE; 'Tis true; she rides me and I long for grass. 'Tis so, I am an ass; else it could never be \nBut I should know her as well as she knows me. ADRIANA; Come, come, no longer will I be a fool, \nTo put the finger in the eye and weep, \nWhilst man and master laugh my woes to scorn. Come, sir, to dinner. Dromio, keep the gate. Husband, I'll dine above with you to-day \nAnd shrive you of a thousand idle pranks. Sirrah, if any ask you for your master, \nSay he dines forth, and let no creature enter. Come, sister."
+      },
+      "next_chunk": {
+        "chunk_id": "C62",
+        "text": "Dromio, play the porter well. ANTIPHOLUS OF SYRACUSE; Am I in earth, in heaven, or in hell? Sleeping or waking?"
+      }
+    },
+    "structural_info": {
+      "page": 28,
+      "breadcrumb_path": "ACT 2 \n12",
+      "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+      "parent_text_snippet": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neither my husband nor th"
+    },
+    "gold_relationship": {
+      "question_id": "Q03",
+      "question_text": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "gold_role": "SUPPORTING"
+    },
+    "retrieval_trace": {
+      "q0_dense_rank_all203": 33,
+      "subquery_dense_ranks": {
+        "subquery_1": {
+          "query": "Antipholus of Syracuse visitor stranger in Ephesus",
+          "rank": 99,
+          "cosine_sim": 0.3567
+        },
+        "subquery_2": {
+          "query": "Adriana marriage to Antipholus of Ephesus twin brother",
+          "rank": 59,
+          "cosine_sim": 0.3695
+        },
+        "subquery_3": {
+          "query": "Mistaken identity Antipholus of Syracuse addressed by Adriana",
+          "rank": 69,
+          "cosine_sim": 0.3816
+        }
+      },
+      "bm25_rank_all203": 7,
+      "depth_analysis": {
+        "N_20": {
+          "in_candidate_pool": true,
+          "candidate_pool_size": 47,
+          "ce_rank": 14,
+          "ce_score": -0.8226590752601624
+        },
+        "N_50": {
+          "in_candidate_pool": true,
+          "candidate_pool_size": 68,
+          "ce_rank": 13,
+          "ce_score": -0.8226584792137146
+        },
+        "N_100": {
+          "in_candidate_pool": true,
+          "candidate_pool_size": 82,
+          "ce_rank": 12,
+          "ce_score": -0.8226590752601624
+        }
+      }
+    }
+  },
+  "C147": {
+    "chunk_id": "C147",
+    "element_id": "pdf_el_d3cb71f0",
+    "character_count": 287,
+    "token_count": 89,
+    "word_count": 53,
+    "raw_text": "PINCH; It is no shame: the fellow finds his vein, \nAnd yielding to him humours well his frenzy. ANTIPHOLUS OF EPHESUS; Thou hast suborn'd the goldsmith to arrest me. ADRIANA; Alas, I sent you money to redeem you, \nBy Dromio here, who came in haste for it. DROMIO OF EPHESUS; Money by me!",
+    "local_context": {
+      "previous_chunk": {
+        "chunk_id": "C146",
+        "text": "ANTIPHOLUS OF EPHESUS; Dined at home! Thou villain, what sayest thou? DROMIO OF EPHESUS; Sir, sooth to say, you did not dine at home. ANTIPHOLUS OF EPHESUS; Were not my doors lock'd up and I shut out? DROMIO OF EPHESUS; Perdie, your doors were lock'd and you shut out. ANTIPHOLUS OF EPHESUS; And did not she herself revile me there? DROMIO OF EPHESUS; Sans fable, she herself reviled you there. ANTIPHOLUS OF EPHESUS; Did not her kitchen-maid rail, taunt, and scorn \nme? DROMIO OF EPHESUS; Certes, she did; the kitchen-vestal scorn'd you. ANTIPHOLUS OF EPHESUS; And did not I in rage depart from thence? DROMIO OF EPHESUS; In verity you did; my bones bear witness, \nThat since have felt the vigour of his rage. ADRIANA; Is't good to soothe him in these contraries?"
+      },
+      "target_chunk": {
+        "chunk_id": "C147",
+        "text": "PINCH; It is no shame: the fellow finds his vein, \nAnd yielding to him humours well his frenzy. ANTIPHOLUS OF EPHESUS; Thou hast suborn'd the goldsmith to arrest me. ADRIANA; Alas, I sent you money to redeem you, \nBy Dromio here, who came in haste for it. DROMIO OF EPHESUS; Money by me!"
+      },
+      "next_chunk": {
+        "chunk_id": "C148",
+        "text": "heart and goodwill you might; \nBut surely master, not a rag of money. ANTIPHOLUS OF EPHESUS; Went'st not thou to her for a purse of ducats? 60"
+      }
+    },
+    "structural_info": {
+      "page": 62,
+      "breadcrumb_path": "ACT 4 \n43",
+      "parent_id": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Offi",
+      "parent_text_snippet": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant; You know since Pen"
+    },
+    "gold_relationship": {
+      "question_id": "Q06",
+      "question_text": "Why is Antipholus of Ephesus arrested, and what role does Angelo the goldsmith play in the debt dispute?",
+      "gold_role": "SUPPORTING"
+    },
+    "retrieval_trace": {
+      "q0_dense_rank_all203": 6,
+      "subquery_dense_ranks": {
+        "subquery_1": {
+          "query": "Antipholus of Ephesus character background arrest debt",
+          "rank": 20,
+          "cosine_sim": 0.5
+        },
+        "subquery_2": {
+          "query": "Angelo goldsmith relationship debt dispute legal claim",
+          "rank": 12,
+          "cosine_sim": 0.2295
+        },
+        "subquery_3": {
+          "query": "Arrest of Antipholus of Ephesus scene Angelo goldsmith demand payment",
+          "rank": 5,
+          "cosine_sim": 0.5968
+        }
+      },
+      "bm25_rank_all203": "N/A (> len)",
+      "depth_analysis": {
+        "N_20": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 34,
+          "ce_rank": "N/A",
+          "ce_score": "1.3017 (Direct - Not in Pool)"
+        },
+        "N_50": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 67,
+          "ce_rank": "N/A",
+          "ce_score": "1.3017 (Direct - Not in Pool)"
+        },
+        "N_100": {
+          "in_candidate_pool": false,
+          "candidate_pool_size": 82,
+          "ce_rank": "N/A",
+          "ce_score": "1.3017 (Direct - Not in Pool)"
+        }
+      }
+    }
+  }
+}

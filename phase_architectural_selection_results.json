@@ -1,0 +1,343 @@
+{
+  "metadata": {
+    "phase": "Terminal Architectural Phase \u2014 Evidence-Set Selection",
+    "corpus": "The Comedy of Errors (203 chunks)",
+    "timestamp": "2026-10-08T10:55:46.084019",
+    "verdict": "EVALUATION INCONCLUSIVE \u2014 EXPAND BENCHMARK"
+  },
+  "canonical_control_d0": {
+    "candidate_recall_d0": 0.85,
+    "final_recall_15": 0.7,
+    "ndcg_10": 0.4849962170994588,
+    "mrr": 0.3685185185185185
+  },
+  "control_a_e0_d1": {
+    "final_recall_15": 0.6,
+    "ndcg_10": 0.4684647962071584,
+    "mrr": 0.3646723646723647
+  },
+  "listwise_selector_by_ordering": {
+    "Ordering_A_Canonical": {
+      "ordering": "Ordering_A_Canonical",
+      "e0_d1_final_rec": 0.6,
+      "raw_selected_recall": 0.35,
+      "final_recall_15": 0.65,
+      "ndcg_10": 0.6984830355021051,
+      "mrr": 0.8541666666666666,
+      "avg_set_size": 3.0
+    },
+    "Ordering_B_Shuffle42": {
+      "ordering": "Ordering_B_Shuffle42",
+      "e0_d1_final_rec": 0.6,
+      "raw_selected_recall": 0.4,
+      "final_recall_15": 0.65,
+      "ndcg_10": 0.6838574959078496,
+      "mrr": 0.7708333333333334,
+      "avg_set_size": 3.1666666666666665
+    },
+    "Ordering_C_Shuffle123": {
+      "ordering": "Ordering_C_Shuffle123",
+      "e0_d1_final_rec": 0.6,
+      "raw_selected_recall": 0.35,
+      "final_recall_15": 0.65,
+      "ndcg_10": 0.6891362158599549,
+      "mrr": 0.7460317460317462,
+      "avg_set_size": 2.8333333333333335
+    }
+  },
+  "mmr_selector": {
+    "status": "NOT_RUN",
+    "reason": "LISTWISE_SUCCESS_CRITERION_NOT_MET",
+    "final_recall_15": 0.0,
+    "ndcg_10": 0.0,
+    "mrr": 0.0
+  },
+  "answer_level_impact": [
+    {
+      "question_id": "Q03",
+      "hard_targets": [
+        "C15",
+        "C29"
+      ],
+      "diagnostic_mode": "COUNTERFACTUAL_INJECTION_DIAGNOSTIC",
+      "answer_without_target": "",
+      "answer_with_target": "",
+      "impact_classification": "UNCLASSIFIED \u2014 NO BLIND ANSWER EVALUATOR"
+    },
+    {
+      "question_id": "Q05",
+      "hard_targets": [
+        "C42"
+      ],
+      "diagnostic_mode": "COUNTERFACTUAL_INJECTION_DIAGNOSTIC",
+      "answer_without_target": "",
+      "answer_with_target": "",
+      "impact_classification": "UNCLASSIFIED \u2014 NO BLIND ANSWER EVALUATOR"
+    }
+  ],
+  "bootstrap_variance": [
+    {
+      "configuration": "Canonical_D0",
+      "metric": "Final_Recall_15",
+      "mean": 0.7222,
+      "ci_lower": 0.5417,
+      "ci_upper": 0.9167,
+      "std_error": 0.0955
+    },
+    {
+      "configuration": "Listwise_LLM_Ordering_A",
+      "metric": "Final_Recall_15",
+      "mean": 0.6667,
+      "ci_lower": 0.4444,
+      "ci_upper": 0.8889,
+      "std_error": 0.1145
+    },
+    {
+      "configuration": "Listwise_LLM_Ordering_A",
+      "metric": "nDCG_10",
+      "mean": 0.6985,
+      "ci_lower": 0.489,
+      "ci_upper": 0.9118,
+      "std_error": 0.1112
+    },
+    {
+      "configuration": "Listwise_LLM_Ordering_A",
+      "metric": "MRR",
+      "mean": 0.8542,
+      "ci_lower": 0.5625,
+      "ci_upper": 1.0,
+      "std_error": 0.1289
+    },
+    {
+      "configuration": "Delta_Listwise_vs_D0",
+      "metric": "Delta_Final_Recall",
+      "mean": -0.0556,
+      "ci_lower": -0.1948,
+      "ci_upper": 0.0833,
+      "std_error": 0.0741
+    }
+  ],
+  "gating_test": {
+    "escalation_rate": 0.0,
+    "gated_system_recall": 0.7,
+    "gated_system_ndcg": 0.4849962170994588,
+    "gated_system_mrr": 0.3685185185185185,
+    "details": [
+      {
+        "question_id": "Q01",
+        "action": "RETAINED_CANONICAL_D0",
+        "sufficient": true,
+        "gated_final_recall": 1.0
+      },
+      {
+        "question_id": "Q02",
+        "action": "RETAINED_CANONICAL_D0",
+        "sufficient": true,
+        "gated_final_recall": 0.75
+      },
+      {
+        "question_id": "Q03",
+        "action": "RETAINED_CANONICAL_D0",
+        "sufficient": true,
+        "gated_final_recall": 0.5
+      },
+      {
+        "question_id": "Q04",
+        "action": "RETAINED_CANONICAL_D0",
+        "sufficient": true,
+        "gated_final_recall": 1.0
+      },
+      {
+        "question_id": "Q05",
+        "action": "RETAINED_CANONICAL_D0",
+        "sufficient": true,
+        "gated_final_recall": 0.3333333333333333
+      },
+      {
+        "question_id": "Q06",
+        "action": "RETAINED_CANONICAL_D0",
+        "sufficient": true,
+        "gated_final_recall": 0.75
+      }
+    ]
+  },
+  "target_autopsies": {
+    "C15": [
+      {
+        "configuration": "Listwise_LLM_Ordering_A_Canonical",
+        "question_id": "Q03",
+        "evidence_chunk_id": "C15",
+        "evidence_role": "PRIMARY",
+        "canonical_B0_rank": 97,
+        "entered_D1": true,
+        "E0_D1_rank": 60,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 0,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      },
+      {
+        "configuration": "Listwise_LLM_Ordering_B_Shuffle42",
+        "question_id": "Q03",
+        "evidence_chunk_id": "C15",
+        "evidence_role": "PRIMARY",
+        "canonical_B0_rank": 97,
+        "entered_D1": true,
+        "E0_D1_rank": 60,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 42,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      },
+      {
+        "configuration": "Listwise_LLM_Ordering_C_Shuffle123",
+        "question_id": "Q03",
+        "evidence_chunk_id": "C15",
+        "evidence_role": "PRIMARY",
+        "canonical_B0_rank": 97,
+        "entered_D1": true,
+        "E0_D1_rank": 60,
+        "listwise_selected": true,
+        "listwise_position": 3,
+        "natural_set_membership": true,
+        "fixed_top15_membership": true,
+        "final_recovery": true,
+        "failure_stage": "FINAL_RECOVERY_SUCCESS",
+        "candidate_order_seed": 123,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      }
+    ],
+    "C29": [
+      {
+        "configuration": "Listwise_LLM_Ordering_A_Canonical",
+        "question_id": "Q03",
+        "evidence_chunk_id": "C29",
+        "evidence_role": "SUPPORTING",
+        "canonical_B0_rank": 21,
+        "entered_D1": true,
+        "E0_D1_rank": 51,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 0,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      },
+      {
+        "configuration": "Listwise_LLM_Ordering_B_Shuffle42",
+        "question_id": "Q03",
+        "evidence_chunk_id": "C29",
+        "evidence_role": "SUPPORTING",
+        "canonical_B0_rank": 21,
+        "entered_D1": true,
+        "E0_D1_rank": 51,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 42,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      },
+      {
+        "configuration": "Listwise_LLM_Ordering_C_Shuffle123",
+        "question_id": "Q03",
+        "evidence_chunk_id": "C29",
+        "evidence_role": "SUPPORTING",
+        "canonical_B0_rank": 21,
+        "entered_D1": true,
+        "E0_D1_rank": 51,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 123,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      }
+    ],
+    "C42": [
+      {
+        "configuration": "Listwise_LLM_Ordering_A_Canonical",
+        "question_id": "Q05",
+        "evidence_chunk_id": "C42",
+        "evidence_role": "PRIMARY",
+        "canonical_B0_rank": 71,
+        "entered_D1": true,
+        "E0_D1_rank": 42,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 0,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      },
+      {
+        "configuration": "Listwise_LLM_Ordering_B_Shuffle42",
+        "question_id": "Q05",
+        "evidence_chunk_id": "C42",
+        "evidence_role": "PRIMARY",
+        "canonical_B0_rank": 71,
+        "entered_D1": true,
+        "E0_D1_rank": 42,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 42,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      },
+      {
+        "configuration": "Listwise_LLM_Ordering_C_Shuffle123",
+        "question_id": "Q05",
+        "evidence_chunk_id": "C42",
+        "evidence_role": "PRIMARY",
+        "canonical_B0_rank": 71,
+        "entered_D1": true,
+        "E0_D1_rank": 42,
+        "listwise_selected": false,
+        "listwise_position": 999,
+        "natural_set_membership": false,
+        "fixed_top15_membership": false,
+        "final_recovery": false,
+        "failure_stage": "SELECTION_FAILURE",
+        "candidate_order_seed": 123,
+        "selector_seed": 0,
+        "selector_model": "nvidia/nemotron-3-ultra-550b-a55b",
+        "selector_prompt_version": "v1_structured_json"
+      }
+    ]
+  }
+}

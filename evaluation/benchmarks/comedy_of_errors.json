@@ -1,0 +1,36 @@
+{
+  "name": "comedy_of_errors_v1",
+  "corpus": "The Comedy of Errors document.pdf",
+  "cases": [
+    {
+      "id": "Q1",
+      "question": "Why is Aegeon sentenced to death in Ephesus?",
+      "answer_concepts": [["syracuse", "syracusian"], ["law", "statute", "forbidden"], ["ephesus"]],
+      "evidence_concepts": [["aegeon", "egeon"], ["syracuse", "syracusian"], ["death", "ransom"]]
+    },
+    {
+      "id": "Q2",
+      "question": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "answer_concepts": [["antipholus of ephesus", "ephesian antipholus"], ["adriana"], ["mistaken identity", "twin", "brother"]],
+      "evidence_concepts": [["adriana"], ["antipholus"], ["husband", "married"]]
+    },
+    {
+      "id": "Q3",
+      "question": "How did Aegeon come to have two pairs of identical twins?",
+      "answer_concepts": [["aemilia", "emilia", "wife"], ["twin sons", "two sons"], ["dromio", "servant twins", "two servants"]],
+      "evidence_concepts": [["aegeon", "egeon"], ["twin"], ["dromio", "servant"]]
+    },
+    {
+      "id": "Q4",
+      "question": "Why is Antipholus of Ephesus arrested, and what does the debt have to do with Angelo the goldsmith?",
+      "answer_concepts": [["angelo"], ["goldsmith"], ["chain"], ["two hundred ducats", "200 ducats", "debt"]],
+      "evidence_concepts": [["angelo"], ["goldsmith"], ["chain"], ["ducat", "debt"]]
+    },
+    {
+      "id": "Q5",
+      "question": "How are the identities of the four twins finally clarified at the end of the play?",
+      "answer_concepts": [["abbess", "aemilia", "emilia"], ["antipholus of ephesus"], ["antipholus of syracuse"], ["dromio of ephesus"], ["dromio of syracuse"]],
+      "evidence_concepts": [["abbess", "aemilia", "emilia"], ["antipholus"], ["dromio"], ["twin"]]
+    }
+  ]
+}

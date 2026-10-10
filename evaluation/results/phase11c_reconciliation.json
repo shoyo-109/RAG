@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "phase": "11C_Reconciliation",
+    "title": "Phase 11C — Production Candidate-Depth Diagnostic Canonical Reconciliation Dataset",
+    "timestamp": "2026-10-06T11:25:00Z",
+    "source_artifact": "phase_11c_results.json",
+    "audit_status": "CANONICAL & FROZEN",
+    "reconciliation_gate": "PASS"
+  },
+  "control": {
+    "target_candidate_recall_20": 0.85,
+    "actual_candidate_recall_20": 0.85,
+    "target_final_recall_15": 0.70,
+    "actual_final_recall_15": 0.70,
+    "target_ndcg_10": 0.485,
+    "actual_ndcg_10": 0.4849962170994588,
+    "target_mrr": 0.369,
+    "actual_mrr": 0.3685185185185185,
+    "reproduction_status": "PASS_EXACT_MATCH",
+    "gating_semantics": "Script gated on Candidate Recall (85.0%) and Final Recall (70.0%) within ±3% tolerance, and logged all four metrics."
+  },
+  "depth_results": [
+    {
+      "candidate_depth_N": 20,
+      "mean_candidate_pool_size": 55.166666666666664,
+      "candidate_recall_N": 0.85,
+      "final_recall_15": 0.70,
+      "evidence_precision_15": 0.15555555555555556,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3685185185185185,
+      "ndcg_10": 0.4849962170994588,
+      "ndcg_15": 0.5179307262273931,
+      "evidence_completeness": 0.3333333333333333,
+      "candidate_to_final_conversion": 0.8235294117647058
+    },
+    {
+      "candidate_depth_N": 30,
+      "mean_candidate_pool_size": 75.16666666666667,
+      "candidate_recall_N": 0.90,
+      "final_recall_15": 0.65,
+      "evidence_precision_15": 0.14444444444444446,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.36574074074074076,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.5022369953908884,
+      "evidence_completeness": 0.3333333333333333,
+      "candidate_to_final_conversion": 0.7222222222222222
+    },
+    {
+      "candidate_depth_N": 50,
+      "mean_candidate_pool_size": 104.83333333333333,
+      "candidate_recall_N": 0.90,
+      "final_recall_15": 0.60,
+      "evidence_precision_15": 0.13333333333333333,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3637566137566138,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.48906540929904535,
+      "evidence_completeness": 0.16666666666666666,
+      "candidate_to_final_conversion": 0.6666666666666666
+    },
+    {
+      "candidate_depth_N": 75,
+      "mean_candidate_pool_size": 133.5,
+      "candidate_recall_N": 0.95,
+      "final_recall_15": 0.60,
+      "evidence_precision_15": 0.13333333333333333,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3637566137566138,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.4854995289119652,
+      "evidence_completeness": 0.16666666666666666,
+      "candidate_to_final_conversion": 0.631578947368421
+    },
+    {
+      "candidate_depth_N": 100,
+      "mean_candidate_pool_size": 149.5,
+      "candidate_recall_N": 1.00,
+      "final_recall_15": 0.60,
+      "evidence_precision_15": 0.13333333333333333,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3637566137566138,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.4854995289119652,
+      "evidence_completeness": 0.16666666666666666,
+      "candidate_to_final_conversion": 0.60
+    }
+  ],
+  "target_results": {
+    "C15": [
+      {"depth_N": 20, "in_pool": false, "insertion_pos": null, "dense_sources": [], "bm25_rank": null, "ce_score": null, "ce_rank": null, "in_top15": false, "failure_stage": "Stage 1 — Candidate Generation Failure"},
+      {"depth_N": 30, "in_pool": false, "insertion_pos": null, "dense_sources": [], "bm25_rank": null, "ce_score": null, "ce_rank": null, "in_top15": false, "failure_stage": "Stage 1 — Candidate Generation Failure"},
+      {"depth_N": 50, "in_pool": false, "insertion_pos": null, "dense_sources": [], "bm25_rank": null, "ce_score": null, "ce_rank": null, "in_top15": false, "failure_stage": "Stage 1 — Candidate Generation Failure"},
+      {"depth_N": 75, "in_pool": false, "insertion_pos": null, "dense_sources": [], "bm25_rank": null, "ce_score": null, "ce_rank": null, "in_top15": false, "failure_stage": "Stage 1 — Candidate Generation Failure"},
+      {"depth_N": 100, "in_pool": true, "insertion_pos": 127, "dense_sources": [{"subquery": "SQ2", "sq_text": "Adriana marriage to Antipholus of Ephesus twin brother", "dense_rank": 97}], "bm25_rank": null, "ce_score": -4.951038837432861, "ce_rank": 79, "in_top15": false, "failure_stage": "Stage 2 — Reranking Failure"}
+    ],
+    "C42": [
+      {"depth_N": 20, "in_pool": false, "insertion_pos": null, "dense_sources": [], "bm25_rank": null, "ce_score": null, "ce_rank": null, "in_top15": false, "failure_stage": "Stage 1 — Candidate Generation Failure"},
+      {"depth_N": 30, "in_pool": false, "insertion_pos": null, "dense_sources": [], "bm25_rank": null, "ce_score": null, "ce_rank": null, "in_top15": false, "failure_stage": "Stage 1 — Candidate Generation Failure"},
+      {"depth_N": 50, "in_pool": false, "insertion_pos": null, "dense_sources": [], "bm25_rank": null, "ce_score": null, "ce_rank": null, "in_top15": false, "failure_stage": "Stage 1 — Candidate Generation Failure"},
+      {"depth_N": 75, "in_pool": true, "insertion_pos": 71, "dense_sources": [{"subquery": "SQ1", "sq_text": "Antipholus of Syracuse character background and relationship to Dromio", "dense_rank": 71}], "bm25_rank": null, "ce_score": 0.5802104473114014, "ce_rank": 45, "in_top15": false, "failure_stage": "Stage 2 — Reranking Failure"},
+      {"depth_N": 100, "in_pool": true, "insertion_pos": 71, "dense_sources": [{"subquery": "SQ1", "sq_text": "Antipholus of Syracuse character background and relationship to Dromio", "dense_rank": 71}, {"subquery": "SQ3", "sq_text": "Initial encounter scenes...", "dense_rank": 87}], "bm25_rank": null, "ce_score": 0.5802091360092163, "ce_rank": 46, "in_top15": false, "failure_stage": "Stage 2 — Reranking Failure"}
+    ]
+  },
+  "rank_semantics": {
+    "field": "candidate_rank",
+    "code_expression": "cand_ids.index(target_cid) + 1",
+    "true_meaning": "candidate-pool insertion position",
+    "is_retrieval_ranking": false,
+    "audit_finding": "The candidate_rank field records the dictionary insertion order of chunks as subqueries and BM25 populate candidate_map. It is NOT a relevance ranking. Retrieval performance must be evaluated using dense subquery ranks, BM25 ranks, and Cross-Encoder ranks."
+  },
+  "bm25_semantics": {
+    "field": "bm25_score",
+    "code_expression": "float(N - r + 1)",
+    "true_meaning": "BM25 rank proxy",
+    "is_okapi_bm25_score": false,
+    "audit_finding": "The recorded bm25_score value (N - r + 1) is a linear rank-based proxy derived from rank r, not an actual Okapi BM25 score."
+  },
+  "failure_stage_by_depth": {
+    "C15": {
+      "N20_N75": "Stage 1 — Candidate Generation Failure (absent from pool)",
+      "N100": "Stage 2 — Reranking Failure (present at insertion pos #127, subquery 2 rank #97, but CE rank #79)"
+    },
+    "C42": {
+      "N20_N50": "Stage 1 — Candidate Generation Failure (absent from pool)",
+      "N75_N100": "Stage 2 — Reranking Failure (present at insertion pos #71, subquery 1 rank #71, but CE rank #45-#46)"
+    }
+  },
+  "ambiguities_resolved": {
+    "Ambiguity_A_C15": "C15 does NOT enter at N=50. Raw JSON artifact confirms C15 is ABSENT at N=20, 30, 50, 75 and FIRST ENTERS at N=100 (insertion pos #127, subquery 2 rank #97, CE score -4.9510, CE rank #79). It NEVER enters final Top-15.",
+    "Ambiguity_B_C42": "C42 does NOT enter at N=30. Raw JSON artifact confirms C42 is ABSENT at N=20, 30, 50 and FIRST ENTERS at N=75 (insertion pos #71, subquery 1 rank #71, CE score +0.5802, CE rank #45). At N=100, CE rank is #46. It NEVER enters final Top-15.",
+    "Ambiguity_C_CandidateRecall": "Candidate Recall sequence across N=20..100 is: 85.0% -> 90.0% -> 90.0% -> 95.0% -> 100.0%. Maximum candidate recall is 100.0% (at N=100), not 95.0%.",
+    "Ambiguity_D_FinalRecall": "Final Recall@15 sequence across N=20..100 is: 70.0% -> 65.0% -> 60.0% -> 60.0% -> 60.0%. Final recall DEGRADES from 70.0% to 60.0% as N increases.",
+    "Ambiguity_E_ControlReproduction": "Phase 11C control (N=20) reproduces canonical Phase 10C control with 100% exact match across all four metrics: Candidate Recall@20 = 85.0%, Final Recall@15 = 70.0%, nDCG@10 = 0.485, MRR = 0.369."
+  },
+  "final_conclusion": {
+    "central_question_answer": "In the actual Phase 10C production retrieval pipeline, C15 and C42 are lost at shallow depth due to Candidate Generation Failure (N < 75/100). When candidate depth is increased (N=75 for C42, N=100 for C15), both targets enter the candidate pool but are rejected downstream by Cross-Encoder R0 (CE Rank #45/#79), classifying their ultimate bottleneck as RERANKING_FAILURE. Furthermore, deepening candidate depth degrades aggregate Final Recall@15 from 70.0% to 60.0% due to cross-encoder distractor noise.",
+    "is_increasing_N_a_solution": false,
+    "recommended_direction": "Fix downstream Cross-Encoder reranker or candidate text representation rather than increasing candidate generation depth N."
+  }
+}

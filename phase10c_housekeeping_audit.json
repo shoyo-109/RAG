@@ -1,0 +1,152 @@
+{
+  "metadata": {
+    "phase": "10C_Housekeeping",
+    "audit_timestamp": "2026-10-04T15:46:14.529275",
+    "status": "CANONICAL & FROZEN",
+    "integrity_gate": "PASS",
+    "source_hierarchy": [
+      "1. phase10c_candidate_pools.json (Raw Candidate Pools)",
+      "2. phase10c_reranker_results.json (Raw Predictions)",
+      "3. phase10c_canonical_results.json",
+      "4. phase10c_canonical_target_autopsy.json",
+      "5. phase10c_canonical_comparison.csv",
+      "6. phase10c_canonical_final_report.md"
+    ]
+  },
+  "candidate_membership_audit": {
+    "C0": {
+      "C15": {
+        "target_id": "C15",
+        "question_id": "Q03",
+        "in_candidate_pool": false,
+        "candidate_rank": null,
+        "pool_candidate_count": 58
+      },
+      "C29": {
+        "target_id": "C29",
+        "question_id": "Q03",
+        "in_candidate_pool": false,
+        "candidate_rank": null,
+        "pool_candidate_count": 58
+      },
+      "C42": {
+        "target_id": "C42",
+        "question_id": "Q05",
+        "in_candidate_pool": false,
+        "candidate_rank": null,
+        "pool_candidate_count": 53
+      },
+      "C61": {
+        "target_id": "C61",
+        "question_id": "Q03",
+        "in_candidate_pool": true,
+        "candidate_rank": 48,
+        "pool_candidate_count": 58
+      },
+      "C147": {
+        "target_id": "C147",
+        "question_id": "Q06",
+        "in_candidate_pool": true,
+        "candidate_rank": 20,
+        "pool_candidate_count": 48
+      }
+    },
+    "C1": {
+      "C15": {
+        "target_id": "C15",
+        "question_id": "Q03",
+        "in_candidate_pool": false,
+        "candidate_rank": null,
+        "pool_candidate_count": 58
+      },
+      "C29": {
+        "target_id": "C29",
+        "question_id": "Q03",
+        "in_candidate_pool": true,
+        "candidate_rank": 34,
+        "pool_candidate_count": 58
+      },
+      "C42": {
+        "target_id": "C42",
+        "question_id": "Q05",
+        "in_candidate_pool": false,
+        "candidate_rank": null,
+        "pool_candidate_count": 51
+      },
+      "C61": {
+        "target_id": "C61",
+        "question_id": "Q03",
+        "in_candidate_pool": true,
+        "candidate_rank": 50,
+        "pool_candidate_count": 58
+      },
+      "C147": {
+        "target_id": "C147",
+        "question_id": "Q06",
+        "in_candidate_pool": true,
+        "candidate_rank": 35,
+        "pool_candidate_count": 50
+      }
+    }
+  },
+  "discrepancy_ledger": [
+    {
+      "issue_id": "Issue 1",
+      "subject": "Draft Report Claim for C1 x R2 at K=15 (80% / .712)",
+      "narrative_draft_claim": "Final Recall=80.0%, nDCG=0.712, MRR=0.525, EvComp=50.0%",
+      "canonical_recomputed_value": "Final Recall=60.0%, nDCG=0.582, MRR=0.373, EvComp=33.3%",
+      "status": "SOURCE_CONFLICT",
+      "artifact_A": "phase10c_reranker_report.md (Draft narrative)",
+      "value_A": "80.0% Final Recall / 0.712 nDCG",
+      "artifact_B": "phase10c_reranker_results.json (Raw execution trace)",
+      "value_B": "60.0% Final Recall / 0.582 nDCG",
+      "resolution": "Draft narrative contained unverified derived estimates. The raw execution trace in phase10c_reranker_results.json is authoritative and canonical."
+    },
+    {
+      "issue_id": "Impossibility Audit C15",
+      "subject": "C15 Cross-Encoder Rank in Candidate Pool C1",
+      "narrative_draft_claim": "C15 CE Rank #3 / #2 (claimed recovered into Top-15)",
+      "canonical_recomputed_value": "CE Rank = null, CE Score = null (absent from top-20 candidate pool)",
+      "status": "SOURCE_CONFLICT",
+      "artifact_A": "phase10c_reranker_report.md (Draft narrative)",
+      "value_A": "C15 CE Rank #3/#2",
+      "artifact_B": "phase10c_candidate_pools.json (Raw candidate pool list)",
+      "value_B": "ABSENT from candidate pool at N=20",
+      "resolution": "C15 did not enter candidate pool C1 at N=20 (Dense Rank #118/#101). Assigned CE Rank = null and Stage 1 Candidate Generation Failure."
+    },
+    {
+      "issue_id": "Impossibility Audit C42",
+      "subject": "C42 Cross-Encoder Rank in Candidate Pool C1",
+      "narrative_draft_claim": "C42 CE Rank #3 / #2 (claimed recovered into Top-15)",
+      "canonical_recomputed_value": "CE Rank = null, CE Score = null (absent from top-20 candidate pool)",
+      "status": "SOURCE_CONFLICT",
+      "artifact_A": "phase10c_reranker_report.md (Draft narrative)",
+      "value_A": "C42 CE Rank #3/#2",
+      "artifact_B": "phase10c_candidate_pools.json (Raw candidate pool list)",
+      "value_B": "ABSENT from candidate pool at N=20",
+      "resolution": "C42 did not enter candidate pool C1 at N=20 (Dense Rank #118/#101). Assigned CE Rank = null and Stage 1 Candidate Generation Failure."
+    }
+  ],
+  "baseline_verification": {
+    "condition": "C0 x R0 x K10",
+    "per_question_recalls": {
+      "Q01": 1.0,
+      "Q02": 0.75,
+      "Q03": 0.25,
+      "Q04": 0.6666666666666666,
+      "Q05": 0.3333333333333333,
+      "Q06": 0.75
+    },
+    "per_question_ndcgs": {
+      "Q01": 0.4977677578363716,
+      "Q02": 0.6859487909052899,
+      "Q03": 0.35577598761161594,
+      "Q04": 0.5684253783110057,
+      "Q05": 0.2620659521669071,
+      "Q06": 0.5399934357655625
+    },
+    "aggregate_recall": 0.6,
+    "macro_ndcg": 0.4849962170994588,
+    "status": "VERIFIED_100_MATCH"
+  }
+}

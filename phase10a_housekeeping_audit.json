@@ -1,0 +1,151 @@
+{
+  "metadata": {
+    "audit_phase": "Phase 10A Housekeeping & Canonicalization Pass",
+    "timestamp": "2026-10-04T09:15:26.216230",
+    "status": "COMPLETED_CLEAN",
+    "auditor": "Antigravity Research Engineering Agent"
+  },
+  "artifact_inventory": {
+    "raw_results_json": {
+      "path": "D:\\Fine Tunning\\ADVANCE RAG\\RAG\\phase10a_representation_results.json",
+      "sha256": "db564c26e0f9864e0197ac9434203557c7ae0cb4b08249e613bd3fb8e63c1fea"
+    },
+    "canonical_results_json": {
+      "path": "D:\\Fine Tunning\\ADVANCE RAG\\RAG\\phase10a_canonical_results.json",
+      "sha256": "aa52db5bd687090fb0f04dfb1fe016ca96d1603837ca3326f6eec4372ff51686"
+    },
+    "canonical_target_autopsy_json": {
+      "path": "D:\\Fine Tunning\\ADVANCE RAG\\RAG\\phase10a_canonical_target_autopsy.json",
+      "sha256": "f306db3613207ab3afb609325a9a311fc68fe68d433171c8a6371f9907d5853b"
+    },
+    "comparison_csv": {
+      "path": "D:\\Fine Tunning\\ADVANCE RAG\\RAG\\phase10a_comparison.csv",
+      "sha256": "5427bbaa992857018e72bfec445da7779dbe3f2a24b505e9569b33980cf025a7"
+    }
+  },
+  "source_of_truth_hierarchy": [
+    "1. Raw execution results (phase10a_representation_results.json)",
+    "2. Canonical structured JSON (phase10a_canonical_results.json)",
+    "3. CSV derived from canonical results (phase10a_comparison.csv)",
+    "4. Markdown report derived from canonical results (phase10a_final_report.md)",
+    "5. Human-written summaries"
+  ],
+  "resolved_model_identities": {
+    "E0": {
+      "id": "sentence-transformers/all-MiniLM-L6-v2",
+      "dimension": 384,
+      "norm": "L2 normalized"
+    },
+    "E1": {
+      "id": "BAAI/bge-small-en-v1.5",
+      "dimension": 384,
+      "norm": "L2 normalized"
+    },
+    "E2": {
+      "model_key": "E2",
+      "markdown_claimed_name": "all-mpnet-base-v2",
+      "canonical_json_name": "intfloat/e5-small-v2",
+      "actual_executed_model": "intfloat/e5-small-v2",
+      "huggingface_id": "intfloat/e5-small-v2",
+      "dimension": 384,
+      "normalization": "L2 normalized",
+      "doc_prefix": "passage: ",
+      "query_prefix": "query: ",
+      "similarity_metric": "Cosine / Dot Product",
+      "verification_status": "VERIFIED",
+      "discrepancy_note": "The previous Markdown draft text contained a copy-paste string naming 'all-mpnet-base-v2'. The actual execution, embedding matrices, and raw JSON outputs strictly used 'intfloat/e5-small-v2' (384-dim)."
+    }
+  },
+  "discrepancy_records": [
+    {
+      "issue_id": "ISSUE_A_E2_MODEL_IDENTITY",
+      "description": "Discrepancy between Markdown text ('all-mpnet-base-v2') and canonical JSON ('intfloat/e5-small-v2')",
+      "previous_value": "all-mpnet-base-v2",
+      "corrected_value": "intfloat/e5-small-v2",
+      "resolution_reason": "Execution logs and model weights verify intfloat/e5-small-v2 (384-dim) with passage/query prefixes was actually executed.",
+      "affected_artifacts": [
+        "phase10a_representation_optimization.md"
+      ]
+    },
+    {
+      "issue_id": "ISSUE_B_C15_A1_E0_RANK",
+      "description": "Discrepancy in reported C15 dense rank under condition A1-E0",
+      "previous_value": "Rank #83 (in markdown summary text)",
+      "corrected_value": "Rank #95 (in raw execution JSON and CSV)",
+      "resolution_reason": "Raw execution dense similarity matrix places C15 at exact 1-indexed rank #95 under A1-E0. The summary text #83 was an erroneous manual transcription.",
+      "affected_artifacts": [
+        "phase10a_representation_optimization.md"
+      ]
+    },
+    {
+      "issue_id": "ISSUE_C_C147_REGRESSION_ANALYSIS",
+      "description": "Blanket claim that C147 remains stable at rank #4-#6 across all conditions",
+      "previous_value": "Stable rank #4-#6 across all 12 conditions",
+      "corrected_value": "Under E1 (bge-small-en-v1.5) with A2/A3, C147 dense rank regresses to #35 and #31.",
+      "resolution_reason": "Empirical evidence shows C147 rank drops from #6 to #35 under A2-E1 and #31 under A3-E1. The claim was corrected to report exact per-condition movements.",
+      "affected_artifacts": [
+        "phase10a_representation_optimization.md"
+      ]
+    },
+    {
+      "issue_id": "ISSUE_D_ZERO_REGRESSION_CLAIM",
+      "description": "Global claim of 'zero regression' across the benchmark",
+      "previous_value": "Zero regression across all questions",
+      "corrected_value": "Q05 Final Recall drops to 0% under A1-E0 and A0-E1; Q03 Final Recall drops to 0% under A3-E1; Q06 drops to 50% under A1-E0.",
+      "resolution_reason": "Removed blanket zero-regression statement and replaced with explicit per-question regression analysis.",
+      "affected_artifacts": [
+        "phase10a_representation_optimization.md"
+      ]
+    },
+    {
+      "issue_id": "ISSUE_E_GATE_C_CONTRADICTION",
+      "description": "Conflicting statements on Gate C status (Triggered vs Conditional Pass)",
+      "previous_value": "Gate C Triggered -> Fine-tuning required",
+      "corrected_value": "Gate C NO TRIGGER / CONDITIONAL PASS. Condition A1-E1 achieved 95.0% Candidate Recall and recovered C42 to Rank #2 inside Candidate N=20.",
+      "resolution_reason": "Re-evaluated Gate C against canonical metrics. Because A1-E1 successfully recovered C42 into Candidate N=20 and boosted Candidate Recall to 95.0%, fine-tuning is not triggered at Phase 10A.",
+      "affected_artifacts": [
+        "phase10a_representation_optimization.md"
+      ]
+    }
+  ],
+  "decision_gates": {
+    "Gate_A_Representation": {
+      "status": "PASS",
+      "finding": "Metadata enrichment (A1) improves C15 #142 -> #95 and C42 #99 -> #67 under E0."
+    },
+    "Gate_B_Embedding": {
+      "status": "PASS",
+      "finding": "Condition A1-E1 achieves 95.0% Candidate Recall@20 and recovers C42 into Candidate N=20 at Rank #2."
+    },
+    "Gate_C_FineTuning": {
+      "status": "NO_TRIGGER",
+      "finding": "Fine-tuning is not required for Phase 10A because A1-E1 achieved 95.0% Candidate Recall and recovered C42."
+    }
+  },
+  "production_candidate_classification": {
+    "A0-E0": "CONTROL",
+    "A1-E1": "STRONG CANDIDATE (Best Candidate Recall 95.0%, C42 Rank #2, 384-dim)",
+    "A3-E2": "PROMISING BUT UNSTABLE (Candidate Recall 95.0%, higher latency)",
+    "A1-E2": "PROMISING (Candidate Recall 95.0%, C42 Rank #15)",
+    "A0-E1": "REJECTED (Low Dense Recall@10: 25.0%)"
+  },
+  "phase10b_handoff": {
+    "frozen_control_config": "A0-E0",
+    "phase10b_candidates": [
+      "A1-E1",
+      "A3-E2",
+      "A1-E2"
+    ],
+    "unresolved_bottlenecks": [
+      "C15 dense rank #32 (subquery entry only)",
+      "Cross-Encoder conversion efficiency"
+    ],
+    "candidate_depth_matrix": [
+      10,
+      20,
+      30,
+      40,
+      50
+    ]
+  }
+}

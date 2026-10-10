@@ -1,0 +1,7 @@
+question_id,total_required_evidence,candidate_retrieved_count,final_retrieved_count,candidate_recall,final_recall,ranking_failures,path_failures,no_path_failures,anchor_candidate_id,anchor_terms_extracted
+Q01,2,2,2,1.0,1.0,0,0,0,C193,"two, aemilia, speak, aegeon, son"
+Q02,4,4,3,1.0,0.75,1,0,0,C4,"made, sons, cause, woman, two"
+Q03,4,2,2,0.5,0.5,0,0,2,C195,"call, gentlewoman, leisure, antipholus, dream"
+Q04,3,3,3,1.0,1.0,0,0,0,C193,"two, aemilia, speak, aegeon, son"
+Q05,3,2,1,0.667,0.333,1,0,1,C50,"ones, syracuse, sound, sure, dromio"
+Q06,4,4,3,1.0,0.75,1,0,0,C113,"officer, arrest, consent, obey, pay"

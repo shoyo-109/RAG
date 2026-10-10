@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "phase": "10B_Housekeeping",
+    "audit_timestamp": "2026-10-04T10:40:56.943501",
+    "status": "FROZEN",
+    "source_hierarchy": [
+      "1. Raw Execution Traces & Target Autopsy",
+      "2. phase10b_canonical_results.json",
+      "3. phase10b_canonical_target_autopsy.json",
+      "4. phase10b_comparison.csv",
+      "5. phase10b_final_report.md"
+    ]
+  },
+  "discrepancy_resolutions": [
+    {
+      "issue_id": "Issue A",
+      "title": "B1 N=20 Final Recall Curve Across Selection Budget K",
+      "old_draft_value": "K10=55%, K15=75%, K20=85%",
+      "canonical_value": "K10=55.0%, K15=65.0%, K20=65.0%",
+      "evidence": "Raw execution traces in phase10b_canonical_results.json. 13 of 20 gold evidence units retained at K=15/20.",
+      "resolution": "Corrected narrative template text in final report to reflect true canonical execution metrics."
+    },
+    {
+      "issue_id": "Issue B",
+      "title": "C15 Cross-Encoder Rank and Ranking Universe",
+      "old_draft_value": "CE Rank #14",
+      "canonical_value": "CE Rank #28 in Q03 Candidate Pool Universe (45 candidate chunks retrieved for Q03 at N=20)",
+      "evidence": "Q03 deduplicated candidate pool trace for B1 (A1-E1). C15 candidate rank is #6, but Cross-Encoder scores it +0.489 resulting in CE Rank #28.",
+      "resolution": "Explicitly defined rank_universe as Q03 candidate pool universe and classified C15 as Stage 3 \u2014 CE Selection Failure."
+    },
+    {
+      "issue_id": "Issue C",
+      "title": "C42 Cross-Encoder Rank and Stage Classification",
+      "old_draft_value": "CE Rank #2 (claimed recovered into Top-10)",
+      "canonical_value": "CE Rank #27 in Q05 Candidate Pool Universe (Dense Rank #1, Candidate Rank #4)",
+      "evidence": "Q05 deduplicated candidate pool trace for B1 (A1-E1). Dense vector similarity rank is #1, candidate rank is #4, but Cross-Encoder ranks it #27.",
+      "resolution": "Classified C42 under B1 as Stage 3 \u2014 CE Selection Failure (excluded from Top-K for K <= 20)."
+    },
+    {
+      "issue_id": "Issue D",
+      "title": "Production Candidate Selection & Pareto Frontier Analysis",
+      "old_draft_value": "B1 N20 K15 selected solely on draft 75% recall claim",
+      "canonical_value": "B2 (A2-E0) N20 K15 is Pareto Champion for Final Retrieval (Final Recall 70.0%, nDCG 0.617, MRR 0.525, EvComp 33.3%). B1 (A1-E1) N20 K15 is Candidate Recall Champion (CandRecall 95.0%).",
+      "evidence": "Multi-objective decision matrix evaluation across B0, B1, B2, B3.",
+      "resolution": "Reported Pareto frontier with B2 (A2-E0) N20 K15 as final retrieval champion and B1 (A1-E1) as candidate recall champion."
+    }
+  ],
+  "metric_definitions": {
+    "Candidate_Recall_N": "Fraction of total 20 gold evidence units present in stage-1 candidate pool at depth N",
+    "Final_Recall_K": "Fraction of total 20 gold evidence units retained in Top-K output after Cross-Encoder reranking",
+    "Evidence_Precision_K": "Useful evidence units in Top-K divided by K",
+    "Primary_Precision_K": "Primary evidence units in Top-K divided by K",
+    "MRR": "Mean reciprocal rank of first gold evidence unit across all 6 benchmark questions",
+    "nDCG_K": "Normalized discounted cumulative gain over gold evidence roles (Primary=3, Supporting=2)",
+    "Evidence_Completeness": "Fraction of benchmark questions (0..1) with 100% Final Recall at K"
+  }
+}

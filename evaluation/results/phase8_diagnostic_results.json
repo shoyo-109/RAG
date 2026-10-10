@@ -1,0 +1,1889 @@
+{
+  "timestamp": "2026-09-26T18:30:32.775786",
+  "model_metadata": {
+    "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "device": "cpu",
+    "vector_embedding_model": "all-MiniLM-L6-v2",
+    "unreachable_diagnostic_chunks": [
+      "C15",
+      "C29",
+      "C42",
+      "C61",
+      "C147"
+    ],
+    "batch_size": 32
+  },
+  "transformations_audit": {
+    "Q01": {
+      "q_id": "Q01",
+      "original_question": "Who is Aegeon and what is his origin?",
+      "q2_frozen": [
+        "Aegeon character background Syracuse merchant",
+        "Aegeon family relationships Emilia twin sons",
+        "Aegeon arrest Ephesus law against Syracusans"
+      ],
+      "8a_aspects": [
+        "Aegeon character identity and role in literature",
+        "Aegeon place of origin or birthplace",
+        "Aegeon family relationships and connections",
+        "Literary work featuring Aegeon as a character"
+      ],
+      "8a_latency_ms": 3563.143491744995,
+      "8b_hyde_passage": "Aegeon is identified as an elderly merchant from Syracuse who faces execution in Ephesus due to the longstanding enmity between the two cities. His backstory reveals he was separated from his wife and one of his twin sons during a shipwreck many years earlier, leaving him to search for his lost family members.",
+      "8b_latency_ms": 1937.9768371582031,
+      "8c_dense_query": "Who is Aegeon and what is his origin?",
+      "8c_lexical_keywords": [
+        "Aegeon",
+        "origin"
+      ],
+      "8c_latency_ms": 8677.27518081665
+    },
+    "Q02": {
+      "q_id": "Q02",
+      "original_question": "Why was Aegeon sentenced to death in Ephesus?",
+      "q2_frozen": [
+        "Aegeon Syracuse merchant background identity",
+        "Ephesus law death penalty Syracusans merchants",
+        "Aegeon arrest sentencing Ephesus Duke ransom"
+      ],
+      "8a_aspects": [
+        "Ephesian law prohibiting Syracusan merchants from entering the city",
+        "Hostility between Syracuse and Ephesus leading to travel bans",
+        "Aegeon's identity as a merchant from Syracuse",
+        "Death penalty as punishment for violating Ephesian entry ban"
+      ],
+      "8a_latency_ms": 13631.146907806396,
+      "8b_hyde_passage": "Aegeon, a merchant from Syracuse, was arrested upon arriving in Ephesus due to a longstanding enmity between the two cities. Ephesian law strictly prohibited Syracusians from entering the city, imposing a death sentence on any who violated the ban unless they could pay an exorbitant ransom. Unable to raise the required sum, Aegeon faced execution for the crime of his origin.",
+      "8b_latency_ms": 7327.975273132324,
+      "8c_dense_query": "Why was Aegeon sentenced to death in Ephesus?",
+      "8c_lexical_keywords": [
+        "Aegeon",
+        "sentenced",
+        "death",
+        "Ephesus"
+      ],
+      "8c_latency_ms": 6276.818037033081
+    },
+    "Q03": {
+      "q_id": "Q03",
+      "original_question": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "q2_frozen": [
+        "Antipholus of Syracuse visitor stranger in Ephesus",
+        "Adriana marriage to Antipholus of Ephesus twin brother",
+        "Mistaken identity Antipholus of Syracuse addressed by Adriana"
+      ],
+      "8a_aspects": [
+        "The twin identity premise: existence of two Antipholuses (Syracuse and Ephesus) and their identical appearance",
+        "Adriana's marital status: her marriage to Antipholus of Ephesus, not Antipholus of Syracuse",
+        "The encounter circumstances: when and where Adriana addresses Antipholus of Syracuse as her husband",
+        "Antipholus of Syracuse's awareness: his knowledge of his twin brother and the situation in Ephesus"
+      ],
+      "8a_latency_ms": 4740.970611572266,
+      "8b_hyde_passage": "The user asks: \"Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?\" This is a question about Shakespeare's \"The Comedy of Errors\". The user wants a hypothetical passage that expresses the type of information useful for answering the question. The passage should be 2-3 sentences, representing semantic concepts, entities, relationships, events, causes, or conditions implied by the question. No quotations, no mention of hypothetical, no retrieval references, no invented specific document facts not implied by the question. Output only the passage.\n\nWe need to produce a short passage that would be useful for answering why Antipholus of Syracuse fails to recognize Adriana. The passage should include relevant context: Antipholus of Syracuse is one of twin brothers, separated at birth; he arrives in Ephesus where his twin brother Antipholus of Ephesus lives; Adriana is the wife of Antipholus of Ephesus; she mistakes Antipholus of Syracuse for her husband; he does not recognize her because he has never met her, and the confusion arises from the identical appearance of the twins. The passage should be 2-3 sentences.\n\nWe must not mention that it's hypothetical. Just write a passage that could be from",
+      "8b_latency_ms": 3684.1447353363037,
+      "8c_dense_query": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "8c_lexical_keywords": [
+        "Antipholus",
+        "Syracuse",
+        "fail",
+        "recognize",
+        "Adriana",
+        "addresses",
+        "husband"
+      ],
+      "8c_latency_ms": 8806.245565414429
+    },
+    "Q04": {
+      "q_id": "Q04",
+      "original_question": "How did Aegeon come to have two pairs of identical twin sons and twin servants?",
+      "q2_frozen": [
+        "Aegeon twin sons birth circumstances Emilia",
+        "Aegeon family separation shipwreck storm",
+        "Aegeon twin servants Dromio purchase acquisition"
+      ],
+      "8a_aspects": [
+        "Aegeon's marriage to Emilia and the birth of their twin sons",
+        "Acquisition of twin servants (Dromio brothers) for Aegeon's twin sons",
+        "Shipwreck separating Aegeon from one twin son and one twin servant",
+        "Circumstances leading to Aegeon having two sets of identical twins in his household"
+      ],
+      "8a_latency_ms": 5433.752536773682,
+      "8b_hyde_passage": "Aegeon and his wife Emilia were traveling by sea when a violent storm separated their vessel, leaving each parent with one infant son and one infant servant on different fragments of the wreckage. The identical twins had been born to two different mothers on the same day — Aegeon's own sons and a pair of servant brothers purchased for them — creating two matching sets that were then divided by the shipwreck. Years later, the separated halves unknowingly converged in Ephesus, where the resulting confusion of mistaken identities revealed the extraordinary circumstances of their original separation.",
+      "8b_latency_ms": 5829.906225204468,
+      "8c_dense_query": "Aegeon origin twin sons twin servants Comedy of Errors",
+      "8c_lexical_keywords": [
+        "Egeon",
+        "Antipholus twins",
+        "Dromio twins",
+        "shipwreck separation",
+        "identical brothers"
+      ],
+      "8c_latency_ms": 3161.7279052734375
+    },
+    "Q05": {
+      "q_id": "Q05",
+      "original_question": "How do Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse?",
+      "q2_frozen": [
+        "Antipholus of Syracuse character background and his relationship to Dromio of Syracuse",
+        "Antipholus of Ephesus relationship to Dromio of Syracuse and the master-servant dynamic in Ephesus",
+        "Initial encounter scenes between Antipholus of Syracuse and Dromio of Syracuse versus Antipholus of Ephesus and Dromio of Syracuse"
+      ],
+      "8a_aspects": [
+        "Antipholus of Syracuse's first encounter with Dromio of Syracuse: scene, dialogue, and behavior",
+        "Antipholus of Ephesus's first encounter with Dromio of Syracuse: scene, dialogue, and behavior",
+        "Context and circumstances of each Antipholus's initial interaction with Dromio of Syracuse",
+        "Differences in master-servant dynamics and recognition between the two Antipholus characters and Dromio of Syracuse"
+      ],
+      "8a_latency_ms": 4952.921628952026,
+      "8b_hyde_passage": "In the opening scenes, Antipholus of Syracuse encounters Dromio of Syracuse as his trusted servant, engaging in familiar banter about money and travel arrangements that reflects their established master-servant relationship. Meanwhile, Antipholus of Ephesus meets the same Dromio under confusing circumstances, responding with bewilderment and anger to what he perceives as his servant's inexplicable behavior and strange claims about a lost thousand marks. These contrasting interactions immediately establish the central confusion of mistaken identity, as each Antipholus interprets Dromio's words through completely different frameworks of expectation and shared history.",
+      "8b_latency_ms": 3890.739917755127,
+      "8c_dense_query": "How do Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse?",
+      "8c_lexical_keywords": [
+        "Antipholus",
+        "Syracuse",
+        "Antipholus",
+        "Ephesus",
+        "differ",
+        "their",
+        "initial",
+        "interactions",
+        "Dromio",
+        "Syracuse"
+      ],
+      "8c_latency_ms": 8452.193260192871
+    },
+    "Q06": {
+      "q_id": "Q06",
+      "original_question": "Why is Antipholus of Ephesus arrested, and what role does Angelo the goldsmith play in the debt dispute?",
+      "q2_frozen": [
+        "Antipholus of Ephesus character background arrest debt",
+        "Angelo goldsmith relationship debt dispute legal claim",
+        "Arrest of Antipholus of Ephesus scene Angelo goldsmith demand payment"
+      ],
+      "8a_aspects": [
+        "Reason for Antipholus of Ephesus's arrest in The Comedy of Errors",
+        "Angelo the goldsmith's involvement in the debt dispute",
+        "Sequence of events linking the gold chain to Antipholus's arrest",
+        "Angelo's testimony or actions regarding the unpaid debt"
+      ],
+      "8a_latency_ms": 7749.739408493042,
+      "8b_hyde_passage": "Antipholus of Ephesus is taken into custody after Angelo the goldsmith accuses him of failing to pay for a valuable chain he allegedly commissioned. Angelo insists the debt",
+      "8b_latency_ms": 4864.934921264648,
+      "8c_dense_query": "Why is Antipholus of Ephesus arrested, and what role does Angelo the goldsmith play in the debt dispute?",
+      "8c_lexical_keywords": [
+        "Antipholus",
+        "Ephesus",
+        "arrested",
+        "role",
+        "Angelo",
+        "goldsmith",
+        "play",
+        "debt",
+        "dispute"
+      ],
+      "8c_latency_ms": 4556.715250015259
+    }
+  },
+  "experiments": {
+    "N_20": {
+      "comparison_table": [
+        {
+          "condition_id": "Control",
+          "condition_name": "Control (Frozen Q2 + CE)",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.0,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.4166666666666667,
+          "ndcg10": 0.5459379103747661,
+          "evidence_completeness": 0.3333333333333333,
+          "required_evidence_completeness": 0.6,
+          "new_gold_recovered": 0,
+          "total_new_candidates_added": 0,
+          "recovery_efficiency": 0.0,
+          "added_candidate_precision": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 35.666666666666664,
+          "mean_gen_latency_ms": 0.0,
+          "mean_ce_latency_ms": 2042.1857436498005,
+          "mean_total_latency_ms": 2174.5857436498004
+        },
+        {
+          "condition_id": "Phase_8A",
+          "condition_name": "8A Aspect Decomposition",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.17,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.41111111111111115,
+          "ndcg10": 0.5448143903329535,
+          "evidence_completeness": 0.3333333333333333,
+          "required_evidence_completeness": 0.6,
+          "new_gold_recovered": 0,
+          "total_new_candidates_added": 36,
+          "recovery_efficiency": 0.0,
+          "added_candidate_precision": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 41.666666666666664,
+          "mean_gen_latency_ms": 6678.612430890401,
+          "mean_ce_latency_ms": 2143.741488456726,
+          "mean_total_latency_ms": 8954.753919347128
+        },
+        {
+          "condition_id": "Phase_8B",
+          "condition_name": "8B HyDE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.03,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.41111111111111115,
+          "ndcg10": 0.5450827014692629,
+          "evidence_completeness": 0.3333333333333333,
+          "required_evidence_completeness": 0.6,
+          "new_gold_recovered": 0,
+          "total_new_candidates_added": 7,
+          "recovery_efficiency": 0.0,
+          "added_candidate_precision": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 36.833333333333336,
+          "mean_gen_latency_ms": 4589.279651641846,
+          "mean_ce_latency_ms": 2036.0308090845745,
+          "mean_total_latency_ms": 6757.71046072642
+        },
+        {
+          "condition_id": "Phase_8C",
+          "condition_name": "8C Vocabulary Bridging",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.06,
+          "final_recall_at_10": 0.55,
+          "evidence_precision": 0.18333333333333335,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.41111111111111115,
+          "ndcg10": 0.5311757117735044,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.55,
+          "new_gold_recovered": 0,
+          "total_new_candidates_added": 13,
+          "recovery_efficiency": 0.0,
+          "added_candidate_precision": 0.0,
+          "candidate_to_top10_conversion": 0.7333333333333334,
+          "mean_ce_pairs": 37.833333333333336,
+          "mean_gen_latency_ms": 6655.162533124288,
+          "mean_ce_latency_ms": 2039.819558461507,
+          "mean_total_latency_ms": 8827.382091585796
+        }
+      ],
+      "unreachable_tracking": {
+        "Control": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Phase_8A": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Phase_8B": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Phase_8C": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ]
+      },
+      "per_question_analysis": {
+        "Control": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88",
+              "C149"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C178",
+              "C169",
+              "C6"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C200",
+              "C94",
+              "C70",
+              "C130",
+              "C135",
+              "C194",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C178",
+              "C197",
+              "C110",
+              "C140",
+              "C137"
+            ]
+          }
+        ],
+        "Phase_8A": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C178",
+              "C169",
+              "C6"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C200",
+              "C94",
+              "C70",
+              "C130",
+              "C135",
+              "C194",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C102",
+              "C178",
+              "C197",
+              "C110",
+              "C140"
+            ]
+          }
+        ],
+        "Phase_8B": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C178",
+              "C169",
+              "C6"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C200",
+              "C94",
+              "C70",
+              "C130",
+              "C135",
+              "C194",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C194",
+              "C178",
+              "C197",
+              "C110",
+              "C140"
+            ]
+          }
+        ],
+        "Phase_8C": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C178",
+              "C169",
+              "C0"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C200",
+              "C94",
+              "C70",
+              "C130",
+              "C135",
+              "C194",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C178",
+              "C197",
+              "C110",
+              "C140",
+              "C137"
+            ]
+          }
+        ]
+      }
+    },
+    "N_50": {
+      "comparison_table": [
+        {
+          "condition_id": "Control",
+          "condition_name": "Control (Frozen Q2 + CE)",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.0,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_recovered": 0,
+          "total_new_candidates_added": 0,
+          "recovery_efficiency": 0.0,
+          "added_candidate_precision": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 54.666666666666664,
+          "mean_gen_latency_ms": 0.0,
+          "mean_ce_latency_ms": 2560.7948700586953,
+          "mean_total_latency_ms": 2693.1948700586954
+        },
+        {
+          "condition_id": "Phase_8A",
+          "condition_name": "8A Aspect Decomposition",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.8,
+          "candidate_expansion_factor": 1.1,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_recovered": 1,
+          "total_new_candidates_added": 34,
+          "recovery_efficiency": 0.029411764705882353,
+          "added_candidate_precision": 0.029411764705882353,
+          "candidate_to_top10_conversion": 0.7499999999999999,
+          "mean_ce_pairs": 60.333333333333336,
+          "mean_gen_latency_ms": 6678.612430890401,
+          "mean_ce_latency_ms": 2660.6318155924478,
+          "mean_total_latency_ms": 9471.644246482849
+        },
+        {
+          "condition_id": "Phase_8B",
+          "condition_name": "8B HyDE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.02,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_recovered": 0,
+          "total_new_candidates_added": 8,
+          "recovery_efficiency": 0.0,
+          "added_candidate_precision": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 56.0,
+          "mean_gen_latency_ms": 4589.279651641846,
+          "mean_ce_latency_ms": 2491.432706514994,
+          "mean_total_latency_ms": 7213.11235815684
+        },
+        {
+          "condition_id": "Phase_8C",
+          "condition_name": "8C Vocabulary Bridging",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.8,
+          "candidate_expansion_factor": 1.03,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_recovered": 1,
+          "total_new_candidates_added": 11,
+          "recovery_efficiency": 0.09090909090909091,
+          "added_candidate_precision": 0.09090909090909091,
+          "candidate_to_top10_conversion": 0.7499999999999999,
+          "mean_ce_pairs": 56.5,
+          "mean_gen_latency_ms": 6655.162533124288,
+          "mean_ce_latency_ms": 2473.675807317098,
+          "mean_total_latency_ms": 9261.238340441387
+        }
+      ],
+      "unreachable_tracking": {
+        "Control": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Phase_8A": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": true,
+            "recovered_by_expansion": true,
+            "provenance": {
+              "chunk_id": "C61",
+              "sources": [
+                {
+                  "channel": "aspect",
+                  "source_query": "The encounter circumstances: when and where Adriana addresses Antipholus of Syracuse as her husband",
+                  "source_rank": 41
+                }
+              ],
+              "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+              "in_base_q2": false,
+              "newly_recovered": true
+            },
+            "ce_score": -2.2571,
+            "ce_rank": 18,
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Phase_8B": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Phase_8C": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": true,
+            "recovered_by_expansion": true,
+            "provenance": {
+              "chunk_id": "C61",
+              "sources": [
+                {
+                  "channel": "dense_bridge",
+                  "source_query": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+                  "source_rank": 33
+                }
+              ],
+              "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+              "in_base_q2": false,
+              "newly_recovered": true
+            },
+            "ce_score": -0.8227,
+            "ce_rank": 14,
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ]
+      },
+      "per_question_analysis": {
+        "Control": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C178",
+              "C2",
+              "C169",
+              "C10",
+              "C181"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C194",
+              "C102",
+              "C197"
+            ]
+          }
+        ],
+        "Phase_8A": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.5,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [
+              "C61"
+            ],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C1",
+              "C178",
+              "C2",
+              "C169",
+              "C10"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C194",
+              "C102",
+              "C197"
+            ]
+          }
+        ],
+        "Phase_8B": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C178",
+              "C2",
+              "C169",
+              "C10",
+              "C181"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C194",
+              "C102",
+              "C197"
+            ]
+          }
+        ],
+        "Phase_8C": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.5,
+            "ce_top10_recall": 0.25,
+            "new_gold_recovered": [
+              "C61"
+            ],
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C178",
+              "C2",
+              "C169",
+              "C10",
+              "C181"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "new_gold_recovered": [],
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C194",
+              "C102",
+              "C197"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

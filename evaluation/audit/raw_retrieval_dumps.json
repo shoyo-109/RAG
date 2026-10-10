@@ -1,0 +1,1466 @@
+{
+  "Q01": {
+    "question": "Who is Aegeon and what is his origin?",
+    "semantic": [
+      {
+        "rank": 1,
+        "chunk_id": "C10",
+        "element_id": "pdf_el_2ffd5bc4",
+        "score": 0.5170961352467309,
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "Gaoler; I will, my lord. AEGEON; Hopeless and helpless doth AEgeon wend,  But to procrastinate his lifeless end. Exeunt 6"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "score": 0.45736037956016895,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Whoever bound him, I will loose his bonds  And gain a husband by his liberty. Speak, old AEgeon, if thou be'st the man  That hadst a wife onc"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C186",
+        "element_id": "pdf_el_1029c61c",
+        "score": 0.39711128024347975,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "you know me well. ANTIPHOLUS OF EPHESUS; I never saw you in my life till now. AEGEON; O, grief hath changed me since you saw me last,  And careful hou"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "score": 0.36720113746839067,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "who deciphers them? DROMIO OF SYRACUSE; I, sir, am Dromio; command him away. DROMIO OF EPHESUS; I, sir, am Dromio; pray, let me stay. ANTIPHOLUS OF SY"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C2",
+        "element_id": "pdf_el_6c9bbe28",
+        "score": 0.35935658971234097,
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "AEGEON; Yet this my comfort: when your words are done,  My woes end likewise with the evening sun. 2"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C194",
+        "element_id": "pdf_el_0ca9eb91",
+        "score": 0.3507002432344646,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Antipholus, thou camest from Corinth first? ANTIPHOLUS OF SYRACUSE; No, sir, not I; I came from Syracuse. DUKE SOLINUS; Stay, stand apart; I know not "
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C166",
+        "element_id": "pdf_el_5952b60c",
+        "score": 0.3457476322870945,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ADRIANA; This week he hath been heavy, sour, sad,  And much different from the man he was;  But till this afternoon his passion  Ne'er brake into extr"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C166",
+        "element_id": "pdf_el_5952b60c",
+        "score": 0.3444639196896096,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Ay, but not enough. ADRIANA; It was the copy of our conference:  In bed he slept not for my urging it;  At board he fed not for my urging it;"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C189",
+        "element_id": "pdf_el_e385cf8e",
+        "score": 0.34045344321604454,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "DROMIO OF EPHESUS; Ay, sir, but I am sure I do not; and whatsoever a  man denies, you are now bound to believe him. AEGEON; Not know my voice! O time'"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C4",
+        "element_id": "pdf_el_c8b5e116",
+        "score": 0.33930205067686936,
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "DUKE SOLINUS; Well, Syracusian, say in brief the cause  Why thou departed'st from thy native home  And for what cause thou camest to Ephesus. AEGEON; "
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "chunk_id": "C171",
+        "element_id": "pdf_el_ad2472ac",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "To make of him a formal man again:  It is a branch and parcel of mine oath,  A charitable duty of my order. Therefore depart and leave him here with m"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C163",
+        "element_id": "pdf_el_171e78be",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Second Merchant; Yes, that you did, sir, and forswore it too. ANTIPHOLUS OF SYRACUSE; Who heard me to deny it or forswear it? Second Merchant; These e"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C169",
+        "element_id": "pdf_el_32d62cb4",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Thou say'st his meat was sauced with thy upbraidings:  Unquiet meals make ill digestions;  Thereof the raging fire of fever bred;  And what's a fever "
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C143",
+        "element_id": "pdf_el_66d6a52d",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Good Doctor Pinch, you are a conjurer;  Establish him in his true sense again,  And I will please you what you will demand. LUCIANA; Alas, how fiery a"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C47",
+        "element_id": "pdf_el_e9febebf",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "DROMIO OF SYRACUSE; There's no time for a man to recover his hair that  grows bald by nature. ANTIPHOLUS OF SYRACUSE; May he not do it by fine and rec"
+      }
+    ],
+    "rrf": [
+      {
+        "rank": 1,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "who deciphers them? DROMIO OF SYRACUSE; I, sir, am Dromio; command him away. DROMIO OF EPHESUS; I, sir, am Dromio; pray, let me stay. ANTIPHOLUS OF SY"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C166",
+        "element_id": "pdf_el_5952b60c",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Ay, but not enough. ADRIANA; It was the copy of our conference:  In bed he slept not for my urging it;  At board he fed not for my urging it;"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C10",
+        "element_id": "pdf_el_2ffd5bc4",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "Gaoler; I will, my lord. AEGEON; Hopeless and helpless doth AEgeon wend,  But to procrastinate his lifeless end. Exeunt 6"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C171",
+        "element_id": "pdf_el_ad2472ac",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "To make of him a formal man again:  It is a branch and parcel of mine oath,  A charitable duty of my order. Therefore depart and leave him here with m"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C163",
+        "element_id": "pdf_el_171e78be",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Second Merchant; Yes, that you did, sir, and forswore it too. ANTIPHOLUS OF SYRACUSE; Who heard me to deny it or forswear it? Second Merchant; These e"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C186",
+        "element_id": "pdf_el_1029c61c",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "you know me well. ANTIPHOLUS OF EPHESUS; I never saw you in my life till now. AEGEON; O, grief hath changed me since you saw me last,  And careful hou"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C169",
+        "element_id": "pdf_el_32d62cb4",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Thou say'st his meat was sauced with thy upbraidings:  Unquiet meals make ill digestions;  Thereof the raging fire of fever bred;  And what's a fever "
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C143",
+        "element_id": "pdf_el_66d6a52d",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Good Doctor Pinch, you are a conjurer;  Establish him in his true sense again,  And I will please you what you will demand. LUCIANA; Alas, how fiery a"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C2",
+        "element_id": "pdf_el_6c9bbe28",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "AEGEON; Yet this my comfort: when your words are done,  My woes end likewise with the evening sun. 2"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C47",
+        "element_id": "pdf_el_e9febebf",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "DROMIO OF SYRACUSE; There's no time for a man to recover his hair that  grows bald by nature. ANTIPHOLUS OF SYRACUSE; May he not do it by fine and rec"
+      }
+    ]
+  },
+  "Q02": {
+    "question": "Why was Aegeon sentenced to death in Ephesus?",
+    "semantic": [
+      {
+        "rank": 1,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "score": 0.5606238035331947,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Whoever bound him, I will loose his bonds  And gain a husband by his liberty. Speak, old AEgeon, if thou be'st the man  That hadst a wife onc"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C189",
+        "element_id": "pdf_el_e385cf8e",
+        "score": 0.5478618071268679,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "DROMIO OF EPHESUS; Ay, sir, but I am sure I do not; and whatsoever a  man denies, you are now bound to believe him. AEGEON; Not know my voice! O time'"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C178",
+        "element_id": "pdf_el_165bc593",
+        "score": 0.5260955031719577,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF EPHESUS; Justice, most gracious duke, O, grant me justice! Even for the service that long since I did thee,  When I bestrid thee in the "
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C186",
+        "element_id": "pdf_el_1029c61c",
+        "score": 0.5244303081181814,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "you know me well. ANTIPHOLUS OF EPHESUS; I never saw you in my life till now. AEGEON; O, grief hath changed me since you saw me last,  And careful hou"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C10",
+        "element_id": "pdf_el_2ffd5bc4",
+        "score": 0.5167222805215252,
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "Five summers have I spent in furthest Greece,  Roaming clean through the bounds of Asia,  And, coasting homeward, came to Ephesus;  Hopeless to find, "
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C73",
+        "element_id": "pdf_el_dc9073c9",
+        "score": 0.5106818662424661,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "ANTIPHOLUS OF EPHESUS; Do you hear, you minion? you'll let us in, I hope?"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C65",
+        "element_id": "pdf_el_63b7f29b",
+        "score": 0.5083024441051313,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "SCENE 1    Before the house of ANTIPHOLUS of Ephesus. Enter ANTIPHOLUS of Ephesus, DROMIO of Ephesus, ANGELO, and BALTHAZAR  ANTIPHOLUS OF EPHESUS; Go"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C113",
+        "element_id": "pdf_el_99a9cc47",
+        "score": 0.4975927722711778,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "ANGELO; Sir, sir, I will have law in Ephesus,  To your notorious shame; I doubt it not. Enter DROMIO of Syracuse, from the bay  DROMIO OF SYRACUSE; Ma"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C197",
+        "element_id": "pdf_el_63ae8555",
+        "score": 0.49743856531527386,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF EPHESUS; There, take it; and much thanks for my good  cheer. AEMELIA; Renowned duke, vouchsafe to take the pains  To go with us into the"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C137",
+        "element_id": "pdf_el_73c6370b",
+        "score": 0.4814528263494184,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "SCENE 4    A street. Enter ANTIPHOLUS of Ephesus and the Officer  ANTIPHOLUS OF EPHESUS; Fear me not, man; I will not break away:  I'll give thee, ere"
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "chunk_id": "C4",
+        "element_id": "pdf_el_c8b5e116",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "DUKE SOLINUS; Well, Syracusian, say in brief the cause  Why thou departed'st from thy native home  And for what cause thou camest to Ephesus. AEGEON; "
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C79",
+        "element_id": "pdf_el_68de8611",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "BALTHAZAR; Have patience, sir; O, let it not be so! Herein you war against your reputation  And draw within the compass of suspect  The unviolated hon"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C85",
+        "element_id": "pdf_el_0678e5c8",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "would you create me new? Transform me then, and to your power I'll yield. But if that I am I, then well I know  Your weeping sister is no wife of mine"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C24",
+        "element_id": "pdf_el_6c427036",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave return'd,  That in such haste I s"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C186",
+        "element_id": "pdf_el_1029c61c",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Courtezan; As sure, my liege, as I do see your grace. DUKE SOLINUS; Why, this is strange. Go call the abbess hither. I think you are all mated or star"
+      }
+    ],
+    "rrf": [
+      {
+        "rank": 1,
+        "chunk_id": "C186",
+        "element_id": "pdf_el_1029c61c",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Courtezan; As sure, my liege, as I do see your grace. DUKE SOLINUS; Why, this is strange. Go call the abbess hither. I think you are all mated or star"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Whoever bound him, I will loose his bonds  And gain a husband by his liberty. Speak, old AEgeon, if thou be'st the man  That hadst a wife onc"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C4",
+        "element_id": "pdf_el_c8b5e116",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "DUKE SOLINUS; Well, Syracusian, say in brief the cause  Why thou departed'st from thy native home  And for what cause thou camest to Ephesus. AEGEON; "
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C189",
+        "element_id": "pdf_el_e385cf8e",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "DROMIO OF EPHESUS; Ay, sir, but I am sure I do not; and whatsoever a  man denies, you are now bound to believe him. AEGEON; Not know my voice! O time'"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C79",
+        "element_id": "pdf_el_68de8611",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "BALTHAZAR; Have patience, sir; O, let it not be so! Herein you war against your reputation  And draw within the compass of suspect  The unviolated hon"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C178",
+        "element_id": "pdf_el_165bc593",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF EPHESUS; Justice, most gracious duke, O, grant me justice! Even for the service that long since I did thee,  When I bestrid thee in the "
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C85",
+        "element_id": "pdf_el_0678e5c8",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "would you create me new? Transform me then, and to your power I'll yield. But if that I am I, then well I know  Your weeping sister is no wife of mine"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C24",
+        "element_id": "pdf_el_6c427036",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave return'd,  That in such haste I s"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C10",
+        "element_id": "pdf_el_2ffd5bc4",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "Five summers have I spent in furthest Greece,  Roaming clean through the bounds of Asia,  And, coasting homeward, came to Ephesus;  Hopeless to find, "
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C73",
+        "element_id": "pdf_el_dc9073c9",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "ANTIPHOLUS OF EPHESUS; Do you hear, you minion? you'll let us in, I hope?"
+      }
+    ]
+  },
+  "Q03": {
+    "question": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+    "semantic": [
+      {
+        "rank": 1,
+        "chunk_id": "C194",
+        "element_id": "pdf_el_0ca9eb91",
+        "score": 0.6909270904186088,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF SYRACUSE; I, gentle mistress. ADRIANA; And are not you my husband? ANTIPHOLUS OF EPHESUS; No; I say nay to that. ANTIPHOLUS OF SYRACUSE;"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C83",
+        "element_id": "pdf_el_06ff6430",
+        "score": 0.6011408196255765,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "SCENE 2     The same. Enter LUCIANA and ANTIPHOLUS of Syracuse  LUCIANA; And may it be that you have quite forgot  A husband's office? shall, Antiphol"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C50",
+        "element_id": "pdf_el_c6ed7c76",
+        "score": 0.5859743184239681,
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "who wafts us yonder? Enter ADRIANA and LUCIANA  ADRIANA; Ay, ay, Antipholus, look strange and frown:  Some other mistress hath thy sweet aspects;  I a"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C24",
+        "element_id": "pdf_el_6c427036",
+        "score": 0.556596728180358,
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave return'd,  That in such haste I s"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C118",
+        "element_id": "pdf_el_3b418c5a",
+        "score": 0.5552786386313376,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "SCENE 2     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Ah, Luciana, did he tempt thee so? Mightst thou perceive austerely"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C88",
+        "element_id": "pdf_el_8f8feaa1",
+        "score": 0.5288040213921542,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "ANTIPHOLUS OF SYRACUSE; As good to wink, sweet love, as look on night. LUCIANA; Why call you me love? call my sister so. ANTIPHOLUS OF SYRACUSE; Thy s"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C91",
+        "element_id": "pdf_el_086c4249",
+        "score": 0.5286660877093712,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "DROMIO OF SYRACUSE; I am an ass, I am a woman's man and besides  myself. ANTIPHOLUS OF SYRACUSE; What woman's man? and how besides thyself?"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C47",
+        "element_id": "pdf_el_e9febebf",
+        "score": 0.5241525858061311,
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "DROMIO OF SYRACUSE; Marry, sir, by a rule as plain as the plain bald  pate of father Time himself. ANTIPHOLUS OF SYRACUSE; Let's hear it."
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C169",
+        "element_id": "pdf_el_32d62cb4",
+        "score": 0.5223293182447406,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Why bear you these rebukes and answer not? ADRIANA; She did betray me to my own reproof. Good people enter and lay hold on him. AEMELIA; No, not a cre"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C175",
+        "element_id": "pdf_el_54c9cd2a",
+        "score": 0.5142408122429041,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ADRIANA; Ay me, it is my husband! Witness you,  That he is borne about invisible:  Even now we housed him in the abbey here;  And now he's there, past"
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "chunk_id": "C140",
+        "element_id": "pdf_el_1c565c57",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "I have served him from the hour of my  nativity to this instant, and have nothing at his  hands for my service but blows. When I am cold, he  heats me"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C194",
+        "element_id": "pdf_el_0ca9eb91",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF SYRACUSE; I, gentle mistress. ADRIANA; And are not you my husband? ANTIPHOLUS OF EPHESUS; No; I say nay to that. ANTIPHOLUS OF SYRACUSE;"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C91",
+        "element_id": "pdf_el_086c4249",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "besides thyself? DROMIO OF SYRACUSE; Marry, sir, besides myself, I am due to a woman;  one  that claims me, one that haunts me, one that will have me."
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C200",
+        "element_id": "pdf_el_6acf9730",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with me;  After so long grief, suc"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C79",
+        "element_id": "pdf_el_68de8611",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "BALTHAZAR; Have patience, sir; O, let it not be so! Herein you war against your reputation  And draw within the compass of suspect  The unviolated hon"
+      }
+    ],
+    "rrf": [
+      {
+        "rank": 1,
+        "chunk_id": "C194",
+        "element_id": "pdf_el_0ca9eb91",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF SYRACUSE; I, gentle mistress. ADRIANA; And are not you my husband? ANTIPHOLUS OF EPHESUS; No; I say nay to that. ANTIPHOLUS OF SYRACUSE;"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C91",
+        "element_id": "pdf_el_086c4249",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "besides thyself? DROMIO OF SYRACUSE; Marry, sir, besides myself, I am due to a woman;  one  that claims me, one that haunts me, one that will have me."
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C140",
+        "element_id": "pdf_el_1c565c57",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "I have served him from the hour of my  nativity to this instant, and have nothing at his  hands for my service but blows. When I am cold, he  heats me"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C83",
+        "element_id": "pdf_el_06ff6430",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "SCENE 2     The same. Enter LUCIANA and ANTIPHOLUS of Syracuse  LUCIANA; And may it be that you have quite forgot  A husband's office? shall, Antiphol"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C50",
+        "element_id": "pdf_el_c6ed7c76",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "who wafts us yonder? Enter ADRIANA and LUCIANA  ADRIANA; Ay, ay, Antipholus, look strange and frown:  Some other mistress hath thy sweet aspects;  I a"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C24",
+        "element_id": "pdf_el_6c427036",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave return'd,  That in such haste I s"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C200",
+        "element_id": "pdf_el_6acf9730",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with me;  After so long grief, suc"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C118",
+        "element_id": "pdf_el_3b418c5a",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "SCENE 2     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Ah, Luciana, did he tempt thee so? Mightst thou perceive austerely"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C79",
+        "element_id": "pdf_el_68de8611",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "BALTHAZAR; Have patience, sir; O, let it not be so! Herein you war against your reputation  And draw within the compass of suspect  The unviolated hon"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C88",
+        "element_id": "pdf_el_8f8feaa1",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "ANTIPHOLUS OF SYRACUSE; As good to wink, sweet love, as look on night. LUCIANA; Why call you me love? call my sister so. ANTIPHOLUS OF SYRACUSE; Thy s"
+      }
+    ]
+  },
+  "Q04": {
+    "question": "How did Aegeon come to have two pairs of identical twin sons and twin servants?",
+    "semantic": [
+      {
+        "rank": 1,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "score": 0.5732663155073088,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Whoever bound him, I will loose his bonds  And gain a husband by his liberty. Speak, old AEgeon, if thou be'st the man  That hadst a wife onc"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C4",
+        "element_id": "pdf_el_c8b5e116",
+        "score": 0.3597837680953275,
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "DUKE SOLINUS; Well, Syracusian, say in brief the cause  Why thou departed'st from thy native home  And for what cause thou camest to Ephesus. AEGEON; "
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C8",
+        "element_id": "pdf_el_4997e5b0",
+        "score": 0.35821521169208603,
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "AEGEON; O, had the gods done so, I had not now  Worthily term'd them merciless to us! For, ere the ships could meet by twice five leagues,  We were en"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C24",
+        "element_id": "pdf_el_6c427036",
+        "score": 0.33304086533060906,
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave return'd,  That in such haste I s"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C10",
+        "element_id": "pdf_el_2ffd5bc4",
+        "score": 0.32656147158330173,
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "Gaoler; I will, my lord. AEGEON; Hopeless and helpless doth AEgeon wend,  But to procrastinate his lifeless end. Exeunt 6"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C186",
+        "element_id": "pdf_el_1029c61c",
+        "score": 0.3258928840197961,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Courtezan; As sure, my liege, as I do see your grace. DUKE SOLINUS; Why, this is strange. Go call the abbess hither. I think you are all mated or star"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C189",
+        "element_id": "pdf_el_e385cf8e",
+        "score": 0.3228078692623225,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "DROMIO OF EPHESUS; Ay, sir, but I am sure I do not; and whatsoever a  man denies, you are now bound to believe him. AEGEON; Not know my voice! O time'"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "score": 0.31734008289793214,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "DUKE SOLINUS; One of these men is Genius to the other;  And so of these. Which is the natural man,  And which the spirit?"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C110",
+        "element_id": "pdf_el_7e3a04dd",
+        "score": 0.3079487861471202,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Second Merchant; My business cannot brook this dalliance. Good sir, say whether you'll answer me or no:  If not, I'll leave him to the officer. ANTIPH"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C194",
+        "element_id": "pdf_el_0ca9eb91",
+        "score": 0.3046497795968484,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Antipholus, thou camest from Corinth first? ANTIPHOLUS OF SYRACUSE; No, sir, not I; I came from Syracuse. DUKE SOLINUS; Stay, stand apart; I know not "
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Whoever bound him, I will loose his bonds  And gain a husband by his liberty. Speak, old AEgeon, if thou be'st the man  That hadst a wife onc"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C27",
+        "element_id": "pdf_el_f7d12276",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "ADRIANA; This servitude makes you to keep unwed. LUCIANA; Not this, but troubles of the marriage-bed. ADRIANA; But, were you wedded, you would bear so"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C107",
+        "element_id": "pdf_el_77ef3317",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "ANGELO; Saving your merry humour, here's the note  How much your chain weighs to the utmost carat,  The fineness of the gold and chargeful fashion. Wh"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C161",
+        "element_id": "pdf_el_2ff0ffb0",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "SCENE 1     A street before a Priory. Enter Second Merchant and ANGELO  ANGELO; I am sorry, sir, that I have hinder'd you;  But, I protest, he had the"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C137",
+        "element_id": "pdf_el_73c6370b",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "How now, sir! have you that I sent you for? DROMIO OF EPHESUS; Here's that, I warrant you, will pay them all. ANTIPHOLUS OF EPHESUS; But where's the m"
+      }
+    ],
+    "rrf": [
+      {
+        "rank": 1,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "AEMELIA; Whoever bound him, I will loose his bonds  And gain a husband by his liberty. Speak, old AEgeon, if thou be'st the man  That hadst a wife onc"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C4",
+        "element_id": "pdf_el_c8b5e116",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "DUKE SOLINUS; Well, Syracusian, say in brief the cause  Why thou departed'st from thy native home  And for what cause thou camest to Ephesus. AEGEON; "
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C27",
+        "element_id": "pdf_el_f7d12276",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "ADRIANA; This servitude makes you to keep unwed. LUCIANA; Not this, but troubles of the marriage-bed. ADRIANA; But, were you wedded, you would bear so"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C8",
+        "element_id": "pdf_el_4997e5b0",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "AEGEON; O, had the gods done so, I had not now  Worthily term'd them merciless to us! For, ere the ships could meet by twice five leagues,  We were en"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C107",
+        "element_id": "pdf_el_77ef3317",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "ANGELO; Saving your merry humour, here's the note  How much your chain weighs to the utmost carat,  The fineness of the gold and chargeful fashion. Wh"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C24",
+        "element_id": "pdf_el_6c427036",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave return'd,  That in such haste I s"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C161",
+        "element_id": "pdf_el_2ff0ffb0",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "SCENE 1     A street before a Priory. Enter Second Merchant and ANGELO  ANGELO; I am sorry, sir, that I have hinder'd you;  But, I protest, he had the"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C10",
+        "element_id": "pdf_el_2ffd5bc4",
+        "parent_id": "",
+        "parent_text": "ACT 1 \n1\nSCENE 1  \n \nA hall in DUKE SOLINUS'S palace. \nEnter DUKE SOLINUS, AEGEON, Gaoler, Officers,",
+        "breadcrumb": "ACT 1 \n1",
+        "text": "Gaoler; I will, my lord. AEGEON; Hopeless and helpless doth AEgeon wend,  But to procrastinate his lifeless end. Exeunt 6"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C137",
+        "element_id": "pdf_el_73c6370b",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "How now, sir! have you that I sent you for? DROMIO OF EPHESUS; Here's that, I warrant you, will pay them all. ANTIPHOLUS OF EPHESUS; But where's the m"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C186",
+        "element_id": "pdf_el_1029c61c",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Courtezan; As sure, my liege, as I do see your grace. DUKE SOLINUS; Why, this is strange. Go call the abbess hither. I think you are all mated or star"
+      }
+    ]
+  },
+  "Q05": {
+    "question": "How do Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse?",
+    "semantic": [
+      {
+        "rank": 1,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "score": 0.6133182397049375,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "who deciphers them? DROMIO OF SYRACUSE; I, sir, am Dromio; command him away. DROMIO OF EPHESUS; I, sir, am Dromio; pray, let me stay. ANTIPHOLUS OF SY"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C94",
+        "element_id": "pdf_el_2c470d1e",
+        "score": 0.608964509774328,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "DROMIO OF SYRACUSE; No, sir, 'tis in grain; Noah's flood could not do it. ANTIPHOLUS OF SYRACUSE; What's her name? DROMIO OF SYRACUSE; Nell, sir; but "
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C194",
+        "element_id": "pdf_el_0ca9eb91",
+        "score": 0.5794805960024716,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Antipholus, thou camest from Corinth first? ANTIPHOLUS OF SYRACUSE; No, sir, not I; I came from Syracuse. DUKE SOLINUS; Stay, stand apart; I know not "
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C50",
+        "element_id": "pdf_el_c6ed7c76",
+        "score": 0.5768155583749615,
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "DROMIO OF SYRACUSE; For two; and sound ones too. ANTIPHOLUS OF SYRACUSE; Nay, not sound, I pray you. DROMIO OF SYRACUSE; Sure ones, then. ANTIPHOLUS O"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C200",
+        "element_id": "pdf_el_6acf9730",
+        "score": 0.5562119551289726,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with me;  After so long grief, suc"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C70",
+        "element_id": "pdf_el_462b72cf",
+        "score": 0.5549734838102134,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "DROMIO OF SYRACUSE[Within]; Right, sir; I'll tell you when, an you tell  me wherefore. ANTIPHOLUS OF EPHESUS; Wherefore? for my dinner: I have not din"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C197",
+        "element_id": "pdf_el_63ae8555",
+        "score": 0.5536504737754764,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF SYRACUSE; I think it be, sir; I deny it not. ANTIPHOLUS OF EPHESUS; And you, sir, for this chain arrested me. ANGELO; I think I did, sir"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C76",
+        "element_id": "pdf_el_f3e94e3b",
+        "score": 0.5502448423721777,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "ANTIPHOLUS OF EPHESUS; Go fetch me something: I'll break ope the gate. DROMIO OF SYRACUSE[Within]; Break any breaking here, and I'll break your  knave"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C97",
+        "element_id": "pdf_el_fd1ba6d7",
+        "score": 0.5462661130811372,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "DROMIO OF SYRACUSE; I looked for the chalky cliffs, but I could find no  whiteness in them; but I guess it stood in her chin,  by the salt rheum that "
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C47",
+        "element_id": "pdf_el_e9febebf",
+        "score": 0.5449482553549448,
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "DROMIO OF SYRACUSE; Marry, sir, by a rule as plain as the plain bald  pate of father Time himself. ANTIPHOLUS OF SYRACUSE; Let's hear it."
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "chunk_id": "C200",
+        "element_id": "pdf_el_6acf9730",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with me;  After so long grief, suc"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C155",
+        "element_id": "pdf_el_f9f4b845",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "they'll kill us. Exeunt all but Antipholus of Syracuse and Dromio of Syracuse  ANTIPHOLUS OF SYRACUSE; I see these witches are afraid of swords. DROMI"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C135",
+        "element_id": "pdf_el_c90583ae",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Master, be wise: an if you give it her,  The devil will shake her chain and fright us with it. Courtezan; I pray you, sir, my ring, or else the chain:"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C163",
+        "element_id": "pdf_el_171e78be",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Second Merchant; Yes, that you did, sir, and forswore it too. ANTIPHOLUS OF SYRACUSE; Who heard me to deny it or forswear it? Second Merchant; These e"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C38",
+        "element_id": "pdf_el_45b406eb",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 2    A public place. Enter ANTIPHOLUS of Syracuse  ANTIPHOLUS OF SYRACUSE; The gold I gave to Dromio is laid up  Safe at the Centaur; and the he"
+      }
+    ],
+    "rrf": [
+      {
+        "rank": 1,
+        "chunk_id": "C200",
+        "element_id": "pdf_el_6acf9730",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with me;  After so long grief, suc"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C191",
+        "element_id": "pdf_el_9bf2fb5e",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "who deciphers them? DROMIO OF SYRACUSE; I, sir, am Dromio; command him away. DROMIO OF EPHESUS; I, sir, am Dromio; pray, let me stay. ANTIPHOLUS OF SY"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C94",
+        "element_id": "pdf_el_2c470d1e",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "DROMIO OF SYRACUSE; No, sir, 'tis in grain; Noah's flood could not do it. ANTIPHOLUS OF SYRACUSE; What's her name? DROMIO OF SYRACUSE; Nell, sir; but "
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C155",
+        "element_id": "pdf_el_f9f4b845",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "they'll kill us. Exeunt all but Antipholus of Syracuse and Dromio of Syracuse  ANTIPHOLUS OF SYRACUSE; I see these witches are afraid of swords. DROMI"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C194",
+        "element_id": "pdf_el_0ca9eb91",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Antipholus, thou camest from Corinth first? ANTIPHOLUS OF SYRACUSE; No, sir, not I; I came from Syracuse. DUKE SOLINUS; Stay, stand apart; I know not "
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C135",
+        "element_id": "pdf_el_c90583ae",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Master, be wise: an if you give it her,  The devil will shake her chain and fright us with it. Courtezan; I pray you, sir, my ring, or else the chain:"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C50",
+        "element_id": "pdf_el_c6ed7c76",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "DROMIO OF SYRACUSE; For two; and sound ones too. ANTIPHOLUS OF SYRACUSE; Nay, not sound, I pray you. DROMIO OF SYRACUSE; Sure ones, then. ANTIPHOLUS O"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C163",
+        "element_id": "pdf_el_171e78be",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Second Merchant; Yes, that you did, sir, and forswore it too. ANTIPHOLUS OF SYRACUSE; Who heard me to deny it or forswear it? Second Merchant; These e"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C38",
+        "element_id": "pdf_el_45b406eb",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "SCENE 2    A public place. Enter ANTIPHOLUS of Syracuse  ANTIPHOLUS OF SYRACUSE; The gold I gave to Dromio is laid up  Safe at the Centaur; and the he"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C70",
+        "element_id": "pdf_el_462b72cf",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "DROMIO OF SYRACUSE[Within]; Right, sir; I'll tell you when, an you tell  me wherefore. ANTIPHOLUS OF EPHESUS; Wherefore? for my dinner: I have not din"
+      }
+    ]
+  },
+  "Q06": {
+    "question": "Why is Antipholus of Ephesus arrested, and what role does Angelo the goldsmith play in the debt dispute?",
+    "semantic": [
+      {
+        "rank": 1,
+        "chunk_id": "C105",
+        "element_id": "pdf_el_7fed9342",
+        "score": 0.658679381430539,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "SCENE 1    A public place. Enter Second Merchant, ANGELO, and an Officer  Second Merchant; You know since Pentecost the sum is due,  And since I have "
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C65",
+        "element_id": "pdf_el_63b7f29b",
+        "score": 0.64167645703718,
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "SCENE 1    Before the house of ANTIPHOLUS of Ephesus. Enter ANTIPHOLUS of Ephesus, DROMIO of Ephesus, ANGELO, and BALTHAZAR  ANTIPHOLUS OF EPHESUS; Go"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C197",
+        "element_id": "pdf_el_63ae8555",
+        "score": 0.6225924865244397,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF SYRACUSE; I think it be, sir; I deny it not. ANTIPHOLUS OF EPHESUS; And you, sir, for this chain arrested me. ANGELO; I think I did, sir"
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C110",
+        "element_id": "pdf_el_7e3a04dd",
+        "score": 0.6074297956820786,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "what should I answer you? ANGELO; The money that you owe me for the chain. ANTIPHOLUS OF EPHESUS; I owe you none till I receive the chain. ANGELO; You"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C137",
+        "element_id": "pdf_el_73c6370b",
+        "score": 0.596325606047285,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "SCENE 4    A street. Enter ANTIPHOLUS of Ephesus and the Officer  ANTIPHOLUS OF EPHESUS; Fear me not, man; I will not break away:  I'll give thee, ere"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C146",
+        "element_id": "pdf_el_965a5824",
+        "score": 0.5884038887218992,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "PINCH; It is no shame: the fellow finds his vein,  And yielding to him humours well his frenzy. ANTIPHOLUS OF EPHESUS; Thou hast suborn'd the goldsmit"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C113",
+        "element_id": "pdf_el_99a9cc47",
+        "score": 0.5742631321529899,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Officer; I do; and charge you in the duke's name to obey me. ANGELO; This touches me in reputation. Either consent to pay this sum for me  Or I attach"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C137",
+        "element_id": "pdf_el_73c6370b",
+        "score": 0.569323679264983,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "How now, sir! have you that I sent you for? DROMIO OF EPHESUS; Here's that, I warrant you, will pay them all. ANTIPHOLUS OF EPHESUS; But where's the m"
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C163",
+        "element_id": "pdf_el_171e78be",
+        "score": 0.5682398479145501,
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "Second Merchant; Yes, that you did, sir, and forswore it too. ANTIPHOLUS OF SYRACUSE; Who heard me to deny it or forswear it? Second Merchant; These e"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C146",
+        "element_id": "pdf_el_965a5824",
+        "score": 0.5682029767845017,
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "heart and goodwill you might;  But surely master, not a rag of money. ANTIPHOLUS OF EPHESUS; Went'st not thou to her for a purse of ducats? 60"
+      }
+    ],
+    "bm25": [
+      {
+        "rank": 1,
+        "chunk_id": "C200",
+        "element_id": "pdf_el_6acf9730",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with me;  After so long grief, suc"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C152",
+        "element_id": "pdf_el_2f71a0ce",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Officer; Masters, let him go  He is my prisoner, and you shall not have him. PINCH; Go bind this man, for he is frantic too. They offer to bind Dromio"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C116",
+        "element_id": "pdf_el_a3b64e60",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "DROMIO OF SYRACUSE; A ship you sent me to, to hire waftage. ANTIPHOLUS OF EPHESUS; Thou drunken slave, I sent thee for a rope;  And told thee to what "
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C61",
+        "element_id": "pdf_el_97946fd3",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "Dromio, play the porter well. ANTIPHOLUS OF SYRACUSE; Am I in earth, in heaven, or in hell? Sleeping or waking?"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C175",
+        "element_id": "pdf_el_54c9cd2a",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ADRIANA; Ay me, it is my husband! Witness you,  That he is borne about invisible:  Even now we housed him in the abbey here;  And now he's there, past"
+      }
+    ],
+    "rrf": [
+      {
+        "rank": 1,
+        "chunk_id": "C137",
+        "element_id": "pdf_el_73c6370b",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "How now, sir! have you that I sent you for? DROMIO OF EPHESUS; Here's that, I warrant you, will pay them all. ANTIPHOLUS OF EPHESUS; But where's the m"
+      },
+      {
+        "rank": 2,
+        "chunk_id": "C146",
+        "element_id": "pdf_el_965a5824",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "heart and goodwill you might;  But surely master, not a rag of money. ANTIPHOLUS OF EPHESUS; Went'st not thou to her for a purse of ducats? 60"
+      },
+      {
+        "rank": 3,
+        "chunk_id": "C105",
+        "element_id": "pdf_el_7fed9342",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "SCENE 1    A public place. Enter Second Merchant, ANGELO, and an Officer  Second Merchant; You know since Pentecost the sum is due,  And since I have "
+      },
+      {
+        "rank": 4,
+        "chunk_id": "C200",
+        "element_id": "pdf_el_6acf9730",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with me;  After so long grief, suc"
+      },
+      {
+        "rank": 5,
+        "chunk_id": "C65",
+        "element_id": "pdf_el_63b7f29b",
+        "parent_id": "",
+        "parent_text": "ACT 3 \n27\nSCENE 1 \n \nBefore the house of ANTIPHOLUS of Ephesus. \nEnter ANTIPHOLUS of Ephesus, DROMIO",
+        "breadcrumb": "ACT 3 \n27",
+        "text": "SCENE 1    Before the house of ANTIPHOLUS of Ephesus. Enter ANTIPHOLUS of Ephesus, DROMIO of Ephesus, ANGELO, and BALTHAZAR  ANTIPHOLUS OF EPHESUS; Go"
+      },
+      {
+        "rank": 6,
+        "chunk_id": "C152",
+        "element_id": "pdf_el_2f71a0ce",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "Officer; Masters, let him go  He is my prisoner, and you shall not have him. PINCH; Go bind this man, for he is frantic too. They offer to bind Dromio"
+      },
+      {
+        "rank": 7,
+        "chunk_id": "C197",
+        "element_id": "pdf_el_63ae8555",
+        "parent_id": "",
+        "parent_text": "ACT 5 \n65\nSCENE 1  \n \nA street before a Priory. \nEnter Second Merchant and ANGELO \nANGELO; I am sorr",
+        "breadcrumb": "ACT 5 \n65",
+        "text": "ANTIPHOLUS OF SYRACUSE; I think it be, sir; I deny it not. ANTIPHOLUS OF EPHESUS; And you, sir, for this chain arrested me. ANGELO; I think I did, sir"
+      },
+      {
+        "rank": 8,
+        "chunk_id": "C116",
+        "element_id": "pdf_el_a3b64e60",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "DROMIO OF SYRACUSE; A ship you sent me to, to hire waftage. ANTIPHOLUS OF EPHESUS; Thou drunken slave, I sent thee for a rope;  And told thee to what "
+      },
+      {
+        "rank": 9,
+        "chunk_id": "C110",
+        "element_id": "pdf_el_7e3a04dd",
+        "parent_id": "",
+        "parent_text": "ACT 4 \n43\nSCENE 1 \n \nA public place. \nEnter Second Merchant, ANGELO, and an Officer \nSecond Merchant",
+        "breadcrumb": "ACT 4 \n43",
+        "text": "what should I answer you? ANGELO; The money that you owe me for the chain. ANTIPHOLUS OF EPHESUS; I owe you none till I receive the chain. ANGELO; You"
+      },
+      {
+        "rank": 10,
+        "chunk_id": "C61",
+        "element_id": "pdf_el_97946fd3",
+        "parent_id": "",
+        "parent_text": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUCIANA \nADRIANA; Neith",
+        "breadcrumb": "ACT 2 \n12",
+        "text": "Dromio, play the porter well. ANTIPHOLUS OF SYRACUSE; Am I in earth, in heaven, or in hell? Sleeping or waking?"
+      }
+    ]
+  }
+}

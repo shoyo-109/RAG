@@ -1,0 +1,5 @@
+config,candidate_recall,final_recall_15,ndcg_10,mrr,total_b3_candidates_added,candidate_pollution_rate,b3_depth,candidate_recall_augmented_pool,total_b3_retrieved,total_b3_duplicates,new_primary_candidates,new_supporting_candidates,new_gold_candidates,new_rel_unnecessary_candidates,new_irrelevant_candidates,new_nongold_candidates,delta_candidate_recall,delta_final_recall,delta_ndcg10,delta_mrr
+D0,0.85,0.7,0.4849962170994588,0.3685185185185185,0,0.0,,,,,,,,,,,,,,
+D1,,0.6,0.4684647962071584,0.3646723646723647,104,0.9712,20.0,1.0,252.0,148.0,2.0,1.0,3.0,100.0,1.0,101.0,0.15,-0.1,-0.0165,-0.0038
+D2,,0.6,0.4684647962071584,0.3637566137566138,290,0.9897,50.0,1.0,555.0,265.0,2.0,1.0,3.0,284.0,3.0,287.0,0.15,-0.1,-0.0165,-0.0048
+D3,,0.6,0.4684647962071584,0.3637566137566138,515,0.9942,100.0,1.0,828.0,313.0,2.0,1.0,3.0,485.0,27.0,512.0,0.15,-0.1,-0.0165,-0.0048

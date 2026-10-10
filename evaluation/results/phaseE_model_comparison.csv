@@ -1,0 +1,7 @@
+config,candidate_pool,reranker,reranker_model,reranker_representation,candidate_recall_d0,candidate_recall_d1,final_recall_15,ndcg_10,mrr,delta_candidate_recall,delta_final_recall,delta_ndcg10,delta_mrr
+E0,Canonical D0,R0,cross-encoder/ms-marco-MiniLM-L-6-v2,B0,0.85,0.85,0.7,0.4849962170994588,0.3685185185185185,,,,
+E0_D1,D1 Augmented,R0,cross-encoder/ms-marco-MiniLM-L-6-v2,B0,,1.0,0.6,0.4684647962071584,0.3646723646723647,0.15,-0.1,-0.0165,-0.0038
+E1,D1 Augmented,R1,BAAI/bge-reranker-base,B0,,1.0,0.55,0.5267420627756217,0.49603174603174605,0.15,-0.15,0.0417,0.1275
+E2,D1 Augmented,R1,BAAI/bge-reranker-base,B3,,1.0,0.55,0.37068712643037927,0.23703703703703705,0.15,-0.15,-0.1143,-0.1315
+E3,D1 Augmented,R2,BAAI/bge-reranker-large,B0,,1.0,0.6,0.5443292760122915,0.38333333333333336,0.15,-0.1,0.0593,0.0148
+E4,D1 Augmented,R2,BAAI/bge-reranker-large,B3,,1.0,0.5,0.3028211210440808,0.09861111111111111,0.15,-0.2,-0.1822,-0.2699

@@ -1,0 +1,1241 @@
+{
+  "metadata": {
+    "phase": "11C",
+    "title": "Phase 11C \u2014 Production Candidate-Depth Diagnostic",
+    "corpus": "The Comedy of Errors (203 chunks: C0\u2013C202)",
+    "timestamp": "2026-10-06T11:10:20.073155",
+    "target_chunks": [
+      "C15",
+      "C42"
+    ],
+    "benchmark_questions": [
+      "Q01",
+      "Q02",
+      "Q03",
+      "Q04",
+      "Q05",
+      "Q06"
+    ],
+    "total_gold_evidence_units": 20,
+    "tested_depths": [
+      20,
+      30,
+      50,
+      75,
+      100
+    ],
+    "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "control_reproduction_gate": "PASSED"
+  },
+  "depth_sweep_results": [
+    {
+      "candidate_depth_N": 20,
+      "candidate_recall_N": 0.85,
+      "mean_candidate_pool_size": 55.166666666666664,
+      "final_recall_15": 0.7,
+      "evidence_precision_15": 0.15555555555555556,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3685185185185185,
+      "ndcg_10": 0.4849962170994588,
+      "ndcg_15": 0.5179307262273931,
+      "evidence_completeness": 0.3333333333333333,
+      "required_evidence_completeness": 0.7,
+      "candidate_to_final_conversion": 0.8235294117647058
+    },
+    {
+      "candidate_depth_N": 30,
+      "candidate_recall_N": 0.9,
+      "mean_candidate_pool_size": 75.16666666666667,
+      "final_recall_15": 0.65,
+      "evidence_precision_15": 0.14444444444444446,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.36574074074074076,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.5022369953908884,
+      "evidence_completeness": 0.3333333333333333,
+      "required_evidence_completeness": 0.65,
+      "candidate_to_final_conversion": 0.7222222222222222
+    },
+    {
+      "candidate_depth_N": 50,
+      "candidate_recall_N": 0.9,
+      "mean_candidate_pool_size": 104.83333333333333,
+      "final_recall_15": 0.6,
+      "evidence_precision_15": 0.13333333333333333,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3637566137566138,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.48906540929904535,
+      "evidence_completeness": 0.16666666666666666,
+      "required_evidence_completeness": 0.6,
+      "candidate_to_final_conversion": 0.6666666666666666
+    },
+    {
+      "candidate_depth_N": 75,
+      "candidate_recall_N": 0.95,
+      "mean_candidate_pool_size": 133.5,
+      "final_recall_15": 0.6,
+      "evidence_precision_15": 0.13333333333333333,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3637566137566138,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.4854995289119652,
+      "evidence_completeness": 0.16666666666666666,
+      "required_evidence_completeness": 0.6,
+      "candidate_to_final_conversion": 0.631578947368421
+    },
+    {
+      "candidate_depth_N": 100,
+      "candidate_recall_N": 1.0,
+      "mean_candidate_pool_size": 149.5,
+      "final_recall_15": 0.6,
+      "evidence_precision_15": 0.13333333333333333,
+      "primary_precision_15": 0.06666666666666667,
+      "mrr": 0.3637566137566138,
+      "ndcg_10": 0.4684647962071584,
+      "ndcg_15": 0.4854995289119652,
+      "evidence_completeness": 0.16666666666666666,
+      "required_evidence_completeness": 0.6,
+      "candidate_to_final_conversion": 0.6
+    }
+  ],
+  "target_diagnostics": [
+    {
+      "depth_N": 20,
+      "target_id": "C15",
+      "question_id": "Q03",
+      "candidate_present": "NO",
+      "candidate_rank": null,
+      "candidate_sources": [],
+      "cross_encoder_score": null,
+      "final_rank": null,
+      "final_top15": "NO",
+      "failure_stage": "CANDIDATE_GENERATION_FAILURE"
+    },
+    {
+      "depth_N": 20,
+      "target_id": "C42",
+      "question_id": "Q05",
+      "candidate_present": "NO",
+      "candidate_rank": null,
+      "candidate_sources": [],
+      "cross_encoder_score": null,
+      "final_rank": null,
+      "final_top15": "NO",
+      "failure_stage": "CANDIDATE_GENERATION_FAILURE"
+    },
+    {
+      "depth_N": 30,
+      "target_id": "C15",
+      "question_id": "Q03",
+      "candidate_present": "NO",
+      "candidate_rank": null,
+      "candidate_sources": [],
+      "cross_encoder_score": null,
+      "final_rank": null,
+      "final_top15": "NO",
+      "failure_stage": "CANDIDATE_GENERATION_FAILURE"
+    },
+    {
+      "depth_N": 30,
+      "target_id": "C42",
+      "question_id": "Q05",
+      "candidate_present": "NO",
+      "candidate_rank": null,
+      "candidate_sources": [],
+      "cross_encoder_score": null,
+      "final_rank": null,
+      "final_top15": "NO",
+      "failure_stage": "CANDIDATE_GENERATION_FAILURE"
+    },
+    {
+      "depth_N": 50,
+      "target_id": "C15",
+      "question_id": "Q03",
+      "candidate_present": "NO",
+      "candidate_rank": null,
+      "candidate_sources": [],
+      "cross_encoder_score": null,
+      "final_rank": null,
+      "final_top15": "NO",
+      "failure_stage": "CANDIDATE_GENERATION_FAILURE"
+    },
+    {
+      "depth_N": 50,
+      "target_id": "C42",
+      "question_id": "Q05",
+      "candidate_present": "NO",
+      "candidate_rank": null,
+      "candidate_sources": [],
+      "cross_encoder_score": null,
+      "final_rank": null,
+      "final_top15": "NO",
+      "failure_stage": "CANDIDATE_GENERATION_FAILURE"
+    },
+    {
+      "depth_N": 75,
+      "target_id": "C15",
+      "question_id": "Q03",
+      "candidate_present": "NO",
+      "candidate_rank": null,
+      "candidate_sources": [],
+      "cross_encoder_score": null,
+      "final_rank": null,
+      "final_top15": "NO",
+      "failure_stage": "CANDIDATE_GENERATION_FAILURE"
+    },
+    {
+      "depth_N": 75,
+      "target_id": "C42",
+      "question_id": "Q05",
+      "candidate_present": "YES",
+      "candidate_rank": 71,
+      "candidate_sources": [
+        "dense_sq1_rank_71"
+      ],
+      "cross_encoder_score": 0.5802104473114014,
+      "final_rank": 45,
+      "final_top15": "NO",
+      "failure_stage": "RERANKING_FAILURE"
+    },
+    {
+      "depth_N": 100,
+      "target_id": "C15",
+      "question_id": "Q03",
+      "candidate_present": "YES",
+      "candidate_rank": 127,
+      "candidate_sources": [
+        "dense_sq2_rank_97"
+      ],
+      "cross_encoder_score": -4.951038837432861,
+      "final_rank": 79,
+      "final_top15": "NO",
+      "failure_stage": "RERANKING_FAILURE"
+    },
+    {
+      "depth_N": 100,
+      "target_id": "C42",
+      "question_id": "Q05",
+      "candidate_present": "YES",
+      "candidate_rank": 71,
+      "candidate_sources": [
+        "dense_sq1_rank_71",
+        "dense_sq3_rank_87"
+      ],
+      "cross_encoder_score": 0.5802091360092163,
+      "final_rank": 46,
+      "final_top15": "NO",
+      "failure_stage": "RERANKING_FAILURE"
+    }
+  ],
+  "provenance_sample": [
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C163",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 1,
+          "dense_score": 0.45061591267585754
+        }
+      },
+      "bm25_rank": 2,
+      "candidate_pool_rank": 1,
+      "candidate_sources": [
+        "dense_sq1_rank_1",
+        "bm25_rank_2"
+      ],
+      "cross_encoder_score": -10.472955703735352,
+      "final_rank": 17
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C12",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 2,
+          "dense_score": 0.44823914766311646
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 2,
+      "candidate_sources": [
+        "dense_sq1_rank_2"
+      ],
+      "cross_encoder_score": -11.107298851013184,
+      "final_rank": 28
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C91",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 3,
+          "dense_score": 0.43977540731430054
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 3,
+      "candidate_sources": [
+        "dense_sq1_rank_3"
+      ],
+      "cross_encoder_score": -11.327217102050781,
+      "final_rank": 51
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C72",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 4,
+          "dense_score": 0.42302173376083374
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 4,
+      "candidate_sources": [
+        "dense_sq1_rank_4"
+      ],
+      "cross_encoder_score": -11.304869651794434,
+      "final_rank": 48
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C102",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 5,
+          "dense_score": 0.4221341609954834
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 5,
+      "candidate_sources": [
+        "dense_sq1_rank_5"
+      ],
+      "cross_encoder_score": -11.318803787231445,
+      "final_rank": 50
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C192",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 6,
+          "dense_score": 0.4182237982749939
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 6,
+      "candidate_sources": [
+        "dense_sq1_rank_6"
+      ],
+      "cross_encoder_score": -4.921921730041504,
+      "final_rank": 7
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C124",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 7,
+          "dense_score": 0.4116392731666565
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 7,
+      "candidate_sources": [
+        "dense_sq1_rank_7"
+      ],
+      "cross_encoder_score": -11.36955738067627,
+      "final_rank": 58
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C165",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 8,
+          "dense_score": 0.408864289522171
+        },
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 18,
+          "dense_score": 0.26455992460250854
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 8,
+      "candidate_sources": [
+        "dense_sq1_rank_8",
+        "dense_sq2_rank_18"
+      ],
+      "cross_encoder_score": -10.775598526000977,
+      "final_rank": 20
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C129",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 9,
+          "dense_score": 0.40312162041664124
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 9,
+      "candidate_sources": [
+        "dense_sq1_rank_9"
+      ],
+      "cross_encoder_score": -11.171126365661621,
+      "final_rank": 36
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C100",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 10,
+          "dense_score": 0.4022368788719177
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 10,
+      "candidate_sources": [
+        "dense_sq1_rank_10"
+      ],
+      "cross_encoder_score": -11.354202270507812,
+      "final_rank": 53
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C55",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 11,
+          "dense_score": 0.4007803499698639
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 11,
+      "candidate_sources": [
+        "dense_sq1_rank_11"
+      ],
+      "cross_encoder_score": -11.357002258300781,
+      "final_rank": 56
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C193",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 12,
+          "dense_score": 0.39206212759017944
+        },
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 1,
+          "dense_score": 0.5537273287773132
+        },
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 3,
+          "dense_score": 0.5203378200531006
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 12,
+      "candidate_sources": [
+        "dense_sq1_rank_12",
+        "dense_sq2_rank_1",
+        "dense_sq3_rank_3"
+      ],
+      "cross_encoder_score": -1.6901261806488037,
+      "final_rank": 1
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C116",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 13,
+          "dense_score": 0.38790178298950195
+        }
+      },
+      "bm25_rank": 18,
+      "candidate_pool_rank": 13,
+      "candidate_sources": [
+        "dense_sq1_rank_13",
+        "bm25_rank_18"
+      ],
+      "cross_encoder_score": -11.2344388961792,
+      "final_rank": 40
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C47",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 14,
+          "dense_score": 0.38698506355285645
+        }
+      },
+      "bm25_rank": 5,
+      "candidate_pool_rank": 14,
+      "candidate_sources": [
+        "dense_sq1_rank_14",
+        "bm25_rank_5"
+      ],
+      "cross_encoder_score": -11.267085075378418,
+      "final_rank": 45
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C158",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 15,
+          "dense_score": 0.37894588708877563
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 15,
+      "candidate_sources": [
+        "dense_sq1_rank_15"
+      ],
+      "cross_encoder_score": -11.355554580688477,
+      "final_rank": 54
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C161",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 16,
+          "dense_score": 0.3775745630264282
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 16,
+      "candidate_sources": [
+        "dense_sq1_rank_16"
+      ],
+      "cross_encoder_score": -10.96977424621582,
+      "final_rank": 23
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C111",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 17,
+          "dense_score": 0.3740185797214508
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 17,
+      "candidate_sources": [
+        "dense_sq1_rank_17"
+      ],
+      "cross_encoder_score": -11.391932487487793,
+      "final_rank": 60
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C70",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 18,
+          "dense_score": 0.3725826144218445
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 18,
+      "candidate_sources": [
+        "dense_sq1_rank_18"
+      ],
+      "cross_encoder_score": -11.117582321166992,
+      "final_rank": 30
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C201",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 19,
+          "dense_score": 0.3699774146080017
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 19,
+      "candidate_sources": [
+        "dense_sq1_rank_19"
+      ],
+      "cross_encoder_score": -11.158767700195312,
+      "final_rank": 35
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C16",
+      "dense_sources": {
+        "SQ1": {
+          "sq_text": "Aegeon character background Syracuse merchant",
+          "dense_rank": 20,
+          "dense_score": 0.3661896586418152
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 20,
+      "candidate_sources": [
+        "dense_sq1_rank_20"
+      ],
+      "cross_encoder_score": -11.361326217651367,
+      "final_rank": 57
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C166",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 2,
+          "dense_score": 0.377948522567749
+        }
+      },
+      "bm25_rank": 6,
+      "candidate_pool_rank": 21,
+      "candidate_sources": [
+        "dense_sq2_rank_2",
+        "bm25_rank_6"
+      ],
+      "cross_encoder_score": -10.572500228881836,
+      "final_rank": 18
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C167",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 3,
+          "dense_score": 0.3496862053871155
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 22,
+      "candidate_sources": [
+        "dense_sq2_rank_3"
+      ],
+      "cross_encoder_score": -9.610434532165527,
+      "final_rank": 14
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C3",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 4,
+          "dense_score": 0.34846031665802
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 23,
+      "candidate_sources": [
+        "dense_sq2_rank_4"
+      ],
+      "cross_encoder_score": -4.456745147705078,
+      "final_rank": 5
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C11",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 5,
+          "dense_score": 0.33869779109954834
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 24,
+      "candidate_sources": [
+        "dense_sq2_rank_5"
+      ],
+      "cross_encoder_score": -1.9201936721801758,
+      "final_rank": 3
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C4",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 6,
+          "dense_score": 0.33717477321624756
+        },
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 9,
+          "dense_score": 0.4610043168067932
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 25,
+      "candidate_sources": [
+        "dense_sq2_rank_6",
+        "dense_sq3_rank_9"
+      ],
+      "cross_encoder_score": -5.759562015533447,
+      "final_rank": 10
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C177",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 7,
+          "dense_score": 0.31888437271118164
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 26,
+      "candidate_sources": [
+        "dense_sq2_rank_7"
+      ],
+      "cross_encoder_score": -10.89046859741211,
+      "final_rank": 21
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C170",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 8,
+          "dense_score": 0.3106909990310669
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 27,
+      "candidate_sources": [
+        "dense_sq2_rank_8"
+      ],
+      "cross_encoder_score": -10.004438400268555,
+      "final_rank": 16
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C189",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 9,
+          "dense_score": 0.31012213230133057
+        },
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 1,
+          "dense_score": 0.5419456362724304
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 28,
+      "candidate_sources": [
+        "dense_sq2_rank_9",
+        "dense_sq3_rank_1"
+      ],
+      "cross_encoder_score": -4.593968391418457,
+      "final_rank": 6
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C168",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 10,
+          "dense_score": 0.3050936460494995
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 29,
+      "candidate_sources": [
+        "dense_sq2_rank_10"
+      ],
+      "cross_encoder_score": -9.23701000213623,
+      "final_rank": 13
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C187",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 11,
+          "dense_score": 0.29980337619781494
+        },
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 6,
+          "dense_score": 0.48520028591156006
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 30,
+      "candidate_sources": [
+        "dense_sq2_rank_11",
+        "dense_sq3_rank_6"
+      ],
+      "cross_encoder_score": -4.998080730438232,
+      "final_rank": 8
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C198",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 12,
+          "dense_score": 0.29422950744628906
+        },
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 15,
+          "dense_score": 0.4217644929885864
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 31,
+      "candidate_sources": [
+        "dense_sq2_rank_12",
+        "dense_sq3_rank_15"
+      ],
+      "cross_encoder_score": -10.756946563720703,
+      "final_rank": 19
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C8",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 13,
+          "dense_score": 0.28312236070632935
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 32,
+      "candidate_sources": [
+        "dense_sq2_rank_13"
+      ],
+      "cross_encoder_score": -2.434169054031372,
+      "final_rank": 4
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C83",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 14,
+          "dense_score": 0.28060412406921387
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 33,
+      "candidate_sources": [
+        "dense_sq2_rank_14"
+      ],
+      "cross_encoder_score": -11.423315048217773,
+      "final_rank": 62
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C118",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 15,
+          "dense_score": 0.27829015254974365
+        },
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 18,
+          "dense_score": 0.39994555711746216
+        }
+      },
+      "bm25_rank": 10,
+      "candidate_pool_rank": 34,
+      "candidate_sources": [
+        "dense_sq2_rank_15",
+        "dense_sq3_rank_18",
+        "bm25_rank_10"
+      ],
+      "cross_encoder_score": -11.353231430053711,
+      "final_rank": 52
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C145",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 16,
+          "dense_score": 0.27266016602516174
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 35,
+      "candidate_sources": [
+        "dense_sq2_rank_16"
+      ],
+      "cross_encoder_score": -11.293102264404297,
+      "final_rank": 47
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C195",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 17,
+          "dense_score": 0.2666853368282318
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 36,
+      "candidate_sources": [
+        "dense_sq2_rank_17"
+      ],
+      "cross_encoder_score": -11.205305099487305,
+      "final_rank": 38
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C24",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 19,
+          "dense_score": 0.26193153858184814
+        }
+      },
+      "bm25_rank": 17,
+      "candidate_pool_rank": 37,
+      "candidate_sources": [
+        "dense_sq2_rank_19",
+        "bm25_rank_17"
+      ],
+      "cross_encoder_score": -11.14215087890625,
+      "final_rank": 34
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C186",
+      "dense_sources": {
+        "SQ2": {
+          "sq_text": "Aegeon family relationships Emilia twin sons",
+          "dense_rank": 20,
+          "dense_score": 0.2619243860244751
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 38,
+      "candidate_sources": [
+        "dense_sq2_rank_20"
+      ],
+      "cross_encoder_score": -1.795043706893921,
+      "final_rank": 2
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C114",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 2,
+          "dense_score": 0.5391350984573364
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 39,
+      "candidate_sources": [
+        "dense_sq3_rank_2"
+      ],
+      "cross_encoder_score": -11.258034706115723,
+      "final_rank": 43
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C73",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 4,
+          "dense_score": 0.512977659702301
+        }
+      },
+      "bm25_rank": 12,
+      "candidate_pool_rank": 40,
+      "candidate_sources": [
+        "dense_sq3_rank_4",
+        "bm25_rank_12"
+      ],
+      "cross_encoder_score": -11.177213668823242,
+      "final_rank": 37
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C178",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 5,
+          "dense_score": 0.49863338470458984
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 41,
+      "candidate_sources": [
+        "dense_sq3_rank_5"
+      ],
+      "cross_encoder_score": -6.633397579193115,
+      "final_rank": 11
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C2",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 7,
+          "dense_score": 0.47488754987716675
+        }
+      },
+      "bm25_rank": 8,
+      "candidate_pool_rank": 42,
+      "candidate_sources": [
+        "dense_sq3_rank_7",
+        "bm25_rank_8"
+      ],
+      "cross_encoder_score": -5.390161514282227,
+      "final_rank": 9
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C65",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 8,
+          "dense_score": 0.46151676774024963
+        }
+      },
+      "bm25_rank": 9,
+      "candidate_pool_rank": 43,
+      "candidate_sources": [
+        "dense_sq3_rank_8",
+        "bm25_rank_9"
+      ],
+      "cross_encoder_score": -11.067770004272461,
+      "final_rank": 27
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C137",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 10,
+          "dense_score": 0.4472578167915344
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 44,
+      "candidate_sources": [
+        "dense_sq3_rank_10"
+      ],
+      "cross_encoder_score": -11.283583641052246,
+      "final_rank": 46
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C142",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 11,
+          "dense_score": 0.4364962875843048
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 45,
+      "candidate_sources": [
+        "dense_sq3_rank_11"
+      ],
+      "cross_encoder_score": -11.24654483795166,
+      "final_rank": 42
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C197",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 12,
+          "dense_score": 0.43593430519104004
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 46,
+      "candidate_sources": [
+        "dense_sq3_rank_12"
+      ],
+      "cross_encoder_score": -10.92982292175293,
+      "final_rank": 22
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C140",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 13,
+          "dense_score": 0.42889219522476196
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 47,
+      "candidate_sources": [
+        "dense_sq3_rank_13"
+      ],
+      "cross_encoder_score": -11.055732727050781,
+      "final_rank": 26
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C146",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 14,
+          "dense_score": 0.42353564500808716
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 48,
+      "candidate_sources": [
+        "dense_sq3_rank_14"
+      ],
+      "cross_encoder_score": -11.230710983276367,
+      "final_rank": 39
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C113",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 16,
+          "dense_score": 0.40643221139907837
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 49,
+      "candidate_sources": [
+        "dense_sq3_rank_16"
+      ],
+      "cross_encoder_score": -11.245723724365234,
+      "final_rank": 41
+    },
+    {
+      "depth_N": 20,
+      "question_id": "Q01",
+      "chunk_id": "C149",
+      "dense_sources": {
+        "SQ3": {
+          "sq_text": "Aegeon arrest Ephesus law against Syracusans",
+          "dense_rank": 17,
+          "dense_score": 0.40195685625076294
+        }
+      },
+      "bm25_rank": null,
+      "candidate_pool_rank": 50,
+      "candidate_sources": [
+        "dense_sq3_rank_17"
+      ],
+      "cross_encoder_score": -11.012560844421387,
+      "final_rank": 24
+    }
+  ]
+}

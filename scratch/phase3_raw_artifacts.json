@@ -1,0 +1,1418 @@
+[
+  {
+    "q_id": "Q01",
+    "condition": "Cond_A_Semantic",
+    "category": "Direct Factual",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C10",
+      "C191",
+      "C186",
+      "C191",
+      "C2",
+      "C194",
+      "C166",
+      "C166",
+      "C189",
+      "C4"
+    ],
+    "latency_ms": 7312.9563331604,
+    "prompt_tokens": 58661,
+    "completion_tokens": 488,
+    "total_tokens": 59149,
+    "answer": "Based on the supplied context, **Aegeon (also spelled AEGEON)** is:\n\n- A **merchant of Syracuse** (identified as such by Duke Solinus in Act 1, Scene 1)\n- **Born in Syracuse** (\"In Syracusa was I born,\" he states in his narrative)\n- Married to a woman (later revealed to be **Aemilia**, the Lady Abbess of Ephesus)\n- Father of **twin sons**, both named **Antipholus** (one of Syracuse, one of Ephesus)\n- Also the master of **twin servants**, both named **Dromio** (purchased from a poor woman at the same inn where his wife gave birth)\n\nHis backstory, as he recounts it to Duke Solinus, is that after his factor's death drew him to Epidamnum, his wife followed him there and gave birth to their twin sons. A shipwreck later separated the family: his wife, one son, and one Dromio were rescued by Corinthian fishermen, while Aegeon, the other son, and the other Dromio were saved by another ship. Aegeon spent **five summers** searching for his lost family across Greece and Asia, eventually arriving in Ephesus, where he was arrested under a law condemning any Syracusian merchant who enters Ephesus without paying a thousand-mark ransom.",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 2,
+    "total_claims": 2,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon is a merchant of Syracuse.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "He was born in Syracuse, married, and engaged in trade in Epidamnum.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q02",
+    "condition": "Cond_A_Semantic",
+    "category": "Causal",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C191",
+      "C189",
+      "C178",
+      "C186",
+      "C10",
+      "C73",
+      "C65",
+      "C113",
+      "C197",
+      "C137"
+    ],
+    "latency_ms": 12273.70810508728,
+    "prompt_tokens": 64552,
+    "completion_tokens": 654,
+    "total_tokens": 65206,
+    "answer": "Based on the supplied context, Aegeon was sentenced to death in Ephesus because:\n\n1. **He is a Syracusian merchant** who entered Ephesus, which was prohibited by law due to enmity between Syracuse and Ephesus.\n\n2. **The law stated**: \"if any Syracusian born / Come to the bay of Ephesus, he dies, / His goods confiscate to the duke's dispose, / Unless a thousand marks be levied, / To quit the penalty and to ransom him.\"\n\n3. **Aegeon could not pay the ransom**: Duke Solinus explicitly states, \"Thy substance, valued at the highest rate, / Cannot amount unto a hundred marks; / Therefore by law thou art condemned to die.\"\n\nThus, Aegeon was condemned because he was a Syracusian found in Ephesus and his total assets (worth at most 100 marks) were insufficient to pay the required 1,000-mark ransom to save his life.",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 4,
+    "total_claims": 4,
+    "req_utilization": 4.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "An Ephesian law/statute prohibits Syracusian merchants from entering Ephesus on pain of death or 1000 marks ransom.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Aegeon is a merchant from Syracuse.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Aegeon's wealth/goods were under 100 marks, leaving him unable to pay the 1000 marks fine.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_4": {
+        "desc": "Duke Solinus sentenced him to death under the law, giving him one day to try to borrow the ransom.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q03",
+    "condition": "Cond_A_Semantic",
+    "category": "Multi-Hop",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C194",
+      "C83",
+      "C50",
+      "C24",
+      "C118",
+      "C88",
+      "C91",
+      "C47",
+      "C169",
+      "C175"
+    ],
+    "latency_ms": 16063.040018081665,
+    "prompt_tokens": 61925,
+    "completion_tokens": 1024,
+    "total_tokens": 62949,
+    "answer": "Based on the supplied context, Antipholus of Syracuse fails to recognize Adriana because **he has only been in Ephesus for two hours and has never met her before**. \n\nWhen Adriana addresses him as her husband in Act 2, Scene 2, he explicitly states:\n\n> \"Plead you to me, fair dame? **I know you not: In Ephesus I am but two hours old**, As strange unto your town as to your talk; Who, every word by all my wit being scann'd, Want wit in all one word to understand.\"\n\nThe confusion occurs because Adriana is the wife of **Antipholus of Ephesus** (his identical twin brother), not Antipholus of Syracuse. The two brothers were separated at birth, and Antipholus of Syracuse has just arrived in Ephesus searching for his lost family. Everyone in Ephesus—including Adriana",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse is visiting Ephesus seeking his long-lost twin brother, unaware his twin lives there.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Adriana is actually married to Antipholus of Ephesus (his identical twin brother).",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Syracuse has never met Adriana before and is bewildered when she mistakes him for her husband.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q04",
+    "condition": "Cond_A_Semantic",
+    "category": "Relationship",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C191",
+      "C4",
+      "C8",
+      "C24",
+      "C10",
+      "C186",
+      "C189",
+      "C191",
+      "C110",
+      "C194"
+    ],
+    "latency_ms": 14733.298063278198,
+    "prompt_tokens": 58408,
+    "completion_tokens": 644,
+    "total_tokens": 59052,
+    "answer": "Based on the text, Aegeon explains the origin of the two pairs of identical twins in Act 1, Scene 1:\n\n1. **Aegeon's biological sons**: Aegeon and his wife had twin sons who were \"so like the other, as could not be distinguish'd but by names.\"\n\n2. **The twin servants**: \"That very hour, and in the self-same inn, a meaner woman was delivered of such a burden, male twins, both alike.\" Since the parents were \"exceeding poor,\" Aegeon \"bought and brought up [the twins] to attend my sons.\"\n\nThus, Aegeon came to have two pairs of identical twins: his own twin sons (the two Antipholuses) and a pair of twin servants (the two Dromios) purchased at birth to serve his sons.",
+    "correctness": 1,
+    "completeness_ratio": 0.6666666666666666,
+    "claims_present": 2,
+    "total_claims": 3,
+    "req_utilization": 0.6666666666666666,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon's wife gave birth to identical twin sons in Epidamnum.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "At the same hour in the same inn, a poor woman gave birth to twin boys, whom Aegeon bought to serve his sons.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "A violent shipwreck on their journey separated the family into two groups on a split ship.",
+        "present": false,
+        "sources_in_context": true,
+        "failure_type": "CASE_2_GENERATION_FAILURE"
+      }
+    }
+  },
+  {
+    "q_id": "Q05",
+    "condition": "Cond_A_Semantic",
+    "category": "Comparative",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C191",
+      "C94",
+      "C194",
+      "C50",
+      "C200",
+      "C70",
+      "C197",
+      "C76",
+      "C97",
+      "C47"
+    ],
+    "latency_ms": 17415.23051261902,
+    "prompt_tokens": 61147,
+    "completion_tokens": 1024,
+    "total_tokens": 62171,
+    "answer": "The user is asking about how Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse. I need to find the relevant scenes in the text where each Antipholus first interacts with Dromio of Syracuse.\n\nLet me search through the context for these interactions.\n\nFirst, Antipholus of Syracuse's initial interaction with Dromio of Syracuse appears in ACT 2, SCENE 2 (Chunk C47, starting around line 17-18):\n\n\"Enter ANTIPHOLUS of Syracuse\nANTIPHOLUS OF SYRACUSE; The gold I gave to Dromio is laid up \nSafe at the Centaur; and the heedful slave \nIs wander'd forth, in care to seek me out \nBy computation and mine host's report. \nI could not speak with Dromio since at first \nI sent him from the mart. See, here he comes. \nEnter DROMIO of Syracuse \nHow now sir! is your merry humour alter'd? \nAs you love strokes, so jest with me again. \nYou know no Centaur? you received no gold? \nYour mistress sent to have me home to dinner? \nMy house was at the Phoenix? Wast thou mad, \nThat thus so madly thou didst answer me? \nDROMIO OF SYRACUSE; What answer, sir? when spake I such a word? \n \nANTIPHOLUS OF SYRACUSE; Even now, even here, not half an hour since. \nDROMIO OF SYRACUSE; I did not see you since you sent me hence, \nHome to the Centaur, with the gold you gave me. \n \nANTIPHOLUS OF SYRACUSE; Villain, thou didst deny the gold's receipt, \nAnd told'st me of a mistress and a dinner; \nFor which, I hope, thou felt'st I was displeased. \nDROMIO OF SYRACUSE; I am glad to see you in this merry vein: \nWhat means this jest? I pray you, master, tell me. \n \nANTIPHOLUS OF SYRACUSE; Yea, dost thou jeer and flout me in the teeth? \nThink'st thou I jest? Hold, take thou that, and that. \nBeating him\"\n\nSo Antipholus of Syracuse initially beats Dromio of Syracuse, thinking he's joking/lying about not receiving the gold and about a mistress/dinner.\n\nNow for Antipholus of Ephesus's initial interaction with Dromio of Syracuse. Looking through the text, I see in ACT 3, SCENE 1 (Chunk C70, C76, C94, C97), there's a scene where Antipholus of Ephesus is at his house door and Dromio of Syracuse is inside (as the porter). But this isn't their \"initial interaction\" - Dromio of Syracuse is inside the house, and Antipholus of Ephesus is outside.\n\nLet me check if there's an earlier interaction. In ACT 3, SCENE 1, Antipholus of Ephesus arrives at his house with his Dromio (Dromio of Ephesus), Angelo, and Balthazar. Dromio of Syracuse is already inside the house (having been sent there by Adriana in ACT 2, SCENE 2). So when Antipholus of Ephesus knocks, Dromio of Syracuse answers from within.\n\nFrom Chunk C70 (ACT 3, SCENE 1):\n\"DROMIO OF EPHESUS; Maud, Bridget, Marian, Cicel, Gillian, Ginn! \nDROMIO OF SYRACUSE [Within]; Mome, malt-horse, capon, coxcomb, \nidiot, patch! \nEither get thee from the door, or sit down at the hatch. \nDost thou conjure for wenches, that thou call'st \nfor such store, \nWhen one is one too many? Go, get thee from the door. \nDROMIO OF EPHESUS; What patch is made our porter? My master stays in \nthe street. \nDROMIO OF SYRACUSE [Within]; Let him walk from whence he came, lest \nhe \ncatch cold on's feet. \n \nANTIPHOLUS OF EPHESUS; Who talks within there? ho, open the door! \n29\nDROMIO OF SYRACUSE[Within];",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money and later beats him when confused by Dromio of Ephesus's report.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Antipholus of Ephesus is locked out of his own home by Dromio of Syracuse who guards the door from inside.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "The twins differ in their interactions due to mistaken identity between the twin masters and servants.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q06",
+    "condition": "Cond_A_Semantic",
+    "category": "Event-Chain",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C105",
+      "C65",
+      "C197",
+      "C110",
+      "C137",
+      "C146",
+      "C113",
+      "C137",
+      "C163",
+      "C146"
+    ],
+    "latency_ms": 18215.765953063965,
+    "prompt_tokens": 73442,
+    "completion_tokens": 1024,
+    "total_tokens": 74466,
+    "answer": "The user is asking about why Antipholus of Ephesus is arrested and what role Angelo the goldsmith plays in the debt dispute. I need to answer based only on the provided context.\n\nLet me search through the context for relevant information about Antipholus of Ephesus's arrest and Angelo's role.\n\nFrom the text, I can see in Act 4, Scene 1 (which appears multiple times in the context), there's a dispute between Antipholus of Ephesus and Angelo the goldsmith about a chain.\n\nKey points from the text:\n\n1. Second Merchant is demanding payment from Angelo since Pentecost\n2. Angelo says the sum he owes to Second Merchant \"is growing to me by Antipholus\" - meaning Antipholus owes Angelo money\n3. Angelo says \"in the instant that I met with you / He had of me a chain: at five o'clock / I shall receive the money for the same\"\n4. Antipholus of Ephesus says \"I promised your presence and the chain; / But neither chain nor goldsmith came to me\"\n5. Angelo presents a note showing the chain's weight, fineness, and fashion, which amounts to \"three odd ducats more / Than I stand debted to this gentleman\" (the Second Merchant)\n6. Antipholus says \"I am not furnish'd with the present money\"\n7. Antipholus tells Angelo to take the chain to his wife to get payment\n8. Angelo says \"Have you the chain about you?\" and Antipholus says \"An if I have not, sir, I hope you have; / Or else you may return without your money\"\n9. Angelo insists \"give me the chain\" and says \"Both wind and tide stays for this gentleman\"\n10. Antipholus says \"Why, give it to my wife and fetch your money\"\n11. Angelo says \"Come, come, you know I gave it you even now\"\n12. Antipholus denies receiving it: \"You gave me none: you wrong me much to say so\"\n13. Second Merchant says \"Well, officer, arrest him at my suit\"\n14. Officer arrests Antipholus\n15. Angelo says \"This touches me in reputation. / Either consent to pay this sum for me / Or I attach you by this officer\"\n16. Antipholus is arrested\n\nLater in Act 5, Scene 1, we see more about this:\n- Angelo says \"I protest, he had the chain of me, / Though most dishonestly he doth deny it\"\n- Second Merchant asks \"How is the man esteemed here in the city?\" and Angelo says \"Of very reverend reputation, sir, / Of credit infinite, highly beloved, / Second to none that lives here in the city\"\n- Angelo sees Antipholus of Syracuse (not Ephesus) wearing the chain and says \"that self chain about his neck / Which he forswore most monstrously to have\"\n- Antipholus of Syracuse says \"I think I had; I never did deny it\"\n- Second Merchant says \"Yes, that you did, sir, and forswore it too\"\n- Later, Antipholus of Ephesus says \"This woman lock'd me out this day from dinner: / That goldsmith there, were he not pack'd with her, / Could witness it, for he was with me then; / Who parted with me to go fetch a chain, / Promising to bring it to the Porpentine, / Where Balthazar and I did dine together. / Our dinner done, and he not coming thither, / I went to seek him: in the street I met him / And in his company that gentleman. / There did this perjured goldsmith swear me down / That I this day of him received the chain, / Which, God he knows, I saw not: for the which / He did arrest me with an officer.\"\n- Angelo confirms: \"My lord, in truth, thus far I witness with him, / That he dined not at home, but was lock'd out.\"\n- Duke asks \"But had he such a chain of thee or no?\" and Angelo says \"He had, my lord: and when he ran in here, / These people saw the chain about his neck.\"\n- Second Merchant says he heard Antipholus confess he had the chain after first forswearing it on the mart\n- Antipholus of Ephesus denies ever being in the abbey or seeing the chain\n\nAlso, in Act 4, Scene 4, the Officer tells Adriana: \"One Angelo, a goldsmith: do you know him? ... Two hundred ducats. ... Due for a chain your husband had of him.\"\n\nAnd Adriana says: \"He did bespeak a chain for me, but had it not.\"\n\nThe Courtezan",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Angelo the goldsmith owes 200 ducats to a Second Merchant and needs immediate payment.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Angelo delivered a gold chain to Antipholus of Syracuse by mistake, but demanded payment from Antipholus of Ephesus.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Ephesus refused to pay for a chain he never received, leading to his arrest for the 200 ducats debt.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q01",
+    "condition": "Cond_B_RRF_50_50",
+    "category": "Direct Factual",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C191",
+      "C166",
+      "C10",
+      "C171",
+      "C163",
+      "C186",
+      "C169",
+      "C143",
+      "C2",
+      "C47"
+    ],
+    "latency_ms": 16922.87802696228,
+    "prompt_tokens": 61432,
+    "completion_tokens": 647,
+    "total_tokens": 62079,
+    "answer": "Based on the supplied context, **Aegeon** is a merchant from **Syracuse** (also spelled Syracusa). \n\nKey details about his origin and background explicitly stated in the text:\n\n- **Birthplace**: \"In Syracusa was I born\" (Act 1, Scene 1)\n- **Occupation**: Merchant who made \"prosperous voyages I often made / To Epidamnum\"\n- **Family**: Married a woman (\"happy but for me\"), had **twin sons** (\"two goodly sons... the one so like the other, / As could not be distinguish'd but by names\")\n- **Separation**: During a sea voyage home from Epidamnum, a shipwreck split the family. His wife and one son (with one twin servant) were rescued by Corinthian fishermen; Aegeon and the other son (with the other twin servant) were saved by another ship.\n- **Current situation**: After 18 years, his remaining son (Antipholus of Syracuse) left to search for his lost brother. Aegeon spent \"Five summers... in furthest Greece, / Roaming clean through the bounds of Asia\" searching for them, eventually arriving in Ephesus, where Syracusians are forbidden on pain of death unless they pay a thousand marks.\n- **Revealed in Act 5**: He is the husband of **Aemilia** (the Lady Abbess of Ephesus) and father of both **Antipholus of Syracuse** and **Antipholus of Ephesus** (the twin brothers).",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 2,
+    "total_claims": 2,
+    "req_utilization": 2.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon is a merchant of Syracuse.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "He was born in Syracuse, married, and engaged in trade in Epidamnum.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q02",
+    "condition": "Cond_B_RRF_50_50",
+    "category": "Causal",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C186",
+      "C191",
+      "C4",
+      "C189",
+      "C79",
+      "C178",
+      "C85",
+      "C24",
+      "C10",
+      "C73"
+    ],
+    "latency_ms": 12079.90837097168,
+    "prompt_tokens": 57335,
+    "completion_tokens": 665,
+    "total_tokens": 58000,
+    "answer": "Based on the supplied context, Aegeon was sentenced to death in Ephesus because he is a Syracusian merchant who entered the bay of Ephesus, which is forbidden by law.\n\nAs Duke Solinus explains in Act 1, Scene 1:\n\n> \"For, since the mortal and intestine jars  \n> 'Twixt thy seditious countrymen and us,  \n> It hath in solemn synods been decreed  \n> Both by the Syracusians and ourselves,  \n> To admit no traffic to our adverse towns Nay, more,  \n> If any born at Ephesus be seen  \n> At any Syracusian marts and fairs;  \n> Again: if any Syracusian born  \n> Come to the bay of Ephesus, he dies,  \n> His goods confiscate to the duke's dispose,  \n> Unless a thousand marks be levied,  \n> To quit the penalty and to ransom him.  \n> Thy substance, valued at the highest rate,  \n> Cannot amount unto a hundred marks;  \n> Therefore by law thou art condemned to die.\"\n\nThe law mandates death for any Syracusian who enters Ephesus, unless they can pay a ransom of 1,000 marks. Since Aegeon's total assets are worth less than 100 marks, he cannot pay the ransom and is therefore condemned to death by law.",
+    "correctness": 1,
+    "completeness_ratio": 0.75,
+    "claims_present": 3,
+    "total_claims": 4,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "An Ephesian law/statute prohibits Syracusian merchants from entering Ephesus on pain of death or 1000 marks ransom.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Aegeon is a merchant from Syracuse.",
+        "present": false,
+        "sources_in_context": true,
+        "failure_type": "CASE_2_GENERATION_FAILURE"
+      },
+      "claim_3": {
+        "desc": "Aegeon's wealth/goods were under 100 marks, leaving him unable to pay the 1000 marks fine.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_4": {
+        "desc": "Duke Solinus sentenced him to death under the law, giving him one day to try to borrow the ransom.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q03",
+    "condition": "Cond_B_RRF_50_50",
+    "category": "Multi-Hop",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C194",
+      "C91",
+      "C140",
+      "C83",
+      "C50",
+      "C24",
+      "C200",
+      "C118",
+      "C79",
+      "C88"
+    ],
+    "latency_ms": 16203.797817230225,
+    "prompt_tokens": 63059,
+    "completion_tokens": 1024,
+    "total_tokens": 64083,
+    "answer": "Based on the supplied context, Antipholus of Syracuse fails to recognize Adriana because **he has only just arrived in Ephesus and does not know her**. \n\nIn Act 2, Scene 2, when Adriana addresses him as her husband, he explicitly replies:\n\n> **ANTIPHOLUS OF SYRACUSE:** Plead you to me, fair dame? **I know you not: In Ephesus I am but two hours old, As strange unto your town as to your talk; Who",
+    "correctness": 1,
+    "completeness_ratio": 0.6666666666666666,
+    "claims_present": 2,
+    "total_claims": 3,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse is visiting Ephesus seeking his long-lost twin brother, unaware his twin lives there.",
+        "present": false,
+        "sources_in_context": false,
+        "failure_type": "CASE_1_RETRIEVAL_FAILURE"
+      },
+      "claim_2": {
+        "desc": "Adriana is actually married to Antipholus of Ephesus (his identical twin brother).",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Syracuse has never met Adriana before and is bewildered when she mistakes him for her husband.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q04",
+    "condition": "Cond_B_RRF_50_50",
+    "category": "Relationship",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C191",
+      "C4",
+      "C27",
+      "C8",
+      "C107",
+      "C24",
+      "C161",
+      "C10",
+      "C137",
+      "C186"
+    ],
+    "latency_ms": 11585.44135093689,
+    "prompt_tokens": 58148,
+    "completion_tokens": 611,
+    "total_tokens": 58759,
+    "answer": "Based on the supplied context, Aegeon explains the origin of the two pairs of identical twins in Act 1, Scene 1:\n\n1. **His own twin sons**: Aegeon's wife gave birth to \"two goodly sons\" who were \"so like the other, / As could not be distinguish'd but by names.\"\n\n2. **The twin servants**: \"That very hour, and in the self-same inn, / A meaner woman was delivered / Of such a burden, male twins, both alike.\" Because the parents \"were exceeding poor,\" Aegeon \"bought and brought up [the twins] to attend my sons.\"\n\nThus, Aegeon's biological twin sons each received an identical twin servant, purchased at birth from a poor family in the same inn at the same hour.",
+    "correctness": 1,
+    "completeness_ratio": 0.6666666666666666,
+    "claims_present": 2,
+    "total_claims": 3,
+    "req_utilization": 0.6666666666666666,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon's wife gave birth to identical twin sons in Epidamnum.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "At the same hour in the same inn, a poor woman gave birth to twin boys, whom Aegeon bought to serve his sons.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "A violent shipwreck on their journey separated the family into two groups on a split ship.",
+        "present": false,
+        "sources_in_context": true,
+        "failure_type": "CASE_2_GENERATION_FAILURE"
+      }
+    }
+  },
+  {
+    "q_id": "Q05",
+    "condition": "Cond_B_RRF_50_50",
+    "category": "Comparative",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C200",
+      "C191",
+      "C94",
+      "C155",
+      "C194",
+      "C135",
+      "C50",
+      "C163",
+      "C38",
+      "C70"
+    ],
+    "latency_ms": 58611.424922943115,
+    "prompt_tokens": 65159,
+    "completion_tokens": 1024,
+    "total_tokens": 66183,
+    "answer": "The user is asking about how Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse. I need to find the relevant scenes in the text where each Antipholus first interacts with Dromio of Syracuse.\n\nLet me search through the text for these interactions.\n\nFirst, Antipholus of Syracuse's initial interaction with Dromio of Syracuse appears to be in Act 2, Scene 2 (Chunk C50, around line 17-18). Let me check:\n\nFrom Chunk C50 (ACT 2, SCENE 2):\n\"Enter ANTIPHOLUS of Syracuse\nANTIPHOLUS OF SYRACUSE; The gold I gave to Dromio is laid up \nSafe at the Centaur; and the heedful slave \nIs wander'd forth, in care to seek me out \nBy computation and mine host's report. \nI could not speak with Dromio since at first \nI sent him from the mart. See, here he comes. \nEnter DROMIO of Syracuse \nHow now sir! is your merry humour alter'd? \nAs you love strokes, so jest with me again. \nYou know no Centaur? you received no gold? \nYour mistress sent to have me home to dinner? \nMy house was at the Phoenix? Wast thou mad, \nThat thus so madly thou didst answer me? \nDROMIO OF SYRACUSE; What answer, sir? when spake I such a word? \n \nANTIPHOLUS OF SYRACUSE; Even now, even here, not half an hour since. \nDROMIO OF SYRACUSE; I did not see you since you sent me hence, \nHome to the Centaur, with the gold you gave me. \n \nANTIPHOLUS OF SYRACUSE; Villain, thou didst deny the gold's receipt, \nAnd told'st me of a mistress and a dinner; \nFor which, I hope, thou felt'st I was displeased. \nDROMIO OF SYRACUSE; I am glad to see you in this merry vein: \nWhat means this jest? I pray you, master, tell me. \n \nANTIPHOLUS OF SYRACUSE; Yea, dost thou jeer and flout me in the teeth? \nThink'st thou I jest? Hold, take thou that, and that. \nBeating him\"\n\nSo Antipholus of Syracuse initially beats Dromio of Syracuse, thinking he's joking/lying about not receiving the gold and about a mistress/dinner.\n\nNow for Antipholus of Ephesus's initial interaction with Dromio of Syracuse. Looking through the text...\n\nIn Act 3, Scene 1 (Chunk C70/C94), we see Antipholus of Ephesus with Dromio of Ephesus, not Dromio of Syracuse. But there's a scene where Dromio of Syracuse is inside the house (as the porter) and Antipholus of Ephesus is outside.\n\nFrom Chunk C70 (ACT 3, SCENE 1):\n\"DROMIO OF EPHESUS; Maud, Bridget, Marian, Cicel, Gillian, Ginn! \nDROMIO OF SYRACUSE [Within]; Mome, malt-horse, capon, coxcomb, \nidiot, patch! \nEither get thee from the door, or sit down at the hatch. \nDost thou conjure for wenches, that thou call'st \nfor such store, \nWhen one is one too many? Go, get thee from the door. \nDROMIO OF EPHESUS; What patch is made our porter? My master stays in \nthe street. \nDROMIO OF SYRACUSE [Within]; Let him walk from whence he came, lest \nhe \ncatch cold on's feet. \n \nANTIPHOLUS OF EPHESUS; Who talks within there? ho, open the door! \n29\nDROMIO OF SYRACUSE[Within]; Right, sir; I'll tell you when, an you tell \nme wherefore. \n \nANTIPHOLUS OF EPHESUS; Wherefore? for my dinner: I have not dined to-\nday. \nDROMIO OF SYRACUSE[Within]; Nor to-day here you must not; come again \nwhen you may. \n \nANTIPHOLUS OF EPHESUS; What art thou that keepest",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money and later beats him when confused by Dromio of Ephesus's report.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Antipholus of Ephesus is locked out of his own home by Dromio of Syracuse who guards the door from inside.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "The twins differ in their interactions due to mistaken identity between the twin masters and servants.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q06",
+    "condition": "Cond_B_RRF_50_50",
+    "category": "Event-Chain",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C137",
+      "C146",
+      "C105",
+      "C200",
+      "C65",
+      "C152",
+      "C197",
+      "C116",
+      "C110",
+      "C61"
+    ],
+    "latency_ms": 35454.1802406311,
+    "prompt_tokens": 71262,
+    "completion_tokens": 1024,
+    "total_tokens": 72286,
+    "answer": "Based on the supplied context, Antipholus of Ephesus is arrested because Angelo the goldsmith claims he owes money for a gold chain, and Angelo needs that payment to satisfy his own debt to the Second Merchant.\n\n**The debt dispute unfolds as follows:**\n\n1. **Ang",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Angelo the goldsmith owes 200 ducats to a Second Merchant and needs immediate payment.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Angelo delivered a gold chain to Antipholus of Syracuse by mistake, but demanded payment from Antipholus of Ephesus.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Ephesus refused to pay for a chain he never received, leading to his arrest for the 200 ducats debt.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q01",
+    "condition": "Cond_C_RRF_80_20",
+    "category": "Direct Factual",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C191",
+      "C166",
+      "C10",
+      "C186",
+      "C2",
+      "C194",
+      "C189",
+      "C4",
+      "C171",
+      "C163"
+    ],
+    "latency_ms": 20968.45817565918,
+    "prompt_tokens": 58661,
+    "completion_tokens": 728,
+    "total_tokens": 59389,
+    "answer": "Based on the supplied context, **Aegeon (also spelled AEGEON)** is:\n\n**Who he is:**\n- A merchant from Syracuse\n- Husband to Aemilia (who later becomes the Lady Abbess of Ephesus)\n- Father of twin sons, both named Antipholus (Antipholus of Syracuse and Antipholus of Ephesus)\n- Father figure to twin servants, both named Dromio (Dromio of Syracuse and Dromio of Ephesus), whom he bought to attend his sons\n\n**His origin and history:**\n- **Born in Syracuse** (\"In Syracusa was I born, and wed / Unto a woman\")\n- Lived in joy with his wife; their wealth increased through \"prosperous voyages I often made / To Epidamnum\"\n- After his factor's death, he traveled to Epidamnum; his wife followed him there\n- In Epidamnum, his wife gave birth to twin sons (\"two goodly sons... the one so like the other, / As could not be distinguish'd but by names\")\n- At the same inn, a poor woman gave birth to twin boys; Aegeon bought them to serve his sons\n- Returning home by sea, a storm wrecked their ship; the family was separated:\n  - His wife, one son, and one Dromio were rescued by fishermen of Corinth\n  - Aegeon, the other son, and the other Dromio were saved by another ship and returned to Syracuse\n- At age 18, his remaining son (Antipholus of Syracuse) asked to search for his lost brother; Aegeon let him go with his Dromio\n- **Spent five summers roaming \"furthest Greece... through the bounds of Asia\"** searching for them\n- Finally \"coasting homeward, came to Ephesus\" — where he was arrested under the law that condemns any Syracusian found in Ephesus to death unless a ransom of a thousand marks is paid\n\nIn Act 5, the family is reunited when Aemilia (the Abbess) recognizes him, and the Duke pardons him.",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 2,
+    "total_claims": 2,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon is a merchant of Syracuse.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "He was born in Syracuse, married, and engaged in trade in Epidamnum.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q02",
+    "condition": "Cond_C_RRF_80_20",
+    "category": "Causal",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C186",
+      "C191",
+      "C189",
+      "C178",
+      "C10",
+      "C73",
+      "C65",
+      "C113",
+      "C197",
+      "C137"
+    ],
+    "latency_ms": 9151.262998580933,
+    "prompt_tokens": 64552,
+    "completion_tokens": 638,
+    "total_tokens": 65190,
+    "answer": "Based on the supplied context, Aegeon was sentenced to death in Ephesus because:\n\n1. **He is a Syracusian merchant** who entered Ephesus, which was prohibited by law due to enmity between Syracuse and Ephesus.\n\n2. **The law stated**: \"if any Syracusian born / Come to the bay of Ephesus, he dies, / His goods confiscate to the duke's dispose, / Unless a thousand marks be levied, / To quit the penalty and to ransom him.\"\n\n3. **Aegeon could not pay the ransom**: Duke Solinus explicitly states, \"Thy substance, valued at the highest rate, / Cannot amount unto a hundred marks; / Therefore by law thou art condemned to die.\"\n\nThus, Aegeon was condemned because he was a Syracusian found in Ephesus and his assets were insufficient to pay the required thousand-mark ransom.",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 4,
+    "total_claims": 4,
+    "req_utilization": 4.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "An Ephesian law/statute prohibits Syracusian merchants from entering Ephesus on pain of death or 1000 marks ransom.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Aegeon is a merchant from Syracuse.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Aegeon's wealth/goods were under 100 marks, leaving him unable to pay the 1000 marks fine.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_4": {
+        "desc": "Duke Solinus sentenced him to death under the law, giving him one day to try to borrow the ransom.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q03",
+    "condition": "Cond_C_RRF_80_20",
+    "category": "Multi-Hop",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C194",
+      "C91",
+      "C83",
+      "C50",
+      "C24",
+      "C118",
+      "C88",
+      "C47",
+      "C169",
+      "C175"
+    ],
+    "latency_ms": 27638.66376876831,
+    "prompt_tokens": 61925,
+    "completion_tokens": 1024,
+    "total_tokens": 62949,
+    "answer": "Based on the supplied context, Antipholus of Syracuse fails to recognize Adriana because **he has only been in Ephesus for two hours and has never met her before**. \n\nWhen Adriana addresses him as her husband, he explicitly states:\n> \"Plead you to me, fair dame? **I know you not: In Ephesus I am but two hours old**, As strange unto your town as to your talk; Who, every word by all my wit being scann'd, Want wit in all one word to understand.\"\n\nThe confusion occurs because Adriana is the wife of **Antipholus of Ephesus** (his identical twin brother), not Antipholus of Syracuse. The two brothers were separated at birth, and Antipholus of Syracuse has just arrived in Ephesus unaware that his twin lives there. Everyone in Ephesus—including Adriana, Luciana, Angelo, and the merchants—mistakes",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse is visiting Ephesus seeking his long-lost twin brother, unaware his twin lives there.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Adriana is actually married to Antipholus of Ephesus (his identical twin brother).",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Syracuse has never met Adriana before and is bewildered when she mistakes him for her husband.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q04",
+    "condition": "Cond_C_RRF_80_20",
+    "category": "Relationship",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C191",
+      "C4",
+      "C8",
+      "C24",
+      "C10",
+      "C186",
+      "C189",
+      "C110",
+      "C194",
+      "C27"
+    ],
+    "latency_ms": 8077.312469482422,
+    "prompt_tokens": 57188,
+    "completion_tokens": 600,
+    "total_tokens": 57788,
+    "answer": "Based on the supplied context, Aegeon explains the origin of the two pairs of identical twins in Act 1, Scene 1:\n\n1. **His own twin sons**: Aegeon's wife gave birth to \"two goodly sons\" who were \"so like the other, as could not be distinguish'd but by names.\"\n\n2. **The twin servants**: \"That very hour, and in the self-same inn, a meaner woman was delivered of such a burden, male twins, both alike.\" Because \"their parents were exceeding poor,\" Aegeon \"bought and brought up [the twins] to attend my sons.\"\n\nThus, Aegeon's biological twin sons (the two Antipholuses) and the purchased twin servants (the two Dromios) were born at the same hour in the same inn, creating two pairs of identical twins.",
+    "correctness": 1,
+    "completeness_ratio": 0.6666666666666666,
+    "claims_present": 2,
+    "total_claims": 3,
+    "req_utilization": 0.6666666666666666,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon's wife gave birth to identical twin sons in Epidamnum.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "At the same hour in the same inn, a poor woman gave birth to twin boys, whom Aegeon bought to serve his sons.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "A violent shipwreck on their journey separated the family into two groups on a split ship.",
+        "present": false,
+        "sources_in_context": true,
+        "failure_type": "CASE_2_GENERATION_FAILURE"
+      }
+    }
+  },
+  {
+    "q_id": "Q05",
+    "condition": "Cond_C_RRF_80_20",
+    "category": "Comparative",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C200",
+      "C191",
+      "C94",
+      "C194",
+      "C50",
+      "C70",
+      "C197",
+      "C76",
+      "C97",
+      "C47"
+    ],
+    "latency_ms": 13528.880596160889,
+    "prompt_tokens": 61147,
+    "completion_tokens": 1024,
+    "total_tokens": 62171,
+    "answer": "The user is asking about how Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse. I need to find the relevant scenes in the text where each Antipholus first interacts with Dromio of Syracuse.\n\nLet me search through the context for these interactions.\n\nFirst, Antipholus of Syracuse's initial interaction with Dromio of Syracuse appears to be in ACT 2, SCENE 2 (Chunk C47, starting around line 17-18). Let me find that.\n\nFrom Chunk C47 (ACT 2, SCENE 2):\n\"Enter ANTIPHOLUS of Syracuse\nANTIPHOLUS OF SYRACUSE; The gold I gave to Dromio is laid up \nSafe at the Centaur; and the heedful slave \nIs wander'd forth, in care to seek me out \nBy computation and mine host's report. \nI could not speak with Dromio since at first \nI sent him from the mart. See, here he comes. \nEnter DROMIO of Syracuse \nHow now sir! is your merry humour alter'd? \nAs you love strokes, so jest with me again. \nYou know no Centaur? you received no gold? \nYour mistress sent to have me home to dinner? \nMy house was at the Phoenix? Wast thou mad, \nThat thus so madly thou didst answer me? \nDROMIO OF SYRACUSE; What answer, sir? when spake I such a word? \n \nANTIPHOLUS OF SYRACUSE; Even now, even here, not half an hour since. \nDROMIO OF SYRACUSE; I did not see you since you sent me hence, \nHome to the Centaur, with the gold you gave me. \n \nANTIPHOLUS OF SYRACUSE; Villain, thou didst deny the gold's receipt, \nAnd told'st me of a mistress and a dinner; \nFor which, I hope, thou felt'st I was displeased. \nDROMIO OF SYRACUSE; I am glad to see you in this merry vein: \nWhat means this jest? I pray you, master, tell me. \n \nANTIPHOLUS OF SYRACUSE; Yea, dost thou jeer and flout me in the teeth? \nThink'st thou I jest? Hold, take thou that, and that. \nBeating him \nDROMIO OF SYRACUSE; Hold, sir, for God's sake! now your jest is earnest: \nUpon what bargain do you give it me?\"\n\nSo Antipholus of Syracuse's initial interaction with Dromio of Syracuse involves him accusing Dromio of denying receiving gold, claiming Dromio told him about a mistress and dinner, and then beating Dromio when Dromio denies it.\n\nNow, what about Antipholus of Ephesus's initial interaction with Dromio of Syracuse? Let me look for that.\n\nIn ACT 3, SCENE 1 (Chunk C70, C76, C94, C97), we see Antipholus of Ephesus interacting with Dromio of Ephesus, not Dromio of Syracuse. But there's a scene where Dromio of Syracuse is inside the house (as the porter) and Antipholus of Ephesus is outside trying to get in.\n\nFrom Chunk C70 (ACT 3, SCENE 1):\n\"DROMIO OF EPHESUS; Maud, Bridget, Marian, Cicel, Gillian, Ginn! \nDROMIO OF SYRACUSE [Within]; Mome, malt-horse, capon, coxcomb, \nidiot, patch! \nEither get thee from the door, or sit down at the hatch. \nDost thou conjure for wenches, that thou call'st \nfor such store, \nWhen one is one too many? Go, get thee from the door. \nDROMIO OF EPHESUS; What patch is made our porter? My master stays in \nthe street. \nDROMIO OF SYRACUSE [Within]; Let him walk from whence he came, lest \nhe \ncatch cold on's feet. \n \nANTIPHOLUS OF EPHESUS; Who talks within there? ho, open the door! \n29\nDROMIO OF SYRACUSE[Within]; Right, sir; I'll tell you when, an you tell \nme wherefore.",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money and later beats him when confused by Dromio of Ephesus's report.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Antipholus of Ephesus is locked out of his own home by Dromio of Syracuse who guards the door from inside.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "The twins differ in their interactions due to mistaken identity between the twin masters and servants.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q06",
+    "condition": "Cond_C_RRF_80_20",
+    "category": "Event-Chain",
+    "retrieved_chunk_count": 10,
+    "retrieved_cids": [
+      "C137",
+      "C146",
+      "C105",
+      "C65",
+      "C197",
+      "C110",
+      "C113",
+      "C163",
+      "C200",
+      "C152"
+    ],
+    "latency_ms": 15181.206464767456,
+    "prompt_tokens": 72482,
+    "completion_tokens": 1024,
+    "total_tokens": 73506,
+    "answer": "The user is asking about why Antipholus of Ephesus is arrested and what role Angelo the goldsmith plays in the debt dispute. I need to answer based only on the provided context.\n\nLet me search through the context for information about Antipholus of Ephesus's arrest and Angelo's role.\n\nFrom the text, I can see in Act 4, Scene 1 (which appears multiple times in the context), there's a dispute between Antipholus of Ephesus and Angelo the goldsmith about a chain.\n\nKey points from the text:\n\n1. Second Merchant is owed money by Angelo (since Pentecost)\n2. Angelo says the sum he owes Second Merchant \"is growing to me by Antipholus\" - meaning Antipholus owes Angelo money\n3. Angelo says \"in the instant that I met with you [Second Merchant], He [Antipholus] had of me a chain: at five o'clock I shall receive the money for the same.\"\n4. Angelo shows a note of the chain's weight, fineness, and fashion, which \"amount to three odd ducats more Than I stand debted to this gentleman [Second Merchant]\"\n5. Antipholus of Ephesus says \"I am not furnish'd with the present money\" and tells Angelo to take the chain to his wife to get payment\n6. Angelo asks \"Have you the chain about you?\" and Antipholus says \"An if I have not, sir, I hope you have; Or else you may return without your money.\"\n7. Angelo insists \"give me the chain\" because \"Both wind and tide stays for this gentleman [Second Merchant]\"\n8. Antipholus denies receiving the chain: \"I owe you none till I receive the chain.\"\n9. Angelo claims \"You know I gave it you half an hour since.\"\n10. Second Merchant says \"Well, officer, arrest him at my suit.\"\n11. Officer arrests Antipholus of Ephesus\n12. Angelo says \"This touches me in reputation. Either consent to pay this sum for me Or I attach you by this officer.\"\n\nLater, in Act 4, Scene 4, the Officer tells Adriana: \"One Angelo, a goldsmith: do you know him? ... Two hundred ducats. ... Due for a chain your husband had of him.\"\n\nAnd in Act 5, Scene 1, Angelo says: \"I protest, he had the chain of me, Though most dishonestly he doth deny it.\" And \"This chain you had of me; can you deny it?\"\n\nAlso, Second Merchant says: \"Besides, I will be sworn these ears of mine Heard you confess you had the chain of him After you first forswore it on the mart: And thereupon I drew my sword on you; And then you fled into this abbey here...\"\n\nBut Antipholus of Ephesus denies ever receiving the chain: \"I never saw the chain, so help me Heaven!\"\n\nSo the situation is: Angelo gave a chain to Antipholus of Ephesus (or so Angelo claims), but Antipholus of Ephesus denies receiving it. Angelo needs the money from Antipholus to pay the Second Merchant. When Antipholus doesn't pay, the Second Merchant has the officer arrest Antipholus at his suit (since Angelo owes the Second Merchant, and Antipholus owes Angelo).\n\nActually, looking more carefully: The Second Merchant is arresting Antipholus at his suit? Let me check: \"Second Merchant; Well, officer, arrest him at my suit.\" And then \"Officer; I do; and charge you in the duke's name to obey me.\" Then Angelo says \"Either consent to pay this sum for me Or I attach you by this officer.\"\n\nWait, it seems like the Second Merchant is arresting Antipholus because Angelo owes the Second Merchant, and Angelo says Antipholus owes him (Angelo) for the chain. But the arrest is \"at my suit\" meaning the Second Merchant's suit against Antipholus? That seems odd.\n\nLet me re-read: \"Second Merchant; You know since Pentecost the sum is due, And since I have not much importuned you; Nor now I had not, but that I am bound To Persia, and want guilders for my voyage: Therefore make present satisfaction, Or I'll attach you by this officer.\"\n\nThis is Second Merchant talking to Angelo. So Second Merchant is threatening to attach Angelo.\n\nThen Angelo says: \"Even just the sum that I do owe to you Is growing to me by Antipholus, And in the instant that I met with you He had of me a chain: at five o'clock I shall receive the money for the same. Pleaseth you walk with me down to his house, I will discharge my bond and thank you too.\"\n\nSo Angelo owes Second Merchant, and Angelo says",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Angelo the goldsmith owes 200 ducats to a Second Merchant and needs immediate payment.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Angelo delivered a gold chain to Antipholus of Syracuse by mistake, but demanded payment from Antipholus of Ephesus.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Ephesus refused to pay for a chain he never received, leading to his arrest for the 200 ducats debt.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q01",
+    "condition": "Cond_D_RRF_80_20_Neighbor_w2",
+    "category": "Direct Factual",
+    "retrieved_chunk_count": 38,
+    "retrieved_cids": [
+      "C189",
+      "C189",
+      "C191",
+      "C191",
+      "C191",
+      "C163",
+      "C163",
+      "C166",
+      "C166",
+      "C166",
+      "C8",
+      "C8",
+      "C10",
+      "C10",
+      "C12",
+      "C183",
+      "C183",
+      "C186",
+      "C186",
+      "C186",
+      "C0",
+      "C1",
+      "C2",
+      "C2",
+      "C4",
+      "C194",
+      "C194",
+      "C194",
+      "C4",
+      "C6",
+      "C169",
+      "C169",
+      "C171",
+      "C171",
+      "C173",
+      "C161",
+      "C161",
+      "C163"
+    ],
+    "latency_ms": 19581.11596107483,
+    "prompt_tokens": 217094,
+    "completion_tokens": 739,
+    "total_tokens": 217833,
+    "answer": "Based on the supplied context, **Aegeon** is a merchant from **Syracuse**. The key facts about his origin and identity are:\n\n- **Birthplace**: \"In Syracusa was I born\" (Act 1, Scene 1)\n- **Occupation**: Merchant who made \"prosperous voyages I often made to Epidamnum\"\n- **Family**: Married to a woman (later revealed to be **Aemilia**, the Abbess of Ephesus); father of **twin sons**, both named Antipholus (\"the one so like the other, as could not be distinguish'd but by names\")\n- **Servants**: Bought a second set of male twins (both named Dromio) to attend his sons\n- **Separation**: During a sea voyage home, a storm split his ship; his wife and one son (with one Dromio) were rescued by Corinthian fishermen, while Aegeon and the other son (with the other Dromio) were saved by another ship\n- **Search**: After his younger son (Antipholus of Syracuse) grew up, he \"importuned me that his attendant… might bear him company in the quest of him.\" Aegeon then spent \"five summers… roaming clean through the bounds of Asia\" searching for his lost family, eventually arriving in Ephesus\n- **Legal peril**: As a Syracusian in Ephesus, he is condemned to death unless he can pay 1,000 marks (Act 1, Scene 1)\n\nIn the final scene (Act 5), Aegeon is reunited with his wife Aemilia and both sons, confirming he is the father of **Antipholus of Syracuse** and **Antipholus of Ephesus**.",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 2,
+    "total_claims": 2,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon is a merchant of Syracuse.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "He was born in Syracuse, married, and engaged in trade in Epidamnum.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q02",
+    "condition": "Cond_D_RRF_80_20_Neighbor_w2",
+    "category": "Causal",
+    "retrieved_chunk_count": 45,
+    "retrieved_cids": [
+      "C183",
+      "C183",
+      "C186",
+      "C186",
+      "C186",
+      "C189",
+      "C189",
+      "C191",
+      "C191",
+      "C191",
+      "C175",
+      "C175",
+      "C178",
+      "C178",
+      "C178",
+      "C8",
+      "C8",
+      "C10",
+      "C10",
+      "C12",
+      "C70",
+      "C70",
+      "C73",
+      "C73",
+      "C73",
+      "C61",
+      "C64",
+      "C65",
+      "C65",
+      "C67",
+      "C110",
+      "C110",
+      "C113",
+      "C113",
+      "C113",
+      "C194",
+      "C194",
+      "C197",
+      "C197",
+      "C197",
+      "C135",
+      "C135",
+      "C137",
+      "C137",
+      "C137"
+    ],
+    "latency_ms": 26443.20797920227,
+    "prompt_tokens": 288203,
+    "completion_tokens": 719,
+    "total_tokens": 288922,
+    "answer": "Based on the supplied context, Aegeon was sentenced to death in Ephesus for the following reasons:\n\n1. **Law against Syracusians**: There was a decree between Syracuse and Ephesus that \"if any Syracusian born Come to the bay of Ephesus, he dies, His goods confiscate to the duke's dispose, Unless a thousand marks be levied, To quit the penalty and to ransom him.\"\n\n2. **Insufficient assets**: Duke Solinus states: \"Thy substance, valued at the highest rate, Cannot amount unto a hundred marks; Therefore by law thou art condemned to die.\"\n\n3. **Political enmity**: The Duke explains the law stems from \"mortal and intestine jars 'Twixt thy seditious countrymen and us\" and \"the rancorous outrage of your duke To merchants, our well-dealing countrymen, Who wanting guilders to redeem their lives Have seal'd his rigorous statutes with their bloods.\"\n\nAegeon, a merchant of Syracuse, had come to Ephesus seeking his lost family, but under the strict law, his presence in Ephesus as a Syracusian-born man carried a death penalty unless he could pay the 1,000-mark ransom, which his assets (worth less than 100 marks) could not cover.",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 4,
+    "total_claims": 4,
+    "req_utilization": 2.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "An Ephesian law/statute prohibits Syracusian merchants from entering Ephesus on pain of death or 1000 marks ransom.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Aegeon is a merchant from Syracuse.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Aegeon's wealth/goods were under 100 marks, leaving him unable to pay the 1000 marks fine.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_4": {
+        "desc": "Duke Solinus sentenced him to death under the law, giving him one day to try to borrow the ransom.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q03",
+    "condition": "Cond_D_RRF_80_20_Neighbor_w2",
+    "category": "Multi-Hop",
+    "retrieved_chunk_count": 46,
+    "retrieved_cids": [
+      "C191",
+      "C191",
+      "C194",
+      "C194",
+      "C194",
+      "C88",
+      "C88",
+      "C91",
+      "C91",
+      "C91",
+      "C81",
+      "C81",
+      "C83",
+      "C83",
+      "C85",
+      "C47",
+      "C47",
+      "C50",
+      "C50",
+      "C50",
+      "C22",
+      "C23",
+      "C24",
+      "C24",
+      "C24",
+      "C116",
+      "C116",
+      "C118",
+      "C118",
+      "C118",
+      "C85",
+      "C85",
+      "C88",
+      "C44",
+      "C44",
+      "C47",
+      "C166",
+      "C166",
+      "C169",
+      "C169",
+      "C171",
+      "C173",
+      "C173",
+      "C175",
+      "C175",
+      "C175"
+    ],
+    "latency_ms": 48071.21157646179,
+    "prompt_tokens": 284691,
+    "completion_tokens": 1024,
+    "total_tokens": 285715,
+    "answer": "The user is asking why Antipholus of Syracuse fails to recognize Adriana when she addresses him as her husband. I need to find the relevant parts in the text where this interaction occurs.\n\nLooking through the text, I see in Act 2, Scene 2 (which appears in multiple chunks), there's an interaction between Antipholus of Syracuse and Adriana. Let me find the specific passage.\n\nFrom chunk C47 (ACT 2, SCENE 2), I see:\n\n\"Enter ADRIANA and LUCIANA \nADRIANA; Ay, ay, Antipholus, look strange and frown: \nSome other mistress hath thy sweet aspects; \nI am not Adriana nor thy wife. \n22\nThe time was once when thou unurged wouldst vow \nThat never words were music to thine ear, \nThat never object pleasing in thine eye, \nThat never touch well welcome to thy hand, \nThat never meat sweet-savor'd in thy taste, \nUnless I spake, or look'd, or touch'd, or carved to thee. \nHow comes it now, my husband, O, how comes it, \nThat thou art thus estranged from thyself? \nThyself I call it, being strange to me, \nThat, undividable, incorporate, \nAm better than thy dear self's better part. \nAh, do not tear away thyself from me! \nFor know, my love, as easy mayest thou fall \nA drop of water in the breaking gulf, \nAnd take unmingled that same drop again, \nWithout addition or diminishing, \nAs take from me thyself and not me too. \nHow dearly would it touch me to the quick, \nShouldst thou but hear I were licentious \nAnd that this body, consecrate to thee, \nBy ruffian lust should be contaminate! \nWouldst thou not spit at me and spurn at me \nAnd hurl the name of husband in my face \nAnd tear the stain'd skin off my harlot-brow \nAnd from my false hand cut the wedding-ring \nAnd break it with a deep-divorcing vow? \nI know thou canst; and therefore see thou do it. \nI am possess'd with an adulterate blot; \nMy blood is mingled with the crime of lust: \nFor if we too be one and thou play false, \nI do digest the poison of thy flesh, \nBeing strumpeted by thy contagion. \nKeep then far league and truce with thy true bed; \nI live unstain'd, thou undishonoured. \n \n23\nANTIPHOLUS OF SYRACUSE; Plead you to me, fair dame? I know you not: \nIn Ephesus I am but two hours old, \nAs strange unto your town as to your talk; \nWho, every word by all my wit being scann'd, \nWant wit in all one word to understand.\"\n\nSo Antipholus of Syracuse explicitly says: \"Plead you to me, fair dame? I know you not: In Ephesus I am but two hours old, As strange unto your town as to your talk; Who, every word by all my wit being scann'd, Want wit in all one word to understand.\"\n\nThis is because he has just arrived in Ephesus (he says he's \"but two hours old\" there) and doesn't know Adriana. He is from Syracuse, and this is his first time in Ephesus. Adriana is the wife of Antipholus of Ephesus (his twin brother), not his wife. So he doesn't recognize her because she's not his wife - she's his twin brother's wife, and he's never met her before.\n\nThe confusion arises because the two Antipholus brothers are identical twins, and Adriana mistakes Antipholus of Syracuse for her husband, Antipholus of Ephesus.\n\nLet me also check if there's any earlier context about Antipholus of Syracuse arriving in Ephesus.\n\nFrom chunk C22 (ACT 1, SCENE 2):\n\"Enter ANTIPHOLUS of Syracuse, DROMIO of Syracuse, and First Merchant \nFirst Merchant; Therefore give out you are of Epidamnum, \nLest that your goods too soon be confiscate. \nThis very day a Syracusian merchant \nIs apprehended for arrival here; \nAnd not being able to buy out his life \nAccording to the statute of the town, \nDies ere the weary sun set in the west. \nThere is your money that I had to",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse is visiting Ephesus seeking his long-lost twin brother, unaware his twin lives there.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Adriana is actually married to Antipholus of Ephesus (his identical twin brother).",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Syracuse has never met Adriana before and is bewildered when she mistakes him for her husband.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q04",
+    "condition": "Cond_D_RRF_80_20_Neighbor_w2",
+    "category": "Relationship",
+    "retrieved_chunk_count": 37,
+    "retrieved_cids": [
+      "C189",
+      "C189",
+      "C191",
+      "C191",
+      "C191",
+      "C2",
+      "C2",
+      "C4",
+      "C4",
+      "C6",
+      "C6",
+      "C8",
+      "C8",
+      "C10",
+      "C22",
+      "C23",
+      "C24",
+      "C24",
+      "C24",
+      "C10",
+      "C12",
+      "C183",
+      "C183",
+      "C186",
+      "C186",
+      "C186",
+      "C107",
+      "C107",
+      "C110",
+      "C110",
+      "C110",
+      "C194",
+      "C194",
+      "C194",
+      "C27",
+      "C27",
+      "C27"
+    ],
+    "latency_ms": 19766.21437072754,
+    "prompt_tokens": 210199,
+    "completion_tokens": 632,
+    "total_tokens": 210831,
+    "answer": "Based on the text provided, Aegeon explains in Act 1, Scene 1 that:\n\n1. **His own twin sons**: Aegeon and his wife had \"two goodly sons\" who were so alike they \"could not be distinguish'd but by names.\"\n\n2. **The twin servants**: \"That very hour, and in the self-same inn, a meaner woman was delivered of such a burden, male twins, both alike.\" Because the parents of these twins \"were exceeding poor,\" Aegeon \"bought and brought up to attend my sons.\"\n\nSo Aegeon acquired the twin servants (the Dromios) by purchasing them from a poor family at the same inn where his wife gave birth to their own twin sons (the Antipholuses), resulting in two pairs of identical twins in his household.",
+    "correctness": 1,
+    "completeness_ratio": 0.6666666666666666,
+    "claims_present": 2,
+    "total_claims": 3,
+    "req_utilization": 0.6666666666666666,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Aegeon's wife gave birth to identical twin sons in Epidamnum.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "At the same hour in the same inn, a poor woman gave birth to twin boys, whom Aegeon bought to serve his sons.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "A violent shipwreck on their journey separated the family into two groups on a split ship.",
+        "present": false,
+        "sources_in_context": true,
+        "failure_type": "CASE_3_CONTEXT_INTERFERENCE"
+      }
+    }
+  },
+  {
+    "q_id": "Q05",
+    "condition": "Cond_D_RRF_80_20_Neighbor_w2",
+    "category": "Comparative",
+    "retrieved_chunk_count": 40,
+    "retrieved_cids": [
+      "C197",
+      "C197",
+      "C200",
+      "C200",
+      "C200",
+      "C189",
+      "C189",
+      "C191",
+      "C191",
+      "C191",
+      "C91",
+      "C91",
+      "C94",
+      "C94",
+      "C94",
+      "C194",
+      "C194",
+      "C194",
+      "C47",
+      "C47",
+      "C50",
+      "C50",
+      "C50",
+      "C67",
+      "C67",
+      "C70",
+      "C70",
+      "C70",
+      "C197",
+      "C73",
+      "C73",
+      "C76",
+      "C76",
+      "C76",
+      "C97",
+      "C97",
+      "C99",
+      "C44",
+      "C44",
+      "C47"
+    ],
+    "latency_ms": 73995.59926986694,
+    "prompt_tokens": 242013,
+    "completion_tokens": 1024,
+    "total_tokens": 243037,
+    "answer": "The user is asking about how Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse. I need to find the relevant parts in the text where each Antipholus interacts with Dromio of Syracuse for the first time.\n\nLet me search through the text for these interactions.\n\nFirst, let's find Antipholus of Syracuse's initial interaction with Dromio of Syracuse.\n\nFrom the text, in ACT 2, SCENE 2 (which appears in multiple chunks), we have:\n\n\"Enter ANTIPHOLUS of Syracuse\nANTIPHOLUS OF SYRACUSE; The gold I gave to Dromio is laid up \nSafe at the Centaur; and the heedful slave \nIs wander'd forth, in care to seek me out \nBy computation and mine host's report. \nI could not speak with Dromio since at first \nI sent him from the mart. See, here he comes. \nEnter DROMIO of Syracuse \nHow now sir! is your merry humour alter'd? \nAs you love strokes, so jest with me again. \nYou know no Centaur? you received no gold? \nYour mistress sent to have me home to dinner? \nMy house was at the Phoenix? Wast thou mad, \nThat thus so madly thou didst answer me? \nDROMIO OF SYRACUSE; What answer, sir? when spake I such a word? \n \nANTIPHOLUS OF SYRACUSE; Even now, even here, not half an hour since. \nDROMIO OF SYRACUSE; I did not see you since you sent me hence, \nHome to the Centaur, with the gold you gave me. \n \nANTIPHOLUS OF SYRACUSE; Villain, thou didst deny the gold's receipt, \nAnd told'st me of a mistress and a dinner; \nFor which, I hope, thou felt'st I was displeased. \nDROMIO OF SYRACUSE; I am glad to see you in this merry vein: \nWhat means this jest? I pray you, master, tell me. \n \n18\nANTIPHOLUS OF SYRACUSE; Yea, dost thou jeer and flout me in the teeth? \nThink'st thou I jest? Hold, take thou that, and that. \nBeating him \nDROMIO OF SYRACUSE; Hold, sir, for God's sake! now your jest is earnest: \nUpon what bargain do you give it me? \n \nANTIPHOLUS OF SYRACUSE; Because that I familiarly sometimes \nDo use you for my fool and chat with you, \nYour sauciness will jest upon my love \nAnd make a common of my serious hours. \nWhen the sun shines let foolish gnats make sport, \nBut creep in crannies when he hides his beams. \nIf you will jest with me, know my aspect, \nAnd fashion your demeanor to my looks, \nOr I will beat this method in your sconce. \nDROMIO OF SYRACUSE; Sconce call you it? so you would leave battering, I \nhad rather have it a head: an you use these blows \nlong, I must get a sconce for my head and ensconce \nit too; or else I shall seek my wit in my shoulders. \nBut, I pray, sir why am I beaten? \n \nANTIPHOLUS OF SYRACUSE; Dost thou not know? \nDROMIO OF SYRACUSE; Nothing, sir, but that I am beaten. \n \nANTIPHOLUS OF SYRACUSE; Shall I tell you why? \nDROMIO OF SYRACUSE; Ay, sir, and wherefore; for they say every why hath \na wherefore. \n \nANTIPHOLUS OF SYRACUSE; Why, first,--for flouting me; and then, \nwherefore--For urging it the second time to me.\"\n\nSo Antipholus of Syracuse's initial interaction with Dromio of Syracuse is confrontational - he accuses Dromio of denying receiving gold, claiming Dromio told him about a mistress and dinner, and then beats Dromio when Dromio denies it.\n\nNow, let's find Antipholus of Ephesus's initial interaction with Dromio of Syracuse.\n\nLooking through the text, in ACT 3, SCENE 1 (which appears in multiple",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.5,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money and later beats him when confused by Dromio of Ephesus's report.",
+        "present": true,
+        "sources_in_context": false,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Antipholus of Ephesus is locked out of his own home by Dromio of Syracuse who guards the door from inside.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "The twins differ in their interactions due to mistaken identity between the twin masters and servants.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  },
+  {
+    "q_id": "Q06",
+    "condition": "Cond_D_RRF_80_20_Neighbor_w2",
+    "category": "Event-Chain",
+    "retrieved_chunk_count": 46,
+    "retrieved_cids": [
+      "C135",
+      "C135",
+      "C137",
+      "C137",
+      "C137",
+      "C143",
+      "C143",
+      "C146",
+      "C146",
+      "C146",
+      "C102",
+      "C104",
+      "C105",
+      "C105",
+      "C107",
+      "C61",
+      "C64",
+      "C65",
+      "C65",
+      "C67",
+      "C194",
+      "C194",
+      "C197",
+      "C197",
+      "C197",
+      "C107",
+      "C107",
+      "C110",
+      "C110",
+      "C110",
+      "C113",
+      "C113",
+      "C113",
+      "C161",
+      "C161",
+      "C163",
+      "C163",
+      "C163",
+      "C200",
+      "C200",
+      "C200",
+      "C149",
+      "C149",
+      "C152",
+      "C152",
+      "C152"
+    ],
+    "latency_ms": 27351.661443710327,
+    "prompt_tokens": 330635,
+    "completion_tokens": 1024,
+    "total_tokens": 331659,
+    "answer": "Based on the supplied context, Antipholus of Ephesus is arrested in a public place at the suit of the Second Merchant, but the underlying dispute involves a gold chain and Angelo the goldsmith. Here are the key facts:\n\n**Why Antipholus of Ephesus is arrested",
+    "correctness": 2,
+    "completeness_ratio": 1.0,
+    "claims_present": 3,
+    "total_claims": 3,
+    "req_utilization": 1.0,
+    "unsupported_claims": 0,
+    "hallucination": 0,
+    "grounding_ratio": 1.0,
+    "claims_status": {
+      "claim_1": {
+        "desc": "Angelo the goldsmith owes 200 ducats to a Second Merchant and needs immediate payment.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_2": {
+        "desc": "Angelo delivered a gold chain to Antipholus of Syracuse by mistake, but demanded payment from Antipholus of Ephesus.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      },
+      "claim_3": {
+        "desc": "Antipholus of Ephesus refused to pay for a chain he never received, leading to his arrest for the 200 ducats debt.",
+        "present": true,
+        "sources_in_context": true,
+        "failure_type": "NONE"
+      }
+    }
+  }
+]

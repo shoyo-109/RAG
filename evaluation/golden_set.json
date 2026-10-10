@@ -1,0 +1,878 @@
+{
+    "dataset_id": "comedy_of_errors_evidence_golden_set_v1",
+    "source": {
+        "title": "The Comedy of Errors",
+        "author": "William Shakespeare",
+        "source_file": "The Comedy of Errors document(1).pdf",
+        "annotation_policy": "Gold evidence must be traceable to the supplied source. Required facts must be supported by the annotated passages, not by external knowledge."
+    },
+    "questions": [
+        {
+            "question_id": "Q01",
+            "question": "Why is Aegeon sentenced to death in Ephesus, and what amount of money could save his life?",
+            "question_type": "causal_factual",
+            "difficulty": "easy",
+            "gold_answer": "Aegeon is a Syracusan merchant who entered Ephesus in violation of the law barring Syracusians on penalty of death. The statute allows him to save his life by paying a ransom of one thousand marks, but the Duke notes that Aegeon's total property does not amount to even one hundred marks.",
+            "required_facts": [
+                "The law decrees that any Syracusan arriving in Ephesus is condemned to die.",
+                "The penalty may be quit by paying a ransom of one thousand marks.",
+                "Aegeon's entire estate/substance is valued at less than one hundred marks."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q01_E1",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Duke Solinus",
+                    "quote": "Again: if any Syracusian born Come to the bay of Ephesus, he dies, His goods confiscate to the duke's dispose, Unless a thousand marks be levied, To quit the penalty and to ransom him.",
+                    "supports": [
+                        "legal_basis",
+                        "ransom_amount"
+                    ]
+                },
+                {
+                    "evidence_id": "Q01_E2",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Duke Solinus",
+                    "quote": "Thy substance, valued at the highest rate, Cannot amount unto a hundred marks; Therefore by law thou art condemned to die.",
+                    "supports": [
+                        "insufficient_property",
+                        "reason_for_sentence"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q01_E1",
+                    "Q01_E2"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Retrieves the sentence but misses the law explaining it.",
+                "States the ransom amount incorrectly.",
+                "Claims Aegeon is unable to pay without retrieving evidence about his property."
+            ]
+        },
+        {
+            "question_id": "Q02",
+            "question": "Why did Aegeon travel to Ephesus after spending years searching elsewhere?",
+            "question_type": "causal_factual",
+            "difficulty": "medium",
+            "gold_answer": "Aegeon set out to search for his lost family after his youngest son, upon turning eighteen, departed with his attendant to look for his missing twin brother. Aegeon spent five summers roaming through Greece and Asia, finally coming to Ephesus on his journey homeward because he was unwilling to leave any human settlement unsought.",
+            "required_facts": [
+                "Aegeon's younger son set out at age eighteen to find his missing brother.",
+                "Aegeon spent five summers traversing Greece and Asia in search of them.",
+                "Aegeon reached Ephesus while coasting homeward, refusing to leave any inhabited place unsearched."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q02_E1",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Aegeon",
+                    "quote": "My youngest boy, and yet my eldest care, At eighteen years became inquisitive After his brother: and importuned me That his attendant-so his case was like, Reft of his brother, but retain'd his name-- Might bear him company in the quest of him:",
+                    "supports": [
+                        "son_search_motivation"
+                    ]
+                },
+                {
+                    "evidence_id": "Q02_E2",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Aegeon",
+                    "quote": "Five summers have I spent in furthest Greece, Roaming clean through the bounds of Asia, And, coasting homeward, came to Ephesus; Hopeless to find, yet loath to leave unsought Or that or any place that harbours men.",
+                    "supports": [
+                        "search_history",
+                        "arrival_in_ephesus",
+                        "continued_hope"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q02_E1",
+                    "Q02_E2"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Says Aegeon travelled to Ephesus only for trade.",
+                "Misses the connection between the son's search and Aegeon's journey.",
+                "Retrieves only the destination without the motivation."
+            ]
+        },
+        {
+            "question_id": "Q03",
+            "question": "How did the shipwreck separate Aegeon and his wife from parts of their family?",
+            "question_type": "event_reconstruction",
+            "difficulty": "medium",
+            "gold_answer": "During the storm, the family tied the children and themselves to opposite ends of a spare mast. The ship struck a rock and split in two. Aegeon's wife and the two infants with her (three people in total) drifted faster before the wind and, as Aegeon believed, were taken up by fishermen of Corinth. Aegeon and the remaining two were subsequently picked up by another ship, separating the family into two groups.",
+            "required_facts": [
+                "The vessel struck a rock and split in half.",
+                "Aegeon and his wife were bound to opposite ends of the mast.",
+                "The wife's party of three (herself, one infant son, and one infant slave) was carried off and taken up by fishermen of Corinth as Aegeon thought.",
+                "Aegeon's party was rescued separately by another vessel."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q03_E1",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Aegeon",
+                    "quote": "We were encounterd by a mighty rock; Which being violently borne upon, Our helpful ship was splitted in the midst;",
+                    "supports": [
+                        "shipwreck_cause",
+                        "ship_split"
+                    ]
+                },
+                {
+                    "evidence_id": "Q03_E2",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Aegeon",
+                    "quote": "Her part, poor soul! seeming as burdened With lesser weight but not with lesser woe, Was carried with more speed before the wind; And in our sight they three were taken up By fishermen of Corinth, as we thought.",
+                    "supports": [
+                        "wife_separated",
+                        "wife_group_rescue"
+                    ]
+                },
+                {
+                    "evidence_id": "Q03_E3",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Aegeon",
+                    "quote": "At length, another ship had seized on us; And, knowing whom it was their hap to save, Gave healthful welcome to their shipwreck'd guests;",
+                    "supports": [
+                        "separate_rescue"
+                    ]
+                },
+                {
+                    "evidence_id": "Q03_E4",
+                    "act": 1,
+                    "scene": 1,
+                    "speaker": "Aegeon",
+                    "quote": "My wife, more careful for the latter-born, Had fasten'd him unto a small spare mast, Such as seafaring men provide for storms; To him one of the other twins was bound, Whilst I had been like heedful of the other:",
+                    "supports": [
+                        "wife_child_allocation",
+                        "parent_child_separation"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q03_E1",
+                    "Q03_E2",
+                    "Q03_E3",
+                    "Q03_E4"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Attributes the separation to a voluntary departure.",
+                "States the wife was with three companions rather than being three persons total.",
+                "Confuses the two rescue groups.",
+                "Claims the characters knew the exact fate of every family member at this point in the play."
+            ]
+        },
+        {
+            "question_id": "Q04",
+            "question": "Why does Antipholus of Syracuse suspect that Dromio has mishandled his money?",
+            "question_type": "misunderstanding_causality",
+            "difficulty": "medium",
+            "gold_answer": "Antipholus of Syracuse had entrusted his gold to Dromio of Syracuse to take to the Centaur inn. Shortly after, he meets Dromio of Ephesus, who denies having received any gold and instead urges him to return home to dinner with his wife. Finding this denial suspicious and fearing trickery in a city reputed for sorcery and cheating, Antipholus assumes his money has been lost or stolen.",
+            "required_facts": [
+                "Antipholus of Syracuse had entrusted a sum of gold to his attendant.",
+                "He encounters Dromio of Ephesus, who denies receiving any gold.",
+                "Antipholus suspects foul play or cozenage in Ephesus rather than recognizing twin servants."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q04_E1",
+                    "act": 1,
+                    "scene": 2,
+                    "speaker": "Antipholus of Syracuse",
+                    "quote": "Where is the gold I gave in charge to thee?",
+                    "supports": [
+                        "expected_money_return"
+                    ]
+                },
+                {
+                    "evidence_id": "Q04_E2",
+                    "act": 1,
+                    "scene": 2,
+                    "speaker": "Dromio of Ephesus",
+                    "quote": "To me, sir? why, you gave no gold to me.",
+                    "supports": [
+                        "denial_of_receipt"
+                    ]
+                },
+                {
+                    "evidence_id": "Q04_E3",
+                    "act": 1,
+                    "scene": 2,
+                    "speaker": "Antipholus of Syracuse",
+                    "quote": "They say this town is full of cozenage, As, nimble jugglers that deceive the eye, Dark-working sorcerers that change the mind, Soul-killing witches that deform the body, Disguised cheaters, prating mountebanks, And many such-like liberties of sin:",
+                    "supports": [
+                        "suspicion_of_deception"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q04_E1",
+                    "Q04_E2",
+                    "Q04_E3"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Claims that the play establishes an actual theft by Dromio.",
+                "Fails to identify the confusion between the two Dromios.",
+                "Treats Antipholus's suspicion as an objectively verified crime."
+            ]
+        },
+        {
+            "question_id": "Q05",
+            "question": "What argument does Luciana use to justify men's greater freedom compared with women's freedom?",
+            "question_type": "interpretive_factual",
+            "difficulty": "medium",
+            "gold_answer": "Luciana argues that men have greater liberty because their business lies out of doors, and she cites a cosmic order where beasts, fish, and birds submit to their males. Since men possess reason and mastery over nature, she argues wives must subordinate their will to their husbands' direction.",
+            "required_facts": [
+                "Men's duties and business keep them outside the domestic sphere.",
+                "Nature's hierarchy dictates that female animals are subject to their males.",
+                "Wives should submit their personal will to their husbands' decisions."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q05_E1",
+                    "act": 2,
+                    "scene": 1,
+                    "speaker": "Luciana",
+                    "quote": "Because their business still lies out o' door.",
+                    "supports": [
+                        "outdoor_business_argument"
+                    ]
+                },
+                {
+                    "evidence_id": "Q05_E2",
+                    "act": 2,
+                    "scene": 1,
+                    "speaker": "Luciana",
+                    "quote": "The beasts, the fishes, and the winged fowls, Are their males' subjects and at their controls: Men, more divine, the masters of all these, Lords of the wide world and wild watery seas, Indued with intellectual sense and souls, Of more preeminence than fish and fowls, Are masters to their females, and their lords:",
+                    "supports": [
+                        "natural_hierarchy_argument"
+                    ]
+                },
+                {
+                    "evidence_id": "Q05_E3",
+                    "act": 2,
+                    "scene": 1,
+                    "speaker": "Luciana",
+                    "quote": "Then let your will attend on their accords.",
+                    "supports": [
+                        "conclusion_about_submission"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q05_E1",
+                    "Q05_E2",
+                    "Q05_E3"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Attributes Adriana's complaints or counter-arguments to Luciana.",
+                "Omits the rationale concerning men's business outdoors.",
+                "Presents Luciana's philosophical argument as Shakespearean factual narration."
+            ]
+        },
+        {
+            "question_id": "Q06",
+            "question": "Why are Antipholus of Ephesus and his companions refused entry to his own house?",
+            "question_type": "multi_hop_causal",
+            "difficulty": "hard",
+            "gold_answer": "Adriana mistook Antipholus of Syracuse for her husband, brought him inside to dine, and strictly ordered that no one else be admitted. When Antipholus of Ephesus arrives with Balthazar and Angelo, Dromio of Syracuse (acting as doorkeeper) and the household servants refuse to open the door, failing to recognize the true master outside.",
+            "required_facts": [
+                "Adriana mistakes Antipholus of Syracuse for her husband and admits him to dinner.",
+                "Adriana commands the household that no creature enter while they dine.",
+                "Dromio of Syracuse is stationed at the gate and denies entry to the arrivals.",
+                "Antipholus of Ephesus and Dromio of Ephesus are locked out of their own residence."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q06_E1",
+                    "act": 2,
+                    "scene": 2,
+                    "speaker": "Adriana",
+                    "quote": "Husband, I'll dine above with you to-day And shrive you of a thousand idle pranks.",
+                    "supports": [
+                        "mistaken_identity_inside_house"
+                    ]
+                },
+                {
+                    "evidence_id": "Q06_E2",
+                    "act": 2,
+                    "scene": 2,
+                    "speaker": "Adriana",
+                    "quote": "Say he dines forth, and let no creature enter.",
+                    "supports": [
+                        "order_to_bar_entry"
+                    ]
+                },
+                {
+                    "evidence_id": "Q06_E3",
+                    "act": 3,
+                    "scene": 1,
+                    "speaker": "Dromio of Syracuse",
+                    "quote": "Either get thee from the door, or sit down at the hatch.",
+                    "supports": [
+                        "refusal_at_door"
+                    ]
+                },
+                {
+                    "evidence_id": "Q06_E4",
+                    "act": 3,
+                    "scene": 1,
+                    "speaker": "Dromio of Ephesus",
+                    "quote": "O villain! thou hast stolen both mine office and my name.",
+                    "supports": [
+                        "dromio_identity_confusion"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q06_E1",
+                    "Q06_E2",
+                    "Q06_E3",
+                    "Q06_E4"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Claims Antipholus of Ephesus was legally dispossessed of his house.",
+                "Omits Adriana's explicit order barring the door.",
+                "Retrieves only the confrontation at the gate without identifying who was inside."
+            ]
+        },
+        {
+            "question_id": "Q07",
+            "question": "Why does Balthazar advise Antipholus of Ephesus to leave the locked house rather than force his way inside?",
+            "question_type": "causal_factual",
+            "difficulty": "medium",
+            "gold_answer": "Balthazar counsels patience, warning that breaking in with an iron crow in broad daylight would spark public gossip, taint Antipholus's civic standing, and cast unwarranted suspicion upon his wife's honour. He urges him to dine elsewhere and return alone in the evening to learn the true explanation.",
+            "required_facts": [
+                "Forcing entry would damage Antipholus's public reputation and stir vulgar gossip.",
+                "A violent entry would bring suspicion upon his wife's honour.",
+                "Balthazar advises departing peacefully to dine elsewhere and returning alone by evening."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q07_E1",
+                    "act": 3,
+                    "scene": 1,
+                    "speaker": "Balthazar",
+                    "quote": "Herein you war against your reputation And draw within the compass of suspect The unviolated honour of your wife.",
+                    "supports": [
+                        "reputation_risk",
+                        "wife_honour_risk"
+                    ]
+                },
+                {
+                    "evidence_id": "Q07_E2",
+                    "act": 3,
+                    "scene": 1,
+                    "speaker": "Balthazar",
+                    "quote": "Be ruled by me: depart in patience, And let us to the Tiger all to dinner,",
+                    "supports": [
+                        "recommended_response"
+                    ]
+                },
+                {
+                    "evidence_id": "Q07_E3",
+                    "act": 3,
+                    "scene": 1,
+                    "speaker": "Balthazar",
+                    "quote": "And about evening come yourself alone To know the reason of this strange restraint.",
+                    "supports": [
+                        "later_return_plan"
+                    ]
+                },
+                {
+                    "evidence_id": "Q07_E4",
+                    "act": 3,
+                    "scene": 1,
+                    "speaker": "Antipholus of Ephesus",
+                    "quote": "Go fetch me an iron crow.",
+                    "supports": [
+                        "intended_forced_entry"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q07_E1",
+                    "Q07_E2",
+                    "Q07_E3",
+                    "Q07_E4"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Claims Balthazar feared physical harm or defeat from the servants.",
+                "Misses the twin risks to personal reputation and marital honour.",
+                "Omits Balthazar's proposed alternative plan."
+            ]
+        },
+        {
+            "question_id": "Q08",
+            "question": "What advice does Luciana give Antipholus of Syracuse about treating Adriana if he is unfaithful?",
+            "question_type": "interpretive_factual",
+            "difficulty": "medium",
+            "gold_answer": "Believing she is speaking to her brother-in-law, Luciana tells him that if he loves elsewhere, he should do it stealthily. She advises him to disguise disloyalty under outward sweetness, keep his straying concealed, and prevent Adriana from reading his infidelity in his face or manner.",
+            "required_facts": [
+                "Luciana acknowledges the prospect of straying outside the marriage.",
+                "She counsels concealing any unfaithfulness by stealth.",
+                "She instructs him to maintain an affectionate outward appearance to spare his wife grief."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q08_E1",
+                    "act": 3,
+                    "scene": 2,
+                    "speaker": "Luciana",
+                    "quote": "Or if you like elsewhere, do it by stealth; Muffle your false love with some show of blindness:",
+                    "supports": [
+                        "concealment_of_infidelity"
+                    ]
+                },
+                {
+                    "evidence_id": "Q08_E2",
+                    "act": 3,
+                    "scene": 2,
+                    "speaker": "Luciana",
+                    "quote": "Look sweet, be fair, become disloyalty; Apparel vice like virtue's harbinger;",
+                    "supports": [
+                        "outward_appearance"
+                    ]
+                },
+                {
+                    "evidence_id": "Q08_E3",
+                    "act": 3,
+                    "scene": 2,
+                    "speaker": "Luciana",
+                    "quote": "'Tis double wrong, to truant with your bed And let her read it in thy looks at board:",
+                    "supports": [
+                        "avoid_visible_disclosure"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q08_E1",
+                    "Q08_E2",
+                    "Q08_E3"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Claims Luciana advocates honest confession and confrontation.",
+                "Fails to identify that Luciana is advising concealment and facade.",
+                "Attributes the speech to Adriana."
+            ]
+        },
+        {
+            "question_id": "Q09",
+            "question": "What evidence establishes that the two men identified as Antipholus arrived from different places?",
+            "question_type": "identity_disambiguation",
+            "difficulty": "hard",
+            "gold_answer": "When questioned directly before Duke Solinus, Antipholus of Syracuse testifies that he came from Syracuse, whereas Antipholus of Ephesus testifies that he came from Corinth (having lived in Ephesus under the Duke's patronage for twenty years). Their simultaneous presence and contrasting answers resolve their separate identities.",
+            "required_facts": [
+                "Antipholus of Syracuse states that he arrived from Syracuse.",
+                "Antipholus of Ephesus states that he came from Corinth before coming under the Duke's patronage in Ephesus.",
+                "The Duke acknowledges both identical men side by side, confirming they are separate individuals."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q09_E1",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Antipholus of Syracuse",
+                    "quote": "No, sir, I came from Syracuse.",
+                    "supports": [
+                        "syracusan_origin"
+                    ]
+                },
+                {
+                    "evidence_id": "Q09_E2",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Antipholus of Ephesus",
+                    "quote": "I came from Corinth, my most gracious lord",
+                    "supports": [
+                        "ephesian_antipholus_origin"
+                    ]
+                },
+                {
+                    "evidence_id": "Q09_E3",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Duke Solinus",
+                    "quote": "These two Antipholuses, these two so like, And these two Dromios, one in semblance",
+                    "supports": [
+                        "recognition_of_identical_pairs"
+                    ]
+                },
+                {
+                    "evidence_id": "Q09_E4",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Duke Solinus",
+                    "quote": "twenty years Have I been patron to Antipholus, During which time he ne'er saw Syracusa:",
+                    "supports": [
+                        "long_term_ephesian_residence",
+                        "distinction_from_syracusan_antipholus"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q09_E1",
+                    "Q09_E2",
+                    "Q09_E3",
+                    "Q09_E4"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Confuses which Antipholus came from Syracuse and which came from Corinth.",
+                "Treats Antipholus of Ephesus as a native resident of Corinth rather than a long-time resident of Ephesus.",
+                "Uses resemblance alone rather than their conflicting geographic statements."
+            ]
+        },
+        {
+            "question_id": "Q10",
+            "question": "How does the final scene resolve Aegeon's search for his family and explain the confusion involving the two Antipholuses and two Dromios?",
+            "question_type": "multi_hop_synthesis",
+            "difficulty": "hard",
+            "gold_answer": "The Abbess reveals herself as Aegeon's lost wife, Aemilia, and explains how their family was sundered after the shipwreck when Corinthian fishermen separated her from one twin son and servant. The simultaneous presence of both sets of identical twins allows Duke Solinus and the family to connect Aegeon's morning story with the afternoon's chaos, clarifying that every misunderstanding arose from people encountering the other identical twin.",
+            "required_facts": [
+                "The Abbess identifies herself as Aemilia, Aegeon's wife and mother of the twins.",
+                "Aemilia details the subsequent separation of her party by Corinthian fishermen.",
+                "Both twin Antipholuses and twin Dromios appear together, clarifying the duplicated identities."
+            ],
+            "gold_evidence": [
+                {
+                    "evidence_id": "Q10_E1",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Aemilia",
+                    "quote": "Speak, old AEgeon, if thou be'st the man That hadst a wife once call'd AEmilia That bore thee at a burden two fair sons:",
+                    "supports": [
+                        "wife_identity",
+                        "family_relationship"
+                    ]
+                },
+                {
+                    "evidence_id": "Q10_E2",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Aemilia",
+                    "quote": "By men of Epidamnum he and I And the twin Dromio all were taken up; But by and by rude fishermen of Corinth By force took Dromio and my son from them And me they left with those of Epidamnum.",
+                    "supports": [
+                        "shipwreck_aftermath",
+                        "family_separation"
+                    ]
+                },
+                {
+                    "evidence_id": "Q10_E3",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Duke Solinus",
+                    "quote": "Why, here begins his morning story right; These two Antipholuses, these two so like, And these two Dromios, one in semblance,-- Besides her urging of her wreck at sea,-- These are the parents to these children, Which accidentally are met together.",
+                    "supports": [
+                        "twin_recognition",
+                        "family_reconstruction",
+                        "resolution"
+                    ]
+                },
+                {
+                    "evidence_id": "Q10_E4",
+                    "act": 5,
+                    "scene": 1,
+                    "speaker": "Aegeon",
+                    "quote": "If I dream not, thou art AEmilia:",
+                    "supports": [
+                        "recognition_of_wife",
+                        "family_reunion"
+                    ]
+                }
+            ],
+            "evidence_policy": {
+                "mode": "multi_passage",
+                "required_evidence_ids": [
+                    "Q10_E1",
+                    "Q10_E2",
+                    "Q10_E3",
+                    "Q10_E4"
+                ],
+                "all_required": true
+            },
+            "failure_conditions": [
+                "Attributes the resolution to witchcraft or supernatural intervention.",
+                "Omits the Abbess's disclosure of the post-shipwreck separation.",
+                "Fails to show how the co-presence of the twins resolves the prior errors."
+            ]
+        }
+    ],
+    "evaluation_policy": {
+        "retrieval": {
+            "metrics": [
+                "gold_evidence_recall_at_n",
+                "required_fact_coverage",
+                "evidence_precision_at_k",
+                "evidence_sufficiency_rate"
+            ],
+            "scoring": {
+                "partial_evidence_credit": true,
+                "strict_sufficiency_requires_all_required_evidence": true,
+                "evidence_recall": "matched_required_evidence_units / total_required_evidence_units",
+                "required_fact_coverage": "supported_required_facts / total_required_facts",
+                "evidence_precision": "retrieved_evidence_units_relevant_to_question / total_retrieved_evidence_units",
+                "question_pass": "all_required_evidence_units_present",
+                "dataset_sufficiency_rate": "questions_with_all_required_evidence_present / total_evaluated_questions"
+            },
+            "rule": "A question passes evidence retrieval only when all required evidence units are present in the retrieved context. Partial matches receive proportional evidence-recall and required-fact-coverage credit but do not pass strict evidence sufficiency.",
+            "matching_rules": {
+                "gold_evidence_ids_are_logical_annotations": true,
+                "match_against_source_spans_and_mapped_chunks": true,
+                "semantic_equivalence_allowed": true,
+                "lexical_overlap_alone_is_not_sufficient": true,
+                "evidence_must_support_the_annotated_fact": true,
+                "duplicate_chunks_do_not_increase_recall": true,
+                "retrieval_depth_n_must_be_recorded": true
+            },
+            "failure_classification": {
+                "RETRIEVAL_FAILURE": "One or more required evidence units are absent from the retrieved context.",
+                "PARTIAL_RETRIEVAL": "Some required evidence units are present, but at least one is missing.",
+                "EVIDENCE_SUFFICIENCY_PASS": "All required evidence units are present and jointly support the required facts.",
+                "RETRIEVAL_EVALUATION_ERROR": "Gold annotations, source-span mappings, chunk mappings, or retrieved-context records are invalid or unavailable."
+            }
+        },
+        "generation": {
+            "metrics": [
+                "answer_correctness",
+                "claim_support_rate",
+                "citation_accuracy",
+                "unsupported_claim_rate"
+            ],
+            "scoring": {
+                "claim_support_rate": "factual_claims_supported_by_evidence / total_evaluable_factual_claims",
+                "citation_accuracy": "citations_that_correctly_support_their_associated_claims / total_evaluated_citations",
+                "unsupported_claim_rate": "unsupported_factual_claims / total_evaluable_factual_claims",
+                "answer_correctness": "degree_to_which_the_answer_correctly_addresses_the_question_using_verified_evidence",
+                "no_factual_claims_policy": "Mark claim-level metrics as not_applicable when there are no evaluable factual claims; do not automatically assign a perfect score."
+            },
+            "rule": "Each factual claim must be supported by one or more retrieved gold evidence units or another verified source passage. Evaluate support at the claim level rather than treating an answer as entirely correct or incorrect based only on wording.",
+            "claim_support_rules": {
+                "every_factual_claim_must_be_traceable": true,
+                "multi_passage_claims_must_have_all_necessary_support": true,
+                "unsupported_inferences_must_be_marked": true,
+                "contradictions_with_verified_evidence_count_as_errors": true,
+                "reference_answer_wording_is_not_mandatory": true,
+                "paraphrases_are_acceptable_when_semantically_faithful": true,
+                "claims_about_absent_details_must_not_be_invented": true
+            },
+            "citation_rules": {
+                "citations_must_resolve_to_real_source_passages": true,
+                "citations_must_support_the_associated_claim": true,
+                "citation_location_must_be_correct": true,
+                "citation_presence_alone_does_not_establish_support": true,
+                "unsupported_or_misleading_citations_count_as_inaccurate": true
+            }
+        },
+        "abstention": {
+            "metrics": [
+                "abstention_correctness",
+                "unsupported_answer_rate",
+                "recovery_retrieval_success_rate"
+            ],
+            "rule": "If required evidence is unavailable, the system must attempt a configured recovery retrieval or state that the available evidence is insufficient. It must not invent missing facts or present unsupported claims as established facts.",
+            "behavior": {
+                "retry_when_evidence_is_missing": true,
+                "retry_strategy_must_be_recorded": true,
+                "answer_only_from_verified_support": true,
+                "abstain_when_evidence_remains_insufficient": true,
+                "partial_answers_must_disclose_missing_evidence": true,
+                "do_not_claim_retrieval_success_without_evidence": true
+            },
+            "scoring": {
+                "correct_abstention": "The system abstains or clearly qualifies its answer when the required evidence remains unavailable after the configured recovery procedure.",
+                "incorrect_abstention": "The system abstains despite sufficient retrieved evidence to answer the question.",
+                "unsupported_answer": "The system asserts factual information that is not supported by retrieved evidence or another verified source.",
+                "successful_recovery": "A recovery attempt retrieves the missing required evidence and makes it available to generation."
+            }
+        },
+        "evidence_mapping": {
+            "required": true,
+            "mapping_fields": [
+                "question_id",
+                "evidence_id",
+                "source_document_id",
+                "source_page",
+                "act",
+                "scene",
+                "speaker",
+                "source_start_offset",
+                "source_end_offset",
+                "source_quote",
+                "chunk_id",
+                "chunk_start_offset",
+                "chunk_end_offset",
+                "supported_fact_ids"
+            ],
+            "rule": "Map each logical gold evidence unit to its verified source span and the actual document and chunk IDs produced by the ingestion pipeline before running retrieval evaluation. A logical evidence ID must not be treated as an existing chunk ID.",
+            "mapping_validation": {
+                "source_document_must_match": true,
+                "source_quote_must_match_or_have_documented_normalization": true,
+                "source_offsets_must_be_valid": true,
+                "chunk_must_overlap_or_contain_the_mapped_source_span": true,
+                "unmapped_required_evidence_must_be_flagged": true,
+                "mapping_errors_must_not_be_scored_as_model_retrieval_failures": true
+            }
+        },
+        "aggregation": {
+            "report_metrics_per_question": true,
+            "report_dataset_level_metrics": true,
+            "report_results_by_retrieval_depth": true,
+            "report_results_by_retrieval_configuration": true,
+            "report_results_by_embedding_model_and_representation": true,
+            "report_partial_and_strict_pass_rates_separately": true,
+            "report_unmapped_or_invalid_annotations_separately": true,
+            "do_not_hide_question_level_failures_in_averages": true,
+            "recommended_outputs": [
+                "per_question_evidence_recall",
+                "per_question_required_fact_coverage",
+                "per_question_evidence_precision",
+                "per_question_evidence_sufficiency",
+                "dataset_mean_evidence_recall",
+                "dataset_mean_required_fact_coverage",
+                "dataset_mean_evidence_precision",
+                "strict_evidence_sufficiency_rate",
+                "answer_correctness",
+                "claim_support_rate",
+                "citation_accuracy",
+                "unsupported_claim_rate",
+                "abstention_correctness",
+                "recovery_retrieval_success_rate"
+            ]
+        },
+        "annotation_notes": [
+            "Gold evidence IDs are logical annotation identifiers, not existing chunk IDs.",
+            "Map each gold evidence unit to the actual document and chunk IDs in the ingestion pipeline before running retrieval evaluation.",
+            "Preserve exact source text and validate quote boundaries against the source PDF.",
+            "If source extraction normalizes whitespace, punctuation, or character encoding, document the normalization and apply it consistently to source and retrieved text.",
+            "Some questions require multiple passages jointly; retrieving only one relevant passage does not constitute a strict pass when other required evidence units are missing.",
+            "The gold answers are reference answers, not the only acceptable wording.",
+            "Evaluate semantic support, not lexical overlap alone.",
+            "A retrieved chunk may support more than one required fact, but it must be independently checked against each fact it is credited for.",
+            "Do not count duplicate copies of the same evidence as additional evidence coverage.",
+            "If an annotation is ambiguous, incorrect, or unmappable, flag it for review instead of penalizing the retrieval system.",
+            "Keep retrieval evaluation separate from generation evaluation so a generation failure is not incorrectly classified as a retrieval failure.",
+            "Record the retrieval configuration, candidate depth, final context depth, and evidence-matching method for every evaluation run."
+        ],
+        "candidate_recall_diagnostics": {
+            "purpose": "Determine whether each required gold evidence unit enters the candidate pool and identify the pipeline stage at which evidence is lost.",
+            "metrics": [
+                "bm25_candidate_evidence_recall_at_n",
+                "dense_candidate_evidence_recall_at_n",
+                "union_candidate_evidence_recall_at_n",
+                "post_fusion_evidence_recall_at_n",
+                "post_reranking_evidence_recall_at_n",
+                "final_context_evidence_recall",
+                "candidate_pool_gold_evidence_miss_rate"
+            ],
+            "candidate_generation": {
+                "record_bm25_candidates": true,
+                "record_dense_candidates": true,
+                "record_union_candidates": true,
+                "record_candidate_rankings": true,
+                "record_candidate_scores": true,
+                "record_candidate_pool_size": true,
+                "record_candidate_depth_n": true,
+                "rule": "Record whether each mapped gold evidence unit is represented by at least one candidate from BM25, dense retrieval, or their union before fusion and reranking."
+            },
+            "pipeline_stages": [
+                "bm25_candidates",
+                "dense_candidates",
+                "union_candidates",
+                "post_fusion_candidates",
+                "post_reranking_candidates",
+                "final_context"
+            ],
+            "scoring": {
+                "candidate_evidence_recall_at_n": "Distinct required gold evidence units represented in the stage's top N candidates / total valid required gold evidence units",
+                "candidate_pool_gold_evidence_miss_rate": "Required gold evidence units absent from the candidate pool / total valid required gold evidence units",
+                "final_context_evidence_recall": "Distinct required gold evidence units represented in the final LLM context / total valid required gold evidence units",
+                "evidence_presence_rule": "A gold evidence unit is present only when a retrieved chunk contains or verifiably overlaps its mapped source span and supports its annotated fact.",
+                "duplicate_handling": "Count each required gold evidence unit at most once per stage, even if multiple retrieved chunks overlap it.",
+                "partial_credit": true
+            },
+            "per_evidence_diagnostics": {
+                "record_for_each_required_evidence_unit": [
+                    "question_id",
+                    "evidence_id",
+                    "mapped_source_span",
+                    "mapped_chunk_ids",
+                    "present_in_bm25",
+                    "bm25_rank",
+                    "present_in_dense",
+                    "dense_rank",
+                    "present_in_union",
+                    "union_rank",
+                    "present_after_fusion",
+                    "fusion_rank",
+                    "present_after_reranking",
+                    "reranked_rank",
+                    "present_in_final_context",
+                    "final_context_rank",
+                    "first_stage_missing",
+                    "failure_classification"
+                ],
+                "rule": "Record presence and rank at every available stage. Use null for a rank when the evidence is absent, and distinguish absence from unavailable diagnostic data."
+            },
+            "failure_classification": {
+                "CANDIDATE_GENERATION_FAILURE": "Required evidence is absent from both the BM25 and dense candidate results.",
+                "BM25_RETRIEVAL_MISS": "Required evidence is absent from the BM25 candidate results.",
+                "DENSE_RETRIEVAL_MISS": "Required evidence is absent from the dense candidate results.",
+                "FUSION_OR_TRUNCATION_LOSS": "Required evidence enters the candidate pool but is absent after fusion or candidate-depth truncation.",
+                "RERANKING_OR_SELECTION_LOSS": "Required evidence is available before reranking but is removed from the retained reranked candidates.",
+                "FINAL_CONTEXT_TRUNCATION": "Required evidence survives reranking but is absent from the final LLM context.",
+                "GENERATION_FAILURE": "Required evidence is present in the final context, but the generated answer fails to use or accurately represent it.",
+                "ANNOTATION_OR_MAPPING_ERROR": "Gold evidence or chunk mapping is invalid, so evidence presence cannot be reliably assessed."
+            },
+            "experimental_requirements": {
+                "evaluate_multiple_candidate_depths": true,
+                "record_candidate_depth_n": true,
+                "compare_retrievers_individually_and_jointly": true,
+                "preserve_stage_outputs_for_audit": true,
+                "compare_candidate_recall_with_final_context_recall": true,
+                "do_not_attribute_missing_candidates_to_the_reranker": true,
+                "do_not_classify_missing_or_invalid_diagnostics_as_retrieval_misses": true
+            }
+        }
+    }
+}

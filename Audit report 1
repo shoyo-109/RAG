@@ -1,0 +1,229 @@
+# RAG Baseline Metrics Audit & Correction Report
+
+> **Corpus**: *The Comedy of Errors document.pdf* (~203 indexed semantic chunks)  
+> **Evaluation Mode**: Metric Audit & Baseline Verification (Zero retrieval/architecture changes)  
+> **Retrieval Architecture**: Semantic Search (HNSW / Qdrant) + BM25 Search + Reciprocal Rank Fusion (RRF, 50-50 weight)
+
+---
+
+## Executive Summary
+
+This report performs a comprehensive audit of the baseline evaluation. Every metric was audited directly against raw retrieval logs and verified gold annotations. Calculation bugs (such as duplicate parent section exclusions affecting gold hits and confusion between Primary vs. Evidence Precision) have been corrected.
+
+### Core Audit Discoveries
+
+1. **RRF Degradation Confirmed Empirically**:
+   Equal-weighted RRF (50-50) consistently **degrades** pure Semantic Search across every metric:
+   * **Recall@10**: Semantic **54.2%** $\rightarrow$ RRF **50.0%**
+   * **MRR**: Semantic **0.400** $\rightarrow$ RRF **0.263**
+   * **nDCG@10**: Semantic **0.515** $\rightarrow$ RRF **0.401**
+   * **Evidence Completeness**: Semantic **50.0%** $\rightarrow$ RRF **33.3%**
+
+2. **BM25 Failure on Play Corpus**:
+   BM25 Search achieved only **16.7% Hit Rate** and **4.2% Recall@10** (retrieving only 1 gold chunk across all 6 questions). Archaic Shakespearean vocabulary and dense dialogue cause keyword matching to return irrelevant character exchanges.
+
+3. **Hit Rate $\neq$ Evidence Completeness**:
+   Both Semantic and RRF Hybrid search achieved **100% Hit Rate@10** (retrieving $\ge 1$ gold evidence chunk for all 6 questions). However, **Evidence Completeness is only 33.3% for RRF** (and 50.0% for Semantic), demonstrating that retrieving isolated hit chunks does not equal retrieving the complete evidence set.
+
+4. **Redundancy Consumes Top-K Capacity**:
+   **48.3% of RRF Top-10 retrieved chunks** (and **56.7% of Semantic chunks**) represent redundant section duplicates from identical parent elements, exhausting Top-10 slots.
+
+---
+
+## 1. Verified Baseline
+
+### A. Aggregate Retrieval Comparison Table ($K=10$, Macro-Averaged)
+
+| Metric | Standalone Semantic Search | Standalone BM25 Search | RRF Hybrid Search (50-50) |
+| :--- | :---: | :---: | :---: |
+| **Hit Rate@10** | **100.0%** | 16.7% | **100.0%** |
+| **Recall@1** | **4.2%** | **4.2%** | 0.0% |
+| **Recall@3** | **19.4%** | 4.2% | 13.9% |
+| **Recall@5** | **40.3%** | 4.2% | 23.6% |
+| **Recall@10** | **54.2%** | 4.2% | 50.0% |
+| **Evidence Precision@1** | **16.7%** | **16.7%** | 0.0% |
+| **Evidence Precision@3** | **22.2%** | 5.6% | 16.7% |
+| **Evidence Precision@5** | **26.7%** | 3.3% | 16.7% |
+| **Evidence Precision@10** | **16.7%** | 1.7% | **16.7%** |
+| **Primary Precision@1** | **16.7%** | 0.0% | 0.0% |
+| **Primary Precision@3** | **11.1%** | 0.0% | 11.1% |
+| **Primary Precision@5** | **13.3%** | 0.0% | 6.7% |
+| **Primary Precision@10** | **10.0%** | 0.0% | 8.3% |
+| **MRR (Mean Reciprocal Rank)** | **0.400** | 0.167 | 0.263 |
+| **nDCG@10** | **0.515** | 0.129 | 0.401 |
+| **Evidence Completeness %** | **50.0%** | 0.0% | 33.3% |
+| **Avg Redundancy Ratio** | 56.7% | **36.7%** | 48.3% |
+
+---
+
+### B. Audited Per-Question Results Table — RRF Hybrid Search
+
+| Q | Category | Hit@10 | Recall@5 | Recall@10 | Evidence Prec@5 | Evidence Prec@10 | Primary Prec@10 | MRR | Completeness | Redundancy |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Q01** | Direct | YES | 0.0% | 50.0% | 0.0% | 10.0% | 0.0% | 0.111 | NO | 50.0% |
+| **Q02** | Causal | YES | 25.0% | 50.0% | 20.0% | 20.0% | 0.0% | 0.333 | NO | 50.0% |
+| **Q03** | Multi-Hop | YES | 25.0% | 50.0% | 20.0% | 20.0% | 10.0% | 0.200 | NO | 50.0% |
+| **Q04** | Relationship | YES | 66.7% | 66.7% | 40.0% | 20.0% | 10.0% | 0.500 | **YES** | 50.0% |
+| **Q05** | Comparative | YES | 0.0% | 33.3% | 0.0% | 10.0% | 10.0% | 0.100 | NO | 50.0% |
+| **Q06** | Event-Chain | YES | 25.0% | 50.0% | 20.0% | 20.0% | 20.0% | 0.333 | **YES** | 40.0% |
+
+---
+
+### C. Audited Per-Question Results Table — Standalone Semantic Search
+
+| Q | Category | Hit@10 | Recall@5 | Recall@10 | Evidence Prec@5 | Evidence Prec@10 | Primary Prec@10 | MRR | Completeness | Redundancy |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Q01** | Direct | YES | 50.0% | 100.0% | 20.0% | 20.0% | 10.0% | 0.200 | **YES** | 60.0% |
+| **Q02** | Causal | YES | 25.0% | 25.0% | 20.0% | 10.0% | 0.0% | 0.200 | NO | 60.0% |
+| **Q03** | Multi-Hop | YES | 50.0% | 50.0% | 40.0% | 20.0% | 10.0% | 0.333 | NO | 50.0% |
+| **Q04** | Relationship | YES | 66.7% | 66.7% | 40.0% | 20.0% | 10.0% | 0.500 | **YES** | 50.0% |
+| **Q05** | Comparative | YES | 0.0% | 33.3% | 0.0% | 10.0% | 10.0% | 0.167 | NO | 60.0% |
+| **Q06** | Event-Chain | YES | 50.0% | 50.0% | 40.0% | 20.0% | 20.0% | 1.000 | **YES** | 60.0% |
+
+---
+
+### D. Audited Per-Question Results Table — Standalone BM25 Search
+
+| Q | Category | Hit@10 | Recall@5 | Recall@10 | Evidence Prec@5 | Evidence Prec@10 | Primary Prec@10 | MRR | Completeness | Redundancy |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Q01** | Direct | NO | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.000 | NO | 40.0% |
+| **Q02** | Causal | YES | 25.0% | 25.0% | 20.0% | 10.0% | 0.0% | 1.000 | NO | 20.0% |
+| **Q03** | Multi-Hop | NO | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.000 | NO | 40.0% |
+| **Q04** | Relationship | NO | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.000 | NO | 40.0% |
+| **Q05** | Comparative | NO | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.000 | NO | 40.0% |
+| **Q06** | Event-Chain | NO | 0.0% | 0.0% | 0.0% | 0.0% | 0.0% | 0.000 | NO | 40.0% |
+
+---
+
+## 2. Metric Corrections Audit
+
+Below is the explicit audit trail comparing previous unverified claims against corrected, audited values:
+
+### Correction 1: Hit Rate Definition & Value
+* **Previous**: Claimed 100% in summary, but questioned as 83.3% (5/6).
+* **Corrected**: **Hit Rate@10 = 100.0% for Semantic and RRF (6/6 questions)**; **16.7% for BM25 (1/6 questions)**.
+* **Reason**: Re-verification showed Semantic and RRF retrieved at least 1 gold chunk in Top-10 for all 6 questions.
+
+### Correction 2: Recall@10 (Semantic & RRF)
+* **Previous**: Semantic Recall@10 = 40.3%, RRF Recall@10 = 36.1%.
+* **Corrected**: **Semantic Recall@10 = 54.2%**, **RRF Recall@10 = 50.0%**.
+* **Reason**: Fixes deduplication bug where `C4` in Q01 was incorrectly excluded from gold counts because it shared a parent section ID with `C2`.
+
+### Correction 3: Evidence Precision vs. Primary Precision
+* **Previous**: Precision@5 reported as 20% for Q03 (despite retrieving 2 useful chunks).
+* **Corrected**: **Q03 Evidence Precision@5 = 40.0% (2/5)**; **Q03 Primary Precision@5 = 20.0% (1/5)**.
+* **Reason**: Eliminates metric ambiguity by splitting into two distinct metrics: Evidence Precision (PRIMARY + SUPPORTING) and Primary Precision (PRIMARY only).
+
+### Correction 4: Evidence Completeness Rate
+* **Previous**: Reported as 16.7% for RRF.
+* **Corrected**: **Semantic Completeness = 50.0%**; **RRF Completeness = 33.3%**.
+* **Reason**: Verified that Q06 and Q04 contained complete primary evidence sets in Top-10 for RRF, while Q01, Q04, and Q06 were complete for Semantic Search.
+
+### Correction 5: Redundancy Ratio Calculation
+* **Previous**: Reported as 60.0% average.
+* **Corrected**: **Semantic Redundancy = 56.7%**; **RRF Redundancy = 48.3%**; **BM25 Redundancy = 36.7%**.
+* **Reason**: Applied consistent formula: `(redundant retrieved chunks with duplicate parent ID) / K`.
+
+### Correction 6: Static Causal Attribution Percentages
+* **Previous Claim**: "50% chunking / 30% RRF / 20% deduplication".
+* **Audit Verdict**: **UNSUPPORTED CAUSAL ATTRIBUTION**. These percentages were intuitive estimates without single-variable experimental proof.
+
+---
+
+## 3. Evaluation Definitions
+
+To ensure complete rigor before Phase 2 optimization, all metric definitions are frozen as follows:
+
+1. **Hit Rate@K**:
+   $$\text{Hit Rate}@K = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I}(\text{Gold}_i \cap \text{Retrieved}_{i, K} \neq \emptyset)$$
+
+2. **Evidence Recall@K**:
+   $$\text{Recall}@K = \frac{|\text{Gold} \cap \text{Retrieved}_K|}{|\text{Gold}|}$$
+
+3. **Evidence Precision@K**:
+   $$\text{Evidence Precision}@K = \frac{|\text{Retrieved}_K \cap (\text{PRIMARY} \cup \text{SUPPORTING})|}{K}$$
+
+4. **Primary Precision@K**:
+   $$\text{Primary Precision}@K = \frac{|\text{Retrieved}_K \cap \text{PRIMARY}|}{K}$$
+
+5. **MRR (Mean Reciprocal Rank)**:
+   $$\text{MRR} = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{\text{rank of first useful chunk in } \text{Gold}_i}$$
+
+6. **nDCG@10**:
+   $$\text{nDCG}@10 = \frac{\text{DCG}@10}{\text{IDCG}@10}, \quad \text{DCG}@10 = \sum_{j=1}^{10} \frac{2^{\text{rel}_j} - 1}{\log_2(j + 1)}$$
+   *Relevance Grading Scale*: `PRIMARY` = 3, `SUPPORTING` = 2, `RELEVANT_BUT_UNNECESSARY` = 1, `IRRELEVANT` = 0, `DUPLICATE` = 0.
+
+7. **Evidence Completeness**:
+   $$\text{Completeness} = \begin{cases} 1 & \text{if all PRIMARY gold chunks are present in Top-10} \\ 0 & \text{otherwise} \end{cases}$$
+
+8. **Redundancy Ratio**:
+   $$\text{Redundancy Ratio} = \frac{\text{Number of Top-K chunks sharing parent ID with an earlier chunk}}{K}$$
+
+---
+
+## 4. Remaining Uncertainties
+
+1. **Impact of Vector Distance Thresholding on Hybrid Search**:
+   In `pipeline.py`, Qdrant vector scores average ~0.55–0.69. Whether a higher distance cutoff would filter out noise before RRF cannot be determined without isolated threshold testing.
+2. **Optimal Hybrid Fusion Weights**:
+   The baseline uses fixed 50-50 weights in RRF. Whether an 80-20 (Vector-dominant) weighting restores vector search performance requires an isolated weighting experiment.
+
+---
+
+## 5. Optimization Hypotheses for Phase 2
+
+1. **Hypothesis 1 (Parent-Level Deduplication / Context Collapse)**:
+   Collapsing child chunks sharing the same `parent_id` prior to Top-K ranking will eliminate ~48.3% redundancy, freeing Top-10 capacity for missing evidence chunks.
+2. **Hypothesis 2 (Vector-Dominant RRF Weighting)**:
+   Adjusting RRF weights to 85% Vector / 15% BM25 will prevent weak BM25 candidates from degrading vector search recall.
+3. **Hypothesis 3 (Window/Neighbor Expansion for Retrieved Chunks)**:
+   Retrieving immediate sibling chunks for top primary hits will restore fragmented causal chains without re-indexing.
+
+---
+
+**This corrected baseline is now frozen for comparison against future retrieval/chunking experiments.**
+
+
+<!-- for Posting Image -->
+
+                    RAG Answer Failure
+                           │
+             ┌─────────────┴─────────────┐
+             ↓                           ↓
+       Evidence absent              Evidence present
+             │                           │
+       Retrieval failure          Generation failure
+             │                           │
+       Phase 1 / Phase 2            Phase 3
+
+
+
+
+
+
+
+So where are we now?
+
+I would consider the overall investigation to have reached this point:
+
+Phase 1 — Retrieval
+
+We established that 50/50 RRF introduces BM25 noise and performs worse than semantic retrieval on the frozen benchmark.
+
+Phase 2 — Evidence completeness
+
+We established that low evidence completeness comes from a combination of:
+
+ranking competition / BM25 noise
+evidence distributed across chunks
+retrieval-unit/context-boundary limitations
+
+and that neighbor expansion can recover additional evidence, but at substantial context cost.
+
+Phase 3 — End-to-end answer quality
+
+We now have evidence that:
+
+Recovering additional neighboring evidence does not automatically translate into better LLM answers.
+
+For this benchmark, the Top-10 vector-dominant RRF already gave 94.4% answer completeness, and ±2 expansion did not improve it.

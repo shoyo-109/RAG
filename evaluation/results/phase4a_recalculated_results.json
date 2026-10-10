@@ -1,0 +1,2164 @@
+{
+  "recalculated_aggregates": [
+    {
+      "condition": "Exp_A_Control",
+      "evidence_availability": 0.4,
+      "claim_coverage": 0.8571428571428571,
+      "generation_utilization": 1.0,
+      "retrieval_failures": 2,
+      "generation_failures": 0,
+      "sum_tot_claims": 14,
+      "sum_expr_claims": 12,
+      "sum_avail_claims": 8,
+      "sum_expr_avail_claims": 8,
+      "correctness": 1.6666666666666667,
+      "completeness": 0.8888888888888888,
+      "input_tokens": 16384.5,
+      "latency_ms": 18191.73514842987
+    },
+    {
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "evidence_availability": 0.4,
+      "claim_coverage": 0.7142857142857143,
+      "generation_utilization": 1.0,
+      "retrieval_failures": 4,
+      "generation_failures": 0,
+      "sum_tot_claims": 14,
+      "sum_expr_claims": 10,
+      "sum_avail_claims": 8,
+      "sum_expr_avail_claims": 8,
+      "correctness": 1.3333333333333333,
+      "completeness": 0.7222222222222222,
+      "input_tokens": 3774.3333333333335,
+      "latency_ms": 16971.43042087555
+    },
+    {
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "evidence_availability": 0.4,
+      "claim_coverage": 0.8571428571428571,
+      "generation_utilization": 1.0,
+      "retrieval_failures": 2,
+      "generation_failures": 0,
+      "sum_tot_claims": 14,
+      "sum_expr_claims": 12,
+      "sum_avail_claims": 8,
+      "sum_expr_avail_claims": 8,
+      "correctness": 1.6666666666666667,
+      "completeness": 0.8888888888888888,
+      "input_tokens": 16384.5,
+      "latency_ms": 19156.53920173645
+    },
+    {
+      "condition": "Exp_D_ExplicitChecklist",
+      "evidence_availability": 0.4,
+      "claim_coverage": 0.8571428571428571,
+      "generation_utilization": 1.0,
+      "retrieval_failures": 2,
+      "generation_failures": 0,
+      "sum_tot_claims": 14,
+      "sum_expr_claims": 12,
+      "sum_avail_claims": 8,
+      "sum_expr_avail_claims": 8,
+      "correctness": 1.6666666666666667,
+      "completeness": 0.8888888888888888,
+      "input_tokens": 16491.833333333332,
+      "latency_ms": 23083.49148432414
+    },
+    {
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "evidence_availability": 0.4,
+      "claim_coverage": 0.7857142857142857,
+      "generation_utilization": 1.0,
+      "retrieval_failures": 3,
+      "generation_failures": 0,
+      "sum_tot_claims": 14,
+      "sum_expr_claims": 11,
+      "sum_avail_claims": 8,
+      "sum_expr_avail_claims": 8,
+      "correctness": 1.5,
+      "completeness": 0.7777777777777777,
+      "input_tokens": 16500.833333333332,
+      "latency_ms": 24412.9220644633
+    },
+    {
+      "condition": "Exp_F_FormattingOnly",
+      "evidence_availability": 0.4,
+      "claim_coverage": 0.8571428571428571,
+      "generation_utilization": 1.0,
+      "retrieval_failures": 2,
+      "generation_failures": 0,
+      "sum_tot_claims": 14,
+      "sum_expr_claims": 12,
+      "sum_avail_claims": 8,
+      "sum_expr_avail_claims": 8,
+      "correctness": 1.6666666666666667,
+      "completeness": 0.8888888888888888,
+      "input_tokens": 49365.0,
+      "latency_ms": 26249.76654847463
+    },
+    {
+      "condition": "Exp_G_ReverseOrder",
+      "evidence_availability": 0.4,
+      "claim_coverage": 0.8571428571428571,
+      "generation_utilization": 1.0,
+      "retrieval_failures": 2,
+      "generation_failures": 0,
+      "sum_tot_claims": 14,
+      "sum_expr_claims": 12,
+      "sum_avail_claims": 8,
+      "sum_expr_avail_claims": 8,
+      "correctness": 1.6666666666666667,
+      "completeness": 0.8888888888888888,
+      "input_tokens": 16384.5,
+      "latency_ms": 18846.969326337177
+    }
+  ],
+  "recalculated_records": [
+    {
+      "question_id": "Q01",
+      "condition": "Exp_A_Control",
+      "evidence_available_percent": 1.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 9010,
+      "output_tokens": 244,
+      "latency_ms": 19619.136810302734
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "evidence_available_percent": 1.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 3639,
+      "output_tokens": 258,
+      "latency_ms": 9636.214256286621
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "evidence_available_percent": 1.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 9010,
+      "output_tokens": 113,
+      "latency_ms": 16777.935028076172
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_D_ExplicitChecklist",
+      "evidence_available_percent": 1.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 9117,
+      "output_tokens": 189,
+      "latency_ms": 11791.274070739746
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "evidence_available_percent": 1.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 9126,
+      "output_tokens": 153,
+      "latency_ms": 8723.405361175537
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_F_FormattingOnly",
+      "evidence_available_percent": 1.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 47530,
+      "output_tokens": 93,
+      "latency_ms": 9775.94017982483
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_G_ReverseOrder",
+      "evidence_available_percent": 1.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 9010,
+      "output_tokens": 47,
+      "latency_ms": 19954.389572143555
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_A_Control",
+      "evidence_available_percent": 0.5,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 19244,
+      "output_tokens": 66,
+      "latency_ms": 8617.321491241455
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "evidence_available_percent": 0.5,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 3641,
+      "output_tokens": 76,
+      "latency_ms": 13814.11862373352
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "evidence_available_percent": 0.5,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 19244,
+      "output_tokens": 77,
+      "latency_ms": 24356.773138046265
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_D_ExplicitChecklist",
+      "evidence_available_percent": 0.5,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 19352,
+      "output_tokens": 78,
+      "latency_ms": 12943.865299224854
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "evidence_available_percent": 0.5,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 19361,
+      "output_tokens": 66,
+      "latency_ms": 34987.03122138977
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_F_FormattingOnly",
+      "evidence_available_percent": 0.5,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 49802,
+      "output_tokens": 94,
+      "latency_ms": 17152.61149406433
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_G_ReverseOrder",
+      "evidence_available_percent": 0.5,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 19244,
+      "output_tokens": 93,
+      "latency_ms": 13478.948593139648
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_A_Control",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 20342,
+      "output_tokens": 90,
+      "latency_ms": 16725.44503211975
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 4738,
+      "output_tokens": 79,
+      "latency_ms": 18692.268133163452
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 20342,
+      "output_tokens": 86,
+      "latency_ms": 8556.951522827148
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_D_ExplicitChecklist",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 20449,
+      "output_tokens": 102,
+      "latency_ms": 26613.519191741943
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 3,
+      "expressed_required_claims": 3,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 3,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 20458,
+      "output_tokens": 110,
+      "latency_ms": 13923.80690574646
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_F_FormattingOnly",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 48224,
+      "output_tokens": 99,
+      "latency_ms": 28239.267587661743
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_G_ReverseOrder",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 20342,
+      "output_tokens": 58,
+      "latency_ms": 27135.565519332886
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_A_Control",
+      "evidence_available_percent": 0.6666666666666666,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 19116,
+      "output_tokens": 47,
+      "latency_ms": 11532.872676849365
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "evidence_available_percent": 0.6666666666666666,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 3649,
+      "output_tokens": 48,
+      "latency_ms": 17368.448495864868
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "evidence_available_percent": 0.6666666666666666,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 19116,
+      "output_tokens": 49,
+      "latency_ms": 13873.79765510559
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_D_ExplicitChecklist",
+      "evidence_available_percent": 0.6666666666666666,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 19223,
+      "output_tokens": 55,
+      "latency_ms": 6433.08687210083
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "evidence_available_percent": 0.6666666666666666,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 19232,
+      "output_tokens": 64,
+      "latency_ms": 14075.781106948853
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_F_FormattingOnly",
+      "evidence_available_percent": 0.6666666666666666,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 46894,
+      "output_tokens": 55,
+      "latency_ms": 18295.60923576355
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_G_ReverseOrder",
+      "evidence_available_percent": 0.6666666666666666,
+      "required_claim_coverage_percent": 0.6666666666666666,
+      "total_required_claims": 3,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 2,
+      "expressed_available_claim_count": 2,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 1,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 1,
+      "completeness": 0.6666666666666666,
+      "input_tokens": 19116,
+      "output_tokens": 57,
+      "latency_ms": 9023.960828781128
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_A_Control",
+      "evidence_available_percent": 0.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 0,
+      "expressed_available_claim_count": 0,
+      "generation_utilization_percent": null,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 14452,
+      "output_tokens": 938,
+      "latency_ms": 28004.297256469727
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "evidence_available_percent": 0.0,
+      "required_claim_coverage_percent": 0.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 0,
+      "available_required_claim_count": 0,
+      "expressed_available_claim_count": 0,
+      "generation_utilization_percent": null,
+      "retrieval_failures_count": 2,
+      "generation_failures_count": 0,
+      "success_count": 0,
+      "correctness": 0,
+      "completeness": 0.0,
+      "input_tokens": 545,
+      "output_tokens": 51,
+      "latency_ms": 9117.570400238037
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "evidence_available_percent": 0.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 0,
+      "expressed_available_claim_count": 0,
+      "generation_utilization_percent": null,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 14452,
+      "output_tokens": 228,
+      "latency_ms": 22139.30916786194
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_D_ExplicitChecklist",
+      "evidence_available_percent": 0.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 0,
+      "expressed_available_claim_count": 0,
+      "generation_utilization_percent": null,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 14560,
+      "output_tokens": 106,
+      "latency_ms": 19073.78625869751
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "evidence_available_percent": 0.0,
+      "required_claim_coverage_percent": 0.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 0,
+      "available_required_claim_count": 0,
+      "expressed_available_claim_count": 0,
+      "generation_utilization_percent": null,
+      "retrieval_failures_count": 2,
+      "generation_failures_count": 0,
+      "success_count": 0,
+      "correctness": 0,
+      "completeness": 0.0,
+      "input_tokens": 14569,
+      "output_tokens": 37,
+      "latency_ms": 17792.07968711853
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_F_FormattingOnly",
+      "evidence_available_percent": 0.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 0,
+      "expressed_available_claim_count": 0,
+      "generation_utilization_percent": null,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 47843,
+      "output_tokens": 842,
+      "latency_ms": 38976.89914703369
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_G_ReverseOrder",
+      "evidence_available_percent": 0.0,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 0,
+      "expressed_available_claim_count": 0,
+      "generation_utilization_percent": null,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 14452,
+      "output_tokens": 111,
+      "latency_ms": 16407.937049865723
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_A_Control",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 16143,
+      "output_tokens": 151,
+      "latency_ms": 24651.33762359619
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 6434,
+      "output_tokens": 189,
+      "latency_ms": 33199.9626159668
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 16143,
+      "output_tokens": 155,
+      "latency_ms": 29234.468698501587
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_D_ExplicitChecklist",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 16250,
+      "output_tokens": 1093,
+      "latency_ms": 61645.41721343994
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 16259,
+      "output_tokens": 1020,
+      "latency_ms": 56975.428104400635
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_F_FormattingOnly",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 55897,
+      "output_tokens": 835,
+      "latency_ms": 45058.271646499634
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_G_ReverseOrder",
+      "evidence_available_percent": 0.25,
+      "required_claim_coverage_percent": 1.0,
+      "total_required_claims": 2,
+      "expressed_required_claims": 2,
+      "available_required_claim_count": 1,
+      "expressed_available_claim_count": 1,
+      "generation_utilization_percent": 1.0,
+      "retrieval_failures_count": 0,
+      "generation_failures_count": 0,
+      "success_count": 2,
+      "correctness": 2,
+      "completeness": 1.0,
+      "input_tokens": 16143,
+      "output_tokens": 150,
+      "latency_ms": 27081.014394760132
+    }
+  ],
+  "claim_level_audit": [
+    {
+      "question_id": "Q01",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q01_C1",
+      "claim_desc": "Aegeon is a merchant from/born in Syracuse.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4",
+        "C2"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q01_C2",
+      "claim_desc": "He married and traveled to Epidamnum / had twin sons born there.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q01_C1",
+      "claim_desc": "Aegeon is a merchant from/born in Syracuse.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4",
+        "C2"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q01_C2",
+      "claim_desc": "He married and traveled to Epidamnum / had twin sons born there.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q01_C1",
+      "claim_desc": "Aegeon is a merchant from/born in Syracuse.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4",
+        "C2"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q01_C2",
+      "claim_desc": "He married and traveled to Epidamnum / had twin sons born there.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q01_C1",
+      "claim_desc": "Aegeon is a merchant from/born in Syracuse.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4",
+        "C2"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q01_C2",
+      "claim_desc": "He married and traveled to Epidamnum / had twin sons born there.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q01_C1",
+      "claim_desc": "Aegeon is a merchant from/born in Syracuse.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4",
+        "C2"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q01_C2",
+      "claim_desc": "He married and traveled to Epidamnum / had twin sons born there.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q01_C1",
+      "claim_desc": "Aegeon is a merchant from/born in Syracuse.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4",
+        "C2"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q01_C2",
+      "claim_desc": "He married and traveled to Epidamnum / had twin sons born there.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q01_C1",
+      "claim_desc": "Aegeon is a merchant from/born in Syracuse.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4",
+        "C2"
+      ]
+    },
+    {
+      "question_id": "Q01",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q01_C2",
+      "claim_desc": "He married and traveled to Epidamnum / had twin sons born there.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q02_C1",
+      "claim_desc": "Ephesus has a law/statute prohibiting Syracusians from entering Ephesus on pain of death or paying 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q02_C2",
+      "claim_desc": "Aegeon's wealth (under 100 marks) is insufficient to pay the required 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q02_C1",
+      "claim_desc": "Ephesus has a law/statute prohibiting Syracusians from entering Ephesus on pain of death or paying 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q02_C2",
+      "claim_desc": "Aegeon's wealth (under 100 marks) is insufficient to pay the required 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q02_C1",
+      "claim_desc": "Ephesus has a law/statute prohibiting Syracusians from entering Ephesus on pain of death or paying 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q02_C2",
+      "claim_desc": "Aegeon's wealth (under 100 marks) is insufficient to pay the required 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q02_C1",
+      "claim_desc": "Ephesus has a law/statute prohibiting Syracusians from entering Ephesus on pain of death or paying 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q02_C2",
+      "claim_desc": "Aegeon's wealth (under 100 marks) is insufficient to pay the required 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q02_C1",
+      "claim_desc": "Ephesus has a law/statute prohibiting Syracusians from entering Ephesus on pain of death or paying 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q02_C2",
+      "claim_desc": "Aegeon's wealth (under 100 marks) is insufficient to pay the required 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q02_C1",
+      "claim_desc": "Ephesus has a law/statute prohibiting Syracusians from entering Ephesus on pain of death or paying 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q02_C2",
+      "claim_desc": "Aegeon's wealth (under 100 marks) is insufficient to pay the required 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q02_C1",
+      "claim_desc": "Ephesus has a law/statute prohibiting Syracusians from entering Ephesus on pain of death or paying 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C12"
+      ]
+    },
+    {
+      "question_id": "Q02",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q02_C2",
+      "claim_desc": "Aegeon's wealth (under 100 marks) is insufficient to pay the required 1,000 marks ransom.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C2",
+        "C10",
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q03_C1",
+      "claim_desc": "Adriana is actually married to Antipholus of Ephesus (his long-lost twin brother).",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C24",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q03_C2",
+      "claim_desc": "Antipholus of Syracuse is a visitor/stranger in Ephesus who is unaware that his twin brother lives there.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q03_C3",
+      "claim_desc": "Antipholus of Syracuse is mistaken for his identical twin brother by Adriana due to their identical appearance.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C15",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q03_C1",
+      "claim_desc": "Adriana is actually married to Antipholus of Ephesus (his long-lost twin brother).",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C24",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q03_C2",
+      "claim_desc": "Antipholus of Syracuse is a visitor/stranger in Ephesus who is unaware that his twin brother lives there.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q03_C3",
+      "claim_desc": "Antipholus of Syracuse is mistaken for his identical twin brother by Adriana due to their identical appearance.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C15",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q03_C1",
+      "claim_desc": "Adriana is actually married to Antipholus of Ephesus (his long-lost twin brother).",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C24",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q03_C2",
+      "claim_desc": "Antipholus of Syracuse is a visitor/stranger in Ephesus who is unaware that his twin brother lives there.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q03_C3",
+      "claim_desc": "Antipholus of Syracuse is mistaken for his identical twin brother by Adriana due to their identical appearance.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C15",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q03_C1",
+      "claim_desc": "Adriana is actually married to Antipholus of Ephesus (his long-lost twin brother).",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C24",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q03_C2",
+      "claim_desc": "Antipholus of Syracuse is a visitor/stranger in Ephesus who is unaware that his twin brother lives there.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q03_C3",
+      "claim_desc": "Antipholus of Syracuse is mistaken for his identical twin brother by Adriana due to their identical appearance.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C15",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q03_C1",
+      "claim_desc": "Adriana is actually married to Antipholus of Ephesus (his long-lost twin brother).",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C24",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q03_C2",
+      "claim_desc": "Antipholus of Syracuse is a visitor/stranger in Ephesus who is unaware that his twin brother lives there.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q03_C3",
+      "claim_desc": "Antipholus of Syracuse is mistaken for his identical twin brother by Adriana due to their identical appearance.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q03_C1",
+      "claim_desc": "Adriana is actually married to Antipholus of Ephesus (his long-lost twin brother).",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C24",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q03_C2",
+      "claim_desc": "Antipholus of Syracuse is a visitor/stranger in Ephesus who is unaware that his twin brother lives there.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q03_C3",
+      "claim_desc": "Antipholus of Syracuse is mistaken for his identical twin brother by Adriana due to their identical appearance.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C15",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q03_C1",
+      "claim_desc": "Adriana is actually married to Antipholus of Ephesus (his long-lost twin brother).",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C24",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q03_C2",
+      "claim_desc": "Antipholus of Syracuse is a visitor/stranger in Ephesus who is unaware that his twin brother lives there.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C15"
+      ]
+    },
+    {
+      "question_id": "Q03",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q03_C3",
+      "claim_desc": "Antipholus of Syracuse is mistaken for his identical twin brother by Adriana due to their identical appearance.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C15",
+        "C61"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q04_C1",
+      "claim_desc": "Aegeon's wife gave birth to identical twin sons at an inn in Epidamnum.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q04_C2",
+      "claim_desc": "At the same inn, a poor woman gave birth to twin boys, which Aegeon bought to serve as servants for his twin sons.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q04_C3",
+      "claim_desc": "A violent storm shipwrecked them, splitting their ship on a rock, separating the family into two groups (one set saved by Corinth fishermen, the other by another ship).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q04_C1",
+      "claim_desc": "Aegeon's wife gave birth to identical twin sons at an inn in Epidamnum.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q04_C2",
+      "claim_desc": "At the same inn, a poor woman gave birth to twin boys, which Aegeon bought to serve as servants for his twin sons.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q04_C3",
+      "claim_desc": "A violent storm shipwrecked them, splitting their ship on a rock, separating the family into two groups (one set saved by Corinth fishermen, the other by another ship).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q04_C1",
+      "claim_desc": "Aegeon's wife gave birth to identical twin sons at an inn in Epidamnum.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q04_C2",
+      "claim_desc": "At the same inn, a poor woman gave birth to twin boys, which Aegeon bought to serve as servants for his twin sons.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q04_C3",
+      "claim_desc": "A violent storm shipwrecked them, splitting their ship on a rock, separating the family into two groups (one set saved by Corinth fishermen, the other by another ship).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q04_C1",
+      "claim_desc": "Aegeon's wife gave birth to identical twin sons at an inn in Epidamnum.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q04_C2",
+      "claim_desc": "At the same inn, a poor woman gave birth to twin boys, which Aegeon bought to serve as servants for his twin sons.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q04_C3",
+      "claim_desc": "A violent storm shipwrecked them, splitting their ship on a rock, separating the family into two groups (one set saved by Corinth fishermen, the other by another ship).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q04_C1",
+      "claim_desc": "Aegeon's wife gave birth to identical twin sons at an inn in Epidamnum.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q04_C2",
+      "claim_desc": "At the same inn, a poor woman gave birth to twin boys, which Aegeon bought to serve as servants for his twin sons.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q04_C3",
+      "claim_desc": "A violent storm shipwrecked them, splitting their ship on a rock, separating the family into two groups (one set saved by Corinth fishermen, the other by another ship).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q04_C1",
+      "claim_desc": "Aegeon's wife gave birth to identical twin sons at an inn in Epidamnum.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q04_C2",
+      "claim_desc": "At the same inn, a poor woman gave birth to twin boys, which Aegeon bought to serve as servants for his twin sons.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q04_C3",
+      "claim_desc": "A violent storm shipwrecked them, splitting their ship on a rock, separating the family into two groups (one set saved by Corinth fishermen, the other by another ship).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q04_C1",
+      "claim_desc": "Aegeon's wife gave birth to identical twin sons at an inn in Epidamnum.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q04_C2",
+      "claim_desc": "At the same inn, a poor woman gave birth to twin boys, which Aegeon bought to serve as servants for his twin sons.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C4"
+      ]
+    },
+    {
+      "question_id": "Q04",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q04_C3",
+      "claim_desc": "A violent storm shipwrecked them, splitting their ship on a rock, separating the family into two groups (one set saved by Corinth fishermen, the other by another ship).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C6"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q05_C1",
+      "claim_desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money, but later beats/scolds him when confused by mistaken identity.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C12",
+        "C42"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q05_C2",
+      "claim_desc": "Antipholus of Ephesus is locked out of his own house by Dromio of Syracuse (who thinks his master Antipholus of Syracuse is inside).",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C65"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q05_C1",
+      "claim_desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money, but later beats/scolds him when confused by mistaken identity.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C12",
+        "C42"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q05_C2",
+      "claim_desc": "Antipholus of Ephesus is locked out of his own house by Dromio of Syracuse (who thinks his master Antipholus of Syracuse is inside).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C65"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q05_C1",
+      "claim_desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money, but later beats/scolds him when confused by mistaken identity.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C12",
+        "C42"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q05_C2",
+      "claim_desc": "Antipholus of Ephesus is locked out of his own house by Dromio of Syracuse (who thinks his master Antipholus of Syracuse is inside).",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C65"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q05_C1",
+      "claim_desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money, but later beats/scolds him when confused by mistaken identity.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C12",
+        "C42"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q05_C2",
+      "claim_desc": "Antipholus of Ephesus is locked out of his own house by Dromio of Syracuse (who thinks his master Antipholus of Syracuse is inside).",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C65"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q05_C1",
+      "claim_desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money, but later beats/scolds him when confused by mistaken identity.",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C12",
+        "C42"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q05_C2",
+      "claim_desc": "Antipholus of Ephesus is locked out of his own house by Dromio of Syracuse (who thinks his master Antipholus of Syracuse is inside).",
+      "evidence_present": false,
+      "claim_expressed": false,
+      "classification": "RETRIEVAL_FAILURE",
+      "supporting_evidence": [
+        "C65"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q05_C1",
+      "claim_desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money, but later beats/scolds him when confused by mistaken identity.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C12",
+        "C42"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q05_C2",
+      "claim_desc": "Antipholus of Ephesus is locked out of his own house by Dromio of Syracuse (who thinks his master Antipholus of Syracuse is inside).",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C65"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q05_C1",
+      "claim_desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money, but later beats/scolds him when confused by mistaken identity.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C12",
+        "C42"
+      ]
+    },
+    {
+      "question_id": "Q05",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q05_C2",
+      "claim_desc": "Antipholus of Ephesus is locked out of his own house by Dromio of Syracuse (who thinks his master Antipholus of Syracuse is inside).",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C65"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q06_C1",
+      "claim_desc": "Angelo the goldsmith delivered a gold chain to Antipholus of Syracuse by mistake, but demanded 200 ducats payment from Antipholus of Ephesus.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C105",
+        "C107"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_A_Control",
+      "claim_id": "Q06_C2",
+      "claim_desc": "Antipholus of Ephesus denied receiving the chain/paying for it, leading Angelo to have him arrested for the 200 ducats debt.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C147",
+        "C155"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q06_C1",
+      "claim_desc": "Angelo the goldsmith delivered a gold chain to Antipholus of Syracuse by mistake, but demanded 200 ducats payment from Antipholus of Ephesus.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C105",
+        "C107"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_B_ReqEvidenceOnly",
+      "claim_id": "Q06_C2",
+      "claim_desc": "Antipholus of Ephesus denied receiving the chain/paying for it, leading Angelo to have him arrested for the 200 ducats debt.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C147",
+        "C155"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q06_C1",
+      "claim_desc": "Angelo the goldsmith delivered a gold chain to Antipholus of Syracuse by mistake, but demanded 200 ducats payment from Antipholus of Ephesus.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C105",
+        "C107"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_C_ReqEvidenceFirst",
+      "claim_id": "Q06_C2",
+      "claim_desc": "Antipholus of Ephesus denied receiving the chain/paying for it, leading Angelo to have him arrested for the 200 ducats debt.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C147",
+        "C155"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q06_C1",
+      "claim_desc": "Angelo the goldsmith delivered a gold chain to Antipholus of Syracuse by mistake, but demanded 200 ducats payment from Antipholus of Ephesus.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C105",
+        "C107"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_D_ExplicitChecklist",
+      "claim_id": "Q06_C2",
+      "claim_desc": "Antipholus of Ephesus denied receiving the chain/paying for it, leading Angelo to have him arrested for the 200 ducats debt.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C147",
+        "C155"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q06_C1",
+      "claim_desc": "Angelo the goldsmith delivered a gold chain to Antipholus of Syracuse by mistake, but demanded 200 ducats payment from Antipholus of Ephesus.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C105",
+        "C107"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_E_EvidenceFirstPrompt",
+      "claim_id": "Q06_C2",
+      "claim_desc": "Antipholus of Ephesus denied receiving the chain/paying for it, leading Angelo to have him arrested for the 200 ducats debt.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C147",
+        "C155"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q06_C1",
+      "claim_desc": "Angelo the goldsmith delivered a gold chain to Antipholus of Syracuse by mistake, but demanded 200 ducats payment from Antipholus of Ephesus.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C105",
+        "C107"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_F_FormattingOnly",
+      "claim_id": "Q06_C2",
+      "claim_desc": "Antipholus of Ephesus denied receiving the chain/paying for it, leading Angelo to have him arrested for the 200 ducats debt.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C147",
+        "C155"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q06_C1",
+      "claim_desc": "Angelo the goldsmith delivered a gold chain to Antipholus of Syracuse by mistake, but demanded 200 ducats payment from Antipholus of Ephesus.",
+      "evidence_present": true,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C105",
+        "C107"
+      ]
+    },
+    {
+      "question_id": "Q06",
+      "condition": "Exp_G_ReverseOrder",
+      "claim_id": "Q06_C2",
+      "claim_desc": "Antipholus of Ephesus denied receiving the chain/paying for it, leading Angelo to have him arrested for the 200 ducats debt.",
+      "evidence_present": false,
+      "claim_expressed": true,
+      "classification": "SUCCESSFUL_GENERATION",
+      "supporting_evidence": [
+        "C147",
+        "C155"
+      ]
+    }
+  ]
+}

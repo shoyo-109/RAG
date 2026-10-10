@@ -1,0 +1,477 @@
+{
+  "targets": {
+    "C15": {
+      "chunk_id": "C15",
+      "q_id": "Q03",
+      "chunk_type": "PRIMARY",
+      "conditions": {
+        "A0": {
+          "similarity": 0.1986088752746582,
+          "rank": 142,
+          "delta_sim": 0.0,
+          "delta_rank": 0,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        },
+        "A1": {
+          "similarity": 0.255558043718338,
+          "rank": 118,
+          "delta_sim": 0.05694916844367981,
+          "delta_rank": 24,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        },
+        "A2": {
+          "similarity": 0.09219373017549515,
+          "rank": 120,
+          "delta_sim": -0.10641514509916306,
+          "delta_rank": 22,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        },
+        "A3": {
+          "similarity": 0.19744107127189636,
+          "rank": 52,
+          "delta_sim": -0.0011678040027618408,
+          "delta_rank": 90,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        }
+      },
+      "strongest_intervention": "A3",
+      "diagnosis": "REPRESENTATION_INTERVENTION_NOT_SUFFICIENT_FOR_ACCESSIBILITY"
+    },
+    "C42": {
+      "chunk_id": "C42",
+      "q_id": "Q05",
+      "chunk_type": "PRIMARY",
+      "conditions": {
+        "A0": {
+          "similarity": 0.2810937166213989,
+          "rank": 99,
+          "delta_sim": 0.0,
+          "delta_rank": 0,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        },
+        "A1": {
+          "similarity": 0.25448089838027954,
+          "rank": 101,
+          "delta_sim": -0.026612818241119385,
+          "delta_rank": -2,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        },
+        "A2": {
+          "similarity": 0.13680711388587952,
+          "rank": 117,
+          "delta_sim": -0.1442866027355194,
+          "delta_rank": -18,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        },
+        "A3": {
+          "similarity": 0.1650526523590088,
+          "rank": 122,
+          "delta_sim": -0.11604106426239014,
+          "delta_rank": -23,
+          "top_10": false,
+          "top_20": false,
+          "top_50": false,
+          "accessibility_band": ">50"
+        }
+      },
+      "strongest_intervention": "none",
+      "diagnosis": "REPRESENTATION_INTERVENTION_NOT_SUFFICIENT_FOR_ACCESSIBILITY"
+    }
+  },
+  "cross_target_decision": "NOT SUPPORTED",
+  "hard_negatives": {
+    "Q03": {
+      "A0": [
+        {
+          "rank": 1,
+          "chunk_id": "C195",
+          "similarity": 0.6909271478652954,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "ANTIPHOLUS OF SYRACUSE; I, gentle mistress. ADRIANA; And are not you my husband? ANTIPHOLUS OF EPHESUS; No; I say nay to",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "C83",
+          "similarity": 0.6011407971382141,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "SCENE 2     The same. Enter LUCIANA and ANTIPHOLUS of Syracuse  LUCIANA; And may it be that you have quite forgot  A hus",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "C52",
+          "similarity": 0.5859743356704712,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "who wafts us yonder? Enter ADRIANA and LUCIANA  ADRIANA; Ay, ay, Antipholus, look strange and frown:  Some other mistres",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "C24",
+          "similarity": 0.5565968155860901,
+          "is_gold": true,
+          "gold_role": "PRIMARY",
+          "snippet": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave ret",
+          "mechanism": "gold_target_match"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "C118",
+          "similarity": 0.5552786588668823,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "SCENE 2     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Ah, Luciana, did he tempt thee so? M",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "C88",
+          "similarity": 0.5288040637969971,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "ANTIPHOLUS OF SYRACUSE; As good to wink, sweet love, as look on night. LUCIANA; Why call you me love? call my sister so.",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "C91",
+          "similarity": 0.5286661386489868,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; I am an ass, I am a woman's man and besides  myself. ANTIPHOLUS OF SYRACUSE; What woman's man? and h",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "C47",
+          "similarity": 0.5241526365280151,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; Marry, sir, by a rule as plain as the plain bald  pate of father Time himself. ANTIPHOLUS OF SYRACUS",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "C170",
+          "similarity": 0.5223293900489807,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "Why bear you these rebukes and answer not? ADRIANA; She did betray me to my own reproof. Good people enter and lay hold ",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "C177",
+          "similarity": 0.5142408609390259,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "ADRIANA; Ay me, it is my husband! Witness you,  That he is borne about invisible:  Even now we housed him in the abbey h",
+          "mechanism": "entity_similarity"
+        }
+      ],
+      "A2": [
+        {
+          "rank": 1,
+          "chunk_id": "C91",
+          "similarity": 0.38430529832839966,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; I am an ass, I am a woman's man and besides  myself. ANTIPHOLUS OF SYRACUSE; What woman's man? and h",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "C47",
+          "similarity": 0.3452158272266388,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; Marry, sir, by a rule as plain as the plain bald  pate of father Time himself. ANTIPHOLUS OF SYRACUS",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "C92",
+          "similarity": 0.32059594988822937,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "besides thyself? DROMIO OF SYRACUSE; Marry, sir, besides myself, I am due to a woman;  one  that claims me, one that hau",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "C83",
+          "similarity": 0.3127490282058716,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "SCENE 2     The same. Enter LUCIANA and ANTIPHOLUS of Syracuse  LUCIANA; And may it be that you have quite forgot  A hus",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "C72",
+          "similarity": 0.2885872721672058,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "can you tell? DROMIO OF SYRACUSE[Within]; If thy name be call'd Luce--Luce, thou hast  answered him well. 30",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "C195",
+          "similarity": 0.2813763916492462,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "ANTIPHOLUS OF SYRACUSE; I, gentle mistress. ADRIANA; And are not you my husband? ANTIPHOLUS OF EPHESUS; No; I say nay to",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "C58",
+          "similarity": 0.27855855226516724,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "Come, I will fasten on this sleeve of thine:  Thou art an elm, my husband, I a vine,  Whose weakness, married to thy str",
+          "mechanism": "generic_narrative_similarity"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "C45",
+          "similarity": 0.27209800481796265,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "ANTIPHOLUS OF SYRACUSE; Thank me, sir, for what? DROMIO OF SYRACUSE; Marry, sir, for this something that you gave me for",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "C56",
+          "similarity": 0.27133774757385254,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "how the world is changed with you! When were you wont to use my sister thus? She sent for you by Dromio home to dinner. ",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "C52",
+          "similarity": 0.2633610963821411,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "who wafts us yonder? Enter ADRIANA and LUCIANA  ADRIANA; Ay, ay, Antipholus, look strange and frown:  Some other mistres",
+          "mechanism": "entity_similarity"
+        }
+      ]
+    },
+    "Q05": {
+      "A0": [
+        {
+          "rank": 1,
+          "chunk_id": "C192",
+          "similarity": 0.6133183240890503,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "who deciphers them? DROMIO OF SYRACUSE; I, sir, am Dromio; command him away. DROMIO OF EPHESUS; I, sir, am Dromio; pray,",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "C95",
+          "similarity": 0.6089645624160767,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; No, sir, 'tis in grain; Noah's flood could not do it. ANTIPHOLUS OF SYRACUSE; What's her name? DROMI",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "C194",
+          "similarity": 0.5794807076454163,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "Antipholus, thou camest from Corinth first? ANTIPHOLUS OF SYRACUSE; No, sir, not I; I came from Syracuse. DUKE SOLINUS; ",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "C50",
+          "similarity": 0.5768156051635742,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; For two; and sound ones too. ANTIPHOLUS OF SYRACUSE; Nay, not sound, I pray you. DROMIO OF SYRACUSE;",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "C200",
+          "similarity": 0.5562119483947754,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "The duke, my husband and my children both,  And you the calendars of their nativity,  Go to a gossips' feast and go with",
+          "mechanism": "generic_narrative_similarity"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "C70",
+          "similarity": 0.5549736022949219,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE[Within]; Right, sir; I'll tell you when, an you tell  me wherefore. ANTIPHOLUS OF EPHESUS; Wherefore?",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "C197",
+          "similarity": 0.5536504983901978,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "ANTIPHOLUS OF SYRACUSE; I think it be, sir; I deny it not. ANTIPHOLUS OF EPHESUS; And you, sir, for this chain arrested ",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "C77",
+          "similarity": 0.5502448678016663,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "ANTIPHOLUS OF EPHESUS; Go fetch me something: I'll break ope the gate. DROMIO OF SYRACUSE[Within]; Break any breaking he",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "C97",
+          "similarity": 0.5462661981582642,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; I looked for the chalky cliffs, but I could find no  whiteness in them; but I guess it stood in her ",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "C47",
+          "similarity": 0.5449482798576355,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DROMIO OF SYRACUSE; Marry, sir, by a rule as plain as the plain bald  pate of father Time himself. ANTIPHOLUS OF SYRACUS",
+          "mechanism": "entity_similarity"
+        }
+      ],
+      "A2": [
+        {
+          "rank": 1,
+          "chunk_id": "C191",
+          "similarity": 0.33676978945732117,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DUKE SOLINUS; One of these men is Genius to the other;  And so of these. Which is the natural man,  And which the spirit",
+          "mechanism": "generic_narrative_similarity"
+        },
+        {
+          "rank": 2,
+          "chunk_id": "C193",
+          "similarity": 0.3276229500770569,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "AEMELIA; Whoever bound him, I will loose his bonds  And gain a husband by his liberty. Speak, old AEgeon, if thou be'st ",
+          "mechanism": "generic_narrative_similarity"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "C67",
+          "similarity": 0.30792245268821716,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "BALTHAZAR; I hold your dainties cheap, sir, and your  welcome dear. ANTIPHOLUS OF EPHESUS; O, Signior Balthazar, either ",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "C4",
+          "similarity": 0.3058716952800751,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "DUKE SOLINUS; Well, Syracusian, say in brief the cause  Why thou departed'st from thy native home  And for what cause th",
+          "mechanism": "generic_narrative_similarity"
+        },
+        {
+          "rank": 5,
+          "chunk_id": "C29",
+          "similarity": 0.30455243587493896,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "Here comes your man; now is your husband nigh. Enter DROMIO of Ephesus  ADRIANA; Say, is your tardy master now at hand? ",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 6,
+          "chunk_id": "C24",
+          "similarity": 0.30219796299934387,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "SCENE 1     The house of ANTIPHOLUS of Ephesus. Enter ADRIANA and LUCIANA  ADRIANA; Neither my husband nor the slave ret",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 7,
+          "chunk_id": "C83",
+          "similarity": 0.29954901337623596,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "SCENE 2     The same. Enter LUCIANA and ANTIPHOLUS of Syracuse  LUCIANA; And may it be that you have quite forgot  A hus",
+          "mechanism": "entity_similarity"
+        },
+        {
+          "rank": 8,
+          "chunk_id": "C186",
+          "similarity": 0.274383008480072,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "Courtezan; As sure, my liege, as I do see your grace. DUKE SOLINUS; Why, this is strange. Go call the abbess hither. I t",
+          "mechanism": "generic_narrative_similarity"
+        },
+        {
+          "rank": 9,
+          "chunk_id": "C2",
+          "similarity": 0.27166274189949036,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "SCENE 1     A hall in DUKE SOLINUS'S palace. Enter DUKE SOLINUS, AEGEON, Gaoler, Officers, and other Attendants  AEGEON;",
+          "mechanism": "generic_narrative_similarity"
+        },
+        {
+          "rank": 10,
+          "chunk_id": "C171",
+          "similarity": 0.2698143422603607,
+          "is_gold": false,
+          "gold_role": "NON_GOLD",
+          "snippet": "To make of him a formal man again:  It is a branch and parcel of mine oath,  A charitable duty of my order. Therefore de",
+          "mechanism": "generic_narrative_similarity"
+        }
+      ]
+    }
+  }
+}

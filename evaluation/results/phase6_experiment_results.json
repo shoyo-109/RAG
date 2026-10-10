@@ -1,0 +1,5140 @@
+{
+  "timestamp": "2026-09-25T17:39:32.058993",
+  "master_table": [
+    {
+      "candidate_N": 20,
+      "policy_id": "P0",
+      "policy_name": "No Dedup",
+      "recall_at_10": 0.4,
+      "evidence_precision": 0.13333333333333333,
+      "primary_precision": 0.06666666666666667,
+      "claim_availability": 0.35714285714285715,
+      "evidence_completeness": 0.16666666666666666,
+      "ndcg10": 0.3989578764657267,
+      "mrr": 0.3071428571428571,
+      "redundancy_ratio": 0.5666666666666667,
+      "unique_parents": 3.3333333333333335,
+      "avg_chunks_per_parent": 3.1944444444444446
+    },
+    {
+      "candidate_N": 20,
+      "policy_id": "P1",
+      "policy_name": "Max 1 / Parent",
+      "recall_at_10": 0.1,
+      "evidence_precision": 0.03333333333333333,
+      "primary_precision": 0.016666666666666666,
+      "claim_availability": 0.14285714285714285,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.33197453021888873,
+      "mrr": 0.25,
+      "redundancy_ratio": 0.0,
+      "unique_parents": 4.666666666666667,
+      "avg_chunks_per_parent": 1.0
+    },
+    {
+      "candidate_N": 20,
+      "policy_id": "P2",
+      "policy_name": "Max 2 / Parent",
+      "recall_at_10": 0.3,
+      "evidence_precision": 0.10000000000000002,
+      "primary_precision": 0.03333333333333333,
+      "claim_availability": 0.21428571428571427,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.3875164680363357,
+      "mrr": 0.2972222222222222,
+      "redundancy_ratio": 0.3726851851851851,
+      "unique_parents": 4.666666666666667,
+      "avg_chunks_per_parent": 1.8333333333333333
+    },
+    {
+      "candidate_N": 20,
+      "policy_id": "P3",
+      "policy_name": "Max 3 / Parent",
+      "recall_at_10": 0.4,
+      "evidence_precision": 0.13333333333333333,
+      "primary_precision": 0.06666666666666667,
+      "claim_availability": 0.35714285714285715,
+      "evidence_completeness": 0.16666666666666666,
+      "ndcg10": 0.4411333115063272,
+      "mrr": 0.31666666666666665,
+      "redundancy_ratio": 0.46666666666666673,
+      "unique_parents": 4.333333333333333,
+      "avg_chunks_per_parent": 2.3333333333333335
+    },
+    {
+      "candidate_N": 50,
+      "policy_id": "P0",
+      "policy_name": "No Dedup",
+      "recall_at_10": 0.2,
+      "evidence_precision": 0.06666666666666667,
+      "primary_precision": 0.03333333333333333,
+      "claim_availability": 0.21428571428571427,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.26249885249999333,
+      "mrr": 0.18611111111111112,
+      "redundancy_ratio": 0.65,
+      "unique_parents": 3.3333333333333335,
+      "avg_chunks_per_parent": 3.388888888888889
+    },
+    {
+      "candidate_N": 50,
+      "policy_id": "P1",
+      "policy_name": "Max 1 / Parent",
+      "recall_at_10": 0.15,
+      "evidence_precision": 0.05000000000000001,
+      "primary_precision": 0.03333333333333333,
+      "claim_availability": 0.21428571428571427,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.32584566834216977,
+      "mrr": 0.19444444444444442,
+      "redundancy_ratio": 0.0,
+      "unique_parents": 5.0,
+      "avg_chunks_per_parent": 1.0
+    },
+    {
+      "candidate_N": 50,
+      "policy_id": "P2",
+      "policy_name": "Max 2 / Parent",
+      "recall_at_10": 0.25,
+      "evidence_precision": 0.08333333333333333,
+      "primary_precision": 0.03333333333333333,
+      "claim_availability": 0.21428571428571427,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.3231884843754274,
+      "mrr": 0.19444444444444442,
+      "redundancy_ratio": 0.45740740740740743,
+      "unique_parents": 5.0,
+      "avg_chunks_per_parent": 1.9666666666666668
+    },
+    {
+      "candidate_N": 50,
+      "policy_id": "P3",
+      "policy_name": "Max 3 / Parent",
+      "recall_at_10": 0.25,
+      "evidence_precision": 0.08333333333333333,
+      "primary_precision": 0.03333333333333333,
+      "claim_availability": 0.21428571428571427,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.29728540737522907,
+      "mrr": 0.18611111111111112,
+      "redundancy_ratio": 0.5333333333333333,
+      "unique_parents": 4.333333333333333,
+      "avg_chunks_per_parent": 2.3333333333333335
+    },
+    {
+      "candidate_N": 100,
+      "policy_id": "P0",
+      "policy_name": "No Dedup",
+      "recall_at_10": 0.25,
+      "evidence_precision": 0.08333333333333333,
+      "primary_precision": 0.05000000000000001,
+      "claim_availability": 0.21428571428571427,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.2902908345637683,
+      "mrr": 0.14484126984126985,
+      "redundancy_ratio": 0.5833333333333334,
+      "unique_parents": 3.6666666666666665,
+      "avg_chunks_per_parent": 2.777777777777778
+    },
+    {
+      "candidate_N": 100,
+      "policy_id": "P1",
+      "policy_name": "Max 1 / Parent",
+      "recall_at_10": 0.1,
+      "evidence_precision": 0.03333333333333333,
+      "primary_precision": 0.016666666666666666,
+      "claim_availability": 0.14285714285714285,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.27872711632309294,
+      "mrr": 0.08333333333333333,
+      "redundancy_ratio": 0.0,
+      "unique_parents": 5.166666666666667,
+      "avg_chunks_per_parent": 1.0
+    },
+    {
+      "candidate_N": 100,
+      "policy_id": "P2",
+      "policy_name": "Max 2 / Parent",
+      "recall_at_10": 0.2,
+      "evidence_precision": 0.06666666666666667,
+      "primary_precision": 0.03333333333333333,
+      "claim_availability": 0.21428571428571427,
+      "evidence_completeness": 0.0,
+      "ndcg10": 0.3019708220569909,
+      "mrr": 0.12222222222222223,
+      "redundancy_ratio": 0.4666666666666666,
+      "unique_parents": 5.0,
+      "avg_chunks_per_parent": 2.0
+    },
+    {
+      "candidate_N": 100,
+      "policy_id": "P3",
+      "policy_name": "Max 3 / Parent",
+      "recall_at_10": 0.25,
+      "evidence_precision": 0.08333333333333333,
+      "primary_precision": 0.05000000000000001,
+      "claim_availability": 0.35714285714285715,
+      "evidence_completeness": 0.16666666666666666,
+      "ndcg10": 0.31943031706972097,
+      "mrr": 0.10714285714285714,
+      "redundancy_ratio": 0.5,
+      "unique_parents": 4.5,
+      "avg_chunks_per_parent": 2.25
+    }
+  ],
+  "counterfactual_trace": [
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 10,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 15 > 10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 1,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C61",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C6",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 13 > 10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 12 > 10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P0",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 13 > 10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 10,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 7,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 7"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 15"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 6,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 6"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 1,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 5,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 5"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C61",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C6",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 5,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 5"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 13"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 4,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 4"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 12"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P1",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 13"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 10,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 15"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 1,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C61",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C6",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 13"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 4,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 4"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 12"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P2",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 13"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 10,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 15"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 1,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C61",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C6",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 13"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 12"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "policy": "P3",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 13,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 13"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 17 > 10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 22,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 22 > 10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 16,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 16 > 10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 29 > 10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 21 > 10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 12 > 10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 21 > 10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 29 > 10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 15 > 10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 11,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 11 > 10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P0",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 21 > 10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 17"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 5,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 5"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 22,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 22"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 16,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 16"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 29"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 12"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 29"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 15"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 11,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 11"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P1",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 17"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 22,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 22"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 16,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 29"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 12"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 29"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 15"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 11,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 11"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P2",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 17"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 5,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 22,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 22"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 16,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C12",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 29"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 3,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 12,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 12"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 29,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 29"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 15,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 15"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 11,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 11"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "policy": "P3",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 11,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 11 > 10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 21 > 10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 17 > 10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 41 > 10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 25,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 25 > 10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 36 > 10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 28,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 28 > 10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 36 > 10"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 41 > 10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 16,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 16 > 10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 4,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P0",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 19,
+      "admitted_top10": "NO",
+      "reason_excluded": "Original rank 19 > 10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 11,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 11"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 6,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 6"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 17"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 41"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 6,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 6"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 25,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 25"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 36"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 28,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 28"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 36"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 41"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 16,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 16"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 4,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 4"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P1",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 19,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 19"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 11,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 11"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 17"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 41"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 25,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 25"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 36"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 28,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 28"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 36"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 41"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 16,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 16"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 4,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 4"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P2",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 19,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 19"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 11,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C2",
+      "original_rrf_rank": 21,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 21"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 17,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 17"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C10",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 41"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C15",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C24",
+      "original_rrf_rank": 6,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C29",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C61",
+      "original_rrf_rank": 25,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 25"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C4",
+      "original_rrf_rank": 7,
+      "admitted_top10": "YES",
+      "reason_excluded": "Retained in Top-10"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C6",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 36"
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C8",
+      "original_rrf_rank": 28,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 28"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C42",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C65",
+      "original_rrf_rank": 36,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 36"
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C12",
+      "original_rrf_rank": 41,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 41"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C105",
+      "original_rrf_rank": 16,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 16"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C107",
+      "original_rrf_rank": 4,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 4"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C147",
+      "original_rrf_rank": "—",
+      "admitted_top10": "NO",
+      "reason_excluded": "Absent from candidate pool N"
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "policy": "P3",
+      "gold_chunk": "C155",
+      "original_rrf_rank": 19,
+      "admitted_top10": "NO",
+      "reason_excluded": "Exceeded parent limit or rank 19"
+    }
+  ],
+  "per_question_matrix": [
+    {
+      "q_id": "Q01",
+      "N": 20,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C2"
+      ],
+      "ev_recall": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "claim_avail": 1.0,
+      "missing_claims": [],
+      "ev_completeness": 1.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C197",
+        "C163",
+        "C2",
+        "C194",
+        "C189",
+        "C4"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.500869885894586,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 2,
+        "avg_chunks_per_parent": 5.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 20,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C10"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C10",
+        "C197",
+        "C137",
+        "C149",
+        "C186",
+        "C4",
+        "C191",
+        "C189",
+        "C178",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.0,
+        "mrr": 1.0,
+        "ndcg10": 0.46972196760395535,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 20,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C83",
+        "C50",
+        "C24",
+        "C118",
+        "C88",
+        "C47",
+        "C169",
+        "C175"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.2,
+        "ndcg10": 0.36075373607851846,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 20,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C8"
+      ],
+      "ev_recall": 0.6666666666666666,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C186",
+        "C200",
+        "C4",
+        "C8",
+        "C24",
+        "C10",
+        "C189",
+        "C110",
+        "C194"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.561209446730229,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 20,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C44",
+        "C200",
+        "C191",
+        "C94",
+        "C50",
+        "C70",
+        "C197",
+        "C76",
+        "C97"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.15621733969012364,
+        "redundancy_ratio": 0.7,
+        "unique_parent_count": 3,
+        "avg_chunks_per_parent": 3.3333333333333335
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 20,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C105"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C137",
+        "C146",
+        "C197",
+        "C105",
+        "C65",
+        "C110",
+        "C113",
+        "C163",
+        "C161",
+        "C178"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.34497488279694827,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 3,
+        "avg_chunks_per_parent": 3.3333333333333335
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 20,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C10",
+        "C55",
+        "C73",
+        "C143"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.3315561667366598,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 20,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C10"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C10",
+        "C197",
+        "C137",
+        "C73",
+        "C24"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 1.0,
+        "ndcg10": 0.4234947196387266,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 20,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 3,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C50",
+        "C118"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.18028641094528697,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 20,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C4",
+        "C24",
+        "C110",
+        "C83"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.5,
+        "ndcg10": 0.6479528711087572,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 20,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C44",
+        "C94",
+        "C19",
+        "C128"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.22827060193861456,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 20,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C137",
+        "C197",
+        "C65",
+        "C55"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.18028641094528697,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 20,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C2"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C10",
+        "C2",
+        "C55",
+        "C73",
+        "C143",
+        "C47"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.25,
+        "ndcg10": 0.43500671032266425,
+        "redundancy_ratio": 0.25,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.6
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 20,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C10"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C10",
+        "C197",
+        "C137",
+        "C149",
+        "C186",
+        "C4",
+        "C73",
+        "C65",
+        "C24"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.0,
+        "mrr": 1.0,
+        "ndcg10": 0.49927300340538094,
+        "redundancy_ratio": 0.3333333333333333,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.8
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 20,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C83",
+        "C50",
+        "C24",
+        "C118",
+        "C169",
+        "C143"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.2,
+        "ndcg10": 0.36075373607851846,
+        "redundancy_ratio": 0.375,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 20,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C8"
+      ],
+      "ev_recall": 0.6666666666666666,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C186",
+        "C4",
+        "C8",
+        "C24",
+        "C110",
+        "C83",
+        "C27",
+        "C107"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.6608835058225705,
+        "redundancy_ratio": 0.3333333333333333,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.8
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 20,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C44",
+        "C200",
+        "C94",
+        "C50",
+        "C70",
+        "C19",
+        "C128",
+        "C130"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.20984034261100418,
+        "redundancy_ratio": 0.4444444444444444,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.8
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 20,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C137",
+        "C146",
+        "C197",
+        "C65",
+        "C163",
+        "C73",
+        "C55",
+        "C61"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.1593415099778758,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 20,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C2"
+      ],
+      "ev_recall": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "claim_avail": 1.0,
+      "missing_claims": [],
+      "ev_completeness": 1.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C2",
+        "C4",
+        "C55",
+        "C73",
+        "C143",
+        "C47"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.2,
+        "ndcg10": 0.6785850106641854,
+        "redundancy_ratio": 0.3,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 20,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C10"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C10",
+        "C197",
+        "C137",
+        "C149",
+        "C186",
+        "C4",
+        "C191",
+        "C73",
+        "C65",
+        "C113"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.0,
+        "mrr": 1.0,
+        "ndcg10": 0.4719813137363042,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 20,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C83",
+        "C50",
+        "C24",
+        "C118",
+        "C88",
+        "C47",
+        "C169",
+        "C175"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.2,
+        "ndcg10": 0.36075373607851846,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 20,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C8"
+      ],
+      "ev_recall": 0.6666666666666666,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C186",
+        "C200",
+        "C4",
+        "C8",
+        "C24",
+        "C10",
+        "C110",
+        "C83",
+        "C27"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.5915636537551143,
+        "redundancy_ratio": 0.4,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 20,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C44",
+        "C200",
+        "C191",
+        "C94",
+        "C50",
+        "C70",
+        "C76",
+        "C47",
+        "C19"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.17859682648047936,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 20,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C105"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C137",
+        "C146",
+        "C197",
+        "C105",
+        "C65",
+        "C163",
+        "C161",
+        "C73",
+        "C70",
+        "C55"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3653193283233614,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 50,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C2"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C2",
+        "C163",
+        "C171",
+        "C197",
+        "C194",
+        "C178"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.2,
+        "ndcg10": 0.17893541982453223,
+        "redundancy_ratio": 0.7,
+        "unique_parent_count": 2,
+        "avg_chunks_per_parent": 5.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 50,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C10"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C146",
+        "C186",
+        "C10",
+        "C197",
+        "C178",
+        "C191",
+        "C137",
+        "C73",
+        "C149",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.29494634444470236,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 50,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C55",
+        "C143",
+        "C50",
+        "C166",
+        "C94",
+        "C149"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3520329019825493,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 50,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C186",
+        "C4",
+        "C10",
+        "C200",
+        "C178",
+        "C194",
+        "C2",
+        "C197",
+        "C163"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.432992518862129,
+        "redundancy_ratio": 0.8,
+        "unique_parent_count": 2,
+        "avg_chunks_per_parent": 5.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 50,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C194",
+        "C44",
+        "C70",
+        "C191",
+        "C73",
+        "C47",
+        "C19",
+        "C55",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.19627643997905228,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 50,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C152",
+        "C137",
+        "C146",
+        "C197",
+        "C113",
+        "C149",
+        "C73",
+        "C178",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.11980948990699469,
+        "redundancy_ratio": 0.7,
+        "unique_parent_count": 3,
+        "avg_chunks_per_parent": 3.3333333333333335
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 50,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C10",
+        "C113",
+        "C47",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.16288018038145155,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 50,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C10"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C146",
+        "C186",
+        "C10",
+        "C73",
+        "C24"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.3379135903488014,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 50,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C24",
+        "C143",
+        "C19"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.41865385025105856,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 50,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C4",
+        "C113",
+        "C24",
+        "C83"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.5,
+        "ndcg10": 0.5998425912351874,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 50,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C44",
+        "C70",
+        "C19",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.22827060193861456,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 50,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C197",
+        "C73",
+        "C16",
+        "C55"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.2075131958979054,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 50,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C2"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C10",
+        "C2",
+        "C113",
+        "C47",
+        "C55",
+        "C73",
+        "C70",
+        "C116"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.25,
+        "ndcg10": 0.27704488050760545,
+        "redundancy_ratio": 0.4,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 50,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C10"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C146",
+        "C186",
+        "C10",
+        "C197",
+        "C137",
+        "C73",
+        "C4",
+        "C65",
+        "C24",
+        "C30"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.0,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.40977673364095485,
+        "redundancy_ratio": 0.4,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 50,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C55",
+        "C143",
+        "C166",
+        "C149",
+        "C19"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3732194587373559,
+        "redundancy_ratio": 0.4444444444444444,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.8
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 50,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C186",
+        "C4",
+        "C10",
+        "C113",
+        "C24",
+        "C27",
+        "C107",
+        "C83",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.49623224847508435,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 50,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C194",
+        "C44",
+        "C70",
+        "C73",
+        "C47",
+        "C19",
+        "C140",
+        "C137",
+        "C16"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.19970372125917404,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 50,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C152",
+        "C197",
+        "C73",
+        "C178",
+        "C16",
+        "C65",
+        "C55",
+        "C12",
+        "C61"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.18315386363238972,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 50,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C2"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C2",
+        "C19",
+        "C113",
+        "C47",
+        "C55",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.2,
+        "ndcg10": 0.24691518245921468,
+        "redundancy_ratio": 0.4,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 50,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C10"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C146",
+        "C186",
+        "C10",
+        "C197",
+        "C178",
+        "C137",
+        "C73",
+        "C149",
+        "C4",
+        "C65"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.0,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.37376300807190865,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 50,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C55",
+        "C143",
+        "C50",
+        "C166",
+        "C94",
+        "C149"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3520329019825493,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 50,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C186",
+        "C4",
+        "C10",
+        "C200",
+        "C2",
+        "C113",
+        "C24",
+        "C27",
+        "C107"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.4633467258870143,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 50,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C194",
+        "C44",
+        "C70",
+        "C191",
+        "C73",
+        "C47",
+        "C19",
+        "C55",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.19627643997905228,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 50,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C152",
+        "C137",
+        "C197",
+        "C73",
+        "C178",
+        "C16",
+        "C194",
+        "C65",
+        "C70"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.15137818587163537,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 100,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C2"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C70",
+        "C2",
+        "C163",
+        "C171",
+        "C197",
+        "C194"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.2120989119762952,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 3,
+        "avg_chunks_per_parent": 3.3333333333333335
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 100,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C10"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C73",
+        "C146",
+        "C113",
+        "C186",
+        "C166",
+        "C183",
+        "C10",
+        "C197",
+        "C178",
+        "C110"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.262015725591729,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 100,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C50",
+        "C166",
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C30",
+        "C55",
+        "C143",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.34177243530756374,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 100,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C178",
+        "C175",
+        "C107",
+        "C186",
+        "C73",
+        "C4",
+        "C166",
+        "C10",
+        "C200"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.39644959357441406,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 100,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C44",
+        "C70",
+        "C19",
+        "C194",
+        "C191",
+        "C73",
+        "C41",
+        "C47",
+        "C94"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.19832033991746972,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 100,
+      "policy": "P0",
+      "policy_name": "No Dedup",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C107"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C146",
+        "C152",
+        "C107",
+        "C137",
+        "C197",
+        "C16",
+        "C183",
+        "C19",
+        "C113"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3310880010151381,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 3,
+        "avg_chunks_per_parent": 3.3333333333333335
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 100,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C10",
+        "C70",
+        "C113",
+        "C30"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.17067564701112384,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 100,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C10"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C73",
+        "C146",
+        "C186",
+        "C10",
+        "C30"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.25,
+        "ndcg10": 0.32604803345611433,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 100,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 3,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C50",
+        "C166",
+        "C91",
+        "C143",
+        "C16"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.2075131958979054,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 100,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C107",
+        "C73",
+        "C4",
+        "C24",
+        "C0"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.5323420237368942,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 6,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 100,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C44",
+        "C70",
+        "C19",
+        "C146"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.22827060193861456,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 100,
+      "policy": "P1",
+      "policy_name": "Max 1 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C197",
+        "C16",
+        "C73",
+        "C55"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.2075131958979054,
+        "redundancy_ratio": 0.0,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 1.0
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 100,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C2"
+      ],
+      "ev_recall": 0.5,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C10",
+        "C70",
+        "C2",
+        "C73",
+        "C113",
+        "C146",
+        "C30",
+        "C47"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.2,
+        "ndcg10": 0.26901176957035233,
+        "redundancy_ratio": 0.4,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 100,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C10"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C73",
+        "C146",
+        "C113",
+        "C186",
+        "C166",
+        "C10",
+        "C19",
+        "C30",
+        "C24",
+        "C67"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.29488627671011025,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 100,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C50",
+        "C166",
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C143",
+        "C118",
+        "C16",
+        "C19"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.36523250801346957,
+        "redundancy_ratio": 0.4,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 100,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C178",
+        "C107",
+        "C73",
+        "C4",
+        "C10",
+        "C24",
+        "C30",
+        "C110",
+        "C70"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.2,
+        "ndcg10": 0.478406654587236,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 100,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C44",
+        "C70",
+        "C19",
+        "C194",
+        "C73",
+        "C41",
+        "C146",
+        "C140",
+        "C16"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.2227437266462429,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 100,
+      "policy": "P2",
+      "policy_name": "Max 2 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C146",
+        "C197",
+        "C16",
+        "C183",
+        "C19",
+        "C73",
+        "C55",
+        "C76",
+        "C61"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.18154399681453434,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q01",
+      "N": 100,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 2,
+      "retrieved_evidence_count": 2,
+      "retrieved_evidence_units": [
+        "C4",
+        "C2"
+      ],
+      "ev_recall": 1.0,
+      "total_claims": 2,
+      "supported_claims": 2,
+      "claim_avail": 1.0,
+      "missing_claims": [],
+      "ev_completeness": 1.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C70",
+        "C2",
+        "C4",
+        "C73",
+        "C113",
+        "C146"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.47448377963995253,
+        "redundancy_ratio": 0.4,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q02",
+      "N": 100,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C10"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C73",
+        "C146",
+        "C113",
+        "C186",
+        "C166",
+        "C183",
+        "C10",
+        "C110",
+        "C19",
+        "C30"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.2867542198660099,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q03",
+      "N": 100,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C24"
+      ],
+      "ev_recall": 0.25,
+      "total_claims": 3,
+      "supported_claims": 1,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C50",
+        "C166",
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C30",
+        "C143",
+        "C73",
+        "C118"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.34278836538941565,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q04",
+      "N": 100,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 1,
+      "retrieved_evidence_units": [
+        "C4"
+      ],
+      "ev_recall": 0.3333333333333333,
+      "total_claims": 3,
+      "supported_claims": 2,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C191",
+        "C178",
+        "C175",
+        "C107",
+        "C73",
+        "C4",
+        "C10",
+        "C2",
+        "C24",
+        "C30"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.4437701520766768,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    },
+    {
+      "q_id": "Q05",
+      "N": 100,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 3,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C200",
+        "C44",
+        "C70",
+        "C19",
+        "C194",
+        "C191",
+        "C73",
+        "C41",
+        "C47",
+        "C94"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.19832033991746972,
+        "redundancy_ratio": 0.6,
+        "unique_parent_count": 4,
+        "avg_chunks_per_parent": 2.5
+      }
+    },
+    {
+      "q_id": "Q06",
+      "N": 100,
+      "policy": "P3",
+      "policy_name": "Max 3 / Parent",
+      "total_required_evidence": 4,
+      "retrieved_evidence_count": 0,
+      "retrieved_evidence_units": [],
+      "ev_recall": 0.0,
+      "total_claims": 2,
+      "supported_claims": 0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "ev_completeness": 0.0,
+      "selected_chunk_ids": [
+        "C110",
+        "C146",
+        "C152",
+        "C197",
+        "C16",
+        "C183",
+        "C19",
+        "C73",
+        "C178",
+        "C55"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.17046504552880112,
+        "redundancy_ratio": 0.5,
+        "unique_parent_count": 5,
+        "avg_chunks_per_parent": 2.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Depth_N,MeanPoolSize,CandidateRecall_N,FinalRecall_15,EvidencePrecision_15,PrimaryPrecision_15,MRR,nDCG_10,nDCG_15,EvidenceCompleteness,ConversionRate,C15_InPool,C15_CERank,C15_FailureStage,C42_InPool,C42_CERank,C42_FailureStage
+20,55.17,0.850,0.700,0.156,0.067,0.369,0.485,0.518,0.333,0.824,False,null,Stage 1 — Candidate Generation Failure,False,null,Stage 1 — Candidate Generation Failure
+30,75.17,0.900,0.650,0.144,0.067,0.366,0.468,0.502,0.333,0.722,False,null,Stage 1 — Candidate Generation Failure,False,null,Stage 1 — Candidate Generation Failure
+50,104.83,0.900,0.600,0.133,0.067,0.364,0.468,0.489,0.167,0.667,False,null,Stage 1 — Candidate Generation Failure,False,null,Stage 1 — Candidate Generation Failure
+75,133.50,0.950,0.600,0.133,0.067,0.364,0.468,0.485,0.167,0.632,False,null,Stage 1 — Candidate Generation Failure,True,#45,Stage 2 — Reranking Failure
+100,149.50,1.000,0.600,0.133,0.067,0.364,0.468,0.485,0.167,0.600,True,#79,Stage 2 — Reranking Failure,True,#46,Stage 2 — Reranking Failure

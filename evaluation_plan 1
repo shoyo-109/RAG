@@ -1,0 +1,73 @@
+# RAG Evaluation Plan: Baseline Chunking, Retrieval Precision & Answer Grounding
+
+## 📌 Context & Objective
+Evaluating the baseline retrieval performance, chunk granularity, and answer grounding of the RAG pipeline on **`Documents/The Comedy of Errors document.pdf`** using topic-focused questions before performing chunker tuning.
+
+---
+
+## 🗺️ Evaluation Architecture & Framework
+
+```mermaid
+flowchart TD
+    Doc["The Comedy of Errors document.pdf"] --> Ingestion["Doc-Loader Ingestion Pipeline"]
+    Ingestion --> Granularity["1. Granularity Profiler<br/>(82 elements -> 203 semantic chunks)"]
+    Ingestion --> Storage["Qdrant Vector DB & BM25 Index"]
+    
+    Bench["Topic Benchmark<br/>(comedy_of_errors.json)"] --> Harness["test_rag.py Evaluation Harness"]
+    Storage --> Harness
+    
+    Harness --> RetrievalEval["2. Retrieval Recall: 100.0%"]
+    Harness --> GroundingEval["3. Answer Grounding: 80.0%"]
+    
+    RetrievalEval --> Diagnostics["4. Granularity Bottleneck & Tuning Strategy"]
+    GroundingEval --> Diagnostics
+```
+
+---
+
+## 📊 Baseline Empirical Metrics Summary
+
+| Metric | Score | Status / Note |
+| :--- | :---: | :--- |
+| **Retrieval Evidence Recall** | **100.0%** | All 5 topic questions successfully retrieved required ground-truth evidence in top-10 |
+| **Generation Concept Coverage** | **100.0%** | 100% coverage of target answer concept groups |
+| **Answer Groundedness Rate** | **80.0%** | 4/5 passed first-pass hallucination filter; 1 (Q3) resolved via self-healing rewrite |
+| **Overall Weighted Score** | **98.0%** | Weighted: 40% Evidence + 50% Answer Concept + 10% Groundedness |
+
+---
+
+## 📏 Chunk Granularity Baseline Profile
+
+* **Initial Ingestion Elements**: 82 `PARAGRAPH` document elements
+* **Semantic Vector Chunks**: 203 total chunks indexed
+* **Sub-Chunk Length Stats**:
+  * **Word Count**: Mean = 197.1 words, Median = 222.5 words, Range = 3 to 279 words
+  * **Character Length**: Mean = 1,089.4 chars, Median = 1,231.0 chars
+* **Parent Section Context Length**:
+  * **Mean Parent Length**: 18,426.5 characters (~3,300 words)
+  * **Max Parent Length**: 22,980 characters (~4,100 words)
+
+---
+
+## 🔎 Key Context Tracing & Deduplication Findings
+
+During evaluation tracing (`llm_context_trace`), a major retrieval efficiency bottleneck was revealed:
+
+| Question ID | Retrieved Top-K | Chunks Deduplicated | Chunks Passed to LLM | Bottleneck Cause |
+| :--- | :---: | :---: | :---: | :--- |
+| **Q1** (Aegeon Sentence) | 10 | **6 (60%)** | 3 | Duplicate mega-parent text (`parent_text` = ~18k chars) |
+| **Q2** (Mistaken Identity) | 10 | **6 (60%)** | 3 | Multiple top sub-chunks belong to identical Act section |
+| **Q3** (Origin of Twins) | 10 | **6 (60%)** | 3 | Triggered hallucination filter due to bloated parent context |
+| **Q4** (Arrest & Gold Chain) | 10 | **7 (70%)** | 2 | 70% of top-10 chunks dropped before prompt insertion |
+| **Q5** (Climax Resolution) | 10 | **4 (40%)** | 2 | 40% dropped due to shared parent block |
+
+> [!WARNING]
+> **Primary Bottleneck**: Because `parent_text` encompasses entire Acts/Scenes (18k–22k characters), 60% to 70% of retrieved top-10 vector candidates are discarded as duplicates during hierarchical context assembly. This restricts the variety of evidence reaching the LLM to only 2 or 3 mega-blocks.
+
+---
+
+## 💡 Recommendations for Chunker Tuning
+
+1. **Reduce Parent Context Scope**: Scope parent blocks to scene-level or bounded sliding windows (~2,000–3,000 chars / ~400 words) rather than full multi-page Acts.
+2. **Optimize Sub-Chunk Granularity**: Target smaller, highly focused sub-chunks (~400–600 characters / ~80–100 words) with 100-character overlap for sharper embedding similarity.
+3. **Refine Deduplication Logic**: Deduplicate by scene/sub-section ID rather than raw parent string matching, allowing diverse snippets across different acts to be included in the LLM prompt.

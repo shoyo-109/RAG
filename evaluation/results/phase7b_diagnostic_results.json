@@ -1,0 +1,1576 @@
+{
+  "timestamp": "2026-09-26T11:16:35.570072",
+  "model_metadata": {
+    "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "device": "cpu",
+    "vector_embedding_model": "all-MiniLM-L6-v2",
+    "llm_query_expansion_model": "nvidia/nemotron-3-ultra-550b-a55b",
+    "batch_size": 32,
+    "fusion_k": 60,
+    "fusion_weights": {
+      "vector": 0.8,
+      "bm25": 0.2
+    }
+  },
+  "query_definitions": [
+    {
+      "q_id": "Q01",
+      "original_query": "Who is Aegeon and what is his origin?",
+      "q2_multiqueries": [
+        "Aegeon character background Syracuse merchant",
+        "Aegeon family relationships Emilia twin sons",
+        "Aegeon arrest Ephesus law against Syracusans"
+      ],
+      "gen_latency_ms": 1200.0
+    },
+    {
+      "q_id": "Q02",
+      "original_query": "Why was Aegeon sentenced to death in Ephesus?",
+      "q2_multiqueries": [
+        "Aegeon Syracuse merchant background identity",
+        "Ephesus law death penalty Syracusans merchants",
+        "Aegeon arrest sentencing Ephesus Duke ransom"
+      ],
+      "gen_latency_ms": 1200.0
+    },
+    {
+      "q_id": "Q03",
+      "original_query": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "q2_multiqueries": [
+        "Antipholus of Syracuse visitor stranger in Ephesus",
+        "Adriana marriage to Antipholus of Ephesus twin brother",
+        "Mistaken identity Antipholus of Syracuse addressed by Adriana"
+      ],
+      "gen_latency_ms": 1200.0
+    },
+    {
+      "q_id": "Q04",
+      "original_query": "How did Aegeon come to have two pairs of identical twin sons and twin servants?",
+      "q2_multiqueries": [
+        "Aegeon twin sons birth circumstances Emilia",
+        "Aegeon family separation shipwreck storm",
+        "Aegeon twin servants Dromio purchase acquisition"
+      ],
+      "gen_latency_ms": 1200.0
+    },
+    {
+      "q_id": "Q05",
+      "original_query": "How do Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse?",
+      "q2_multiqueries": [
+        "Antipholus of Syracuse character background and his relationship to Dromio of Syracuse",
+        "Antipholus of Ephesus relationship to Dromio of Syracuse and the master-servant dynamic in Ephesus",
+        "Initial encounter scenes between Antipholus of Syracuse and Dromio of Syracuse versus Antipholus of Ephesus and Dromio of Syracuse"
+      ],
+      "gen_latency_ms": 1200.0
+    },
+    {
+      "q_id": "Q06",
+      "original_query": "Why is Antipholus of Ephesus arrested, and what role does Angelo the goldsmith play in the debt dispute?",
+      "q2_multiqueries": [
+        "Antipholus of Ephesus character background arrest debt",
+        "Angelo goldsmith relationship debt dispute legal claim",
+        "Arrest of Antipholus of Ephesus scene Angelo goldsmith demand payment"
+      ],
+      "gen_latency_ms": 1200.0
+    }
+  ],
+  "experiments": {
+    "N_20": {
+      "comparison_table": [
+        {
+          "condition": "Q0 + RRF (Baseline)",
+          "candidate_recall": 0.6,
+          "final_recall_at_10": 0.4,
+          "evidence_precision": 0.13333333333333333,
+          "primary_precision": 0.06666666666666667,
+          "mrr": 0.3071428571428571,
+          "ndcg10": 0.3989578764657267,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.4,
+          "redundancy": 5.666666666666667,
+          "reranker_recovery": "N/A",
+          "candidate_to_top10_conversion": 0.6666666666666667
+        },
+        {
+          "condition": "Q2 + RRF (Control)",
+          "candidate_recall": 0.75,
+          "final_recall_at_10": 0.4,
+          "evidence_precision": 0.13333333333333333,
+          "primary_precision": 0.08333333333333333,
+          "mrr": 0.13214285714285715,
+          "ndcg10": 0.3819971404737749,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.4,
+          "redundancy": 5.5,
+          "reranker_recovery": "N/A",
+          "candidate_to_top10_conversion": 0.5333333333333333
+        },
+        {
+          "condition": "Q2 + Cross-Encoder",
+          "candidate_recall": 0.75,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.4166666666666667,
+          "ndcg10": 0.5459379103747661,
+          "evidence_completeness": 0.3333333333333333,
+          "required_evidence_completeness": 0.6,
+          "redundancy": 5.166666666666667,
+          "reranker_recovery": 0.7142857142857143,
+          "candidate_to_top10_conversion": 0.7999999999999999
+        }
+      ],
+      "recovery_statistics": {
+        "cand_present_rrf_missed_count": 7,
+        "promoted_to_top10_count": 5,
+        "recovery_rate": 0.7142857142857143,
+        "candidate_present_rrf_missed_chunks": [
+          "C4",
+          "C10",
+          "C24",
+          "C6",
+          "C65",
+          "C12",
+          "C155"
+        ],
+        "promoted_chunks": [
+          "C4",
+          "C10",
+          "C24",
+          "C6",
+          "C12"
+        ]
+      },
+      "latencies": {
+        "mean_q2_gen_ms": 1200.0,
+        "mean_cand_retrieval_ms": 132.37480322519937,
+        "mean_rrf_ms": 0.0,
+        "mean_cross_encoder_ms": 1971.977988878886,
+        "mean_total_ms": 3304.3527921040854,
+        "mean_pairs_scored": 35.666666666666664
+      },
+      "gold_tracing_records": [
+        {
+          "q_id": "Q01",
+          "N": 20,
+          "gold_chunk": "C4",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 10,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            64,
+            6,
+            9
+          ],
+          "rrf_rank": 8,
+          "ce_score": -5.7596,
+          "ce_rank": 6,
+          "delta_rank": 2,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q01",
+          "N": 20,
+          "gold_chunk": "C2",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 5,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            30,
+            4,
+            7
+          ],
+          "rrf_rank": 7,
+          "ce_score": -5.3902,
+          "ce_rank": 5,
+          "delta_rank": 2,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q02",
+          "N": 20,
+          "gold_chunk": "C2",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 15,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            24,
+            1,
+            7
+          ],
+          "rrf_rank": 8,
+          "ce_score": -4.4425,
+          "ce_rank": 6,
+          "delta_rank": 2,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q02",
+          "N": 20,
+          "gold_chunk": "C4",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 18,
+          "bm25_rank": 1,
+          "subquery_ranks": [
+            51,
+            6,
+            39
+          ],
+          "rrf_rank": 21,
+          "ce_score": 0.8209,
+          "ce_rank": 1,
+          "delta_rank": 20,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q02",
+          "N": 20,
+          "gold_chunk": "C10",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 5,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            43,
+            3,
+            14
+          ],
+          "rrf_rank": 12,
+          "ce_score": 0.7015,
+          "ce_rank": 2,
+          "delta_rank": 10,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q02",
+          "N": 20,
+          "gold_chunk": "C12",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 57,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            10,
+            16,
+            62
+          ],
+          "rrf_rank": 5,
+          "ce_score": -10.5325,
+          "ce_rank": 23,
+          "delta_rank": -18,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "NO",
+          "recovery_category": "Case D — Demoted out of Top-10 by CE"
+        },
+        {
+          "q_id": "Q03",
+          "N": 20,
+          "gold_chunk": "C15",
+          "role": "PRIMARY",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q03",
+          "N": 20,
+          "gold_chunk": "C24",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 4,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            91,
+            4,
+            56
+          ],
+          "rrf_rank": 20,
+          "ce_score": 0.3794,
+          "ce_rank": 5,
+          "delta_rank": 15,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q03",
+          "N": 20,
+          "gold_chunk": "C29",
+          "role": "SUPPORTING",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q03",
+          "N": 20,
+          "gold_chunk": "C61",
+          "role": "SUPPORTING",
+          "in_candidate_pool": false,
+          "q0_sem_rank": 33,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            69,
+            59,
+            54
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q04",
+          "N": 20,
+          "gold_chunk": "C4",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 2,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            3,
+            8,
+            29
+          ],
+          "rrf_rank": 4,
+          "ce_score": -7.0485,
+          "ce_rank": 4,
+          "delta_rank": 0,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q04",
+          "N": 20,
+          "gold_chunk": "C6",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 21,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            17,
+            5,
+            "—"
+          ],
+          "rrf_rank": 11,
+          "ce_score": -10.9369,
+          "ce_rank": 10,
+          "delta_rank": 1,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q04",
+          "N": 20,
+          "gold_chunk": "C8",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 3,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            9,
+            2,
+            40
+          ],
+          "rrf_rank": 5,
+          "ce_score": -5.5233,
+          "ce_rank": 2,
+          "delta_rank": 3,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q05",
+          "N": 20,
+          "gold_chunk": "C42",
+          "role": "PRIMARY",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q05",
+          "N": 20,
+          "gold_chunk": "C65",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 12,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            52,
+            1,
+            28
+          ],
+          "rrf_rank": "—",
+          "ce_score": -0.559,
+          "ce_rank": 29,
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Case C — Rank unchanged / Unranked"
+        },
+        {
+          "q_id": "Q05",
+          "N": 20,
+          "gold_chunk": "C12",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 29,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            18,
+            35,
+            11
+          ],
+          "rrf_rank": 18,
+          "ce_score": 3.1343,
+          "ce_rank": 10,
+          "delta_rank": 8,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q06",
+          "N": 20,
+          "gold_chunk": "C105",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 1,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            14,
+            4,
+            1
+          ],
+          "rrf_rank": 9,
+          "ce_score": 0.0329,
+          "ce_rank": 2,
+          "delta_rank": 7,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q06",
+          "N": 20,
+          "gold_chunk": "C107",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 15,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            16,
+            5,
+            7
+          ],
+          "rrf_rank": 5,
+          "ce_score": -0.02,
+          "ce_rank": 3,
+          "delta_rank": 2,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q06",
+          "N": 20,
+          "gold_chunk": "C147",
+          "role": "SUPPORTING",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q06",
+          "N": 20,
+          "gold_chunk": "C155",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 16,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            67,
+            6,
+            35
+          ],
+          "rrf_rank": 16,
+          "ce_score": -11.3375,
+          "ce_rank": 29,
+          "delta_rank": -13,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Case D — Ranked worse than RRF"
+        }
+      ],
+      "per_question_comparison": [
+        {
+          "q_id": "Q01",
+          "N": 20,
+          "gold_evidence": [
+            "C4",
+            "C2"
+          ],
+          "in_cand_pool": [
+            "C4",
+            "C2"
+          ],
+          "top10_rrf": [
+            "C163",
+            "C191",
+            "C166",
+            "C186",
+            "C197",
+            "C189",
+            "C2",
+            "C4",
+            "C113",
+            "C70"
+          ],
+          "top10_ce": [
+            "C191",
+            "C8",
+            "C189",
+            "C186",
+            "C2",
+            "C4",
+            "C178",
+            "C10",
+            "C166",
+            "C171"
+          ],
+          "final_recall_rrf": 1.0,
+          "final_recall_ce": 1.0,
+          "delta_recall": 0.0
+        },
+        {
+          "q_id": "Q02",
+          "N": 20,
+          "gold_evidence": [
+            "C2",
+            "C4",
+            "C10",
+            "C12"
+          ],
+          "in_cand_pool": [
+            "C2",
+            "C4",
+            "C10",
+            "C12"
+          ],
+          "top10_rrf": [
+            "C113",
+            "C137",
+            "C149",
+            "C197",
+            "C12",
+            "C146",
+            "C178",
+            "C2",
+            "C191",
+            "C65"
+          ],
+          "top10_ce": [
+            "C4",
+            "C10",
+            "C178",
+            "C186",
+            "C189",
+            "C2",
+            "C197",
+            "C149",
+            "C191",
+            "C24"
+          ],
+          "final_recall_rrf": 0.5,
+          "final_recall_ce": 0.75,
+          "delta_recall": 0.25
+        },
+        {
+          "q_id": "Q03",
+          "N": 20,
+          "gold_evidence": [
+            "C15",
+            "C24",
+            "C29",
+            "C61"
+          ],
+          "in_cand_pool": [
+            "C24"
+          ],
+          "top10_rrf": [
+            "C194",
+            "C91",
+            "C140",
+            "C55",
+            "C99",
+            "C73",
+            "C191",
+            "C50",
+            "C197",
+            "C70"
+          ],
+          "top10_ce": [
+            "C194",
+            "C55",
+            "C99",
+            "C175",
+            "C24",
+            "C197",
+            "C83",
+            "C163",
+            "C88",
+            "C149"
+          ],
+          "final_recall_rrf": 0.0,
+          "final_recall_ce": 0.25,
+          "delta_recall": 0.25
+        },
+        {
+          "q_id": "Q04",
+          "N": 20,
+          "gold_evidence": [
+            "C4",
+            "C6",
+            "C8"
+          ],
+          "in_cand_pool": [
+            "C4",
+            "C6",
+            "C8"
+          ],
+          "top10_rrf": [
+            "C191",
+            "C166",
+            "C186",
+            "C4",
+            "C8",
+            "C113",
+            "C2",
+            "C189",
+            "C10",
+            "C163"
+          ],
+          "top10_ce": [
+            "C191",
+            "C8",
+            "C186",
+            "C4",
+            "C2",
+            "C10",
+            "C189",
+            "C178",
+            "C169",
+            "C6"
+          ],
+          "final_recall_rrf": 0.6666666666666666,
+          "final_recall_ce": 1.0,
+          "delta_recall": 0.33333333333333337
+        },
+        {
+          "q_id": "Q05",
+          "N": 20,
+          "gold_evidence": [
+            "C42",
+            "C65",
+            "C12"
+          ],
+          "in_cand_pool": [
+            "C65",
+            "C12"
+          ],
+          "top10_rrf": [
+            "C200",
+            "C38",
+            "C163",
+            "C44",
+            "C191",
+            "C70",
+            "C19",
+            "C194",
+            "C47",
+            "C91"
+          ],
+          "top10_ce": [
+            "C155",
+            "C50",
+            "C197",
+            "C200",
+            "C94",
+            "C70",
+            "C130",
+            "C135",
+            "C194",
+            "C12"
+          ],
+          "final_recall_rrf": 0.0,
+          "final_recall_ce": 0.3333333333333333,
+          "delta_recall": 0.3333333333333333
+        },
+        {
+          "q_id": "Q06",
+          "N": 20,
+          "gold_evidence": [
+            "C105",
+            "C107",
+            "C147",
+            "C155"
+          ],
+          "in_cand_pool": [
+            "C105",
+            "C107",
+            "C155"
+          ],
+          "top10_rrf": [
+            "C152",
+            "C110",
+            "C146",
+            "C197",
+            "C107",
+            "C137",
+            "C113",
+            "C140",
+            "C105",
+            "C65"
+          ],
+          "top10_ce": [
+            "C113",
+            "C105",
+            "C107",
+            "C116",
+            "C65",
+            "C178",
+            "C197",
+            "C110",
+            "C140",
+            "C137"
+          ],
+          "final_recall_rrf": 0.5,
+          "final_recall_ce": 0.5,
+          "delta_recall": 0.0
+        }
+      ]
+    },
+    "N_50": {
+      "comparison_table": [
+        {
+          "condition": "Q0 + RRF (Baseline)",
+          "candidate_recall": 0.75,
+          "final_recall_at_10": 0.2,
+          "evidence_precision": 0.06666666666666667,
+          "primary_precision": 0.03333333333333333,
+          "mrr": 0.18611111111111112,
+          "ndcg10": 0.26249885249999333,
+          "evidence_completeness": 0.0,
+          "required_evidence_completeness": 0.2,
+          "redundancy": 6.5,
+          "reranker_recovery": "N/A",
+          "candidate_to_top10_conversion": 0.26666666666666666
+        },
+        {
+          "condition": "Q2 + RRF (Control)",
+          "candidate_recall": 0.75,
+          "final_recall_at_10": 0.15,
+          "evidence_precision": 0.05000000000000001,
+          "primary_precision": 0.03333333333333333,
+          "mrr": 0.08928571428571429,
+          "ndcg10": 0.27819646587323543,
+          "evidence_completeness": 0.0,
+          "required_evidence_completeness": 0.15,
+          "redundancy": 5.5,
+          "reranker_recovery": "N/A",
+          "candidate_to_top10_conversion": 0.19999999999999998
+        },
+        {
+          "condition": "Q2 + Cross-Encoder",
+          "candidate_recall": 0.75,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "redundancy": 5.333333333333333,
+          "reranker_recovery": 0.75,
+          "candidate_to_top10_conversion": 0.7999999999999999
+        }
+      ],
+      "recovery_statistics": {
+        "cand_present_rrf_missed_count": 12,
+        "promoted_to_top10_count": 9,
+        "recovery_rate": 0.75,
+        "candidate_present_rrf_missed_chunks": [
+          "C4",
+          "C2",
+          "C2",
+          "C10",
+          "C12",
+          "C24",
+          "C6",
+          "C8",
+          "C65",
+          "C12",
+          "C105",
+          "C155"
+        ],
+        "promoted_chunks": [
+          "C4",
+          "C2",
+          "C2",
+          "C10",
+          "C24",
+          "C8",
+          "C12",
+          "C105",
+          "C155"
+        ]
+      },
+      "latencies": {
+        "mean_q2_gen_ms": 1200.0,
+        "mean_cand_retrieval_ms": 132.37480322519937,
+        "mean_rrf_ms": 0.0,
+        "mean_cross_encoder_ms": 2413.0863746007285,
+        "mean_total_ms": 3745.4611778259277,
+        "mean_pairs_scored": 54.666666666666664
+      },
+      "gold_tracing_records": [
+        {
+          "q_id": "Q01",
+          "N": 50,
+          "gold_chunk": "C4",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 10,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            64,
+            6,
+            9
+          ],
+          "rrf_rank": 19,
+          "ce_score": -5.7596,
+          "ce_rank": 7,
+          "delta_rank": 12,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q01",
+          "N": 50,
+          "gold_chunk": "C2",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 5,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            30,
+            4,
+            7
+          ],
+          "rrf_rank": 13,
+          "ce_score": -5.3902,
+          "ce_rank": 6,
+          "delta_rank": 7,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q02",
+          "N": 50,
+          "gold_chunk": "C2",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 15,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            24,
+            1,
+            7
+          ],
+          "rrf_rank": 20,
+          "ce_score": -4.4425,
+          "ce_rank": 4,
+          "delta_rank": 16,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q02",
+          "N": 50,
+          "gold_chunk": "C4",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 18,
+          "bm25_rank": 1,
+          "subquery_ranks": [
+            51,
+            6,
+            39
+          ],
+          "rrf_rank": 7,
+          "ce_score": 0.8209,
+          "ce_rank": 1,
+          "delta_rank": 6,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q02",
+          "N": 50,
+          "gold_chunk": "C10",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 5,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            43,
+            3,
+            14
+          ],
+          "rrf_rank": 18,
+          "ce_score": -4.8083,
+          "ce_rank": 5,
+          "delta_rank": 13,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q02",
+          "N": 50,
+          "gold_chunk": "C12",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 57,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            10,
+            16,
+            62
+          ],
+          "rrf_rank": 22,
+          "ce_score": -10.5325,
+          "ce_rank": 33,
+          "delta_rank": -11,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Case D — Ranked worse than RRF"
+        },
+        {
+          "q_id": "Q03",
+          "N": 50,
+          "gold_chunk": "C15",
+          "role": "PRIMARY",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q03",
+          "N": 50,
+          "gold_chunk": "C24",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 4,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            91,
+            4,
+            56
+          ],
+          "rrf_rank": 46,
+          "ce_score": 0.3794,
+          "ce_rank": 6,
+          "delta_rank": 40,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q03",
+          "N": 50,
+          "gold_chunk": "C29",
+          "role": "SUPPORTING",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q03",
+          "N": 50,
+          "gold_chunk": "C61",
+          "role": "SUPPORTING",
+          "in_candidate_pool": false,
+          "q0_sem_rank": 33,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            69,
+            59,
+            54
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q04",
+          "N": 50,
+          "gold_chunk": "C4",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 2,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            3,
+            8,
+            29
+          ],
+          "rrf_rank": 7,
+          "ce_score": -7.0485,
+          "ce_rank": 4,
+          "delta_rank": 3,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q04",
+          "N": 50,
+          "gold_chunk": "C6",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 21,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            17,
+            5,
+            "—"
+          ],
+          "rrf_rank": 28,
+          "ce_score": -10.9369,
+          "ce_rank": 11,
+          "delta_rank": 17,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Case B — Rank improved but outside Top-10"
+        },
+        {
+          "q_id": "Q04",
+          "N": 50,
+          "gold_chunk": "C8",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 3,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            9,
+            2,
+            40
+          ],
+          "rrf_rank": 19,
+          "ce_score": -5.5233,
+          "ce_rank": 2,
+          "delta_rank": 17,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q05",
+          "N": 50,
+          "gold_chunk": "C42",
+          "role": "PRIMARY",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q05",
+          "N": 50,
+          "gold_chunk": "C65",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 12,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            52,
+            1,
+            28
+          ],
+          "rrf_rank": 29,
+          "ce_score": -0.559,
+          "ce_rank": 33,
+          "delta_rank": -4,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Case D — Ranked worse than RRF"
+        },
+        {
+          "q_id": "Q05",
+          "N": 50,
+          "gold_chunk": "C12",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 29,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            18,
+            35,
+            11
+          ],
+          "rrf_rank": 25,
+          "ce_score": 3.1343,
+          "ce_rank": 10,
+          "delta_rank": 15,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q06",
+          "N": 50,
+          "gold_chunk": "C105",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 1,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            14,
+            4,
+            1
+          ],
+          "rrf_rank": 16,
+          "ce_score": 0.0329,
+          "ce_rank": 1,
+          "delta_rank": 15,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        },
+        {
+          "q_id": "Q06",
+          "N": 50,
+          "gold_chunk": "C107",
+          "role": "PRIMARY",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 15,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            16,
+            5,
+            7
+          ],
+          "rrf_rank": 4,
+          "ce_score": -2.2314,
+          "ce_rank": 6,
+          "delta_rank": -2,
+          "top10_after_rrf": "YES",
+          "top10_after_ce": "YES",
+          "recovery_category": "Retained in Top-10 (Both RRF & CE)"
+        },
+        {
+          "q_id": "Q06",
+          "N": 50,
+          "gold_chunk": "C147",
+          "role": "SUPPORTING",
+          "in_candidate_pool": false,
+          "q0_sem_rank": "—",
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            "—",
+            "—",
+            "—"
+          ],
+          "rrf_rank": "—",
+          "ce_score": "—",
+          "ce_rank": "—",
+          "delta_rank": "—",
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "NO",
+          "recovery_category": "Candidate-generation failure (Absent)"
+        },
+        {
+          "q_id": "Q06",
+          "N": 50,
+          "gold_chunk": "C155",
+          "role": "SUPPORTING",
+          "in_candidate_pool": true,
+          "q0_sem_rank": 16,
+          "bm25_rank": "—",
+          "subquery_ranks": [
+            67,
+            6,
+            35
+          ],
+          "rrf_rank": 20,
+          "ce_score": -2.2545,
+          "ce_rank": 7,
+          "delta_rank": 13,
+          "top10_after_rrf": "NO",
+          "top10_after_ce": "YES",
+          "recovery_category": "Case A — Promoted into Top-10"
+        }
+      ],
+      "per_question_comparison": [
+        {
+          "q_id": "Q01",
+          "N": 50,
+          "gold_evidence": [
+            "C4",
+            "C2"
+          ],
+          "in_cand_pool": [
+            "C4",
+            "C2"
+          ],
+          "top10_rrf": [
+            "C163",
+            "C143",
+            "C186",
+            "C191",
+            "C10",
+            "C110",
+            "C178",
+            "C73",
+            "C166",
+            "C200"
+          ],
+          "top10_ce": [
+            "C186",
+            "C10",
+            "C8",
+            "C189",
+            "C191",
+            "C2",
+            "C4",
+            "C166",
+            "C171",
+            "C163"
+          ],
+          "final_recall_rrf": 0.0,
+          "final_recall_ce": 1.0,
+          "delta_recall": 1.0
+        },
+        {
+          "q_id": "Q02",
+          "N": 50,
+          "gold_evidence": [
+            "C2",
+            "C4",
+            "C10",
+            "C12"
+          ],
+          "in_cand_pool": [
+            "C2",
+            "C4",
+            "C10",
+            "C12"
+          ],
+          "top10_rrf": [
+            "C186",
+            "C110",
+            "C113",
+            "C146",
+            "C197",
+            "C19",
+            "C4",
+            "C152",
+            "C137",
+            "C73"
+          ],
+          "top10_ce": [
+            "C4",
+            "C186",
+            "C189",
+            "C2",
+            "C10",
+            "C197",
+            "C149",
+            "C191",
+            "C178",
+            "C24"
+          ],
+          "final_recall_rrf": 0.25,
+          "final_recall_ce": 0.75,
+          "delta_recall": 0.5
+        },
+        {
+          "q_id": "Q03",
+          "N": 50,
+          "gold_evidence": [
+            "C15",
+            "C24",
+            "C29",
+            "C61"
+          ],
+          "in_cand_pool": [
+            "C24"
+          ],
+          "top10_rrf": [
+            "C194",
+            "C91",
+            "C140",
+            "C200",
+            "C73",
+            "C19",
+            "C197",
+            "C85",
+            "C55",
+            "C99"
+          ],
+          "top10_ce": [
+            "C194",
+            "C55",
+            "C99",
+            "C116",
+            "C175",
+            "C24",
+            "C197",
+            "C83",
+            "C163",
+            "C155"
+          ],
+          "final_recall_rrf": 0.0,
+          "final_recall_ce": 0.25,
+          "delta_recall": 0.25
+        },
+        {
+          "q_id": "Q04",
+          "N": 50,
+          "gold_evidence": [
+            "C4",
+            "C6",
+            "C8"
+          ],
+          "in_cand_pool": [
+            "C4",
+            "C6",
+            "C8"
+          ],
+          "top10_rrf": [
+            "C191",
+            "C27",
+            "C137",
+            "C186",
+            "C166",
+            "C163",
+            "C4",
+            "C73",
+            "C200",
+            "C113"
+          ],
+          "top10_ce": [
+            "C191",
+            "C8",
+            "C186",
+            "C4",
+            "C189",
+            "C178",
+            "C2",
+            "C169",
+            "C10",
+            "C181"
+          ],
+          "final_recall_rrf": 0.3333333333333333,
+          "final_recall_ce": 0.6666666666666666,
+          "delta_recall": 0.3333333333333333
+        },
+        {
+          "q_id": "Q05",
+          "N": 50,
+          "gold_evidence": [
+            "C42",
+            "C65",
+            "C12"
+          ],
+          "in_cand_pool": [
+            "C65",
+            "C12"
+          ],
+          "top10_rrf": [
+            "C200",
+            "C44",
+            "C38",
+            "C194",
+            "C163",
+            "C19",
+            "C55",
+            "C70",
+            "C47",
+            "C91"
+          ],
+          "top10_ce": [
+            "C155",
+            "C50",
+            "C197",
+            "C116",
+            "C200",
+            "C94",
+            "C132",
+            "C130",
+            "C135",
+            "C12"
+          ],
+          "final_recall_rrf": 0.0,
+          "final_recall_ce": 0.3333333333333333,
+          "delta_recall": 0.3333333333333333
+        },
+        {
+          "q_id": "Q06",
+          "N": 50,
+          "gold_evidence": [
+            "C105",
+            "C107",
+            "C147",
+            "C155"
+          ],
+          "in_cand_pool": [
+            "C105",
+            "C107",
+            "C155"
+          ],
+          "top10_rrf": [
+            "C152",
+            "C110",
+            "C146",
+            "C107",
+            "C116",
+            "C137",
+            "C197",
+            "C113",
+            "C16",
+            "C178"
+          ],
+          "top10_ce": [
+            "C105",
+            "C116",
+            "C113",
+            "C65",
+            "C178",
+            "C107",
+            "C155",
+            "C194",
+            "C102",
+            "C197"
+          ],
+          "final_recall_rrf": 0.25,
+          "final_recall_ce": 0.75,
+          "delta_recall": 0.5
+        }
+      ]
+    }
+  }
+}

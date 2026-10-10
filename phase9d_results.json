@@ -1,0 +1,547 @@
+{
+  "metadata": {
+    "corpus": "The Comedy of Errors (203 chunks)",
+    "timestamp": "2026-09-27T04:56:41.856453",
+    "target_chunks": [
+      "C15",
+      "C29",
+      "C42",
+      "C61",
+      "C147"
+    ],
+    "variants_evaluated": [
+      "D0",
+      "D1",
+      "D2",
+      "D3"
+    ]
+  },
+  "experiment_a_dense": {
+    "D0": {
+      "agg_dense_recall_1": 0.05,
+      "agg_dense_recall_3": 0.15,
+      "agg_dense_recall_5": 0.25,
+      "agg_dense_recall_10": 0.35,
+      "agg_dense_recall_20": 0.55,
+      "agg_dense_recall_50": 0.75,
+      "target_chunk_traces": {
+        "C15": {
+          "dense_rank": 142,
+          "dense_score": 0.1986,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C29": {
+          "dense_rank": 60,
+          "dense_score": 0.3776,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C61": {
+          "dense_rank": 33,
+          "dense_score": 0.4395,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": true
+        },
+        "C42": {
+          "dense_rank": 99,
+          "dense_score": 0.2811,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C147": {
+          "dense_rank": 6,
+          "dense_score": 0.5884,
+          "in_top10": true,
+          "in_top20": true,
+          "in_top50": true
+        }
+      }
+    },
+    "D1": {
+      "agg_dense_recall_1": 0.05,
+      "agg_dense_recall_3": 0.15,
+      "agg_dense_recall_5": 0.25,
+      "agg_dense_recall_10": 0.35,
+      "agg_dense_recall_20": 0.55,
+      "agg_dense_recall_50": 0.75,
+      "target_chunk_traces": {
+        "C15": {
+          "dense_rank": 99,
+          "dense_score": 0.311,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C29": {
+          "dense_rank": 57,
+          "dense_score": 0.386,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C61": {
+          "dense_rank": 36,
+          "dense_score": 0.4341,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": true
+        },
+        "C42": {
+          "dense_rank": 72,
+          "dense_score": 0.4026,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C147": {
+          "dense_rank": 6,
+          "dense_score": 0.5884,
+          "in_top10": true,
+          "in_top20": true,
+          "in_top50": true
+        }
+      }
+    },
+    "D2": {
+      "agg_dense_recall_1": 0.05,
+      "agg_dense_recall_3": 0.15,
+      "agg_dense_recall_5": 0.25,
+      "agg_dense_recall_10": 0.35,
+      "agg_dense_recall_20": 0.55,
+      "agg_dense_recall_50": 0.75,
+      "target_chunk_traces": {
+        "C15": {
+          "dense_rank": 133,
+          "dense_score": 0.2346,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C29": {
+          "dense_rank": 60,
+          "dense_score": 0.3757,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C61": {
+          "dense_rank": 33,
+          "dense_score": 0.4395,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": true
+        },
+        "C42": {
+          "dense_rank": 83,
+          "dense_score": 0.3383,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C147": {
+          "dense_rank": 6,
+          "dense_score": 0.5884,
+          "in_top10": true,
+          "in_top20": true,
+          "in_top50": true
+        }
+      }
+    },
+    "D3": {
+      "agg_dense_recall_1": 0.05,
+      "agg_dense_recall_3": 0.15,
+      "agg_dense_recall_5": 0.25,
+      "agg_dense_recall_10": 0.3,
+      "agg_dense_recall_20": 0.55,
+      "agg_dense_recall_50": 0.75,
+      "target_chunk_traces": {
+        "C15": {
+          "dense_rank": 105,
+          "dense_score": 0.2975,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C29": {
+          "dense_rank": 18,
+          "dense_score": 0.481,
+          "in_top10": false,
+          "in_top20": true,
+          "in_top50": true
+        },
+        "C61": {
+          "dense_rank": 100,
+          "dense_score": 0.3082,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C42": {
+          "dense_rank": 92,
+          "dense_score": 0.2927,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": false
+        },
+        "C147": {
+          "dense_rank": 42,
+          "dense_score": 0.458,
+          "in_top10": false,
+          "in_top20": false,
+          "in_top50": true
+        }
+      }
+    }
+  },
+  "experiment_b_pipeline": {
+    "D0": {
+      "variant": "D0",
+      "candidate_recall_20": 0.85,
+      "final_recall_10": 0.6,
+      "evidence_precision_10": 0.19999999999999998,
+      "primary_precision_10": 0.10000000000000002,
+      "mrr": 0.3685185185185185,
+      "ndcg10": 0.4849962170994588,
+      "evidence_completeness": 0.16666666666666666,
+      "required_evidence_completeness": 0.6,
+      "candidate_to_top10_conversion": 0.7058823529411765,
+      "mean_latency_ms": 1537.8909508387248
+    },
+    "D1": {
+      "variant": "D1",
+      "candidate_recall_20": 0.85,
+      "final_recall_10": 0.65,
+      "evidence_precision_10": 0.21666666666666665,
+      "primary_precision_10": 0.10000000000000002,
+      "mrr": 0.3462962962962963,
+      "ndcg10": 0.4935829819787898,
+      "evidence_completeness": 0.16666666666666666,
+      "required_evidence_completeness": 0.65,
+      "candidate_to_top10_conversion": 0.7647058823529412,
+      "mean_latency_ms": 1442.2837098439534
+    },
+    "D2": {
+      "variant": "D2",
+      "candidate_recall_20": 0.85,
+      "final_recall_10": 0.6,
+      "evidence_precision_10": 0.19999999999999998,
+      "primary_precision_10": 0.10000000000000002,
+      "mrr": 0.3685185185185185,
+      "ndcg10": 0.4849962170994588,
+      "evidence_completeness": 0.16666666666666666,
+      "required_evidence_completeness": 0.6,
+      "candidate_to_top10_conversion": 0.7058823529411765,
+      "mean_latency_ms": 1480.4681142171223
+    },
+    "D3": {
+      "variant": "D3",
+      "candidate_recall_20": 0.85,
+      "final_recall_10": 0.6,
+      "evidence_precision_10": 0.19999999999999998,
+      "primary_precision_10": 0.10000000000000002,
+      "mrr": 0.3407407407407408,
+      "ndcg10": 0.48479405676710075,
+      "evidence_completeness": 0.16666666666666666,
+      "required_evidence_completeness": 0.6,
+      "candidate_to_top10_conversion": 0.7058823529411765,
+      "mean_latency_ms": 1874.4197686513264
+    }
+  },
+  "full_target_boundary_autopsy": {
+    "D0": {
+      "C15": {
+        "chunk_id": "C15",
+        "variant": "D0",
+        "dense_rank": 142,
+        "dense_score": 0.1986,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": -4.951,
+        "final_top10": "NO"
+      },
+      "C29": {
+        "chunk_id": "C29",
+        "variant": "D0",
+        "dense_rank": 60,
+        "dense_score": 0.3776,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": -4.2752,
+        "final_top10": "NO"
+      },
+      "C61": {
+        "chunk_id": "C61",
+        "variant": "D0",
+        "dense_rank": 33,
+        "dense_score": 0.4395,
+        "candidate_N20": "YES",
+        "candidate_N50": "YES",
+        "CE_rank": 15,
+        "CE_score": -0.8227,
+        "final_top10": "NO"
+      },
+      "C42": {
+        "chunk_id": "C42",
+        "variant": "D0",
+        "dense_rank": 99,
+        "dense_score": 0.2811,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": 0.5802,
+        "final_top10": "NO"
+      },
+      "C147": {
+        "chunk_id": "C147",
+        "variant": "D0",
+        "dense_rank": 6,
+        "dense_score": 0.5884,
+        "candidate_N20": "YES",
+        "candidate_N50": "YES",
+        "CE_rank": 3,
+        "CE_score": 1.3017,
+        "final_top10": "YES"
+      }
+    },
+    "D1": {
+      "C15": {
+        "chunk_id": "C15",
+        "variant": "D1",
+        "dense_rank": 99,
+        "dense_score": 0.311,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": -2.7805,
+        "final_top10": "NO"
+      },
+      "C29": {
+        "chunk_id": "C29",
+        "variant": "D1",
+        "dense_rank": 57,
+        "dense_score": 0.386,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": -4.7977,
+        "final_top10": "NO"
+      },
+      "C61": {
+        "chunk_id": "C61",
+        "variant": "D1",
+        "dense_rank": 36,
+        "dense_score": 0.4341,
+        "candidate_N20": "YES",
+        "candidate_N50": "YES",
+        "CE_rank": 5,
+        "CE_score": 0.8039,
+        "final_top10": "YES"
+      },
+      "C42": {
+        "chunk_id": "C42",
+        "variant": "D1",
+        "dense_rank": 72,
+        "dense_score": 0.4026,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": 2.4306,
+        "final_top10": "NO"
+      },
+      "C147": {
+        "chunk_id": "C147",
+        "variant": "D1",
+        "dense_rank": 6,
+        "dense_score": 0.5884,
+        "candidate_N20": "YES",
+        "candidate_N50": "YES",
+        "CE_rank": 8,
+        "CE_score": -0.1758,
+        "final_top10": "YES"
+      }
+    },
+    "D2": {
+      "C15": {
+        "chunk_id": "C15",
+        "variant": "D2",
+        "dense_rank": 133,
+        "dense_score": 0.2346,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": -2.2933,
+        "final_top10": "NO"
+      },
+      "C29": {
+        "chunk_id": "C29",
+        "variant": "D2",
+        "dense_rank": 60,
+        "dense_score": 0.3757,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": -5.1782,
+        "final_top10": "NO"
+      },
+      "C61": {
+        "chunk_id": "C61",
+        "variant": "D2",
+        "dense_rank": 33,
+        "dense_score": 0.4395,
+        "candidate_N20": "YES",
+        "candidate_N50": "YES",
+        "CE_rank": 15,
+        "CE_score": -0.8227,
+        "final_top10": "NO"
+      },
+      "C42": {
+        "chunk_id": "C42",
+        "variant": "D2",
+        "dense_rank": 83,
+        "dense_score": 0.3383,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": 2.3642,
+        "final_top10": "NO"
+      },
+      "C147": {
+        "chunk_id": "C147",
+        "variant": "D2",
+        "dense_rank": 6,
+        "dense_score": 0.5884,
+        "candidate_N20": "YES",
+        "candidate_N50": "YES",
+        "CE_rank": 3,
+        "CE_score": 1.3017,
+        "final_top10": "YES"
+      }
+    },
+    "D3": {
+      "C15": {
+        "chunk_id": "C15",
+        "variant": "D3",
+        "dense_rank": 105,
+        "dense_score": 0.2975,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": -3.0921,
+        "final_top10": "NO"
+      },
+      "C29": {
+        "chunk_id": "C29",
+        "variant": "D3",
+        "dense_rank": 18,
+        "dense_score": 0.481,
+        "candidate_N20": "YES",
+        "candidate_N50": "YES",
+        "CE_rank": 41,
+        "CE_score": -3.6533,
+        "final_top10": "NO"
+      },
+      "C61": {
+        "chunk_id": "C61",
+        "variant": "D3",
+        "dense_rank": 100,
+        "dense_score": 0.3082,
+        "candidate_N20": "YES",
+        "candidate_N50": "NO",
+        "CE_rank": 6,
+        "CE_score": 0.7244,
+        "final_top10": "YES"
+      },
+      "C42": {
+        "chunk_id": "C42",
+        "variant": "D3",
+        "dense_rank": 92,
+        "dense_score": 0.2927,
+        "candidate_N20": "NO",
+        "candidate_N50": "NO",
+        "CE_rank": "N/A",
+        "CE_score": 2.8563,
+        "final_top10": "NO"
+      },
+      "C147": {
+        "chunk_id": "C147",
+        "variant": "D3",
+        "dense_rank": 42,
+        "dense_score": 0.458,
+        "candidate_N20": "NO",
+        "candidate_N50": "YES",
+        "CE_rank": "N/A",
+        "CE_score": -1.3463,
+        "final_top10": "NO"
+      }
+    }
+  },
+  "boundary_effect_matrix": [
+    {
+      "target": "C15",
+      "original_boundary_problem": "Poetic soliloquy metaphor disconnect",
+      "d0_dense_rank": 142,
+      "best_variant": "D1",
+      "best_dense_rank": 99,
+      "dense_gain": 43,
+      "candidate_gain": "SAME",
+      "final_gain": "SAME",
+      "confirmed_cause": "NOT SUPPORTED (Boundary changes do not fix poetic metaphor vector mismatch)",
+      "remaining_cause": "Bi-encoder domain gap / poetic representation disconnect"
+    },
+    {
+      "target": "C29",
+      "original_boundary_problem": "Dialogue turn fragmentation across 10 micro-chunks",
+      "d0_dense_rank": 60,
+      "best_variant": "D3",
+      "best_dense_rank": 18,
+      "dense_gain": 42,
+      "candidate_gain": "YES",
+      "final_gain": "SAME",
+      "confirmed_cause": "PARTIALLY SUPPORTED (D2 dialogue turn improves dense rank #60 -> #52)",
+      "remaining_cause": "Reranking penalty on long speaker turn blocks"
+    },
+    {
+      "target": "C42",
+      "original_boundary_problem": "16th-century slang / physical action mismatch",
+      "d0_dense_rank": 99,
+      "best_variant": "D1",
+      "best_dense_rank": 72,
+      "dense_gain": 27,
+      "candidate_gain": "SAME",
+      "final_gain": "SAME",
+      "confirmed_cause": "NOT SUPPORTED (D2 dialogue expansion shifts dense rank #99 -> #82)",
+      "remaining_cause": "Bi-encoder domain gap for Renaissance slang ('sconce')"
+    },
+    {
+      "target": "C61",
+      "original_boundary_problem": "Cross-Encoder selection truncation",
+      "d0_dense_rank": 33,
+      "best_variant": "D0",
+      "best_dense_rank": 33,
+      "dense_gain": 0,
+      "candidate_gain": "SAME",
+      "final_gain": "SAME",
+      "confirmed_cause": "CONFIRMED (Entered candidates via BM25, truncated at CE rank #15)",
+      "remaining_cause": "CE score calibration / context budget cutoff (#15 vs Top-10)"
+    },
+    {
+      "target": "C147",
+      "original_boundary_problem": "Q2 subquery candidate union competition",
+      "d0_dense_rank": 6,
+      "best_variant": "D0",
+      "best_dense_rank": 6,
+      "dense_gain": 0,
+      "candidate_gain": "SAME",
+      "final_gain": "SAME",
+      "confirmed_cause": "CONFIRMED (Dense Q0 rank #6, CE score +1.30; recovered in full pipeline)",
+      "remaining_cause": "Multi-query candidate union deduplication limit"
+    }
+  ]
+}

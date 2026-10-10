@@ -1,0 +1,6 @@
+representation,mean_q_evidence_sim,mean_anchor_evidence_sim,dense_reachable_count,dense_reachable_rate
+B0,0.416,0.5863,11,0.55
+B1,0.438,0.687,8,0.4
+B2,0.4247,0.5887,8,0.4
+B3,0.4297,0.8533,11,0.55
+Distributed_N3,0.4007,0.5875,5,0.25

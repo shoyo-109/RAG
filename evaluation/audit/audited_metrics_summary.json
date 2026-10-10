@@ -1,0 +1,696 @@
+{
+  "semantic": {
+    "Q01": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.5,
+        "recall_10": 1.0
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.18339912323981486,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.8,
+      "gold_found": [],
+      "total_gold": 2,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q02": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.25,
+        "recall_10": 0.25
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.2,
+      "ndcg_10": 0.24238548336677668,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [
+        "C10"
+      ],
+      "total_gold": 4,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "SUPPORTING",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q03": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.25,
+        "recall_5": 0.5,
+        "recall_10": 0.5
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.3333333333333333,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.3333333333333333,
+      "ndcg_10": 0.2475823039202298,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [
+        "C50"
+      ],
+      "total_gold": 4,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "SUPPORTING",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q04": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.6666666666666666,
+        "recall_5": 0.6666666666666666,
+        "recall_10": 0.6666666666666666
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.3333333333333333,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.3333333333333333,
+        "primary_precision_5": 0.2,
+        "primary_precision_10": 0.1
+      },
+      "mrr": 0.5,
+      "ndcg_10": 0.5626193975833275,
+      "completeness": 1.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [
+        "C4"
+      ],
+      "total_gold": 3,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "PRIMARY",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "IRRELEVANT",
+        "DUPLICATE"
+      ]
+    },
+    "Q05": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.25
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.12719261404721655,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.7,
+      "gold_found": [],
+      "total_gold": 4,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q06": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.2,
+        "recall_3": 0.2,
+        "recall_5": 0.4,
+        "recall_10": 0.4
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 1.0,
+        "evidence_precision_3": 0.3333333333333333,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 1.0,
+        "primary_precision_3": 0.3333333333333333,
+        "primary_precision_5": 0.2,
+        "primary_precision_10": 0.1
+      },
+      "mrr": 1.0,
+      "ndcg_10": 0.4681262386903843,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.7,
+      "gold_found": [
+        "C105"
+      ],
+      "total_gold": 5,
+      "classifications": [
+        "PRIMARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    }
+  },
+  "bm25": {
+    "Q01": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.0
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.04350185255637837,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.4,
+      "gold_found": [],
+      "total_gold": 2,
+      "classifications": [
+        "IRRELEVANT",
+        "DUPLICATE",
+        "DUPLICATE",
+        "IRRELEVANT",
+        "RELEVANT_BUT_UNNECESSARY"
+      ]
+    },
+    "Q02": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.25,
+        "recall_3": 0.25,
+        "recall_5": 0.25,
+        "recall_10": 0.25
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 1.0,
+        "evidence_precision_3": 0.3333333333333333,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 1.0,
+      "ndcg_10": 0.2936011740683946,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.2,
+      "gold_found": [
+        "C4"
+      ],
+      "total_gold": 4,
+      "classifications": [
+        "SUPPORTING",
+        "IRRELEVANT",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "IRRELEVANT"
+      ]
+    },
+    "Q03": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.0
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.07959508273217593,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.4,
+      "gold_found": [],
+      "total_gold": 4,
+      "classifications": [
+        "IRRELEVANT",
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q04": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.0
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.2050392536704803,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.4,
+      "gold_found": [],
+      "total_gold": 3,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q05": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.0
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.06279298996581945,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.4,
+      "gold_found": [],
+      "total_gold": 4,
+      "classifications": [
+        "IRRELEVANT",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY"
+      ]
+    },
+    "Q06": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.0
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.06112041115863617,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.4,
+      "gold_found": [],
+      "total_gold": 5,
+      "classifications": [
+        "IRRELEVANT",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE"
+      ]
+    }
+  },
+  "rrf": {
+    "Q01": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.5
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.2011815161550527,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [],
+      "total_gold": 2,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "IRRELEVANT",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY"
+      ]
+    },
+    "Q02": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.25,
+        "recall_5": 0.25,
+        "recall_10": 0.5
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.3333333333333333,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.3333333333333333,
+      "ndcg_10": 0.15536953434151757,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [
+        "C4"
+      ],
+      "total_gold": 4,
+      "classifications": [
+        "IRRELEVANT",
+        "DUPLICATE",
+        "SUPPORTING",
+        "DUPLICATE",
+        "IRRELEVANT",
+        "DUPLICATE",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q03": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.25,
+        "recall_10": 0.5
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.2,
+      "ndcg_10": 0.19646554664889013,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [
+        "C50"
+      ],
+      "total_gold": 4,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "IRRELEVANT",
+        "DUPLICATE",
+        "SUPPORTING",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q04": {
+      "hit_10": 1.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.3333333333333333,
+        "recall_5": 0.6666666666666666,
+        "recall_10": 0.6666666666666666
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.3333333333333333,
+        "evidence_precision_5": 0.2,
+        "evidence_precision_10": 0.1
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.3333333333333333,
+        "primary_precision_5": 0.2,
+        "primary_precision_10": 0.1
+      },
+      "mrr": 0.5,
+      "ndcg_10": 0.6065129316209639,
+      "completeness": 1.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [
+        "C4"
+      ],
+      "total_gold": 3,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "PRIMARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q05": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.0,
+        "recall_5": 0.0,
+        "recall_10": 0.25
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.07798420162057394,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [],
+      "total_gold": 4,
+      "classifications": [
+        "IRRELEVANT",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE"
+      ]
+    },
+    "Q06": {
+      "hit_10": 0.0,
+      "recalls": {
+        "recall_1": 0.0,
+        "recall_3": 0.2,
+        "recall_5": 0.2,
+        "recall_10": 0.4
+      },
+      "evidence_precisions": {
+        "evidence_precision_1": 0.0,
+        "evidence_precision_3": 0.0,
+        "evidence_precision_5": 0.0,
+        "evidence_precision_10": 0.0
+      },
+      "primary_precisions": {
+        "primary_precision_1": 0.0,
+        "primary_precision_3": 0.0,
+        "primary_precision_5": 0.0,
+        "primary_precision_10": 0.0
+      },
+      "mrr": 0.0,
+      "ndcg_10": 0.09648847572507732,
+      "completeness": 0.0,
+      "redundancy_ratio": 0.6,
+      "gold_found": [],
+      "total_gold": 5,
+      "classifications": [
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "IRRELEVANT",
+        "RELEVANT_BUT_UNNECESSARY",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "DUPLICATE",
+        "RELEVANT_BUT_UNNECESSARY"
+      ]
+    }
+  }
+}

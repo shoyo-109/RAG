@@ -1,0 +1,2176 @@
+{
+  "timestamp": "2026-09-26T12:44:40.592343",
+  "model_metadata": {
+    "cross_encoder_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "device": "cpu",
+    "vector_embedding_model": "all-MiniLM-L6-v2",
+    "unreachable_diagnostic_chunks": [
+      "C15",
+      "C29",
+      "C61",
+      "C42",
+      "C147"
+    ],
+    "batch_size": 32
+  },
+  "experiments": {
+    "N_20": {
+      "comparison_table": [
+        {
+          "condition_id": "Q2_CE_Control",
+          "condition_name": "Q2 + CE Control",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.0,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.4166666666666667,
+          "ndcg10": 0.5459379103747661,
+          "evidence_completeness": 0.3333333333333333,
+          "required_evidence_completeness": 0.6,
+          "new_gold_evidence_recovered_count": 0,
+          "total_new_candidates_added": 0,
+          "expansion_recovery_efficiency": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 35.666666666666664,
+          "mean_ce_latency_ms": 1951.2227773666382,
+          "mean_total_latency_ms": 3284.926128387451
+        },
+        {
+          "condition_id": "Q2_Parent_CE",
+          "condition_name": "Q2 + Parent Exp + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.8,
+          "candidate_expansion_factor": 2.27,
+          "final_recall_at_10": 0.5,
+          "evidence_precision": 0.16666666666666666,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.39444444444444443,
+          "ndcg10": 0.5191126273916523,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.5,
+          "new_gold_evidence_recovered_count": 1,
+          "total_new_candidates_added": 272,
+          "expansion_recovery_efficiency": 0.003676470588235294,
+          "candidate_to_top10_conversion": 0.625,
+          "mean_ce_pairs": 81.0,
+          "mean_ce_latency_ms": 3030.600070953369,
+          "mean_total_latency_ms": 4364.803187052409
+        },
+        {
+          "condition_id": "Q2_Neighbor_1_CE",
+          "condition_name": "Q2 + Neighbor ±1 + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.11,
+          "final_recall_at_10": 0.55,
+          "evidence_precision": 0.18333333333333335,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.4166666666666667,
+          "ndcg10": 0.5320309206790078,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.55,
+          "new_gold_evidence_recovered_count": 0,
+          "total_new_candidates_added": 23,
+          "expansion_recovery_efficiency": 0.0,
+          "candidate_to_top10_conversion": 0.7333333333333334,
+          "mean_ce_pairs": 39.5,
+          "mean_ce_latency_ms": 1973.3649094899495,
+          "mean_total_latency_ms": 3307.5677076975503
+        },
+        {
+          "condition_id": "Q2_Neighbor_2_CE",
+          "condition_name": "Q2 + Neighbor ±2 + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.41,
+          "final_recall_at_10": 0.55,
+          "evidence_precision": 0.18333333333333335,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.4166666666666667,
+          "ndcg10": 0.5320309206790078,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.55,
+          "new_gold_evidence_recovered_count": 0,
+          "total_new_candidates_added": 88,
+          "expansion_recovery_efficiency": 0.0,
+          "candidate_to_top10_conversion": 0.7333333333333334,
+          "mean_ce_pairs": 50.333333333333336,
+          "mean_ce_latency_ms": 2146.7663447062173,
+          "mean_total_latency_ms": 3480.63694636027
+        },
+        {
+          "condition_id": "Q2_Combined_CE",
+          "condition_name": "Q2 + Parent + Neighbor ±1 + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.8,
+          "candidate_expansion_factor": 2.27,
+          "final_recall_at_10": 0.5,
+          "evidence_precision": 0.16666666666666666,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.39444444444444443,
+          "ndcg10": 0.5191126273916523,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.5,
+          "new_gold_evidence_recovered_count": 1,
+          "total_new_candidates_added": 272,
+          "expansion_recovery_efficiency": 0.003676470588235294,
+          "candidate_to_top10_conversion": 0.625,
+          "mean_ce_pairs": 81.0,
+          "mean_ce_latency_ms": 3002.9320319493613,
+          "mean_total_latency_ms": 4337.135108311971
+        }
+      ],
+      "unreachable_tracking": {
+        "Q2_CE_Control": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Parent_CE": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": true,
+            "recovered_by_expansion": true,
+            "expansion_provenance": {
+              "chunk_id": "C61",
+              "source": "parent",
+              "source_chunk_id": "C55",
+              "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+              "distance_from_seed": 0
+            },
+            "ce_score": -0.8227,
+            "ce_rank": 16,
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Neighbor_1_CE": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Neighbor_2_CE": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Combined_CE": [
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": true,
+            "recovered_by_expansion": true,
+            "expansion_provenance": {
+              "chunk_id": "C61",
+              "source": "parent",
+              "source_chunk_id": "C55",
+              "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+              "distance_from_seed": 0
+            },
+            "ce_score": -0.8227,
+            "ce_rank": 16,
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ]
+      },
+      "per_question_analysis": {
+        "Q2_CE_Control": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88",
+              "C149"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C178",
+              "C169",
+              "C6"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C200",
+              "C94",
+              "C70",
+              "C130",
+              "C135",
+              "C194",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C178",
+              "C197",
+              "C110",
+              "C140",
+              "C137"
+            ]
+          }
+        ],
+        "Q2_Parent_CE": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.5,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [
+              "C61"
+            ],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C104",
+              "C64",
+              "C160"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C70",
+              "C132",
+              "C130",
+              "C135"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C81",
+              "C102",
+              "C178",
+              "C197",
+              "C76"
+            ]
+          }
+        ],
+        "Q2_Neighbor_1_CE": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88",
+              "C149"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C104",
+              "C160",
+              "C23"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C200",
+              "C94",
+              "C70",
+              "C130",
+              "C135",
+              "C194",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C178",
+              "C197",
+              "C110",
+              "C140",
+              "C137"
+            ]
+          }
+        ],
+        "Q2_Neighbor_2_CE": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88",
+              "C149"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C53",
+              "C65",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C200",
+              "C94",
+              "C70",
+              "C130",
+              "C135",
+              "C194",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C178",
+              "C197",
+              "C110",
+              "C140",
+              "C137"
+            ]
+          }
+        ],
+        "Q2_Combined_CE": [
+          {
+            "q_id": "Q01",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C189",
+              "C186",
+              "C2",
+              "C4",
+              "C178",
+              "C10",
+              "C166",
+              "C171"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C4",
+              "C10",
+              "C178",
+              "C186",
+              "C189",
+              "C2",
+              "C197",
+              "C149",
+              "C191",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 20,
+            "base_recall": 0.25,
+            "exp_recall": 0.5,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [
+              "C61"
+            ],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C88"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 20,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C2",
+              "C10",
+              "C189",
+              "C104",
+              "C64",
+              "C160"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 20,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C70",
+              "C132",
+              "C130",
+              "C135"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 20,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.5,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C113",
+              "C105",
+              "C107",
+              "C116",
+              "C65",
+              "C81",
+              "C102",
+              "C178",
+              "C197",
+              "C76"
+            ]
+          }
+        ]
+      }
+    },
+    "N_50": {
+      "comparison_table": [
+        {
+          "condition_id": "Q2_CE_Control",
+          "condition_name": "Q2 + CE Control",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.0,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_evidence_recovered_count": 0,
+          "total_new_candidates_added": 0,
+          "expansion_recovery_efficiency": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 54.666666666666664,
+          "mean_ce_latency_ms": 2447.888453801473,
+          "mean_total_latency_ms": 3781.591804822286
+        },
+        {
+          "condition_id": "Q2_Parent_CE",
+          "condition_name": "Q2 + Parent Exp + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.8,
+          "candidate_expansion_factor": 1.48,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_evidence_recovered_count": 1,
+          "total_new_candidates_added": 158,
+          "expansion_recovery_efficiency": 0.006329113924050633,
+          "candidate_to_top10_conversion": 0.7499999999999999,
+          "mean_ce_pairs": 81.0,
+          "mean_ce_latency_ms": 3041.47207736969,
+          "mean_total_latency_ms": 4376.008582115173
+        },
+        {
+          "condition_id": "Q2_Neighbor_1_CE",
+          "condition_name": "Q2 + Neighbor ±1 + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.08,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_evidence_recovered_count": 0,
+          "total_new_candidates_added": 27,
+          "expansion_recovery_efficiency": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 59.166666666666664,
+          "mean_ce_latency_ms": 2538.6588970820108,
+          "mean_total_latency_ms": 3872.3622481028237
+        },
+        {
+          "condition_id": "Q2_Neighbor_2_CE",
+          "condition_name": "Q2 + Neighbor ±2 + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.75,
+          "candidate_expansion_factor": 1.28,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_evidence_recovered_count": 0,
+          "total_new_candidates_added": 93,
+          "expansion_recovery_efficiency": 0.0,
+          "candidate_to_top10_conversion": 0.7999999999999999,
+          "mean_ce_pairs": 70.16666666666667,
+          "mean_ce_latency_ms": 2687.563180923462,
+          "mean_total_latency_ms": 4021.522831916809
+        },
+        {
+          "condition_id": "Q2_Combined_CE",
+          "condition_name": "Q2 + Parent + Neighbor ±1 + CE",
+          "base_candidate_recall": 0.75,
+          "expanded_candidate_recall": 0.8,
+          "candidate_expansion_factor": 1.48,
+          "final_recall_at_10": 0.6,
+          "evidence_precision": 0.19999999999999998,
+          "primary_precision": 0.10000000000000002,
+          "mrr": 0.48888888888888893,
+          "ndcg10": 0.5445410232435467,
+          "evidence_completeness": 0.16666666666666666,
+          "required_evidence_completeness": 0.6,
+          "new_gold_evidence_recovered_count": 1,
+          "total_new_candidates_added": 158,
+          "expansion_recovery_efficiency": 0.006329113924050633,
+          "candidate_to_top10_conversion": 0.7499999999999999,
+          "mean_ce_pairs": 81.0,
+          "mean_ce_latency_ms": 3044.862945874532,
+          "mean_total_latency_ms": 4378.732395172119
+        }
+      ],
+      "unreachable_tracking": {
+        "Q2_CE_Control": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Parent_CE": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": true,
+            "recovered_by_expansion": true,
+            "expansion_provenance": {
+              "chunk_id": "C61",
+              "source": "parent",
+              "source_chunk_id": "C55",
+              "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+              "distance_from_seed": 0
+            },
+            "ce_score": -0.8227,
+            "ce_rank": 15,
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Neighbor_1_CE": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Neighbor_2_CE": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ],
+        "Q2_Combined_CE": [
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C15",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C29",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "unreachable_chunk": "C61",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": true,
+            "recovered_by_expansion": true,
+            "expansion_provenance": {
+              "chunk_id": "C61",
+              "source": "parent",
+              "source_chunk_id": "C55",
+              "parent_id": "ACT 2 \n12\nSCENE 1  \n \nThe house of ANTIPHOLUS of Ephesus. \nEnter ADRIANA and LUC",
+              "distance_from_seed": 0
+            },
+            "ce_score": -0.8227,
+            "ce_rank": 15,
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "unreachable_chunk": "C42",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "unreachable_chunk": "C147",
+            "in_base_candidate_pool": false,
+            "in_expanded_candidate_pool": false,
+            "recovered_by_expansion": false,
+            "expansion_provenance": null,
+            "ce_score": "—",
+            "ce_rank": "—",
+            "in_top10": "NO"
+          }
+        ]
+      },
+      "per_question_analysis": {
+        "Q2_CE_Control": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C178",
+              "C2",
+              "C169",
+              "C10",
+              "C181"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + CE Control",
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C194",
+              "C102",
+              "C197"
+            ]
+          }
+        ],
+        "Q2_Parent_CE": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.5,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [
+              "C61"
+            ],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C104",
+              "C64",
+              "C160",
+              "C23",
+              "C1"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent Exp + CE",
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C81",
+              "C194",
+              "C102"
+            ]
+          }
+        ],
+        "Q2_Neighbor_1_CE": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C104",
+              "C64",
+              "C160",
+              "C23",
+              "C1"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C194",
+              "C102",
+              "C197"
+            ]
+          }
+        ],
+        "Q2_Neighbor_2_CE": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C53"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.25,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C53",
+              "C130",
+              "C97",
+              "C104",
+              "C64"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Neighbor ±2 + CE",
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C194",
+              "C102",
+              "C197"
+            ]
+          }
+        ],
+        "Q2_Combined_CE": [
+          {
+            "q_id": "Q01",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 1.0,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C186",
+              "C10",
+              "C8",
+              "C189",
+              "C191",
+              "C2",
+              "C4",
+              "C166",
+              "C171",
+              "C163"
+            ]
+          },
+          {
+            "q_id": "Q02",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C4",
+              "C186",
+              "C189",
+              "C2",
+              "C10",
+              "C197",
+              "C149",
+              "C191",
+              "C178",
+              "C24"
+            ]
+          },
+          {
+            "q_id": "Q03",
+            "N": 50,
+            "base_recall": 0.25,
+            "exp_recall": 0.5,
+            "ce_top10_recall": 0.25,
+            "evidence_recovered": [
+              "C61"
+            ],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C194",
+              "C55",
+              "C99",
+              "C116",
+              "C175",
+              "C24",
+              "C197",
+              "C83",
+              "C163",
+              "C155"
+            ]
+          },
+          {
+            "q_id": "Q04",
+            "N": 50,
+            "base_recall": 1.0,
+            "exp_recall": 1.0,
+            "ce_top10_recall": 0.6666666666666666,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C191",
+              "C8",
+              "C186",
+              "C4",
+              "C189",
+              "C104",
+              "C64",
+              "C160",
+              "C23",
+              "C1"
+            ]
+          },
+          {
+            "q_id": "Q05",
+            "N": 50,
+            "base_recall": 0.6666666666666666,
+            "exp_recall": 0.6666666666666666,
+            "ce_top10_recall": 0.3333333333333333,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C155",
+              "C50",
+              "C197",
+              "C116",
+              "C200",
+              "C94",
+              "C132",
+              "C130",
+              "C135",
+              "C12"
+            ]
+          },
+          {
+            "q_id": "Q06",
+            "N": 50,
+            "base_recall": 0.75,
+            "exp_recall": 0.75,
+            "ce_top10_recall": 0.75,
+            "evidence_recovered": [],
+            "expansion_mechanism": "Q2 + Parent + Neighbor ±1 + CE",
+            "top10_cids": [
+              "C105",
+              "C116",
+              "C113",
+              "C65",
+              "C178",
+              "C107",
+              "C155",
+              "C81",
+              "C194",
+              "C102"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

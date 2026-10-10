@@ -1,0 +1,273 @@
+{
+  "targets": {
+    "C15": {
+      "chunk_id": "C15",
+      "q_id": "Q03",
+      "type": "PRIMARY",
+      "baseline_dense_rank": 142,
+      "baseline_dense_sim": 0.1986088752746582,
+      "family_b1_traces": {
+        "B1_0": {
+          "rank": 142,
+          "sim": 0.1986088752746582,
+          "delta_rank": 0,
+          "delta_sim": 0.0,
+          "accessibility_band": ">50"
+        },
+        "B1_1": {
+          "rank": 180,
+          "sim": 0.2091919481754303,
+          "delta_rank": -38,
+          "delta_sim": 0.010583072900772095,
+          "accessibility_band": ">50"
+        },
+        "B1_2": {
+          "rank": 160,
+          "sim": 0.253342866897583,
+          "delta_rank": -18,
+          "delta_sim": 0.054733991622924805,
+          "accessibility_band": ">50"
+        },
+        "B1_3": {
+          "rank": 183,
+          "sim": 0.2091919481754303,
+          "delta_rank": -41,
+          "delta_sim": 0.010583072900772095,
+          "accessibility_band": ">50"
+        }
+      },
+      "family_b2_traces": {
+        "B2_0": {
+          "rank": 142,
+          "sim": 0.1986088752746582,
+          "delta_rank": 0,
+          "delta_sim": 0.0,
+          "accessibility_band": ">50"
+        },
+        "B2_1": {
+          "rank": 105,
+          "sim": 0.3375871181488037,
+          "delta_rank": 37,
+          "delta_sim": 0.1389782428741455,
+          "accessibility_band": ">50"
+        },
+        "B2_2": {
+          "rank": 142,
+          "sim": 0.2128818780183792,
+          "delta_rank": 0,
+          "delta_sim": 0.014273002743721008,
+          "accessibility_band": ">50"
+        },
+        "B2_3": {
+          "rank": 98,
+          "sim": 0.34644344449043274,
+          "delta_rank": 44,
+          "delta_sim": 0.14783456921577454,
+          "accessibility_band": ">50"
+        }
+      },
+      "family_b3_n_traces": {
+        "N10": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N20": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N30": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N40": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N50": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N75": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N100": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N150": {
+          "in_candidate_pool": true,
+          "candidate_rank": 142,
+          "ce_rank": 80,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N203": {
+          "in_candidate_pool": true,
+          "candidate_rank": 142,
+          "ce_rank": 80,
+          "in_final_top15": false,
+          "final_rank": null
+        }
+      },
+      "failure_stage": "Stage 2 \u2014 Candidate Depth Failure",
+      "failure_description": "Target absent at production N=20 (Rank #142), but enters candidate pool at deeper N > 20."
+    },
+    "C42": {
+      "chunk_id": "C42",
+      "q_id": "Q05",
+      "type": "PRIMARY",
+      "baseline_dense_rank": 99,
+      "baseline_dense_sim": 0.2810937166213989,
+      "family_b1_traces": {
+        "B1_0": {
+          "rank": 99,
+          "sim": 0.2810937166213989,
+          "delta_rank": 0,
+          "delta_sim": 0.0,
+          "accessibility_band": ">50"
+        },
+        "B1_1": {
+          "rank": 101,
+          "sim": 0.3853692412376404,
+          "delta_rank": -2,
+          "delta_sim": 0.10427552461624146,
+          "accessibility_band": ">50"
+        },
+        "B1_2": {
+          "rank": 96,
+          "sim": 0.3914072811603546,
+          "delta_rank": 3,
+          "delta_sim": 0.11031356453895569,
+          "accessibility_band": ">50"
+        },
+        "B1_3": {
+          "rank": 98,
+          "sim": 0.3984423875808716,
+          "delta_rank": 1,
+          "delta_sim": 0.11734867095947266,
+          "accessibility_band": ">50"
+        }
+      },
+      "family_b2_traces": {
+        "B2_0": {
+          "rank": 99,
+          "sim": 0.2810937166213989,
+          "delta_rank": 0,
+          "delta_sim": 0.0,
+          "accessibility_band": ">50"
+        },
+        "B2_1": {
+          "rank": 55,
+          "sim": 0.4589765667915344,
+          "delta_rank": 44,
+          "delta_sim": 0.1778828501701355,
+          "accessibility_band": ">50"
+        },
+        "B2_2": {
+          "rank": 106,
+          "sim": 0.26666074991226196,
+          "delta_rank": -7,
+          "delta_sim": -0.014432966709136963,
+          "accessibility_band": ">50"
+        },
+        "B2_3": {
+          "rank": 77,
+          "sim": 0.40681132674217224,
+          "delta_rank": 22,
+          "delta_sim": 0.12571761012077332,
+          "accessibility_band": ">50"
+        }
+      },
+      "family_b3_n_traces": {
+        "N10": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N20": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N30": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N40": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N50": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N75": {
+          "in_candidate_pool": false,
+          "candidate_rank": null,
+          "ce_rank": null,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N100": {
+          "in_candidate_pool": true,
+          "candidate_rank": 99,
+          "ce_rank": 46,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N150": {
+          "in_candidate_pool": true,
+          "candidate_rank": 99,
+          "ce_rank": 46,
+          "in_final_top15": false,
+          "final_rank": null
+        },
+        "N203": {
+          "in_candidate_pool": true,
+          "candidate_rank": 99,
+          "ce_rank": 46,
+          "in_final_top15": false,
+          "final_rank": null
+        }
+      },
+      "failure_stage": "Stage 2 \u2014 Candidate Depth Failure",
+      "failure_description": "Target absent at production N=20 (Rank #99), but enters candidate pool at deeper N > 20."
+    }
+  },
+  "cross_target_decision": "CANDIDATE_DEPTH_BOTTLENECK_SUPPORTED"
+}

@@ -1,0 +1,46 @@
+{
+  "Cond_A_Semantic": {
+    "avg_correctness": 1.8333333333333333,
+    "avg_completeness": 0.9444444444444443,
+    "avg_evidence_utilization": 1.6111111111111114,
+    "avg_grounding_ratio": 1.0,
+    "avg_hallucination_rate": 0.0,
+    "avg_unsupported_claims": 0.0,
+    "avg_total_tokens": 63832.166666666664,
+    "avg_latency_ms": 14335.666497548422,
+    "avg_chunks": 10.0
+  },
+  "Cond_B_RRF_50_50": {
+    "avg_correctness": 1.5,
+    "avg_completeness": 0.8472222222222222,
+    "avg_evidence_utilization": 1.277777777777778,
+    "avg_grounding_ratio": 1.0,
+    "avg_hallucination_rate": 0.0,
+    "avg_unsupported_claims": 0.0,
+    "avg_total_tokens": 63565.0,
+    "avg_latency_ms": 25142.93845494588,
+    "avg_chunks": 10.0
+  },
+  "Cond_C_RRF_80_20": {
+    "avg_correctness": 1.8333333333333333,
+    "avg_completeness": 0.9444444444444443,
+    "avg_evidence_utilization": 1.6111111111111114,
+    "avg_grounding_ratio": 1.0,
+    "avg_hallucination_rate": 0.0,
+    "avg_unsupported_claims": 0.0,
+    "avg_total_tokens": 63498.833333333336,
+    "avg_latency_ms": 15757.630745569864,
+    "avg_chunks": 10.0
+  },
+  "Cond_D_RRF_80_20_Neighbor_w2": {
+    "avg_correctness": 1.8333333333333333,
+    "avg_completeness": 0.9444444444444443,
+    "avg_evidence_utilization": 1.277777777777778,
+    "avg_grounding_ratio": 1.0,
+    "avg_hallucination_rate": 0.0,
+    "avg_unsupported_claims": 0.0,
+    "avg_total_tokens": 262999.5,
+    "avg_latency_ms": 35868.168433507286,
+    "avg_chunks": 42.0
+  }
+}

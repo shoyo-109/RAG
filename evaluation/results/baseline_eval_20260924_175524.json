@@ -1,0 +1,1245 @@
+{
+  "run_id": "eval_run_20260924_175448",
+  "corpus": "The Comedy of Errors document.pdf",
+  "total_chunks_indexed": 203,
+  "cases": [
+    {
+      "question_id": "Q01",
+      "question": "Who is Aegeon and what is his origin?",
+      "question_type": "direct",
+      "gold_evidence": [
+        {
+          "chunk_id": "C4",
+          "role": "primary",
+          "desc": "Born in Syracuse, married, merchant who traveled to Epidamnum"
+        },
+        {
+          "chunk_id": "C2",
+          "role": "supporting",
+          "desc": "Duke Solinus addresses him as Syracusian merchant"
+        }
+      ],
+      "retrieval": {
+        "semantic_results": [
+          "C10",
+          "C191",
+          "C186",
+          "C191",
+          "C2",
+          "C194",
+          "C166",
+          "C166",
+          "C189",
+          "C4"
+        ],
+        "bm25_results": [
+          "C171",
+          "C163",
+          "C169",
+          "C143",
+          "C47"
+        ],
+        "rrf_results": [
+          "C191",
+          "C166",
+          "C10",
+          "C171",
+          "C163",
+          "C186",
+          "C169",
+          "C143",
+          "C2",
+          "C47"
+        ]
+      },
+      "evaluation": {
+        "semantic": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.5,
+            "recall_at_10": 1.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.2,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.8,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.08092178353245053,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": true,
+            "logically_sufficient": true
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 8,
+            "unique_parent_ids": 2,
+            "unique_scene_ids": 2,
+            "duplicate_count": 8,
+            "redundancy_ratio": 0.8
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        },
+        "bm25": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.6,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.4,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.09018028982624532,
+          "evidence_completeness": {
+            "at_least_one_relevant": false,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 5,
+            "unique_chunk_ids": 5,
+            "unique_parent_ids": 3,
+            "unique_scene_ids": 3,
+            "duplicate_count": 2,
+            "redundancy_ratio": 0.4
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY"
+          ]
+        },
+        "rrf": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.5
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.4,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.10442037537130604,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY"
+          ]
+        }
+      },
+      "diagnosis": "Partial evidence retrieved (1/2 chunks). Missing critical context: ['C4']."
+    },
+    {
+      "question_id": "Q02",
+      "question": "Why was Aegeon sentenced to death in Ephesus?",
+      "question_type": "causal",
+      "gold_evidence": [
+        {
+          "chunk_id": "C2",
+          "role": "primary",
+          "desc": "Statute prohibiting Syracusians in Ephesus on pain of death/1000 marks ransom, Aegeon wealth under 100 marks"
+        },
+        {
+          "chunk_id": "C4",
+          "role": "supporting",
+          "desc": "Aegeon origin in Syracuse"
+        },
+        {
+          "chunk_id": "C10",
+          "role": "supporting",
+          "desc": "Duke Solinus grants 1 day to beg/borrow 1000 marks before execution"
+        },
+        {
+          "chunk_id": "C12",
+          "role": "supporting",
+          "desc": "First Merchant confirms Syracusian merchant apprehended and unable to buy out life"
+        }
+      ],
+      "retrieval": {
+        "semantic_results": [
+          "C191",
+          "C189",
+          "C178",
+          "C186",
+          "C10",
+          "C73",
+          "C65",
+          "C113",
+          "C197",
+          "C137"
+        ],
+        "bm25_results": [
+          "C4",
+          "C79",
+          "C85",
+          "C24",
+          "C186"
+        ],
+        "rrf_results": [
+          "C186",
+          "C191",
+          "C4",
+          "C189",
+          "C79",
+          "C178",
+          "C85",
+          "C24",
+          "C10",
+          "C73"
+        ]
+      },
+      "evaluation": {
+        "semantic": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.25,
+            "recall_at_10": 0.25
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.2,
+            "precision_at_10": 0.1
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.1,
+          "relevant_unnecessary_pct_at_10": 0.3,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.2,
+          "ndcg_at_10": 0.11861700536521494,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "SUPPORTING",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        },
+        "bm25": {
+          "recalls": {
+            "recall_at_1": 0.25,
+            "recall_at_3": 0.25,
+            "recall_at_5": 0.25,
+            "recall_at_10": 0.25
+          },
+          "precisions": {
+            "precision_at_1": 1.0,
+            "precision_at_3": 0.3333333333333333,
+            "precision_at_5": 0.2,
+            "precision_at_10": 0.1
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.2,
+          "relevant_unnecessary_pct_at_10": 0.4,
+          "irrelevant_pct_at_10": 0.2,
+          "duplicate_pct_at_10": 0.2,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.15988243312446618,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 5,
+            "unique_chunk_ids": 5,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 1,
+            "redundancy_ratio": 0.2
+          },
+          "classifications": [
+            "SUPPORTING",
+            "IRRELEVANT",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY"
+          ]
+        },
+        "rrf": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.25,
+            "recall_at_5": 0.25,
+            "recall_at_10": 0.5
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.3333333333333333,
+            "precision_at_5": 0.2,
+            "precision_at_10": 0.1
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.1,
+          "relevant_unnecessary_pct_at_10": 0.2,
+          "irrelevant_pct_at_10": 0.1,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.3333333333333333,
+          "ndcg_at_10": 0.11791484276917086,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "SUPPORTING",
+            "DUPLICATE",
+            "IRRELEVANT",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        }
+      },
+      "diagnosis": "Partial evidence retrieved (2/4 chunks). Missing critical context: ['C12', 'C2']."
+    },
+    {
+      "question_id": "Q03",
+      "question": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "question_type": "multi_hop",
+      "gold_evidence": [
+        {
+          "chunk_id": "C15",
+          "role": "primary",
+          "desc": "Antipholus of Syracuse in Ephesus seeking twin brother, unaware twin lives there"
+        },
+        {
+          "chunk_id": "C24",
+          "role": "primary",
+          "desc": "Adriana is married to Antipholus of Ephesus"
+        },
+        {
+          "chunk_id": "C29",
+          "role": "supporting",
+          "desc": "Dromio of Ephesus mistakes Antipholus of Syracuse for his master"
+        },
+        {
+          "chunk_id": "C61",
+          "role": "supporting",
+          "desc": "Adriana confronts Antipholus of Syracuse mistaking him for her husband"
+        }
+      ],
+      "retrieval": {
+        "semantic_results": [
+          "C194",
+          "C83",
+          "C50",
+          "C24",
+          "C118",
+          "C88",
+          "C91",
+          "C47",
+          "C169",
+          "C175"
+        ],
+        "bm25_results": [
+          "C140",
+          "C194",
+          "C91",
+          "C200",
+          "C79"
+        ],
+        "rrf_results": [
+          "C194",
+          "C91",
+          "C140",
+          "C83",
+          "C50",
+          "C24",
+          "C200",
+          "C118",
+          "C79",
+          "C88"
+        ]
+      },
+      "evaluation": {
+        "semantic": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.25,
+            "recall_at_10": 0.25
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.4,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.10544757181390836,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        },
+        "bm25": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.4,
+          "irrelevant_pct_at_10": 0.2,
+          "duplicate_pct_at_10": 0.4,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.0473646129187725,
+          "evidence_completeness": {
+            "at_least_one_relevant": false,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 5,
+            "unique_chunk_ids": 5,
+            "unique_parent_ids": 3,
+            "unique_scene_ids": 3,
+            "duplicate_count": 2,
+            "redundancy_ratio": 0.4
+          },
+          "classifications": [
+            "IRRELEVANT",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        },
+        "rrf": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.25
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.3,
+          "irrelevant_pct_at_10": 0.1,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.08450700818951178,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "IRRELEVANT",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        }
+      },
+      "diagnosis": "Partial evidence retrieved (1/4 chunks). Missing critical context: ['C29', 'C61', 'C15']."
+    },
+    {
+      "question_id": "Q04",
+      "question": "How did Aegeon come to have two pairs of identical twin sons and twin servants?",
+      "question_type": "relationship",
+      "gold_evidence": [
+        {
+          "chunk_id": "C4",
+          "role": "primary",
+          "desc": "Wife gave birth to identical twin sons in Epidamnum, poor woman birthed twin boys bought by Aegeon"
+        },
+        {
+          "chunk_id": "C6",
+          "role": "supporting",
+          "desc": "Storm separated family into two groups on spare mast"
+        },
+        {
+          "chunk_id": "C8",
+          "role": "supporting",
+          "desc": "Ship split on rock; one set saved by Corinth fishermen, other by another ship"
+        }
+      ],
+      "retrieval": {
+        "semantic_results": [
+          "C191",
+          "C4",
+          "C8",
+          "C24",
+          "C10",
+          "C186",
+          "C189",
+          "C191",
+          "C110",
+          "C194"
+        ],
+        "bm25_results": [
+          "C191",
+          "C27",
+          "C107",
+          "C161",
+          "C137"
+        ],
+        "rrf_results": [
+          "C191",
+          "C4",
+          "C27",
+          "C8",
+          "C107",
+          "C24",
+          "C161",
+          "C10",
+          "C137",
+          "C186"
+        ]
+      },
+      "evaluation": {
+        "semantic": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.6666666666666666,
+            "recall_at_5": 0.6666666666666666,
+            "recall_at_10": 0.6666666666666666
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.3333333333333333,
+            "precision_at_5": 0.2,
+            "precision_at_10": 0.1
+          },
+          "primary_precision_at_10": 0.1,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.3,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.5,
+          "ndcg_at_10": 0.277516685325005,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": true
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 9,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "PRIMARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE"
+          ]
+        },
+        "bm25": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.6,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.4,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.09618540964239655,
+          "evidence_completeness": {
+            "at_least_one_relevant": false,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 5,
+            "unique_chunk_ids": 5,
+            "unique_parent_ids": 3,
+            "unique_scene_ids": 3,
+            "duplicate_count": 2,
+            "redundancy_ratio": 0.4
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        },
+        "rrf": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.3333333333333333,
+            "recall_at_5": 0.6666666666666666,
+            "recall_at_10": 0.6666666666666666
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.3333333333333333,
+            "precision_at_5": 0.2,
+            "precision_at_10": 0.1
+          },
+          "primary_precision_at_10": 0.1,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.3,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.5,
+          "ndcg_at_10": 0.28451964068854874,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": true
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "PRIMARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        }
+      },
+      "diagnosis": "Partial evidence retrieved (2/3 chunks). Missing critical context: ['C6']."
+    },
+    {
+      "question_id": "Q05",
+      "question": "How do Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse?",
+      "question_type": "comparative",
+      "gold_evidence": [
+        {
+          "chunk_id": "C12",
+          "role": "supporting",
+          "desc": "Antipholus of Syracuse trusts Dromio of Syracuse with money"
+        },
+        {
+          "chunk_id": "C42",
+          "role": "primary",
+          "desc": "Antipholus of Syracuse beats Dromio of Syracuse over money confusion"
+        },
+        {
+          "chunk_id": "C65",
+          "role": "primary",
+          "desc": "Antipholus of Ephesus locked out by Dromio of Syracuse inside house"
+        }
+      ],
+      "retrieval": {
+        "semantic_results": [
+          "C191",
+          "C94",
+          "C194",
+          "C50",
+          "C200",
+          "C70",
+          "C197",
+          "C76",
+          "C97",
+          "C47"
+        ],
+        "bm25_results": [
+          "C200",
+          "C155",
+          "C135",
+          "C163",
+          "C38"
+        ],
+        "rrf_results": [
+          "C200",
+          "C191",
+          "C94",
+          "C155",
+          "C194",
+          "C135",
+          "C50",
+          "C163",
+          "C38",
+          "C70"
+        ]
+      },
+      "evaluation": {
+        "semantic": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.3,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.7,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.09305630430780909,
+          "evidence_completeness": {
+            "at_least_one_relevant": false,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 3,
+            "unique_scene_ids": 3,
+            "duplicate_count": 7,
+            "redundancy_ratio": 0.7
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        },
+        "bm25": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.6,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.4,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.09107819807533638,
+          "evidence_completeness": {
+            "at_least_one_relevant": false,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 5,
+            "unique_chunk_ids": 5,
+            "unique_parent_ids": 3,
+            "unique_scene_ids": 3,
+            "duplicate_count": 2,
+            "redundancy_ratio": 0.4
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY"
+          ]
+        },
+        "rrf": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.4,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.10219234982965442,
+          "evidence_completeness": {
+            "at_least_one_relevant": false,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        }
+      },
+      "diagnosis": "Retrieval failure: None of the required gold evidence chunks were retrieved in Top-10."
+    },
+    {
+      "question_id": "Q06",
+      "question": "Why is Antipholus of Ephesus arrested, and what role does Angelo the goldsmith play in the debt dispute?",
+      "question_type": "event_chain",
+      "gold_evidence": [
+        {
+          "chunk_id": "C105",
+          "role": "primary",
+          "desc": "Angelo owes 200 ducats to Second Merchant and needs payment for chain"
+        },
+        {
+          "chunk_id": "C107",
+          "role": "primary",
+          "desc": "Angelo gave chain to Antipholus of Syracuse by mistake, demands payment from Ephesus twin"
+        },
+        {
+          "chunk_id": "C147",
+          "role": "supporting",
+          "desc": "Antipholus of Ephesus denies getting chain, Angelo has him arrested"
+        },
+        {
+          "chunk_id": "C155",
+          "role": "supporting",
+          "desc": "Officer holds Antipholus of Ephesus under arrest for 200 ducats debt"
+        }
+      ],
+      "retrieval": {
+        "semantic_results": [
+          "C105",
+          "C65",
+          "C197",
+          "C110",
+          "C137",
+          "C146",
+          "C113",
+          "C137",
+          "C163",
+          "C146"
+        ],
+        "bm25_results": [
+          "C200",
+          "C152",
+          "C116",
+          "C61",
+          "C175"
+        ],
+        "rrf_results": [
+          "C137",
+          "C146",
+          "C105",
+          "C200",
+          "C65",
+          "C152",
+          "C197",
+          "C116",
+          "C110",
+          "C61"
+        ]
+      },
+      "evaluation": {
+        "semantic": {
+          "recalls": {
+            "recall_at_1": 0.25,
+            "recall_at_3": 0.25,
+            "recall_at_5": 0.25,
+            "recall_at_10": 0.25
+          },
+          "precisions": {
+            "precision_at_1": 1.0,
+            "precision_at_3": 0.3333333333333333,
+            "precision_at_5": 0.2,
+            "precision_at_10": 0.1
+          },
+          "primary_precision_at_10": 0.1,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.2,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.7,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.3405325036603246,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 8,
+            "unique_parent_ids": 3,
+            "unique_scene_ids": 3,
+            "duplicate_count": 7,
+            "redundancy_ratio": 0.7
+          },
+          "classifications": [
+            "PRIMARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE"
+          ]
+        },
+        "bm25": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.0,
+            "recall_at_5": 0.0,
+            "recall_at_10": 0.0
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.6,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.4,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.08634239627491311,
+          "evidence_completeness": {
+            "at_least_one_relevant": false,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 5,
+            "unique_chunk_ids": 5,
+            "unique_parent_ids": 3,
+            "unique_scene_ids": 3,
+            "duplicate_count": 2,
+            "redundancy_ratio": 0.4
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE"
+          ]
+        },
+        "rrf": {
+          "recalls": {
+            "recall_at_1": 0.0,
+            "recall_at_3": 0.25,
+            "recall_at_5": 0.25,
+            "recall_at_10": 0.25
+          },
+          "precisions": {
+            "precision_at_1": 0.0,
+            "precision_at_3": 0.0,
+            "precision_at_5": 0.0,
+            "precision_at_10": 0.0
+          },
+          "primary_precision_at_10": 0.0,
+          "supporting_precision_at_10": 0.0,
+          "relevant_unnecessary_pct_at_10": 0.4,
+          "irrelevant_pct_at_10": 0.0,
+          "duplicate_pct_at_10": 0.6,
+          "mrr": 0.0,
+          "ndcg_at_10": 0.08822653940104963,
+          "evidence_completeness": {
+            "at_least_one_relevant": true,
+            "all_required_evidence": false,
+            "logically_sufficient": false
+          },
+          "redundancy": {
+            "total_retrieved": 10,
+            "unique_chunk_ids": 10,
+            "unique_parent_ids": 4,
+            "unique_scene_ids": 4,
+            "duplicate_count": 6,
+            "redundancy_ratio": 0.6
+          },
+          "classifications": [
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY",
+            "RELEVANT_BUT_UNNECESSARY",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "DUPLICATE",
+            "RELEVANT_BUT_UNNECESSARY"
+          ]
+        }
+      },
+      "diagnosis": "Partial evidence retrieved (1/4 chunks). Missing critical context: ['C155', 'C107', 'C147']."
+    }
+  ],
+  "aggregate_summary": {
+    "semantic": {
+      "recall_1": 0.041666666666666664,
+      "recall_3": 0.15277777777777776,
+      "recall_5": 0.3194444444444444,
+      "recall_10": 0.40277777777777773,
+      "precision_1": 0.16666666666666666,
+      "precision_3": 0.1111111111111111,
+      "precision_5": 0.10000000000000002,
+      "precision_10": 0.05000000000000001,
+      "mrr": 0.2833333333333333,
+      "ndcg_10": 0.16934864233411875,
+      "completeness": 0.3333333333333333,
+      "redundancy": 0.6666666666666666
+    },
+    "bm25": {
+      "recall_1": 0.041666666666666664,
+      "recall_3": 0.041666666666666664,
+      "recall_5": 0.041666666666666664,
+      "recall_10": 0.041666666666666664,
+      "precision_1": 0.16666666666666666,
+      "precision_3": 0.05555555555555555,
+      "precision_5": 0.03333333333333333,
+      "precision_10": 0.016666666666666666,
+      "mrr": 0.16666666666666666,
+      "ndcg_10": 0.095172223310355,
+      "completeness": 0.0,
+      "redundancy": 0.36666666666666664
+    },
+    "rrf": {
+      "recall_1": 0.0,
+      "recall_3": 0.13888888888888887,
+      "recall_5": 0.19444444444444442,
+      "recall_10": 0.3611111111111111,
+      "precision_1": 0.0,
+      "precision_3": 0.1111111111111111,
+      "precision_5": 0.06666666666666667,
+      "precision_10": 0.03333333333333333,
+      "mrr": 0.13888888888888887,
+      "ndcg_10": 0.1302967927082069,
+      "completeness": 0.16666666666666666,
+      "redundancy": 0.6
+    }
+  },
+  "category_summary": {
+    "direct": {
+      "recall": 0.5,
+      "precision": 0.0,
+      "completeness": 0.0,
+      "redundancy": 0.6
+    },
+    "causal": {
+      "recall": 0.5,
+      "precision": 0.1,
+      "completeness": 0.0,
+      "redundancy": 0.6
+    },
+    "multi_hop": {
+      "recall": 0.25,
+      "precision": 0.0,
+      "completeness": 0.0,
+      "redundancy": 0.6
+    },
+    "relationship": {
+      "recall": 0.6666666666666666,
+      "precision": 0.1,
+      "completeness": 1.0,
+      "redundancy": 0.6
+    },
+    "comparative": {
+      "recall": 0.0,
+      "precision": 0.0,
+      "completeness": 0.0,
+      "redundancy": 0.6
+    },
+    "event_chain": {
+      "recall": 0.25,
+      "precision": 0.0,
+      "completeness": 0.0,
+      "redundancy": 0.6
+    }
+  }
+}

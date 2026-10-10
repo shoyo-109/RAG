@@ -1,0 +1,2342 @@
+[
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B0",
+    "dense_rank": 142,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B0",
+    "dense_rank": 60,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": -4.275217056274414,
+      "N40": -4.275217056274414,
+      "N50": -4.275218486785889
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 48,
+      "N40": 53,
+      "N50": 58
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B0",
+    "dense_rank": 33,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.8226587772369385,
+      "N20": -0.8226590752601624,
+      "N30": -0.8226590752601624,
+      "N40": -0.8226590752601624,
+      "N50": -0.8226575255393982
+    },
+    "ce_ranks": {
+      "N10": 7,
+      "N20": 15,
+      "N30": 16,
+      "N40": 16,
+      "N50": 17
+    },
+    "final_ranks": {
+      "N10": 7,
+      "N20": 15,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B0",
+    "dense_rank": 99,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B0",
+    "dense_rank": 6,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": 1.3016853332519531,
+      "N20": 1.3016853332519531,
+      "N30": 1.3016843795776367,
+      "N40": 1.3016853332519531,
+      "N50": 1.3016853332519531
+    },
+    "ce_ranks": {
+      "N10": 3,
+      "N20": 3,
+      "N30": 3,
+      "N40": 3,
+      "N50": 3
+    },
+    "final_ranks": {
+      "N10": 3,
+      "N20": 3,
+      "N30": 3,
+      "N40": 3,
+      "N50": 3
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B1",
+    "dense_rank": 85,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": -3.9645802974700928,
+      "N40": -3.9645802974700928,
+      "N50": -3.9645802974700928
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 37,
+      "N40": 39,
+      "N50": 41
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B1",
+    "dense_rank": 36,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -4.983633995056152,
+      "N20": -4.983633041381836,
+      "N30": -4.983633041381836,
+      "N40": -4.983633518218994,
+      "N50": -4.983632564544678
+    },
+    "ce_ranks": {
+      "N10": 25,
+      "N20": 44,
+      "N30": 57,
+      "N40": 63,
+      "N50": 69
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B1",
+    "dense_rank": 21,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.4840160608291626,
+      "N20": -1.4840160608291626,
+      "N30": -1.4840160608291626,
+      "N40": -1.4840166568756104,
+      "N50": -1.484015703201294
+    },
+    "ce_ranks": {
+      "N10": 9,
+      "N20": 11,
+      "N30": 12,
+      "N40": 13,
+      "N50": 14
+    },
+    "final_ranks": {
+      "N10": 9,
+      "N20": 11,
+      "N30": 12,
+      "N40": 13,
+      "N50": 14
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B1",
+    "dense_rank": 67,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": 2.921567440032959,
+      "N50": 2.921567916870117
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": 32,
+      "N50": 33
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B1",
+    "dense_rank": 4,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.6236615180969238,
+      "N20": -0.6236615180969238,
+      "N30": -0.6236633658409119,
+      "N40": -0.6236615180969238,
+      "N50": -0.6236622333526611
+    },
+    "ce_ranks": {
+      "N10": 6,
+      "N20": 7,
+      "N30": 7,
+      "N40": 7,
+      "N50": 7
+    },
+    "final_ranks": {
+      "N10": 6,
+      "N20": 7,
+      "N30": 7,
+      "N40": 7,
+      "N50": 7
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B2",
+    "dense_rank": 118,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B2",
+    "dense_rank": 51,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": -4.762725353240967,
+      "N30": -4.762723922729492,
+      "N40": -4.762723922729492,
+      "N50": -4.762724876403809
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": 41,
+      "N30": 47,
+      "N40": 53,
+      "N50": 55
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B2",
+    "dense_rank": 26,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.9110691547393799,
+      "N20": -1.9110691547393799,
+      "N30": -1.9110691547393799,
+      "N40": -1.9110677242279053,
+      "N50": -1.9110695123672485
+    },
+    "ce_ranks": {
+      "N10": 7,
+      "N20": 13,
+      "N30": 14,
+      "N40": 15,
+      "N50": 15
+    },
+    "final_ranks": {
+      "N10": 7,
+      "N20": 13,
+      "N30": 14,
+      "N40": 15,
+      "N50": 15
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B2",
+    "dense_rank": 101,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B2",
+    "dense_rank": 6,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.3105611801147461,
+      "N20": -0.3105618357658386,
+      "N30": -0.3105602264404297,
+      "N40": -0.3105611801147461,
+      "N50": -0.31056103110313416
+    },
+    "ce_ranks": {
+      "N10": 5,
+      "N20": 5,
+      "N30": 5,
+      "N40": 5,
+      "N50": 5
+    },
+    "final_ranks": {
+      "N10": 5,
+      "N20": 5,
+      "N30": 5,
+      "N40": 5,
+      "N50": 5
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B3",
+    "dense_rank": 94,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": -3.845289707183838,
+      "N40": -3.845289707183838,
+      "N50": -3.845289707183838
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 31,
+      "N40": 32,
+      "N50": 35
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B3",
+    "dense_rank": 32,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": -5.343691349029541,
+      "N30": -5.343692302703857,
+      "N40": -5.343691349029541,
+      "N50": -5.343691825866699
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": 49,
+      "N30": 57,
+      "N40": 61,
+      "N50": 66
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B3",
+    "dense_rank": 35,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -4.168493270874023,
+      "N20": -4.168493270874023,
+      "N30": -4.168493270874023,
+      "N40": -4.168493270874023,
+      "N50": -4.168491840362549
+    },
+    "ce_ranks": {
+      "N10": 19,
+      "N20": 31,
+      "N30": 36,
+      "N40": 37,
+      "N50": 40
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E0",
+    "b_key": "B3",
+    "dense_rank": 72,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E0",
+    "b_key": "B3",
+    "dense_rank": 3,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.1329355239868164,
+      "N20": -1.1329355239868164,
+      "N30": -1.132935643196106,
+      "N40": -1.1329355239868164,
+      "N50": -1.1329360008239746
+    },
+    "ce_ranks": {
+      "N10": 8,
+      "N20": 8,
+      "N30": 8,
+      "N40": 8,
+      "N50": 8
+    },
+    "final_ranks": {
+      "N10": 8,
+      "N20": 8,
+      "N30": 8,
+      "N40": 8,
+      "N50": 8
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B0",
+    "dense_rank": 74,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B0",
+    "dense_rank": 61,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": -4.275219440460205,
+      "N50": -4.2752180099487305
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": 51,
+      "N50": 55
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B0",
+    "dense_rank": 58,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.8226590752601624,
+      "N20": -0.8226590752601624,
+      "N30": -0.8226590752601624,
+      "N40": -0.8226575255393982,
+      "N50": -0.8226583003997803
+    },
+    "ce_ranks": {
+      "N10": 10,
+      "N20": 15,
+      "N30": 16,
+      "N40": 18,
+      "N50": 19
+    },
+    "final_ranks": {
+      "N10": 10,
+      "N20": 15,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B0",
+    "dense_rank": 64,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B0",
+    "dense_rank": 16,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": 1.3016853332519531,
+      "N30": 1.3016843795776367,
+      "N40": 1.3016853332519531,
+      "N50": 1.3016853332519531
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": 3,
+      "N30": 3,
+      "N40": 3,
+      "N50": 3
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": 3,
+      "N30": 3,
+      "N40": 3,
+      "N50": 3
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B1",
+    "dense_rank": 32,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -3.9645802974700928,
+      "N20": -3.9645802974700928,
+      "N30": -3.9645802974700928,
+      "N40": -3.9645802974700928,
+      "N50": -3.9645802974700928
+    },
+    "ce_ranks": {
+      "N10": 21,
+      "N20": 30,
+      "N30": 34,
+      "N40": 39,
+      "N50": 41
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B1",
+    "dense_rank": 60,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": -4.983635902404785,
+      "N30": -4.983635902404785,
+      "N40": -4.983633518218994,
+      "N50": -4.9836320877075195
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": 44,
+      "N30": 53,
+      "N40": 60,
+      "N50": 67
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B1",
+    "dense_rank": 65,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.4840160608291626,
+      "N20": -1.4840160608291626,
+      "N30": -1.4840160608291626,
+      "N40": -1.4840166568756104,
+      "N50": -1.484015703201294
+    },
+    "ce_ranks": {
+      "N10": 9,
+      "N20": 12,
+      "N30": 14,
+      "N40": 14,
+      "N50": 14
+    },
+    "final_ranks": {
+      "N10": 9,
+      "N20": 12,
+      "N30": 14,
+      "N40": 14,
+      "N50": 14
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B1",
+    "dense_rank": 2,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": 2.9215686321258545,
+      "N20": 2.9215686321258545,
+      "N30": 2.9215683937072754,
+      "N40": 2.9215683937072754,
+      "N50": 2.921567440032959
+    },
+    "ce_ranks": {
+      "N10": 17,
+      "N20": 26,
+      "N30": 29,
+      "N40": 31,
+      "N50": 33
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B1",
+    "dense_rank": 19,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.6236615180969238,
+      "N20": -0.6236622333526611,
+      "N30": -0.6236633658409119,
+      "N40": -0.6236615180969238,
+      "N50": -0.6236622333526611
+    },
+    "ce_ranks": {
+      "N10": 7,
+      "N20": 7,
+      "N30": 7,
+      "N40": 7,
+      "N50": 7
+    },
+    "final_ranks": {
+      "N10": 7,
+      "N20": 7,
+      "N30": 7,
+      "N40": 7,
+      "N50": 7
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B2",
+    "dense_rank": 74,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B2",
+    "dense_rank": 57,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": -4.762725353240967
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": 51
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B2",
+    "dense_rank": 88,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.9110691547393799,
+      "N20": -1.9110691547393799,
+      "N30": -1.9110691547393799,
+      "N40": -1.911065936088562,
+      "N50": -1.9110686779022217
+    },
+    "ce_ranks": {
+      "N10": 8,
+      "N20": 13,
+      "N30": 14,
+      "N40": 14,
+      "N50": 14
+    },
+    "final_ranks": {
+      "N10": 8,
+      "N20": 13,
+      "N30": 14,
+      "N40": 14,
+      "N50": 14
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B2",
+    "dense_rank": 89,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B2",
+    "dense_rank": 27,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": -0.3105614185333252,
+      "N30": -0.3105602264404297,
+      "N40": -0.3105606138706207,
+      "N50": -0.3105614185333252
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": 5,
+      "N30": 5,
+      "N40": 5,
+      "N50": 5
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": 5,
+      "N30": 5,
+      "N40": 5,
+      "N50": 5
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B3",
+    "dense_rank": 34,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": -3.845289707183838,
+      "N30": -3.845289707183838,
+      "N40": -3.845289707183838,
+      "N50": -3.845289707183838
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": 25,
+      "N30": 29,
+      "N40": 33,
+      "N50": 34
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B3",
+    "dense_rank": 59,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": -5.343692302703857,
+      "N40": -5.343691349029541,
+      "N50": -5.343691825866699
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 52,
+      "N40": 61,
+      "N50": 66
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B3",
+    "dense_rank": 73,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -4.168493270874023,
+      "N20": -4.168493270874023,
+      "N30": -4.168493270874023,
+      "N40": -4.168491363525391,
+      "N50": -4.168491840362549
+    },
+    "ce_ranks": {
+      "N10": 20,
+      "N20": 30,
+      "N30": 34,
+      "N40": 38,
+      "N50": 40
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E1",
+    "b_key": "B3",
+    "dense_rank": 14,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": 2.881727457046509,
+      "N40": 2.881728410720825,
+      "N50": 2.881728410720825
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 29,
+      "N40": 32,
+      "N50": 33
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E1",
+    "b_key": "B3",
+    "dense_rank": 43,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": -1.132935643196106,
+      "N40": -1.1329350471496582,
+      "N50": -1.132934808731079
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 8,
+      "N40": 8,
+      "N50": 8
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 8,
+      "N40": 8,
+      "N50": 8
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B0",
+    "dense_rank": 114,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": false
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 1 \u2014 Candidate Generation Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B0",
+    "dense_rank": 27,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -4.275217056274414,
+      "N20": -4.275217056274414,
+      "N30": -4.275217056274414,
+      "N40": -4.275218963623047,
+      "N50": -4.2752180099487305
+    },
+    "ce_ranks": {
+      "N10": 26,
+      "N20": 44,
+      "N30": 51,
+      "N40": 56,
+      "N50": 61
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B0",
+    "dense_rank": 22,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.822658896446228,
+      "N20": -0.8226590752601624,
+      "N30": -0.8226590752601624,
+      "N40": -0.8226584196090698,
+      "N50": -0.8226583003997803
+    },
+    "ce_ranks": {
+      "N10": 10,
+      "N20": 15,
+      "N30": 17,
+      "N40": 17,
+      "N50": 19
+    },
+    "final_ranks": {
+      "N10": 10,
+      "N20": 15,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B0",
+    "dense_rank": 36,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": 0.5802099704742432,
+      "N40": 0.5802095532417297,
+      "N50": 0.5802086591720581
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 41,
+      "N40": 44,
+      "N50": 44
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B0",
+    "dense_rank": 3,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": 1.3016853332519531,
+      "N20": 1.3016842603683472,
+      "N30": 1.3016853332519531,
+      "N40": 1.3016843795776367,
+      "N50": 1.3016853332519531
+    },
+    "ce_ranks": {
+      "N10": 3,
+      "N20": 3,
+      "N30": 3,
+      "N40": 3,
+      "N50": 3
+    },
+    "final_ranks": {
+      "N10": 3,
+      "N20": 3,
+      "N30": 3,
+      "N40": 3,
+      "N50": 3
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B1",
+    "dense_rank": 64,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -3.9645802974700928,
+      "N20": -3.9645802974700928,
+      "N30": -3.9645802974700928,
+      "N40": -3.9645802974700928,
+      "N50": -3.9645802974700928
+    },
+    "ce_ranks": {
+      "N10": 22,
+      "N20": 35,
+      "N30": 41,
+      "N40": 42,
+      "N50": 45
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B1",
+    "dense_rank": 41,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -4.983633995056152,
+      "N20": -4.983635902404785,
+      "N30": -4.983633041381836,
+      "N40": -4.983633518218994,
+      "N50": -4.983633041381836
+    },
+    "ce_ranks": {
+      "N10": 33,
+      "N20": 53,
+      "N30": 62,
+      "N40": 66,
+      "N50": 73
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B1",
+    "dense_rank": 43,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.4840160608291626,
+      "N20": -1.4840160608291626,
+      "N30": -1.4840160608291626,
+      "N40": -1.4840166568756104,
+      "N50": -1.484015703201294
+    },
+    "ce_ranks": {
+      "N10": 11,
+      "N20": 13,
+      "N30": 13,
+      "N40": 14,
+      "N50": 14
+    },
+    "final_ranks": {
+      "N10": 11,
+      "N20": 13,
+      "N30": 13,
+      "N40": 14,
+      "N50": 14
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B1",
+    "dense_rank": 14,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": 2.9215686321258545,
+      "N20": 2.9215686321258545,
+      "N30": 2.9215681552886963,
+      "N40": 2.9215683937072754,
+      "N50": 2.921567440032959
+    },
+    "ce_ranks": {
+      "N10": 17,
+      "N20": 26,
+      "N30": 30,
+      "N40": 32,
+      "N50": 33
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B1",
+    "dense_rank": 5,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.6236615180969238,
+      "N20": -0.6236622333526611,
+      "N30": -0.6236633658409119,
+      "N40": -0.6236633658409119,
+      "N50": -0.6236615180969238
+    },
+    "ce_ranks": {
+      "N10": 6,
+      "N20": 7,
+      "N30": 7,
+      "N40": 7,
+      "N50": 7
+    },
+    "final_ranks": {
+      "N10": 6,
+      "N20": 7,
+      "N30": 7,
+      "N40": 7,
+      "N50": 7
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B2",
+    "dense_rank": 110,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": false,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": -4.154985427856445
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": 46
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B2",
+    "dense_rank": 44,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": -4.762723922729492,
+      "N40": -4.762723922729492,
+      "N50": -4.762724876403809
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": 47,
+      "N40": 52,
+      "N50": 58
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B2",
+    "dense_rank": 71,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.9110698699951172,
+      "N20": -1.9110698699951172,
+      "N30": -1.9110691547393799,
+      "N40": -1.911065936088562,
+      "N50": -1.9110691547393799
+    },
+    "ce_ranks": {
+      "N10": 10,
+      "N20": 14,
+      "N30": 14,
+      "N40": 15,
+      "N50": 15
+    },
+    "final_ranks": {
+      "N10": 10,
+      "N20": 14,
+      "N30": 14,
+      "N40": 15,
+      "N50": 15
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B2",
+    "dense_rank": 38,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": false,
+      "N30": false,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": 0.5246040225028992,
+      "N50": 0.5246034860610962
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": 47,
+      "N50": 49
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 2 \u2014 Candidate Depth Bottleneck"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B2",
+    "dense_rank": 6,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -0.3105611801147461,
+      "N20": -0.3105598986148834,
+      "N30": -0.3105602264404297,
+      "N40": -0.3105602264404297,
+      "N50": -0.3105606138706207
+    },
+    "ce_ranks": {
+      "N10": 5,
+      "N20": 5,
+      "N30": 5,
+      "N40": 5,
+      "N50": 5
+    },
+    "final_ranks": {
+      "N10": 5,
+      "N20": 5,
+      "N30": 5,
+      "N40": 5,
+      "N50": 5
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  },
+  {
+    "target_chunk": "C15",
+    "question_id": "Q03",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B3",
+    "dense_rank": 68,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -3.845289707183838,
+      "N20": -3.845289707183838,
+      "N30": -3.845289707183838,
+      "N40": -3.845289707183838,
+      "N50": -3.845289707183838
+    },
+    "ce_ranks": {
+      "N10": 16,
+      "N20": 30,
+      "N30": 34,
+      "N40": 37,
+      "N50": 37
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C29",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B3",
+    "dense_rank": 40,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -5.343689918518066,
+      "N20": -5.343689918518066,
+      "N30": -5.343691349029541,
+      "N40": -5.343689918518066,
+      "N50": -5.343691349029541
+    },
+    "ce_ranks": {
+      "N10": 32,
+      "N20": 51,
+      "N30": 63,
+      "N40": 70,
+      "N50": 74
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C61",
+    "question_id": "Q03",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B3",
+    "dense_rank": 49,
+    "bm25_rank": 7,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -4.168493270874023,
+      "N20": -4.168493270874023,
+      "N30": -4.168493270874023,
+      "N40": -4.168493270874023,
+      "N50": -4.168491840362549
+    },
+    "ce_ranks": {
+      "N10": 20,
+      "N20": 35,
+      "N30": 40,
+      "N40": 44,
+      "N50": 44
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C42",
+    "question_id": "Q05",
+    "chunk_type": "PRIMARY",
+    "e_key": "E2",
+    "b_key": "B3",
+    "dense_rank": 12,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": false,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": null,
+      "N20": 2.881728172302246,
+      "N30": 2.881727457046509,
+      "N40": 2.8817293643951416,
+      "N50": 2.8817293643951416
+    },
+    "ce_ranks": {
+      "N10": null,
+      "N20": 26,
+      "N30": 31,
+      "N40": 34,
+      "N50": 34
+    },
+    "final_ranks": {
+      "N10": null,
+      "N20": null,
+      "N30": null,
+      "N40": null,
+      "N50": null
+    },
+    "failure_stage": "Stage 3 \u2014 CE Reranking Failure"
+  },
+  {
+    "target_chunk": "C147",
+    "question_id": "Q06",
+    "chunk_type": "SUPPORTING",
+    "e_key": "E2",
+    "b_key": "B3",
+    "dense_rank": 9,
+    "bm25_rank": null,
+    "rrf_rank": null,
+    "candidate_membership": {
+      "N10": true,
+      "N20": true,
+      "N30": true,
+      "N40": true,
+      "N50": true
+    },
+    "ce_scores": {
+      "N10": -1.1329355239868164,
+      "N20": -1.1329362392425537,
+      "N30": -1.132935643196106,
+      "N40": -1.132935643196106,
+      "N50": -1.1329360008239746
+    },
+    "ce_ranks": {
+      "N10": 7,
+      "N20": 8,
+      "N30": 8,
+      "N40": 8,
+      "N50": 8
+    },
+    "final_ranks": {
+      "N10": 7,
+      "N20": 8,
+      "N30": 8,
+      "N40": 8,
+      "N50": 8
+    },
+    "failure_stage": "Stage 4 \u2014 Recovered"
+  }
+]

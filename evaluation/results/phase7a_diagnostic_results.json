@@ -1,0 +1,5510 @@
+{
+  "timestamp": "2026-09-25T18:00:29.077569",
+  "query_definitions": [
+    {
+      "q_id": "Q01",
+      "original_query": "Who is Aegeon and what is his origin?",
+      "q1_reformulated": "Aegeon character origin Syracuse Comedy of Errors Shakespeare",
+      "q2_multiqueries": [
+        "Aegeon character background Syracuse merchant",
+        "Aegeon family relationships Emilia twin sons",
+        "Aegeon arrest Ephesus law against Syracusans"
+      ]
+    },
+    {
+      "q_id": "Q02",
+      "original_query": "Why was Aegeon sentenced to death in Ephesus?",
+      "q1_reformulated": "Aegeon sentenced death Ephesus reason Syracuse law enmity Comedy of Errors",
+      "q2_multiqueries": [
+        "Aegeon Syracuse merchant background identity",
+        "Ephesus law death penalty Syracusans merchants",
+        "Aegeon arrest sentencing Ephesus Duke ransom"
+      ]
+    },
+    {
+      "q_id": "Q03",
+      "original_query": "Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?",
+      "q1_reformulated": "Antipholus of Syracuse Adriana mistaken identity husband wife recognition failure Comedy of Errors",
+      "q2_multiqueries": [
+        "The user is asking for 3 distinct search sub-queries to retrieve relevant evidence from a document (presumably Shakespeare's \"The Comedy of Errors\") to answer the question: \"Why does Antipholus of Syracuse fail to recognize Adriana when she addresses him as her husband?\"",
+        "We need to generate exactly 3 search sub-queries, each targeting a different aspect of the evidence needed. The rules: each query should target a different aspect (e.g., entities/character background; key rules, laws, or relationships; specific actions, events, or consequences). Do not invent facts or assume details not in the question. Do not answer the question. Format as JSON array of 3 strings.",
+        "We must output only the JSON array, no markdown, no conversational text."
+      ]
+    },
+    {
+      "q_id": "Q04",
+      "original_query": "How did Aegeon come to have two pairs of identical twin sons and twin servants?",
+      "q1_reformulated": "Aegeon twin sons twin servants origin shipwreck Comedy of Errors",
+      "q2_multiqueries": [
+        "Aegeon twin sons birth circumstances Emilia",
+        "Aegeon family separation shipwreck storm",
+        "Aegeon twin servants Dromio purchase acquisition"
+      ]
+    },
+    {
+      "q_id": "Q05",
+      "original_query": "How do Antipholus of Syracuse and Antipholus of Ephesus differ in their initial interactions with Dromio of Syracuse?",
+      "q1_reformulated": "Antipholus of Syracuse Antipholus of Ephesus initial interactions Dromio of Syracuse differences comparison Comedy of Errors",
+      "q2_multiqueries": [
+        "Antipholus of Syracuse character background and his relationship to Dromio of Syracuse",
+        "Antipholus of Ephesus relationship to Dromio of Syracuse and the master-servant dynamic in Ephesus",
+        "Initial encounter scenes between Antipholus of Syracuse and Dromio of Syracuse versus Antipholus of Ephesus and Dromio of Syracuse"
+      ]
+    },
+    {
+      "q_id": "Q06",
+      "original_query": "Why is Antipholus of Ephesus arrested, and what role does Angelo the goldsmith play in the debt dispute?",
+      "q1_reformulated": "Antipholus of Ephesus arrest Angelo goldsmith debt dispute Comedy of Errors",
+      "q2_multiqueries": [
+        "Antipholus of Ephesus character background arrest debt",
+        "Angelo goldsmith relationship debt dispute legal claim",
+        "Arrest of Antipholus of Ephesus scene Angelo goldsmith demand payment"
+      ]
+    }
+  ],
+  "master_results": [
+    {
+      "strategy_id": "Q0",
+      "strategy_name": "Original",
+      "candidate_N": 20,
+      "sem_candidate_recall": 0.6,
+      "union_candidate_recall": 0.6,
+      "hybrid_candidate_recall": 0.6,
+      "final_recall_at_10": 0.4,
+      "claim_availability": 0.35714285714285715,
+      "ndcg10": 0.3989578764657267,
+      "mrr": 0.3071428571428571
+    },
+    {
+      "strategy_id": "Q0",
+      "strategy_name": "Original",
+      "candidate_N": 50,
+      "sem_candidate_recall": 0.75,
+      "union_candidate_recall": 0.75,
+      "hybrid_candidate_recall": 0.75,
+      "final_recall_at_10": 0.2,
+      "claim_availability": 0.21428571428571427,
+      "ndcg10": 0.26249885249999333,
+      "mrr": 0.18611111111111112
+    },
+    {
+      "strategy_id": "Q0",
+      "strategy_name": "Original",
+      "candidate_N": 100,
+      "sem_candidate_recall": 0.8,
+      "union_candidate_recall": 0.8,
+      "hybrid_candidate_recall": 0.8,
+      "final_recall_at_10": 0.25,
+      "claim_availability": 0.21428571428571427,
+      "ndcg10": 0.2902908345637683,
+      "mrr": 0.14484126984126985
+    },
+    {
+      "strategy_id": "Q1",
+      "strategy_name": "Reformulated",
+      "candidate_N": 20,
+      "sem_candidate_recall": 0.5,
+      "union_candidate_recall": 0.5,
+      "hybrid_candidate_recall": 0.5,
+      "final_recall_at_10": 0.4,
+      "claim_availability": 0.35714285714285715,
+      "ndcg10": 0.38367148064313045,
+      "mrr": 0.21388888888888888
+    },
+    {
+      "strategy_id": "Q1",
+      "strategy_name": "Reformulated",
+      "candidate_N": 50,
+      "sem_candidate_recall": 0.8,
+      "union_candidate_recall": 0.8,
+      "hybrid_candidate_recall": 0.8,
+      "final_recall_at_10": 0.2,
+      "claim_availability": 0.21428571428571427,
+      "ndcg10": 0.3540253931509736,
+      "mrr": 0.20833333333333334
+    },
+    {
+      "strategy_id": "Q1",
+      "strategy_name": "Reformulated",
+      "candidate_N": 100,
+      "sem_candidate_recall": 0.8,
+      "union_candidate_recall": 0.8,
+      "hybrid_candidate_recall": 0.8,
+      "final_recall_at_10": 0.15,
+      "claim_availability": 0.14285714285714285,
+      "ndcg10": 0.2626905304625112,
+      "mrr": 0.09325396825396826
+    },
+    {
+      "strategy_id": "Q2",
+      "strategy_name": "Multi-query",
+      "candidate_N": 20,
+      "sem_candidate_recall": 0.65,
+      "union_candidate_recall": 0.75,
+      "hybrid_candidate_recall": 0.7,
+      "final_recall_at_10": 0.4,
+      "claim_availability": 0.5,
+      "ndcg10": 0.3846396529586587,
+      "mrr": 0.13214285714285715
+    },
+    {
+      "strategy_id": "Q2",
+      "strategy_name": "Multi-query",
+      "candidate_N": 50,
+      "sem_candidate_recall": 0.8,
+      "union_candidate_recall": 0.8,
+      "hybrid_candidate_recall": 0.8,
+      "final_recall_at_10": 0.15,
+      "claim_availability": 0.14285714285714285,
+      "ndcg10": 0.2800766990014761,
+      "mrr": 0.08928571428571429
+    },
+    {
+      "strategy_id": "Q2",
+      "strategy_name": "Multi-query",
+      "candidate_N": 100,
+      "sem_candidate_recall": 0.8,
+      "union_candidate_recall": 0.8,
+      "hybrid_candidate_recall": 0.8,
+      "final_recall_at_10": 0.2,
+      "claim_availability": 0.21428571428571427,
+      "ndcg10": 0.30285730226840335,
+      "mrr": 0.09722222222222221
+    }
+  ],
+  "query_diversity_stats": [
+    {
+      "q_id": "Q01",
+      "candidate_N": 20,
+      "jaccard_ab": 0.0625,
+      "jaccard_ac": 0.030303030303030304,
+      "jaccard_bc": 0.3076923076923077,
+      "avg_jaccard": 0.13349844599844599,
+      "unique_a": 15,
+      "unique_b": 8,
+      "unique_c": 9,
+      "total_union_size": 41
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 50,
+      "jaccard_ab": 0.32075471698113206,
+      "jaccard_ac": 0.36,
+      "jaccard_bc": 0.5111111111111111,
+      "avg_jaccard": 0.39728860936408106,
+      "unique_a": 12,
+      "unique_b": 7,
+      "unique_c": 4,
+      "total_union_size": 57
+    },
+    {
+      "q_id": "Q01",
+      "candidate_N": 100,
+      "jaccard_ab": 0.6133333333333333,
+      "jaccard_ac": 0.7,
+      "jaccard_bc": 0.6944444444444444,
+      "avg_jaccard": 0.6692592592592592,
+      "unique_a": 3,
+      "unique_b": 5,
+      "unique_c": 0,
+      "total_union_size": 75
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 20,
+      "jaccard_ab": 0.13333333333333333,
+      "jaccard_ac": 0.06666666666666667,
+      "jaccard_bc": 0.6,
+      "avg_jaccard": 0.26666666666666666,
+      "unique_a": 12,
+      "unique_b": 2,
+      "unique_c": 2,
+      "total_union_size": 32
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 50,
+      "jaccard_ab": 0.40816326530612246,
+      "jaccard_ac": 0.37254901960784315,
+      "jaccard_bc": 0.8108108108108109,
+      "avg_jaccard": 0.5305076985749255,
+      "unique_a": 14,
+      "unique_b": 0,
+      "unique_c": 2,
+      "total_union_size": 51
+    },
+    {
+      "q_id": "Q02",
+      "candidate_N": 100,
+      "jaccard_ab": 0.6164383561643836,
+      "jaccard_ac": 0.6338028169014085,
+      "jaccard_bc": 0.873015873015873,
+      "avg_jaccard": 0.7077523486938885,
+      "unique_a": 11,
+      "unique_b": 3,
+      "unique_c": 1,
+      "total_union_size": 74
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 20,
+      "jaccard_ab": 0.3448275862068966,
+      "jaccard_ac": 0.2,
+      "jaccard_bc": 0.08823529411764706,
+      "avg_jaccard": 0.2110209601081812,
+      "unique_a": 6,
+      "unique_b": 10,
+      "unique_c": 11,
+      "total_union_size": 40
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 50,
+      "jaccard_ab": 0.44642857142857145,
+      "jaccard_ac": 0.39285714285714285,
+      "jaccard_bc": 0.29508196721311475,
+      "avg_jaccard": 0.3781225604996097,
+      "unique_a": 6,
+      "unique_b": 11,
+      "unique_c": 11,
+      "total_union_size": 67
+    },
+    {
+      "q_id": "Q03",
+      "candidate_N": 100,
+      "jaccard_ab": 0.7397260273972602,
+      "jaccard_ac": 0.6901408450704225,
+      "jaccard_bc": 0.6710526315789473,
+      "avg_jaccard": 0.7003065013488766,
+      "unique_a": 1,
+      "unique_b": 6,
+      "unique_c": 4,
+      "total_union_size": 77
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 20,
+      "jaccard_ab": 0.5454545454545454,
+      "jaccard_ac": 0.058823529411764705,
+      "jaccard_bc": 0.16129032258064516,
+      "avg_jaccard": 0.2551894658156518,
+      "unique_a": 4,
+      "unique_b": 1,
+      "unique_c": 13,
+      "total_union_size": 35
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 50,
+      "jaccard_ab": 0.574468085106383,
+      "jaccard_ac": 0.39215686274509803,
+      "jaccard_bc": 0.42592592592592593,
+      "avg_jaccard": 0.4641836245924689,
+      "unique_a": 3,
+      "unique_b": 6,
+      "unique_c": 10,
+      "total_union_size": 57
+    },
+    {
+      "q_id": "Q04",
+      "candidate_N": 100,
+      "jaccard_ab": 0.7671232876712328,
+      "jaccard_ac": 0.6533333333333333,
+      "jaccard_bc": 0.72,
+      "avg_jaccard": 0.7134855403348555,
+      "unique_a": 4,
+      "unique_b": 4,
+      "unique_c": 6,
+      "total_union_size": 79
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 20,
+      "jaccard_ab": 0.06451612903225806,
+      "jaccard_ac": 0.8,
+      "jaccard_bc": 0.12903225806451613,
+      "avg_jaccard": 0.3311827956989247,
+      "unique_a": 1,
+      "unique_b": 12,
+      "unique_c": 1,
+      "total_union_size": 32
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 50,
+      "jaccard_ab": 0.4807692307692308,
+      "jaccard_ac": 0.7380952380952381,
+      "jaccard_bc": 0.6170212765957447,
+      "avg_jaccard": 0.6119619151534046,
+      "unique_a": 5,
+      "unique_b": 10,
+      "unique_c": 0,
+      "total_union_size": 52
+    },
+    {
+      "q_id": "Q05",
+      "candidate_N": 100,
+      "jaccard_ab": 0.9661016949152542,
+      "jaccard_ac": 1.0,
+      "jaccard_bc": 0.9661016949152542,
+      "avg_jaccard": 0.9774011299435029,
+      "unique_a": 0,
+      "unique_b": 2,
+      "unique_c": 0,
+      "total_union_size": 59
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 20,
+      "jaccard_ab": 0.30434782608695654,
+      "jaccard_ac": 0.75,
+      "jaccard_bc": 0.25,
+      "avg_jaccard": 0.43478260869565216,
+      "unique_a": 1,
+      "unique_b": 9,
+      "unique_c": 2,
+      "total_union_size": 25
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 50,
+      "jaccard_ab": 0.3877551020408163,
+      "jaccard_ac": 0.8055555555555556,
+      "jaccard_bc": 0.38,
+      "avg_jaccard": 0.5244368858654572,
+      "unique_a": 1,
+      "unique_b": 15,
+      "unique_c": 2,
+      "total_union_size": 51
+    },
+    {
+      "q_id": "Q06",
+      "candidate_N": 100,
+      "jaccard_ab": 0.6486486486486487,
+      "jaccard_ac": 0.890625,
+      "jaccard_bc": 0.6301369863013698,
+      "avg_jaccard": 0.7231368783166728,
+      "unique_a": 1,
+      "unique_b": 10,
+      "unique_c": 0,
+      "total_union_size": 74
+    }
+  ],
+  "missing_chunk_tracing": [
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 10,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 15,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 6,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 1,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 13,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 12,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q0",
+      "N": 20,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 13,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 17,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 22,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 3,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 29,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 3,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 21,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 12,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 21,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 29,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 15,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 11,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q0",
+      "N": 50,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 21,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 11,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 6,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 21,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 17,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 41,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 6,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 25,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 36,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 28,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 36,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 41,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q0",
+      "N": 100,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 19,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 11,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 6,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 2,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 3,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 8,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q1",
+      "N": 20,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 15,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 25,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 11,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 18,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 15,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 24,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 37,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 30,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 2,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 17,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 13,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 32,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 9,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 2,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q1",
+      "N": 50,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 22,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 37,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 15,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 6,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 36,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 44,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 26,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 26,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 25,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 31,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 45,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 11,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q1",
+      "N": 100,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 21,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 8,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 8,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": 21,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 12,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 15,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 11,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 18,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 9,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 5,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q2",
+      "N": 20,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 19,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 13,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 20,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 18,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 22,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 29,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 43,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 7,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 28,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 19,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 29,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 25,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 4,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q2",
+      "N": 50,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 20,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 10,
+      "q1_sem_rank": 24,
+      "q2_sub_ranks": [
+        64,
+        6,
+        9
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 24,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q01",
+      "gold_chunk": "C2",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 29,
+      "q2_sub_ranks": [
+        30,
+        4,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C2",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 8,
+      "q2_sub_ranks": [
+        24,
+        1,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 21,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 18,
+      "q1_sem_rank": 20,
+      "q2_sub_ranks": [
+        51,
+        6,
+        39
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 8,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C10",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 5,
+      "q1_sem_rank": 2,
+      "q2_sub_ranks": [
+        43,
+        3,
+        14
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 16,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q02",
+      "gold_chunk": "C12",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 57,
+      "q1_sem_rank": 23,
+      "q2_sub_ranks": [
+        10,
+        16,
+        62
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 22,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C15",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C24",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 4,
+      "q1_sem_rank": 44,
+      "q2_sub_ranks": [
+        19,
+        17,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 34,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C29",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q03",
+      "gold_chunk": "C61",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 33,
+      "q1_sem_rank": 35,
+      "q2_sub_ranks": [
+        49,
+        75,
+        41
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 44,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C4",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 2,
+      "q1_sem_rank": 4,
+      "q2_sub_ranks": [
+        3,
+        8,
+        29
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 8,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C6",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 21,
+      "q1_sem_rank": 6,
+      "q2_sub_ranks": [
+        17,
+        5,
+        "—"
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 51,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q04",
+      "gold_chunk": "C8",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 3,
+      "q1_sem_rank": 3,
+      "q2_sub_ranks": [
+        9,
+        2,
+        40
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 32,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C42",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C65",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 12,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        52,
+        1,
+        28
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 43,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q05",
+      "gold_chunk": "C12",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 29,
+      "q1_sem_rank": 36,
+      "q2_sub_ranks": [
+        18,
+        35,
+        11
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 41,
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C105",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 1,
+      "q1_sem_rank": 1,
+      "q2_sub_ranks": [
+        14,
+        4,
+        1
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 10,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C107",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 15,
+      "q1_sem_rank": 9,
+      "q2_sub_ranks": [
+        16,
+        5,
+        7
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 3,
+      "in_final_top10": true
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C147",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": "—",
+      "q1_sem_rank": "—",
+      "q2_sub_ranks": [
+        "—",
+        "—",
+        "—"
+      ],
+      "in_sem_candidate_pool": false,
+      "final_rrf_rank": "—",
+      "in_final_top10": false
+    },
+    {
+      "q_id": "Q06",
+      "gold_chunk": "C155",
+      "strategy": "Q2",
+      "N": 100,
+      "q0_sem_rank": 16,
+      "q1_sem_rank": 19,
+      "q2_sub_ranks": [
+        67,
+        6,
+        35
+      ],
+      "in_sem_candidate_pool": true,
+      "final_rrf_rank": 20,
+      "in_final_top10": false
+    }
+  ],
+  "per_question_details": [
+    {
+      "q_id": "Q01",
+      "strategy": "Q0",
+      "N": 20,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 1.0,
+      "claim_avail": 1.0,
+      "missing_claims": [],
+      "top10_cids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C197",
+        "C163",
+        "C2",
+        "C194",
+        "C189",
+        "C4"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.500869885894586
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q0",
+      "N": 20,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.5,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C10",
+        "C197",
+        "C137",
+        "C149",
+        "C186",
+        "C4",
+        "C191",
+        "C189",
+        "C178",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.0,
+        "mrr": 1.0,
+        "ndcg10": 0.46972196760395535
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q0",
+      "N": 20,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24"
+      ],
+      "sem_recall": 0.25,
+      "union_recall": 0.25,
+      "hybrid_cand_recall": 0.25,
+      "final_recall": 0.25,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C194",
+        "C91",
+        "C83",
+        "C50",
+        "C24",
+        "C118",
+        "C88",
+        "C47",
+        "C169",
+        "C175"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.2,
+        "ndcg10": 0.36075373607851846
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q0",
+      "N": 20,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C8"
+      ],
+      "sem_recall": 0.6666666666666666,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.6666666666666666,
+      "final_recall": 0.6666666666666666,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C191",
+        "C186",
+        "C200",
+        "C4",
+        "C8",
+        "C24",
+        "C10",
+        "C189",
+        "C110",
+        "C194"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.561209446730229
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q0",
+      "N": 20,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65"
+      ],
+      "sem_recall": 0.3333333333333333,
+      "union_recall": 0.3333333333333333,
+      "hybrid_cand_recall": 0.3333333333333333,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C194",
+        "C44",
+        "C200",
+        "C191",
+        "C94",
+        "C50",
+        "C70",
+        "C197",
+        "C76",
+        "C97"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.15621733969012364
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q0",
+      "N": 20,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C137",
+        "C146",
+        "C197",
+        "C105",
+        "C65",
+        "C110",
+        "C113",
+        "C163",
+        "C161",
+        "C178"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.34497488279694827
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q0",
+      "N": 50,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.5,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "top10_cids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C2",
+        "C163",
+        "C171",
+        "C197",
+        "C194",
+        "C178"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.2,
+        "ndcg10": 0.17893541982453223
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q0",
+      "N": 50,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C146",
+        "C186",
+        "C10",
+        "C197",
+        "C178",
+        "C191",
+        "C137",
+        "C73",
+        "C149",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.29494634444470236
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q0",
+      "N": 50,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24",
+        "C61"
+      ],
+      "sem_recall": 0.5,
+      "union_recall": 0.5,
+      "hybrid_cand_recall": 0.5,
+      "final_recall": 0.25,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C55",
+        "C143",
+        "C50",
+        "C166",
+        "C94",
+        "C149"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3520329019825493
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q0",
+      "N": 50,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.3333333333333333,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C191",
+        "C186",
+        "C4",
+        "C10",
+        "C200",
+        "C178",
+        "C194",
+        "C2",
+        "C197",
+        "C163"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.432992518862129
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q0",
+      "N": 50,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65",
+        "C12"
+      ],
+      "sem_recall": 0.6666666666666666,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.6666666666666666,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C200",
+        "C194",
+        "C44",
+        "C70",
+        "C191",
+        "C73",
+        "C47",
+        "C19",
+        "C55",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.19627643997905228
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q0",
+      "N": 50,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C110",
+        "C152",
+        "C137",
+        "C146",
+        "C197",
+        "C113",
+        "C149",
+        "C73",
+        "C178",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.11980948990699469
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q0",
+      "N": 100,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.5,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "top10_cids": [
+        "C191",
+        "C166",
+        "C186",
+        "C10",
+        "C70",
+        "C2",
+        "C163",
+        "C171",
+        "C197",
+        "C194"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.2120989119762952
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q0",
+      "N": 100,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C73",
+        "C146",
+        "C113",
+        "C186",
+        "C166",
+        "C183",
+        "C10",
+        "C197",
+        "C178",
+        "C110"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.262015725591729
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q0",
+      "N": 100,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24",
+        "C61"
+      ],
+      "sem_recall": 0.5,
+      "union_recall": 0.5,
+      "hybrid_cand_recall": 0.5,
+      "final_recall": 0.25,
+      "claim_avail": 0.3333333333333333,
+      "missing_claims": [
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C50",
+        "C166",
+        "C194",
+        "C91",
+        "C88",
+        "C24",
+        "C30",
+        "C55",
+        "C143",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.34177243530756374
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q0",
+      "N": 100,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.3333333333333333,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C191",
+        "C178",
+        "C175",
+        "C107",
+        "C186",
+        "C73",
+        "C4",
+        "C166",
+        "C10",
+        "C200"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.39644959357441406
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q0",
+      "N": 100,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65",
+        "C12"
+      ],
+      "sem_recall": 0.6666666666666666,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.6666666666666666,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C200",
+        "C44",
+        "C70",
+        "C19",
+        "C194",
+        "C191",
+        "C73",
+        "C41",
+        "C47",
+        "C94"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.19832033991746972
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q0",
+      "N": 100,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C110",
+        "C146",
+        "C152",
+        "C107",
+        "C137",
+        "C197",
+        "C16",
+        "C183",
+        "C19",
+        "C113"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3310880010151381
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q1",
+      "N": 20,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [],
+      "sem_recall": 0.0,
+      "union_recall": 0.0,
+      "hybrid_cand_recall": 0.0,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "top10_cids": [
+        "C197",
+        "C163",
+        "C0",
+        "C55",
+        "C12",
+        "C191",
+        "C91",
+        "C200",
+        "C186",
+        "C189"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.24186592480529392
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q1",
+      "N": 20,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.5,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C197",
+        "C10",
+        "C137",
+        "C140",
+        "C186",
+        "C4",
+        "C113",
+        "C189",
+        "C191",
+        "C178"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.0,
+        "mrr": 0.5,
+        "ndcg10": 0.3818125763763431
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q1",
+      "N": 20,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [],
+      "sem_recall": 0.0,
+      "union_recall": 0.0,
+      "hybrid_cand_recall": 0.0,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C91",
+        "C50",
+        "C94",
+        "C99",
+        "C194",
+        "C140",
+        "C47",
+        "C83",
+        "C58",
+        "C175"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.14201197674365323
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q1",
+      "N": 20,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 1.0,
+      "claim_avail": 1.0,
+      "missing_claims": [],
+      "top10_cids": [
+        "C10",
+        "C191",
+        "C0",
+        "C8",
+        "C4",
+        "C197",
+        "C6",
+        "C189",
+        "C2",
+        "C200"
+      ],
+      "secondary": {
+        "ev_precision": 0.3,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.6380317075704502
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q1",
+      "N": 20,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65"
+      ],
+      "sem_recall": 0.3333333333333333,
+      "union_recall": 0.3333333333333333,
+      "hybrid_cand_recall": 0.3333333333333333,
+      "final_recall": 0.3333333333333333,
+      "claim_avail": 0.5,
+      "missing_claims": [
+        "Q05_C1"
+      ],
+      "top10_cids": [
+        "C140",
+        "C200",
+        "C65",
+        "C197",
+        "C73",
+        "C194",
+        "C76",
+        "C50",
+        "C94",
+        "C191"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.42166152913776545
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q1",
+      "N": 20,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.5,
+      "claim_avail": 0.5,
+      "missing_claims": [
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C146",
+        "C137",
+        "C197",
+        "C140",
+        "C105",
+        "C65",
+        "C110",
+        "C107",
+        "C0",
+        "C113"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.2,
+        "mrr": 0.2,
+        "ndcg10": 0.47664516922527667
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q1",
+      "N": 50,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "top10_cids": [
+        "C197",
+        "C191",
+        "C186",
+        "C10",
+        "C194",
+        "C128",
+        "C99",
+        "C140",
+        "C19",
+        "C70"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.23841980467042215
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q1",
+      "N": 50,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C19",
+        "C197",
+        "C146",
+        "C10",
+        "C113",
+        "C186",
+        "C137",
+        "C140",
+        "C191",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.25,
+        "ndcg10": 0.3176792276182854
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q1",
+      "N": 50,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24",
+        "C61"
+      ],
+      "sem_recall": 0.5,
+      "union_recall": 0.5,
+      "hybrid_cand_recall": 0.5,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C50",
+        "C91",
+        "C194",
+        "C94",
+        "C99",
+        "C55",
+        "C85",
+        "C143",
+        "C88",
+        "C197"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.1721777876865522
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q1",
+      "N": 50,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.3333333333333333,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C10",
+        "C4",
+        "C197",
+        "C2",
+        "C186",
+        "C107",
+        "C113",
+        "C200",
+        "C137",
+        "C166"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.5,
+        "ndcg10": 0.6035641928985919
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q1",
+      "N": 50,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65",
+        "C12"
+      ],
+      "sem_recall": 0.6666666666666666,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.6666666666666666,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C73",
+        "C194",
+        "C200",
+        "C140",
+        "C197",
+        "C44",
+        "C76",
+        "C191",
+        "C19",
+        "C47"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.21049369044102684
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q1",
+      "N": 50,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.5,
+      "claim_avail": 0.5,
+      "missing_claims": [
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C110",
+        "C107",
+        "C146",
+        "C137",
+        "C197",
+        "C19",
+        "C152",
+        "C140",
+        "C105",
+        "C113"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.2,
+        "mrr": 0.5,
+        "ndcg10": 0.5818176555909631
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q1",
+      "N": 100,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "top10_cids": [
+        "C197",
+        "C19",
+        "C41",
+        "C44",
+        "C163",
+        "C191",
+        "C186",
+        "C10",
+        "C194",
+        "C55"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.2396244520248843
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q1",
+      "N": 100,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C113",
+        "C19",
+        "C110",
+        "C197",
+        "C146",
+        "C10",
+        "C186",
+        "C137",
+        "C140",
+        "C191"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.16666666666666666,
+        "ndcg10": 0.18230730701355524
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q1",
+      "N": 100,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24",
+        "C61"
+      ],
+      "sem_recall": 0.5,
+      "union_recall": 0.5,
+      "hybrid_cand_recall": 0.5,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C50",
+        "C91",
+        "C194",
+        "C44",
+        "C166",
+        "C94",
+        "C99",
+        "C55",
+        "C85",
+        "C47"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.14997530084989366
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q1",
+      "N": 100,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.3333333333333333,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C191",
+        "C107",
+        "C166",
+        "C175",
+        "C10",
+        "C110",
+        "C4",
+        "C73",
+        "C197",
+        "C2"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.44902101388364857
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q1",
+      "N": 100,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65",
+        "C12"
+      ],
+      "sem_recall": 0.6666666666666666,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.6666666666666666,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C200",
+        "C44",
+        "C70",
+        "C19",
+        "C73",
+        "C194",
+        "C140",
+        "C197",
+        "C41",
+        "C76"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.22412710798794722
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q1",
+      "N": 100,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C110",
+        "C146",
+        "C152",
+        "C107",
+        "C137",
+        "C197",
+        "C19",
+        "C16",
+        "C140",
+        "C183"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.3310880010151381
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q2",
+      "N": 20,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 1.0,
+      "claim_avail": 1.0,
+      "missing_claims": [],
+      "top10_cids": [
+        "C163",
+        "C191",
+        "C166",
+        "C186",
+        "C197",
+        "C189",
+        "C2",
+        "C4",
+        "C113",
+        "C70"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.539577495744739
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q2",
+      "N": 20,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C10",
+        "C12"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.5,
+      "claim_avail": 1.0,
+      "missing_claims": [],
+      "top10_cids": [
+        "C113",
+        "C137",
+        "C149",
+        "C197",
+        "C12",
+        "C146",
+        "C178",
+        "C2",
+        "C191",
+        "C65"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.2,
+        "ndcg10": 0.435484192945563
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q2",
+      "N": 20,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24"
+      ],
+      "sem_recall": 0.25,
+      "union_recall": 0.25,
+      "hybrid_cand_recall": 0.25,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C91",
+        "C73",
+        "C163",
+        "C143",
+        "C118",
+        "C58",
+        "C152",
+        "C70",
+        "C99",
+        "C166"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.16095137679573118
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q2",
+      "N": 20,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.6666666666666666,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C191",
+        "C166",
+        "C186",
+        "C4",
+        "C8",
+        "C113",
+        "C2",
+        "C189",
+        "C10",
+        "C163"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.5322441720467617
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q2",
+      "N": 20,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C12"
+      ],
+      "sem_recall": 0.3333333333333333,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.3333333333333333,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C200",
+        "C38",
+        "C163",
+        "C44",
+        "C191",
+        "C70",
+        "C19",
+        "C194",
+        "C47",
+        "C91"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.17965151452765796
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q2",
+      "N": 20,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.5,
+      "claim_avail": 0.5,
+      "missing_claims": [
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C152",
+        "C110",
+        "C146",
+        "C197",
+        "C107",
+        "C137",
+        "C113",
+        "C140",
+        "C105",
+        "C65"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.2,
+        "mrr": 0.2,
+        "ndcg10": 0.4599291656914995
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q2",
+      "N": 50,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "top10_cids": [
+        "C163",
+        "C143",
+        "C186",
+        "C191",
+        "C10",
+        "C110",
+        "C178",
+        "C73",
+        "C166",
+        "C200"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.2623752086310313
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q2",
+      "N": 50,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C186",
+        "C110",
+        "C113",
+        "C146",
+        "C197",
+        "C19",
+        "C4",
+        "C152",
+        "C137",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.2803810470012831
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q2",
+      "N": 50,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24",
+        "C61"
+      ],
+      "sem_recall": 0.5,
+      "union_recall": 0.5,
+      "hybrid_cand_recall": 0.5,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C91",
+        "C163",
+        "C73",
+        "C41",
+        "C118",
+        "C143",
+        "C194",
+        "C58",
+        "C50",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.17232308683904654
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q2",
+      "N": 50,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.3333333333333333,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C191",
+        "C27",
+        "C137",
+        "C186",
+        "C166",
+        "C163",
+        "C4",
+        "C73",
+        "C200",
+        "C113"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.14285714285714285,
+        "ndcg10": 0.4599081001053585
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q2",
+      "N": 50,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65",
+        "C12"
+      ],
+      "sem_recall": 0.6666666666666666,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.6666666666666666,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C200",
+        "C44",
+        "C38",
+        "C194",
+        "C163",
+        "C19",
+        "C55",
+        "C70",
+        "C47",
+        "C91"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.17826813318595364
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q2",
+      "N": 50,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q06_C1",
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C152",
+        "C110",
+        "C146",
+        "C107",
+        "C116",
+        "C137",
+        "C197",
+        "C113",
+        "C16",
+        "C178"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.25,
+        "ndcg10": 0.32720461824618347
+      }
+    },
+    {
+      "q_id": "Q01",
+      "strategy": "Q2",
+      "N": 100,
+      "req_units": [
+        "C4",
+        "C2"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C2"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q01_C1",
+        "Q01_C2"
+      ],
+      "top10_cids": [
+        "C163",
+        "C191",
+        "C73",
+        "C171",
+        "C186",
+        "C113",
+        "C143",
+        "C110",
+        "C10",
+        "C166"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.24258273973746552
+      }
+    },
+    {
+      "q_id": "Q02",
+      "strategy": "Q2",
+      "N": 100,
+      "req_units": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C2",
+        "C4",
+        "C10",
+        "C12"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.25,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q02_C1",
+        "Q02_C2"
+      ],
+      "top10_cids": [
+        "C186",
+        "C110",
+        "C113",
+        "C146",
+        "C191",
+        "C16",
+        "C19",
+        "C4",
+        "C197",
+        "C137"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.0,
+        "mrr": 0.125,
+        "ndcg10": 0.25105494465696626
+      }
+    },
+    {
+      "q_id": "Q03",
+      "strategy": "Q2",
+      "N": 100,
+      "req_units": [
+        "C15",
+        "C24",
+        "C29",
+        "C61"
+      ],
+      "sem_retrieved": [
+        "C24",
+        "C61"
+      ],
+      "sem_recall": 0.5,
+      "union_recall": 0.5,
+      "hybrid_cand_recall": 0.5,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q03_C1",
+        "Q03_C2",
+        "Q03_C3"
+      ],
+      "top10_cids": [
+        "C91",
+        "C118",
+        "C73",
+        "C163",
+        "C194",
+        "C166",
+        "C143",
+        "C41",
+        "C149",
+        "C140"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.16729878872308665
+      }
+    },
+    {
+      "q_id": "Q04",
+      "strategy": "Q2",
+      "N": 100,
+      "req_units": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_retrieved": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sem_recall": 1.0,
+      "union_recall": 1.0,
+      "hybrid_cand_recall": 1.0,
+      "final_recall": 0.3333333333333333,
+      "claim_avail": 0.6666666666666666,
+      "missing_claims": [
+        "Q04_C3"
+      ],
+      "top10_cids": [
+        "C191",
+        "C137",
+        "C107",
+        "C163",
+        "C27",
+        "C186",
+        "C166",
+        "C4",
+        "C200",
+        "C73"
+      ],
+      "secondary": {
+        "ev_precision": 0.1,
+        "pri_precision": 0.1,
+        "mrr": 0.125,
+        "ndcg10": 0.43444559601448435
+      }
+    },
+    {
+      "q_id": "Q05",
+      "strategy": "Q2",
+      "N": 100,
+      "req_units": [
+        "C42",
+        "C65",
+        "C12"
+      ],
+      "sem_retrieved": [
+        "C65",
+        "C12"
+      ],
+      "sem_recall": 0.6666666666666666,
+      "union_recall": 0.6666666666666666,
+      "hybrid_cand_recall": 0.6666666666666666,
+      "final_recall": 0.0,
+      "claim_avail": 0.0,
+      "missing_claims": [
+        "Q05_C1",
+        "Q05_C2"
+      ],
+      "top10_cids": [
+        "C200",
+        "C44",
+        "C38",
+        "C70",
+        "C19",
+        "C194",
+        "C155",
+        "C191",
+        "C47",
+        "C94"
+      ],
+      "secondary": {
+        "ev_precision": 0.0,
+        "pri_precision": 0.0,
+        "mrr": 0.0,
+        "ndcg10": 0.21536721790337585
+      }
+    },
+    {
+      "q_id": "Q06",
+      "strategy": "Q2",
+      "N": 100,
+      "req_units": [
+        "C105",
+        "C107",
+        "C147",
+        "C155"
+      ],
+      "sem_retrieved": [
+        "C105",
+        "C107",
+        "C155"
+      ],
+      "sem_recall": 0.75,
+      "union_recall": 0.75,
+      "hybrid_cand_recall": 0.75,
+      "final_recall": 0.5,
+      "claim_avail": 0.5,
+      "missing_claims": [
+        "Q06_C2"
+      ],
+      "top10_cids": [
+        "C152",
+        "C110",
+        "C107",
+        "C146",
+        "C137",
+        "C16",
+        "C113",
+        "C178",
+        "C197",
+        "C105"
+      ],
+      "secondary": {
+        "ev_precision": 0.2,
+        "pri_precision": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg10": 0.5063945265750415
+      }
+    }
+  ]
+}
