@@ -42,7 +42,7 @@ An enterprise-ready, production-grade Retrieval-Augmented Generation (RAG) platf
 ## 🚀 Getting Started
 
 ### 📋 Prerequisites
-Ensure you have Python 3.10+ and Node.js 18+ installed on your system.
+Ensure you have Python 3.11+ and Node.js 18+ installed on your system.
 
 ### 🔑 Environment Variables
 Create a `.env` file in the root directory:

@@ -23,3 +23,10 @@ test_*.py
 *_test.py
 tests/
 test/
+/.hf_cache
+/evaluation
+*.json
+Phase*.*
+phase2_audit_report
+evaluation_plan 1
+Audit report 1
